@@ -1,6 +1,12 @@
 import '@testing-library/jest-dom/vitest';
 import { afterEach, vi } from 'vitest';
 import { cleanup } from '@testing-library/react';
+import i18n, { NAMESPACES } from '../i18n';
+import { resources } from '../i18n/resources';
+
+// La app carga cada idioma por separado; en las pruebas están los dos desde el principio.
+for (const lng of ['es', 'en'] as const)
+  for (const ns of NAMESPACES) i18n.addResourceBundle(lng, ns, resources[lng][ns], true, true);
 
 afterEach(() => cleanup());
 

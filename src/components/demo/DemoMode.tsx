@@ -5,8 +5,7 @@ import { RotateCcw, X } from 'lucide-react';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { useAppStore } from '../../state/useAppStore';
 import { useUiStore } from '../../state/useUiStore';
-import { getLenis } from '../../hooks/useLenis';
-import { refreshScroll } from '../../hooks/useScrollProgress';
+import { scrollBridge } from '../../lib/scrollBridge';
 import { hasWebGL2 } from '../../lib/device';
 import { lightTime } from '../../lib/astro';
 import { formatDate, formatLightTime } from '../../lib/format';
@@ -83,14 +82,14 @@ function DemoRunner() {
     const prevOverflow = h.style.overflow;
     h.style.overflow = 'hidden';
     window.scrollTo(0, 0);
-    getLenis()?.stop();
+    scrollBridge.stop();
     exitBtn.current?.focus({ preventScroll: true });
     return () => {
       delete h.dataset.demo;
       h.style.overflow = prevOverflow;
-      getLenis()?.start();
+      scrollBridge.start();
       window.scrollTo(0, 0);
-      refreshScroll();
+      scrollBridge.refresh();
     };
   }, []);
 

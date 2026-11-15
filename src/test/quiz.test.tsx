@@ -4,7 +4,7 @@ import i18n from '../i18n';
 import { Quiz } from '../components/quiz/Quiz';
 import { MACHINES_BY_ID } from '../data/machines';
 import { useAppStore } from '../state/useAppStore';
-import { resources } from '../i18n';
+import { resources } from '../i18n/resources';
 
 const q = (resources.es.quiz as unknown as Record<string, Record<string, Record<string, string>>>)
   .surveyor!;

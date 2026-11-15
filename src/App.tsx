@@ -1,9 +1,13 @@
 import { lazy, Suspense, type ReactNode } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { AppShell } from './components/layout/AppShell';
-import { JourneyPage } from './routes/JourneyPage';
 import { RouteFallback } from './components/layout/RouteFallback';
 
+// La Travesía también va en su propio fragmento: las rutas secundarias no la descargan y, en la
+// portada, `index.html` la precarga en paralelo con el fragmento de entrada (ver vite.config.ts).
+const JourneyPage = lazy(() =>
+  import('./routes/JourneyPage').then((m) => ({ default: m.JourneyPage })),
+);
 const AtlasPage = lazy(() => import('./routes/AtlasPage').then((m) => ({ default: m.AtlasPage })));
 const CatalogPage = lazy(() =>
   import('./routes/CatalogPage').then((m) => ({ default: m.CatalogPage })),
@@ -35,7 +39,7 @@ export function App() {
     <BrowserRouter basename={basename}>
       <Routes>
         <Route element={<AppShell />}>
-          <Route index element={<JourneyPage />} />
+          <Route index element={<Lazy el={<JourneyPage />} />} />
           <Route
             path="atlas/luna"
             element={

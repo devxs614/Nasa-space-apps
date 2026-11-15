@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
-import i18n, { detectedLocale } from '../i18n';
+import { activateLocale, detectedLocale, isLocaleLoaded } from '../i18n';
 import { MACHINE_IDS } from '../data/ids';
 import type { Locale, MachineId } from '../data/types';
 import { safeStorage } from '../lib/storage';
@@ -102,14 +102,23 @@ export const useAppStore = create<AppState>()(
       patchDates: {},
       postcard: null,
       setLocale: (l) => {
-        void i18n.changeLanguage(l);
-        set({ locale: l });
+        // Cada idioma se descarga aparte: `locale` cambia cuando sus textos ya están listos.
+        if (isLocaleLoaded(l)) {
+          void activateLocale(l);
+          set({ locale: l });
+          return;
+        }
+        void activateLocale(l).then(
+          () => set({ locale: l }),
+          () => undefined, // sin red para descargarlo: se mantiene el idioma actual
+        );
       },
       setQuality: (q, auto = false) => set({ quality: q, autoQuality: auto }),
       setLiteMode: (on) => set({ liteMode: on, liteDecided: true }),
       updateSettings: (patch) => {
-        if (patch.locale) void i18n.changeLanguage(patch.locale);
-        set(patch);
+        const { locale, ...rest } = patch;
+        if (locale) get().setLocale(locale);
+        set(rest);
       },
       markVisited: (id) => {
         if (get().progress[id]?.visited) return;
@@ -146,9 +155,6 @@ export const useAppStore = create<AppState>()(
           ...p,
           progress: { ...emptyProgress(), ...(p.progress ?? {}) },
         };
-      },
-      onRehydrateStorage: () => (state) => {
-        if (state && state.locale !== i18n.resolvedLanguage) void i18n.changeLanguage(state.locale);
       },
     },
   ),

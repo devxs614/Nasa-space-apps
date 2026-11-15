@@ -7,7 +7,7 @@ import {
   demoStepIndex,
 } from '../components/demo/demoScript';
 import { sceneForBeat, sceneForSection } from '../lib/scenes';
-import { resources } from '../i18n';
+import { resources } from '../i18n/resources';
 import { useJourneyStore } from '../state/useJourneyStore';
 
 const MOON_MS = 1284;

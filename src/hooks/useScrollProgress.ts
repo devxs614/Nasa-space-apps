@@ -2,6 +2,8 @@ import { useEffect, type RefObject } from 'react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { gsap } from 'gsap';
 
+import { scrollBridge } from '../lib/scrollBridge';
+
 gsap.registerPlugin(ScrollTrigger);
 
 /**
@@ -36,3 +38,4 @@ export function useScrollProgress(
 export function refreshScroll(): void {
   window.requestAnimationFrame(() => ScrollTrigger.refresh());
 }
+scrollBridge.setRefresh(refreshScroll);

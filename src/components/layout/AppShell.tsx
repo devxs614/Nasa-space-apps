@@ -21,7 +21,6 @@ import { cx } from '../../lib/cx';
 const AudioBridge = lazy(() =>
   import('../../audio/AudioBridge').then((m) => ({ default: m.AudioBridge })),
 );
-
 /** Envuelve todas las rutas (Parte 16.2). */
 export function AppShell() {
   useHtmlAttributes();
