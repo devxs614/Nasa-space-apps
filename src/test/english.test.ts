@@ -6,7 +6,12 @@ import { EXTRAS } from '../data/extras';
 import { formatDate } from '../lib/format';
 
 /** Todos los textos en inglés de un árbol de datos (`{ es, en }`) o de un JSON de traducciones. */
-function englishTexts(node: unknown, path = '', inEnglish = false, out = new Map<string, string>()) {
+function englishTexts(
+  node: unknown,
+  path = '',
+  inEnglish = false,
+  out = new Map<string, string>(),
+) {
   if (typeof node === 'string') {
     if (inEnglish) out.set(path, node);
   } else if (Array.isArray(node)) {

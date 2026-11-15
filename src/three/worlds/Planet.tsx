@@ -89,10 +89,9 @@ export function Planet({
     const path = TEXTURE[kind];
     if (!path) return;
     let alive = true;
-    const url = publicUrl(path);
-    void assetExists(url).then((ok) => {
+    void assetExists(path).then((ok) => {
       if (!ok || !alive) return;
-      new TextureLoader().load(url, (t) => {
+      new TextureLoader().load(publicUrl(path), (t) => {
         t.colorSpace = SRGBColorSpace;
         if (alive) setMap(t);
       });

@@ -24,7 +24,8 @@ jobs:
       - run: npm run build
         env:
           BASE_PATH: /${{ github.event.repository.name }}/
-      - run: cp dist/index.html dist/404.html
+      # 404.html y una copia de index.html por ruta: las rutas profundas responden 200.
+      - run: node scripts/spa-routes.mjs
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5
         with:

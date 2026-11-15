@@ -1,3 +1,4 @@
+import { existsSync, readdirSync } from 'node:fs';
 import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vitest/config';
 import type { Plugin } from 'vite';
@@ -87,9 +88,24 @@ function preloadHints(): Plugin {
   };
 }
 
+/**
+ * Texturas y modelos opcionales (Anexo C) que hay en `public/` al compilar. La app solo pide los de
+ * esta lista: preguntar al servidor por un archivo que no está deja un error 404 en la consola.
+ */
+function optionalAssets(): string[] {
+  return ['textures', 'models'].flatMap((dir) => {
+    const abs = fileURLToPath(new URL(`./public/${dir}`, import.meta.url));
+    if (!existsSync(abs)) return [];
+    return readdirSync(abs)
+      .filter((file) => !file.startsWith('.'))
+      .map((file) => `${dir}/${file}`);
+  });
+}
+
 export default defineConfig({
   plugins: [react(), tailwindcss(), preloadHints()],
   base: process.env.BASE_PATH ?? '/',
+  define: { __OPTIONAL_ASSETS__: JSON.stringify(optionalAssets()) },
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
   },

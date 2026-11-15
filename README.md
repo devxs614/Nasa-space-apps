@@ -49,7 +49,8 @@ Requires Node.js 20.19+ or 22.12+. Optional public-domain textures: `npm run ass
 ## Deploy
 
 `npm run build` produces a static `dist/`. GitHub Pages deploys automatically from `main` through
-`.github/workflows/pages.yml` (enable Pages with "Source: GitHub Actions"). Vercel uses `vercel.json` and Netlify uses
+`.github/workflows/pages.yml` (enable Pages with "Source: GitHub Actions"). The workflow runs
+`scripts/spa-routes.mjs`, which copies `index.html` to every known route so deep links answer with HTTP 200. Vercel uses `vercel.json` and Netlify uses
 `public/_redirects` to rewrite deep links to `index.html`.
 
 `public/og-image.png` and the no-JavaScript reading pages (`public/lectura-es.html`, `public/lectura-en.html`) are generated

@@ -51,9 +51,10 @@ function useOptionalGlb(id: MachineId): Object3D | null {
   useEffect(() => {
     if (quality === 'low') return;
     let alive = true;
-    const url = publicUrl(`models/${id}.glb`);
-    void assetExists(url).then(async (ok) => {
+    const path = `models/${id}.glb`;
+    void assetExists(path).then(async (ok) => {
       if (!ok || !alive) return;
+      const url = publicUrl(path);
       const { GLTFLoader } = await import('three/examples/jsm/loaders/GLTFLoader.js');
       new GLTFLoader().load(url, (g) => {
         if (!alive) return;

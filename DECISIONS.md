@@ -162,3 +162,21 @@
   concordancia. El resto de la revisión (comas decimales, comillas españolas, ortografía británica, palabras en español) se
   hizo con un barrido puntual de los 2.017 textos y no encontró nada.
 - Qué no cambia: ningún dato. Solo formato y puntuación; "poetic translation" se mantiene porque así lo dice el guion.
+
+## 2026-11-15 — Texturas y modelos opcionales: lista hecha al compilar
+- Contexto: la app preguntaba con `HEAD` si existían `textures/*.jpg` y `models/<id>.glb` (Anexo C). En calidad media o alta
+  (equipos con GPU) cada archivo ausente dejaba un error 404 en la consola; Lighthouse en la web publicada bajaba a 96 en
+  buenas prácticas. Con el 3D por software (calidad baja) no se pedían, y por eso las pruebas locales no lo veían.
+- Decisión: `vite.config.ts` lee `public/textures` y `public/models` al compilar y define `__OPTIONAL_ASSETS__`.
+  `assetExists(ruta)` responde `false` sin tocar la red si el archivo no está en esa lista; si está, lo confirma con `HEAD`.
+- Por qué: cero peticiones fallidas, y si el equipo añade texturas con `npm run assets` se usan sin cambiar código
+  (en desarrollo hay que reiniciar `npm run dev`). Prueba: `src/test/assets.test.ts`.
+
+## 2026-11-15 — Rutas profundas con estado 200 en GitHub Pages
+- Contexto: GitHub Pages no reescribe rutas. `/lectura`, `/maquinas/opportunity`… se servían desde `404.html`: la app
+  cargaba, pero con estado HTTP 404, y Lighthouse, los rastreadores y las vistas previas de enlaces descartaban la página.
+- Decisión: tras compilar, `scripts/spa-routes.mjs` copia `index.html` a cada ruta conocida, en dos formas (`ruta.html` y
+  `ruta/index.html`), además de `404.html` para las rutas desconocidas. Los ids de las máquinas salen de `src/data/ids.ts`.
+  El flujo de Pages lo ejecuta; Vercel y Netlify siguen con sus reescrituras.
+- Nota: no choca con la lectura estática (`lectura-es.html`, `lectura-en.html`): `lectura.html` es la app, no un texto fijo.
+

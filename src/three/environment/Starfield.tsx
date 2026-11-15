@@ -70,10 +70,10 @@ export function Starfield() {
 
   useEffect(() => {
     let alive = true;
-    const url = publicUrl('textures/starmap_4k.jpg');
-    void assetExists(url).then((ok) => {
+    const path = 'textures/starmap_4k.jpg';
+    void assetExists(path).then((ok) => {
       if (!ok || !alive) return;
-      new TextureLoader().load(url, (t) => {
+      new TextureLoader().load(publicUrl(path), (t) => {
         t.colorSpace = SRGBColorSpace;
         if (alive) setMilky(t);
       });
