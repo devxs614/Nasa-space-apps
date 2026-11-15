@@ -8,6 +8,7 @@ import { useAppStore } from '../../state/useAppStore';
 import { nextMachine } from '../../data/machines';
 import { PatchButton } from './PatchButton';
 import { scrollToEl } from '../../hooks/useLenis';
+import { NasaImage } from '../media/NasaImage';
 
 /** "Legado": dónde está hoy, cadena de herencia, parche, Modo Pro y preguntas de aula. */
 export function BeatLegacy({ machine, standalone }: { machine: Machine; standalone?: boolean }) {
@@ -20,7 +21,16 @@ export function BeatLegacy({ machine, standalone }: { machine: Machine; standalo
       <div className="max-w-[600px] space-y-4">
         <ScriptLines machine={machine} beat="legacy" />
       </div>
-      <TodayAndLegacy machine={machine} />
+      <div className="grid gap-4 md:grid-cols-[1fr_1fr]">
+        <TodayAndLegacy machine={machine} />
+        {machine.imageQueries[0] && (
+          <NasaImage
+            query={machine.imageQueries[0]}
+            alt={machine.today.text[locale]}
+            poster={machine.id}
+          />
+        )}
+      </div>
       <PatchButton machine={machine} />
       <ProPanel machine={machine} />
       {classroom && <AulaQuestions machine={machine} />}

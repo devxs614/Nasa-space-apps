@@ -1,6 +1,6 @@
 # Progreso
 
-## Fase actual: 3 — Las 15 máquinas y la señal
+## Fase actual: 4 — Mini-experiencias
 
 ## Hecho
 - [x] Proyecto Vite + React 19 + TypeScript 5.9 con las versiones fijadas de la Parte 5 (sin conflictos de dependencias).
@@ -21,6 +21,8 @@
 - [x] Fase 2: lienzo único en diferido con calidad adaptativa (PerformanceMonitor, AdaptiveDpr), estrellas con shader, director de escenas y rig de cámara amortiguado.
 - [x] Fase 2: mundos procedurales (Tierra nocturna, Luna, Marte con atmósfera, Eros, Vesta, Ceres), dioramas de superficie con 6 variantes, Kepler y sistema exterior en escala logarítmica, prólogo y epílogo.
 - [x] Fase 2: 15 modelos procedurales con revelado holográfico por planos de recorte, polvo, pieza clave con contorno y GLB opcional.
+- [x] Fase 4: las 15 mini-experiencias de la Parte 13 con "Saltar", "Ver resultado" (exprés), modo sin presión, controles de ratón, táctil y teclado, resumen `aria-live` y etiqueta de simulación ilustrativa; una prueba e2e por acto.
+- [x] Fase 4: cliente de images-api.nasa.gov con caché, tiempo límite y descarte de derechos de terceros; `NasaImage` con póster de respaldo.
 - [x] Fase 3: señal completa (mantener 1,2 s o pulsar, Enter/Espacio, envío automático de LUMI al 60 %), tiempo de luz con compresión, variantes de Luna (tiempo real), Kepler (transmisor apagado), Ceres (rango) y Pioneer (fecha de llegada del saludo).
 - [x] Fase 3: HUD (HoldButton, SignalMeter, LightTimeCounter con fórmula en Modo Pro, MissionClock, Telemetry, HudFrame, osciloscopio plano), respuesta archivada con aviso `aria-live`.
 - [x] Fase 3: parches SVG originales (4 formas, 15 glifos, estados bloqueado/conseguido/dorado, bordado), "Recibir parche" y riel con check.
@@ -51,4 +53,6 @@
 - Fase 2: `index-*.js` ≈ 199 KB inicial · `Experience-*.js` ≈ 176 KB (diferido) · `PostFX-*.js` ≈ 25 KB (diferido).
 
 ## Problemas conocidos
+- El despliegue a GitHub Pages falla en `actions/configure-pages` hasta que se active Pages en el repositorio (Settings → Pages → Source: GitHub Actions). El build de CI pasa.
+- InSight: el corte del interior es una ilustración aproximada; la Parte 11 no publica el radio de Marte, así que no se dibuja a escala. TODO(verificar).
 - Solo en desarrollo (StrictMode): React registra un aviso de desmontaje del lienzo de R3F al montar dos veces los efectos. En la compilación de producción no aparece ningún error en consola.
