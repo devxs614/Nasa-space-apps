@@ -1,1 +1,87 @@
-{}
+{
+  "worlds": {
+    "moon": "Luna",
+    "mars": "Marte",
+    "small-bodies": "Mundos pequeños",
+    "deep-space": "Espacio profundo"
+  },
+  "worldsAct": {
+    "moon": "Acto I",
+    "mars": "Acto II",
+    "small-bodies": "Acto III",
+    "deep-space": "Acto IV"
+  },
+  "types": {
+    "lander": "Aterrizador",
+    "rover": "Rover",
+    "instrument": "Instrumento",
+    "orbiter": "Orbitador",
+    "helicopter": "Helicóptero",
+    "telescope": "Telescopio",
+    "probe": "Sonda"
+  },
+  "status": {
+    "silent-surface": "En silencio en la superficie",
+    "silent-orbit": "En silencio en órbita",
+    "drifting": "A la deriva",
+    "still-useful": "Todavía útil"
+  },
+  "beats": {
+    "wake": "Despertar",
+    "identity": "Quién soy",
+    "journey": "El viaje",
+    "arrival": "La llegada",
+    "work": "El trabajo",
+    "lastSignal": "Última señal",
+    "legacy": "Legado"
+  },
+  "siteKinds": {
+    "lander": "Aterrizadores",
+    "rover-end": "Rovers",
+    "instrument": "Instrumentos",
+    "impact": "Impactos",
+    "retroreflector": "Sigue funcionando"
+  },
+  "siteKind": {
+    "lander": "Aterrizador",
+    "rover-end": "Posición final de rover",
+    "instrument": "Instrumento",
+    "impact": "Impacto",
+    "retroreflector": "Retrorreflector"
+  },
+  "arrivalKind": {
+    "landing": "Llegada a la superficie",
+    "orbit": "Entrada en órbita",
+    "flyby": "Sobrevuelo"
+  },
+  "dates": {
+    "launch": "Lanzamiento",
+    "arrival": "Llegada",
+    "lastSignal": "Última señal",
+    "missionEnd": "Fin de misión declarado",
+    "planned": "Plan"
+  },
+  "lightMethod": {
+    "mean": "distancia media",
+    "ephemeris": "efemérides de JPL",
+    "range": "rango",
+    "extrapolated": "extrapolación lineal",
+    "off": "transmisor apagado"
+  },
+  "bodies": {
+    "earth": "la Tierra",
+    "moon": "la Luna",
+    "mars": "Marte",
+    "eros": "433 Eros",
+    "ceres": "Ceres",
+    "kepler": "Kepler",
+    "pioneer10": "Pioneer 10",
+    "pioneer11": "Pioneer 11"
+  },
+  "timeline": {
+    "launch": "Lanzamiento",
+    "arrival": "Llegada",
+    "lastSignal": "Última señal",
+    "missionEnd": "Fin de misión"
+  }
+}

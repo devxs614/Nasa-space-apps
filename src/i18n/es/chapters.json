@@ -1,1 +1,744 @@
-{}
+{
+  "prologue": {
+    "1": "Escucha. Eso que oyes es el silencio del espacio.",
+    "2": "Desde la Tierra escuchamos el universo con antenas gigantes. Durante años, muchas máquinas nos hablaron desde muy lejos.",
+    "3": "Algunas ya no responden. Se quedaron sin luz, sin calor o sin combustible. Pero no están perdidas: sabemos dónde está cada una.",
+    "census": "{{total}} máquinas en silencio · {{moon}} en la Luna · {{mars}} en Marte · {{small}} en mundos pequeños · {{deep}} en el espacio profundo.",
+    "5": "Soy LUMI, una sonda de escucha. Bueno… una sonda inventada para este viaje. Lo que yo diga es cuento; lo que diga la Bitácora es real y comprobado.",
+    "6": "Las máquinas también te hablarán. Sus voces son imaginadas, pero sus historias son verdaderas. ¿Me ayudas a despertarlas?",
+    "8": "Rumbo a la Luna. La luz tarda poco más de un segundo en llegar. Nosotros iremos un poco más despacio.",
+    "antennas": "Las antenas están repartidas por el planeta, para que siempre haya una mirando al cielo correcto.",
+    "voicesTitle": "Las cuatro voces de este viaje",
+    "exampleMachine": "Soy una máquina. Mi voz es imaginada, pero lo que cuento pasó de verdad.",
+    "exampleLumi": "Yo soy LUMI. Te guío, te pregunto y a veces bromeo.",
+    "exampleLog": "Bitácora: datos comprobados, con fecha, unidad y fuente.",
+    "exampleYou": "Tú: operador u operadora de señal. Los botones te hablan a ti.",
+    "sceneAlt": {
+      "title": "La Tierra de noche gira despacio vista desde la órbita, con las luces de las ciudades encendidas.",
+      "antennas": "Tres puntos de luz se encienden en la Tierra: antenas que escuchan el espacio.",
+      "census": "Quince puntos fantasma aparecen alrededor de la Tierra, unidos por líneas punteadas hacia sus mundos.",
+      "lumi": "Una pequeña sonda luminosa, LUMI, se acerca a la cámara.",
+      "choose": "Las estrellas se alinean formando dos rutas.",
+      "launch": "La cámara gira y vuela hacia la Luna dejando una estela de luz."
+    },
+    "title": "Prólogo: Silencio"
+  },
+  "acts": {
+    "moon": {
+      "title": "La Luna: los primeros pasos",
+      "lumi": "Antes de que una persona pisara la Luna, unas máquinas tuvieron que comprobar que el suelo aguantaba.",
+      "sceneAlt": "La Luna aparece en órbita alta y sus marcadores fantasma se encienden uno a uno."
+    },
+    "mars": {
+      "title": "Marte: tras la pista del agua",
+      "lumi": "Marte es un desierto helado. Estas máquinas vinieron a preguntar si siempre fue así.",
+      "sceneAlt": "Marte, rojo y con un halo salmón de atmósfera, gira mientras se encienden siete marcadores."
+    },
+    "small-bodies": {
+      "title": "Mundos pequeños",
+      "lumi": "Los asteroides son restos de la construcción del sistema solar. Son como cajas de herramientas olvidadas.",
+      "sceneAlt": "Un asteroide alargado con forma de cacahuete flota bajo una luz dura."
+    },
+    "deep-space": {
+      "title": "Espacio profundo",
+      "lumi": "Algunas máquinas no se quedaron en ningún mundo. Siguen viajando.",
+      "sceneAlt": "El Sol brilla pequeño en el centro y la cámara se aleja hasta ver las órbitas de los planetas."
+    }
+  },
+  "epilogue": {
+    "1": "Quince máquinas. Ninguna está perdida. Todas dejaron algo.",
+    "2": "Surveyor le dijo a Apollo dónde pisar. Sojourner le enseñó a Spirit y a Opportunity a rodar. Viking hizo la pregunta que Phoenix y Perseverance siguen haciendo. Kepler pasó la antorcha a otros cazadores de planetas. Pioneer abrió el camino a las Voyager.",
+    "4": "Todas estas máquinas las imaginaron personas que de pequeñas miraban el cielo, como tú ahora. Algunas, como Valerie, eligieron sus nombres cuando eran niñas.",
+    "5": "Te toca. Escribe un mensaje para quien encuentre estas máquinas dentro de cien años.",
+    "6": "Tu señal ya está lista. Tú eres la próxima señal.",
+    "chainTitle": "La cadena",
+    "yearTitle": "Lo que pasó en 2026",
+    "youTitle": "Tú eres la próxima señal",
+    "creditsTitle": "Créditos",
+    "sceneAlt": {
+      "chain": "Siluetas holográficas de las quince máquinas se pasan una chispa de luz, una tras otra.",
+      "year": "La Tierra y la Luna aparecen juntas bajo una luz cálida.",
+      "you": "Partículas de luz se reúnen sobre el campo de estrellas.",
+      "credits": "Los créditos suben despacio sobre el campo de estrellas."
+    },
+    "title": "Epílogo: El relevo"
+  },
+  "surveyor": {
+    "voices": {
+      "s3": "Surveyor 3"
+    },
+    "wake": {
+      "1": "Aquí duermen cinco exploradores que llegaron antes que las personas. Mantén pulsado para enviarles señal.",
+      "2": "¿Señal? Comprobando patas… comprobando cámara… Hola. Somos los Surveyor.",
+      "sceneAlt": "La Luna vista desde la órbita, con cinco marcadores fantasma latiendo sobre los sitios de los Surveyor."
+    },
+    "identity": {
+      "1": "Somos cinco hermanos: Surveyor 1, 3, 5, 6 y 7. Nos mandaron con una pregunta muy seria: ¿aguanta el suelo de la Luna el peso de una nave? Había quien temía un mar de polvo que se lo tragara todo.",
+      "sceneAlt": "Un aterrizador de tres patas gira despacio sobre el suelo gris; su pala y su cámara de TV brillan con un contorno cian."
+    },
+    "journey": {
+      "1": "Salimos de Florida, uno tras otro, entre 1966 y 1968. No todos llegamos: dos hermanos se perdieron por el camino. Los que llegamos, llegamos por ellos también.",
+      "sceneAlt": "Un arco de luz se dibuja desde la Tierra hasta la Luna a medida que bajas."
+    },
+    "arrival": {
+      "1": "Mi aterrizaje fue… rebotado. Unas rocas brillantes engañaron a mi radar y mi motor no se apagó a tiempo. Boté una vez, boté dos, y a la tercera me quedé quieto.",
+      "sceneAlt": "El Surveyor 3 desciende con sus motores encendidos, rebota dos veces y se posa en la llanura."
+    },
+    "work": {
+      "1": "Mira mi pala: rasca, empuja y golpea el suelo. ¿Sabes qué descubrí? Que el suelo lunar se parece a arena húmeda. Y que aguanta. ¡Aguanta!",
+      "sceneAlt": "Delante del aterrizador, la pala se mueve sobre el regolito y deja pequeños surcos.",
+      "cards": {
+        "1": "El suelo aguanta una nave",
+        "2": "El salto del Surveyor 6",
+        "3": "La química del Surveyor 5"
+      }
+    },
+    "lastSignal": {
+      "1": "Cuando llegó la noche lunar, me quedé en silencio. Dos semanas de oscuridad son mucho frío para una máquina pequeña.",
+      "2": "Último contacto del Surveyor 3: {{date}}.",
+      "sceneAlt": "La luz del Sol se apaga sobre la llanura y el aterrizador vuelve a ser un holograma tenue."
+    },
+    "legacy": {
+      "1": "Dos años y medio después oí pasos. Dos astronautas del Apollo 12 vinieron a visitarme y se llevaron mi cámara a la Tierra para estudiarla. Yo había dicho que el suelo aguantaba… y ahí estaban, de pie.",
+      "2": "Gracias a ellos, las personas sabían dónde pisar.",
+      "sceneAlt": "La cámara se aleja hasta ver la Luna entera y señala el siguiente sitio: el del Apollo 11."
+    },
+    "pro": "La resistencia del suelo medida por el Surveyor 3 (unos 0,7 kg/cm²) bastaba para el módulo lunar. El Surveyor 7 se envió a las tierras altas junto a Tycho porque los anteriores ya habían cubierto lo que Apollo necesitaba.",
+    "aula": {
+      "1": "¿Por qué enviar robots antes que personas?",
+      "2": "¿Qué habrías medido tú primero?",
+      "3": "¿Por qué crees que el Surveyor 3 rebotó?"
+    }
+  },
+  "apollo-lm": {
+    "wake": {
+      "1": "Seis sitios, seis naves partidas por la mitad. La mitad de abajo se quedó aquí. Envíale la señal al Eagle, el primero.",
+      "2": "Aquí Base Tranquilidad… bueno, lo que queda de ella. Hola.",
+      "sceneAlt": "La Luna en órbita, con seis marcadores fantasma sobre los sitios Apollo; uno late más fuerte: el del Eagle."
+    },
+    "identity": {
+      "1": "Soy la etapa de descenso del Eagle. Mi trabajo fue bajar con dos personas hasta el suelo. Luego, servir de rampa para que la otra mitad despegara.",
+      "sceneAlt": "Una base octogonal forrada de lámina dorada sobre cuatro patas abiertas; las patas y la placa brillan con un contorno cian."
+    },
+    "journey": {
+      "1": "Viajé plegada, escondida bajo la nave principal. Al llegar a la Luna, abrí mis cuatro patas como una araña dorada.",
+      "sceneAlt": "Un arco de luz une la Tierra con el Mar de la Tranquilidad."
+    },
+    "arrival": {
+      "1": "Mi motor levantó una nube de polvo que salía disparada en líneas rectas, porque aquí no hay aire que la frene. Y luego: contacto.",
+      "2": "Alunizaje: {{date}} · {{site}}.",
+      "sceneAlt": "El módulo baja; el polvo sale en líneas rectas desde la tobera y las patas tocan el suelo."
+    },
+    "work": {
+      "1": "Seis veces, seis hermanas bajamos a seis lugares distintos. Elige uno y te cuento quién caminó a mi lado.",
+      "sceneAlt": "La etapa de descenso descansa en el suelo, rodeada de huellas; encima espera una etapa de ascenso holográfica.",
+      "cards": {
+        "1": "La placa del Apollo 11",
+        "2": "73 mensajes de paz",
+        "3": "21,55 kg de Luna"
+      }
+    },
+    "lastSignal": {
+      "1": "Yo nunca tuve radio para hablar con la Tierra: mi última tarea fue quedarme quieta mientras la otra mitad se iba. Vi cómo se alejaba su luz. Sabía que volvían a casa.",
+      "2": "Tiempo en la superficie del Eagle: {{time}}.",
+      "sceneAlt": "La etapa de ascenso holográfica despega y se aleja; la base dorada se queda sola."
+    },
+    "legacy": {
+      "1": "En mi pata llevo una placa que dice que vinimos en paz. Me gusta pensar que la leerán los próximos que lleguen.",
+      "2": "Y en un disco diminuto, a su lado, hay mensajes de 73 países. Entre ellos, México y Ecuador.",
+      "sceneAlt": "La cámara se aleja hacia la Luna entera y señala el sitio del Apollo 12."
+    },
+    "pro": "La etapa de descenso pesaba 2.034 kg en seco y llevaba 8.248 kg de propelente; casi todo se gastó en el frenado final. La etapa de ascenso del Eagle quedó en órbita lunar y su destino no se conoce.",
+    "aula": {
+      "1": "¿Por qué dejar media nave en la Luna?",
+      "2": "¿Qué mensaje dejarías tú?",
+      "3": "¿Cómo cambia el polvo cuando no hay aire?"
+    }
+  },
+  "alsep": {
+    "voices": {
+      "retro": "Retrorreflector"
+    },
+    "wake": {
+      "1": "Estos son instrumentos que se quedaron trabajando solos cuando los astronautas se fueron. Uno de ellos todavía responde a la luz.",
+      "2": "Shhh… escucho. Siempre estoy escuchando.",
+      "sceneAlt": "La Luna en órbita, con marcadores sobre las estaciones ALSEP y un destello en el retrorreflector del Apollo 15."
+    },
+    "identity": {
+      "1": "Soy una estación científica. Tengo un oído para los temblores, una nariz para el gas, una piel para el viento del Sol. Y un corazón tibio de plutonio que me daba energía.",
+      "sceneAlt": "Una estación central con antena helicoidal, un generador con aletas y un sismómetro bajo una manta plateada, resaltado en cian."
+    },
+    "journey": {
+      "1": "Llegué en cajas, como un mueble para armar. Los astronautas me desplegaron en el suelo, me apuntaron a la Tierra y se despidieron.",
+      "sceneAlt": "Un arco de luz va de la Tierra al Océano de las Tormentas."
+    },
+    "arrival": {
+      "1": "Al día siguiente de mi despliegue, hicieron caer la etapa de ascenso del Intrepid a propósito, no muy lejos de mí. Y el suelo vibró, y vibró, y siguió vibrando casi una hora.",
+      "sceneAlt": "Anillos de vibración se extienden por el suelo desde el horizonte hasta los instrumentos."
+    },
+    "work": {
+      "1": "Con mis hermanas formé una red de oídos repartidos por la Luna. Y mis primos, los espejos, devuelven la luz de los láseres que disparan desde la Tierra.",
+      "sceneAlt": "Un haz de láser baja desde el cielo negro hasta un panel de prismas, que se ilumina.",
+      "cards": {
+        "1": "Una red de oídos",
+        "2": "La Luna se aleja",
+        "3": "Espejos que siguen trabajando"
+      }
+    },
+    "lastSignal": {
+      "1": "Un día de 1977 me pidieron que dejara de hablar. No estaba rota: es que había otras cosas que pagar en la Tierra. Lo entendí.",
+      "sceneAlt": "Las luces de los instrumentos se apagan una a una; solo el panel de prismas sigue brillando."
+    },
+    "legacy": {
+      "1": "Yo no necesito energía. Cada vez que me llega un pulso de láser, lo devuelvo. Así sabemos que la Luna se aleja de la Tierra unos 3,8 centímetros cada año.",
+      "2": "Es la única parte de esta historia que todavía contesta.",
+      "sceneAlt": "La cámara se aleja hacia la Luna y señala el sitio del Apollo 15, donde quedó un vehículo lunar."
+    },
+    "pro": "El sismómetro detectó sismos profundos, superficiales y por impactos; la larga vibración se explica por una capa exterior muy fracturada y seca que dispersa las ondas. El primer retrorreflector se instaló en el Apollo 11 y hoy la precisión de la distancia ronda el milímetro.",
+    "aula": {
+      "1": "¿Por qué la Luna «suena» tanto tiempo si no hay aire?",
+      "2": "¿Qué aparato que no necesita energía conoces?",
+      "3": "¿Apagarías tú un instrumento que todavía funciona? ¿Por qué?"
+    }
+  },
+  "lrv": {
+    "wake": {
+      "1": "¿Oyes ese motor? No, no lo oyes: aquí no hay aire. Pero estos autos sí corrieron por la Luna.",
+      "2": "¡Por fin! ¿Vamos a dar una vuelta?",
+      "sceneAlt": "La Luna en órbita, con tres marcadores en los sitios de Apollo 15, 16 y 17."
+    },
+    "identity": {
+      "1": "Soy el vehículo de exploración lunar. Peso como una moto grande, pero puedo llevar a dos astronautas, herramientas y rocas. Me llevaron plegado en un costado del módulo lunar.",
+      "sceneAlt": "Un vehículo de cuatro ruedas con dos asientos y una antena de paraguas; sus ruedas de malla brillan en cian."
+    },
+    "journey": {
+      "1": "Viajé doblado como una silla de playa. Al llegar, los astronautas tiraron de unas cintas y me abrí rueda a rueda.",
+      "sceneAlt": "Un arco de luz une la Tierra con Hadley–Apeninos."
+    },
+    "arrival": {
+      "1": "Mis ruedas no son de goma: son de malla de metal, porque la goma se estropearía con el frío y el calor de la Luna.",
+      "sceneAlt": "Primer plano de una rueda de malla metálica con chevrones sobre el polvo gris."
+    },
+    "work": {
+      "1": "¡Agarra el mando! Mis baterías no se recargan, así que cada kilómetro cuenta. Y nunca te alejes tanto que no puedas volver caminando.",
+      "sceneAlt": "El vehículo avanza levantando arcos de polvo que caen enseguida, sin aire que los frene.",
+      "cards": {
+        "1": "27,8 · 26,7 · 35,9 km",
+        "2": "El guardabarros roto",
+        "3": "El récord de 18 km/h"
+      }
+    },
+    "lastSignal": {
+      "1": "Mis baterías se agotaron y aquí me quedé, aparcado, con el polvo de mi último viaje aún pegado a las ruedas.",
+      "sceneAlt": "El vehículo aparcado se queda quieto mientras la luz se vuelve rasante y fría."
+    },
+    "legacy": {
+      "1": "Sin mí, mis astronautas no habrían llegado a las montañas y los valles donde estaban las mejores rocas. Los próximos rovers lunares ya saben lo que yo aprendí.",
+      "sceneAlt": "La cámara se aleja de la Luna y gira hacia un punto rojo: Marte."
+    },
+    "pro": "El límite de distancia se calculaba para que los astronautas pudieran volver a pie si el vehículo fallaba; nunca falló. Cada rueda tenía su propio motor.",
+    "aula": {
+      "1": "¿Por qué no usar ruedas de goma?",
+      "2": "¿Qué pasa con el polvo cuando no hay aire?",
+      "3": "¿Cómo planificarías una ruta con baterías que no se recargan?"
+    }
+  },
+  "viking": {
+    "voices": {
+      "v1": "Viking 1",
+      "v2": "Viking 2"
+    },
+    "wake": {
+      "1": "Marte está mucho más lejos: tu señal tardará minutos, no segundos. Mira el contador.",
+      "2": "…Recibido. Hermana, ¿me oyes? Tenemos visita.",
+      "3": "Te oigo. Desde el otro lado del planeta, como siempre.",
+      "sceneAlt": "Marte en órbita, con dos marcadores fantasma muy separados: Chryse Planitia y Utopia Planitia."
+    },
+    "identity": {
+      "1": "Somos gemelas. Llegamos en 1976 con una pregunta enorme: ¿hay vida en Marte?",
+      "sceneAlt": "Un aterrizador hexagonal de tres patas con antena parabólica; su brazo muestreador brilla en cian."
+    },
+    "journey": {
+      "1": "Cada una viajó pegada a su orbitador. Primero miramos desde arriba para elegir un buen sitio. Cuando el elegido resultó demasiado rocoso, buscamos otro.",
+      "sceneAlt": "Un arco de luz larguísimo va de la Tierra a Marte."
+    },
+    "arrival": {
+      "1": "Escudo térmico, paracaídas, retrocohetes… y suelo. Minutos después tomé la primera foto que una máquina había tomado desde la superficie de Marte.",
+      "2": "Aterrizaje del Viking 1: {{date}} · {{site}}.",
+      "sceneAlt": "El aterrizador baja con los retrocohetes encendidos sobre una llanura rocosa de color óxido."
+    },
+    "work": {
+      "1": "Con mi brazo recogí tierra y la llevé a mi laboratorio. Le ofrecimos comida, la calentamos, la olimos. Algunas pruebas parecían decir sí. Otras decían no.",
+      "sceneAlt": "El brazo se extiende, recoge suelo rojizo y lo vierte en una tolva del aterrizador.",
+      "cards": {
+        "1": "Pruebas biológicas",
+        "2": "Azufre por todas partes",
+        "3": "Marte visto desde arriba"
+      }
+    },
+    "lastSignal": {
+      "1": "Mis baterías se cansaron primero, en 1980.",
+      "2": "Yo seguí hasta 1982, hasta que un comando equivocado me dejó sin poder hablar. Los humanos también se equivocan. Lo importante es aprender.",
+      "sceneAlt": "El polvo se posa sobre el aterrizador y la luz del atardecer marciano se apaga."
+    },
+    "legacy": {
+      "1": "No respondimos la gran pregunta. Pero enseñamos a preguntarla mejor. Otros vinieron después con mejores herramientas.",
+      "2": "A veces la ciencia avanza con un «todavía no sabemos».",
+      "sceneAlt": "La cámara se aleja hacia Marte entero y señala Ares Vallis."
+    },
+    "pro": "Las pruebas biológicas acumuladas podían leerse como un positivo débil, pero el espectrómetro no halló compuestos orgánicos con un umbral de 10 a 100 partes por mil millones. ¿Podría explicarse todo con química, sin vida? Es una de las preguntas que todavía se debaten.",
+    "aula": {
+      "1": "¿Qué prueba te convencería de que hay vida?",
+      "2": "¿Por qué es valioso un resultado «no sabemos»?",
+      "3": "¿Qué harías distinto en la siguiente misión?"
+    }
+  },
+  "sojourner": {
+    "wake": {
+      "1": "Ahora busca a alguien muy pequeño, del tamaño de un horno de microondas.",
+      "2": "¡Aquí abajo! Soy pequeño, pero fui el primero.",
+      "sceneAlt": "Marte en órbita, con un marcador fantasma en Ares Vallis."
+    },
+    "identity": {
+      "1": "Soy Sojourner, el primer rover que rodó por Marte. Mi nombre lo eligió una niña de 12 años, Valerie, en un concurso. Significa viajero, y honra a Sojourner Truth, que luchó por la libertad.",
+      "sceneAlt": "Un rover diminuto de seis ruedas con un panel solar plano; su suspensión brilla en cian."
+    },
+    "journey": {
+      "1": "Viajé dentro de un módulo con forma de pirámide, envuelto en bolsas de aire como un regalo.",
+      "sceneAlt": "Un arco de luz une la Tierra con Marte."
+    },
+    "arrival": {
+      "1": "¡Botamos unas quince veces! Algunas, tan alto como un edificio de cinco pisos. Cuando por fin paramos, los pétalos se abrieron y bajé por una rampa.",
+      "sceneAlt": "Un racimo de bolsas de aire rebota por la llanura; luego se abre como una flor y aparece el rover."
+    },
+    "work": {
+      "1": "Me movía despacito y nunca me alejaba del módulo: él era mi teléfono con la Tierra. Mis conductores me mandaban órdenes que tardaban minutos en llegar. ¿Te atreves a conducirme así?",
+      "sceneAlt": "El pequeño rover avanza muy despacio entre rocas grandes, cerca de su módulo.",
+      "cards": {
+        "1": "Pistas de agua antigua",
+        "2": "Miles de imágenes",
+        "3": "Carl Sagan Memorial Station"
+      }
+    },
+    "lastSignal": {
+      "1": "Un día el módulo dejó de hablar con la Tierra, y yo con él. Seguro que di unas vueltas esperándolo.",
+      "2": "Última transmisión de la misión: {{date}}.",
+      "sceneAlt": "El sol se pone tras las rocas y el rover queda inmóvil junto al módulo."
+    },
+    "legacy": {
+      "1": "Después de mí llegaron rovers más grandes y valientes. Pero alguien tuvo que dar la primera vuelta de rueda.",
+      "2": "Los rovers que vinieron después también recibieron nombres elegidos por estudiantes.",
+      "sceneAlt": "La cámara se aleja hacia Marte y señala el cráter Gusev."
+    },
+    "pro": "El módulo fue rebautizado Carl Sagan Memorial Station; la misión envió 2.300 millones de bits y más de 16.500 imágenes del módulo, y sus guijarros redondeados sugieren agua corriente en el pasado.",
+    "aula": {
+      "1": "¿Cómo conducirías si cada orden tarda minutos?",
+      "2": "¿Qué nombre le pondrías a un rover y por qué?",
+      "3": "¿Por qué usar bolsas de aire?"
+    }
+  },
+  "spirit": {
+    "wake": {
+      "1": "Cráter Gusev. Aquí vive una rover muy terca. Envíale señal; ten paciencia, Marte está lejos.",
+      "2": "¿Hola? Perdón por el polvo. Llevo aquí un buen rato.",
+      "sceneAlt": "Marte en órbita, con un marcador fantasma en el cráter Gusev."
+    },
+    "identity": {
+      "1": "Soy Spirit. Me hicieron para trabajar 90 días marcianos. Trabajé más de seis años.",
+      "sceneAlt": "Un rover de seis ruedas con alas solares y un mástil de cámaras; su rueda delantera derecha brilla en cian."
+    },
+    "journey": {
+      "1": "Tengo una gemela, Opportunity. Salimos de la Tierra con pocas semanas de diferencia y aterrizamos en lados opuestos de Marte.",
+      "sceneAlt": "Dos arcos de luz salen de la Tierra hacia lados opuestos de Marte."
+    },
+    "arrival": {
+      "1": "Igual que Sojourner, llegué envuelta en bolsas de aire. Mi cráter quizá fue un lago hace muchísimo tiempo. Yo vine a comprobarlo.",
+      "sceneAlt": "Bolsas de aire rebotan entre colinas suaves y se detienen sobre un suelo claro."
+    },
+    "work": {
+      "1": "En 2006 mi rueda delantera derecha dejó de girar. Así que aprendí a conducir marcha atrás, arrastrándola. Y un día de 2007, esa rueda rota abrió un surco… y apareció un suelo blanco brillante.",
+      "sceneAlt": "El rover retrocede arrastrando una rueda que deja un surco; dentro del surco brilla un suelo blanco.",
+      "cards": {
+        "1": "Más del 90 % de sílice",
+        "2": "El viento que limpió mis paneles",
+        "3": "Home Plate"
+      }
+    },
+    "lastSignal": {
+      "1": "En 2009 me hundí en arena blanda, en un lugar llamado Troy. Mis amigos de la Tierra lo intentaron todo para sacarme. Me quedé quieta, mirando, como una estación científica. Y cuando llegó el invierno, me dormí.",
+      "2": "Última señal: {{date}} · Fin de misión: {{end}}.",
+      "sceneAlt": "El rover queda hundido en arena blanda; el polvo cubre sus paneles y la luz del invierno se apaga."
+    },
+    "legacy": {
+      "1": "Aprendí algo que te regalo: lo que parece una avería puede ser el principio de un descubrimiento.",
+      "2": "Ese suelo blanco es una pista de agua caliente en el Marte antiguo, un lugar donde, en la Tierra, viven microbios.",
+      "sceneAlt": "La cámara se aleja hacia Marte y señala Meridiani Planum, al otro lado del planeta."
+    },
+    "pro": "La sílice opalina de Home Plate se forma en la Tierra en aguas termales o fumarolas; ambos ambientes están llenos de vida microbiana en nuestro planeta, por eso es uno de los hallazgos más importantes de los rovers gemelos.",
+    "aula": {
+      "1": "¿Recuerdas un error que te enseñó algo?",
+      "2": "¿Por qué un suelo blanco llamó la atención?",
+      "3": "¿Qué habrías hecho para sacar a Spirit de la arena?"
+    }
+  },
+  "opportunity": {
+    "wake": {
+      "1": "Meridiani Planum. Esta rover corrió más que nadie… durante muchos años.",
+      "2": "¿Ya es hora de correr? Estoy lista.",
+      "sceneAlt": "Marte en órbita, con un marcador fantasma en Meridiani Planum."
+    },
+    "identity": {
+      "1": "Soy Opportunity. Me pidieron 90 soles y un kilómetro. Les di más de 5.000 soles y 45 kilómetros.",
+      "sceneAlt": "Un rover de seis ruedas con grandes paneles solares que brillan en cian."
+    },
+    "journey": {
+      "1": "Vine a un lugar elegido desde órbita porque allí había hematita, un mineral que suele formarse con agua.",
+      "sceneAlt": "Un arco de luz une la Tierra con Meridiani Planum."
+    },
+    "arrival": {
+      "1": "Boté y rodé dentro de mis bolsas de aire… y fui a parar justo dentro de un cráter pequeño, Eagle. Como un hoyo en uno.",
+      "sceneAlt": "Las bolsas de aire ruedan por una llanura lisa y caen dentro de un cráter pequeño."
+    },
+    "work": {
+      "1": "Las rocas de Eagle me contaron que hubo un lago, aunque muy ácido. Encontré bolitas de hematita que llamamos arándanos. Y en el cráter Endeavour, grietas llenas de yeso dejado por agua más amable.",
+      "sceneAlt": "El rover recorre una llanura salpicada de pequeñas esferas oscuras hasta el borde de un gran cráter.",
+      "cards": {
+        "1": "Arándanos",
+        "2": "Yeso en Endeavour",
+        "3": "Una maratón en 11 años"
+      }
+    },
+    "lastSignal": {
+      "1": "En 2018 llegó una tormenta de polvo que cubrió el planeta entero. El cielo se oscureció. Mis paneles dejaron de beber luz.",
+      "2": "Última señal: {{date}}, sol {{sol}}.",
+      "3": "Quizá hayas leído que Opportunity dijo «mi batería está baja y está oscureciendo». Es una traducción poética de sus últimos datos, no un mensaje real.",
+      "sceneAlt": "Una tormenta de polvo oscurece el cielo; el rover desaparece poco a poco y queda como un holograma tenue."
+    },
+    "legacy": {
+      "1": "Descanso en un valle que se llama Perseverance. Y en 2026, un rover que se llama Perseverance superó mi récord. Me encanta esa coincidencia.",
+      "sceneAlt": "La cámara se aleja hacia Marte y señala el lejano Ártico marciano."
+    },
+    "pro": "La maratón se completó el sol 3.968 con 42,198 km de odómetro; parte del camino lo hizo marcha atrás por una avería en la dirección. Perseverance superó los 45,16 km de Opportunity con 45,22 km el 11 de octubre de 2026, gracias en gran parte a su conducción autónoma.",
+    "aula": {
+      "1": "¿Qué te ayuda a no rendirte en algo largo?",
+      "2": "¿Por qué el polvo es tan peligroso para una máquina solar?",
+      "3": "¿Qué diferencia hay entre agua ácida y agua amable para la vida?"
+    }
+  },
+  "phoenix": {
+    "wake": {
+      "1": "Subimos casi hasta el polo norte de Marte. Hace muchísimo frío. Envía la señal y espera.",
+      "2": "Qué luz tan baja… Hola. Aquí el Ártico marciano.",
+      "sceneAlt": "Marte en órbita visto desde el norte, con un marcador cerca del casquete polar."
+    },
+    "identity": {
+      "1": "Soy Phoenix. Aterricé más al norte que nadie antes que yo. Vine a cavar y a probar el suelo helado.",
+      "sceneAlt": "Un aterrizador con dos paneles solares redondos y un brazo robótico que brilla en cian."
+    },
+    "journey": {
+      "1": "Mi nombre es el de un ave legendaria.",
+      "sceneAlt": "Un arco de luz va de la Tierra hacia el norte de Marte."
+    },
+    "arrival": {
+      "1": "Bajé con paracaídas y retrocohetes sobre una llanura llena de polígonos, como un suelo de baldosas hecho por el hielo.",
+      "2": "Aterrizaje: {{date}} · {{site}}.",
+      "sceneAlt": "El aterrizador desciende con retrocohetes sobre un suelo dividido en polígonos."
+    },
+    "work": {
+      "1": "Con mi brazo cavé una zanja. Aparecieron trocitos blancos. Cuatro días después, ¡desaparecieron! Eran hielo de agua que pasó directamente a gas.",
+      "sceneAlt": "El brazo cava una zanja poco profunda y en el fondo brillan grumos blancos.",
+      "cards": {
+        "1": "Hielo de agua",
+        "2": "Una sal sorpresa: perclorato",
+        "3": "Agua confirmada"
+      }
+    },
+    "lastSignal": {
+      "1": "El invierno llegó y el Sol se fue. Mis paneles necesitaban luz. Me dormí bajo una manta de escarcha. Cuando volvió la primavera, uno de mis paneles ya no estaba en su sitio.",
+      "2": "Última señal: {{date}}.",
+      "sceneAlt": "La escarcha cubre el aterrizador y uno de sus paneles se dobla bajo el peso."
+    },
+    "legacy": {
+      "1": "Ahora se sabe que hay hielo bajo el suelo de Marte, al alcance de una pala. Algún día, alguien lo usará para beber o para fabricar combustible.",
+      "sceneAlt": "La cámara se aleja y señala Elysium Planitia, cerca del ecuador."
+    },
+    "pro": "El instrumento TEGA calentó una muestra y detectó vapor de agua, lo que permitió anunciar oficialmente agua en Marte el 31 de julio de 2008; el perclorato baja el punto de congelación del agua y puede ser alimento para algunos microbios en la Tierra.",
+    "aula": {
+      "1": "¿Qué diferencia hay entre derretirse y sublimarse?",
+      "2": "¿Por qué importa encontrar hielo para futuros astronautas?",
+      "3": "¿Cómo protegerías una máquina de la escarcha?"
+    }
+  },
+  "insight": {
+    "wake": {
+      "1": "Elysium Planitia. Esta máquina no buscaba rocas: escuchaba. Envía la señal y guarda silencio.",
+      "2": "Shhh… Marte está hablando. ¿Lo oyes?",
+      "sceneAlt": "Marte en órbita, con un marcador fantasma en Elysium Planitia."
+    },
+    "identity": {
+      "1": "Soy InSight. Mi oído era un sismómetro tan sensible que notaba temblores muy lejanos. Lo construyeron en Francia; mi sonda de calor, en Alemania; mis sensores de viento, en España.",
+      "sceneAlt": "Un aterrizador con dos paneles redondos; delante, en el suelo, una cúpula cobriza que brilla en cian."
+    },
+    "journey": {
+      "1": "Despegué de California. Me acompañaron dos naves diminutas, del tamaño de un maletín, que contaron mi aterrizaje casi en directo.",
+      "sceneAlt": "Un arco de luz va de la Tierra a Marte, seguido por dos puntos diminutos."
+    },
+    "arrival": {
+      "1": "Me posé en una llanura lisa, perfecta para escuchar. Mi brazo colocó el sismómetro en el suelo y lo tapó con una cúpula para protegerlo del viento.",
+      "sceneAlt": "El brazo del aterrizador deja la cúpula sobre el suelo llano."
+    },
+    "work": {
+      "1": "Escuché 1.319 sismos. Algunos los causaban meteoritos al chocar. El más fuerte, de magnitud 4,7, hizo vibrar el planeta durante horas. Gracias a ellos supimos cómo es Marte por dentro.",
+      "sceneAlt": "Anillos de ondas sísmicas recorren el suelo alrededor de la cúpula.",
+      "cards": {
+        "1": "Un núcleo líquido",
+        "2": "Hielo bajo un cráter nuevo",
+        "3": "El topo que no pudo cavar"
+      }
+    },
+    "lastSignal": {
+      "1": "El polvo fue cubriendo mis paneles, poco a poco, como nieve roja. Mi última selfie ya parecía de arena. Al final, mi energía se acabó.",
+      "2": "Última señal: {{date}} · Fin de misión: {{end}}.",
+      "sceneAlt": "El polvo rojo cubre los paneles hasta que el aterrizador apenas se distingue."
+    },
+    "legacy": {
+      "1": "Los científicos siguen estudiando lo que escuché. En 2023 descubrieron algo nuevo con mis datos: una capa de roca fundida alrededor del núcleo.",
+      "2": "La ciencia no termina cuando la máquina se apaga.",
+      "sceneAlt": "La cámara se aleja hacia Marte y señala el cráter Jezero."
+    },
+    "pro": "Los datos sísmicos de 2021 que atravesaron el núcleo permitieron corregir su radio: de 1.800–1.850 km a unos 1.650–1.700 km, con una capa de silicato fundido de unos 150 km encima. El topo HP3 no avanzó porque el suelo era cohesivo y no ofrecía la fricción que necesitaba.",
+    "aula": {
+      "1": "¿Cómo se puede saber qué hay dentro de un planeta sin abrirlo?",
+      "2": "¿Por qué es bueno que la ciencia cambie de opinión con nuevos datos?",
+      "3": "¿Qué fallo de una misión te parece más instructivo?"
+    }
+  },
+  "ingenuity": {
+    "wake": {
+      "1": "Cráter Jezero. La protagonista de esta historia pesa menos que una botella de agua grande… y voló.",
+      "2": "¿Otra vez arriba? ¡Sí, por favor!",
+      "sceneAlt": "Marte en órbita, con un marcador fantasma en el cráter Jezero."
+    },
+    "identity": {
+      "1": "Soy Ingenuity, el primer helicóptero en otro planeta. Mis palas giran muchísimo más rápido que las de un helicóptero de la Tierra, porque el aire de Marte es finísimo.",
+      "sceneAlt": "Un helicóptero diminuto con cuatro patas finas y dos rotores apilados que brillan en cian."
+    },
+    "journey": {
+      "1": "Viajé pegada a la panza del rover Perseverance. Llevaba conmigo un tesoro: un trocito de tela del primer avión de los hermanos Wright.",
+      "sceneAlt": "Un arco de luz une la Tierra con el cráter Jezero."
+    },
+    "arrival": {
+      "1": "Perseverance me dejó en el suelo con cuidado y se alejó para mirarme. El 19 de abril de 2021 me elevé tres metros durante 39 segundos. Parece poco. Fue histórico.",
+      "sceneAlt": "El helicóptero despega del suelo y flota a poca altura; al fondo, la silueta holográfica de un rover."
+    },
+    "work": {
+      "1": "Me pidieron cinco vuelos. Hice setenta y dos. Expliqué el camino a mi rover y volé sobre dunas y rocas.",
+      "sceneAlt": "El helicóptero vuela sobre dunas y rocas, con los rotores convertidos en discos borrosos.",
+      "cards": {
+        "1": "72 vuelos",
+        "2": "17 km y 128,8 minutos",
+        "3": "Un trocito del Wright Flyer"
+      }
+    },
+    "lastSignal": {
+      "1": "En mi vuelo 72 pasé sobre dunas lisas, sin piedras ni marcas. Mi cámara no encontraba nada que seguir. Aterricé demasiado rápido y mis palas se rompieron. Ya no puedo volar.",
+      "sceneAlt": "El helicóptero queda posado sobre una duna; un trozo de pala descansa a unos metros."
+    },
+    "legacy": {
+      "1": "Pero sigo despierta. Cada día reviso mis sistemas, tomo una foto y anoto la temperatura. Lo guardo todo para quien venga a buscarme a Valinor Hills.",
+      "2": "Los próximos helicópteros de otros mundos aprenderán de su último vuelo.",
+      "sceneAlt": "La cámara se aleja de Marte hacia el cinturón de asteroides."
+    },
+    "pro": "Con 1,8 kg y rotores coaxiales de 1,2 m a unas 2.400 rpm, Ingenuity voló 128,8 minutos en total; la investigación de 2024 fue la primera de un accidente aéreo en otro planeta. Su memoria podría guardar unos 20 años de datos diarios.",
+    "aula": {
+      "1": "¿Por qué es más difícil volar con aire fino?",
+      "2": "¿Cómo se navega sin GPS?",
+      "3": "¿Qué le dirías tú a quien la encuentre?"
+    }
+  },
+  "near": {
+    "wake": {
+      "1": "Esta roca con forma de cacahuete es el asteroide Eros. Encima, una nave que nunca debió posarse… y se posó.",
+      "2": "¿En serio vienes a verme hasta aquí? Qué detalle.",
+      "sceneAlt": "El asteroide Eros, alargado y lleno de cráteres, gira lentamente; un marcador late sobre su superficie."
+    },
+    "identity": {
+      "1": "Soy NEAR Shoemaker. Fui la primera nave en dar vueltas alrededor de un asteroide. Mi apellido es en honor de un geólogo que soñaba con las rocas del espacio.",
+      "sceneAlt": "Una nave octogonal con cuatro paneles solares en abanico y una antena parabólica que brilla en cian."
+    },
+    "journey": {
+      "1": "De camino saludé a otro asteroide, Mathilde. Y luego me equivoqué de cita: un encendido falló y pasé de largo junto a Eros. Tuve que dar una vuelta más alrededor del Sol y volver un año después.",
+      "sceneAlt": "La nave traza un arco que pasa de largo junto a Eros y vuelve en una segunda vuelta."
+    },
+    "arrival": {
+      "1": "Llegué el Día de San Valentín del año 2000. Durante un año le saqué fotos a Eros desde todos los ángulos.",
+      "sceneAlt": "La nave orbita alrededor del asteroide mostrando cráteres y una gran depresión en forma de silla."
+    },
+    "work": {
+      "1": "Al final de mi misión, mis ingenieros tuvieron una idea loca: ¿y si baja? Nadie me había diseñado para eso. Bajé despacito, tomando fotos, y toqué el suelo a la velocidad de una persona caminando rápido.",
+      "sceneAlt": "La nave desciende muy despacio hacia el suelo del asteroide y levanta un poco de polvo al tocarlo.",
+      "cards": {
+        "1": "Primera en orbitar un asteroide",
+        "2": "Primera en posarse en uno",
+        "3": "160.000 imágenes"
+      }
+    },
+    "lastSignal": {
+      "1": "Seguí hablando desde el suelo unas dos semanas. Luego el frío, muchísimo frío, me dejó dormida.",
+      "2": "Última señal: {{date}}.",
+      "sceneAlt": "La sombra avanza sobre la nave posada y su luz se apaga."
+    },
+    "legacy": {
+      "1": "Ahora otras naves visitan asteroides, toman muestras y hasta empujan alguno para aprender a proteger la Tierra.",
+      "2": "Y una curiosidad: el geólogo Eugene Shoemaker también llegó a la Luna. Una sonda llevó una pequeña parte de sus cenizas. Mira la ficha extra de Lunar Prospector.",
+      "sceneAlt": "La cámara se aleja hacia el cinturón de asteroides, donde brillan Vesta y Ceres."
+    },
+    "pro": "El aterrizaje del 12 de febrero de 2001 fue a unos 6,4 km/h, justo al sur de la silla Himeros; durante el descenso tomó 69 imágenes de alta resolución y, ya en la superficie, envió datos unas dos semanas, hasta que el frío de −173 °C la apagó.",
+    "aula": {
+      "1": "¿Por qué nos interesa estudiar asteroides?",
+      "2": "¿Qué riesgos tiene posarse con una nave que no está diseñada para ello?",
+      "3": "¿Qué harías si fallas una cita importante?"
+    }
+  },
+  "dawn": {
+    "wake": {
+      "1": "En el cinturón de asteroides gira una nave con alas enormes alrededor de un planeta enano. Envíale señal; ya verás cuánto tarda.",
+      "2": "Despacio… despacio… hola. Yo siempre voy despacio, pero llego lejos.",
+      "sceneAlt": "Vesta, achatada, y Ceres, oscura con dos puntos brillantes, flotan en la luz débil del Sol lejano."
+    },
+    "identity": {
+      "1": "Soy Dawn. Fui la primera nave en orbitar dos mundos distintos más allá de la Tierra: Vesta y Ceres. Mi secreto es un motor iónico que empuja muy suave, pero sin parar.",
+      "sceneAlt": "Una nave con dos alas solares larguísimas; en su base, un motor brilla con un resplandor azul resaltado en cian."
+    },
+    "journey": {
+      "1": "Pasé junto a Marte para que su gravedad me diera un empujón. Luego encendí mi motor azul durante años. Un empujón tan suave como el peso de una hoja de papel, todos los días.",
+      "2": "La comparación con una hoja de papel es una imagen narrativa, no un dato.",
+      "sceneAlt": "La nave deja una estela azul de partículas mientras viaja de Vesta hacia Ceres."
+    },
+    "arrival": {
+      "1": "Primero Vesta, en 2011: un mundo con una montaña dos veces más alta que el Everest. Después me fui a Ceres y llegué en 2015.",
+      "sceneAlt": "La nave llega a Vesta, con su gran cuenca y su pico central, y luego se aleja hacia Ceres."
+    },
+    "work": {
+      "1": "En Ceres vi unas manchas brillantísimas. ¿Hielo? No: sal. Sal que subió desde dentro, mezclada con agua. Y una montaña solitaria que quizá fue un volcán de agua helada.",
+      "sceneAlt": "Ceres gira bajo la nave; dos manchas blancas brillan dentro de un cráter.",
+      "cards": {
+        "1": "Dos mundos",
+        "2": "Las manchas de Occator",
+        "3": "Ahuna Mons"
+      }
+    },
+    "lastSignal": {
+      "1": "Para orientarme usaba un poco de otro combustible, la hidracina. En 2018 se acabó la última gota. Ya no podía apuntar mi antena a la Tierra.",
+      "2": "Fin de misión: {{end}}.",
+      "sceneAlt": "El resplandor azul del motor se apaga y la nave sigue girando alrededor de Ceres en silencio."
+    },
+    "legacy": {
+      "1": "No me estrellé ni me perdí. Sigo dando vueltas a Ceres, y seguiré así durante décadas. Soy un monumento que gira.",
+      "sceneAlt": "La cámara se aleja del cinturón de asteroides hacia el Sol y la órbita de la Tierra."
+    },
+    "pro": "Dawn usó propulsión eléctrica solar con 425 kg de xenón; viajó unos 6.900 millones de km en 11 años y en sus últimas órbitas bajó a unos 35 km de Ceres. Las manchas de Occator son sobre todo carbonato de sodio.",
+    "aula": {
+      "1": "¿Qué es mejor, un empujón fuerte y corto o uno suave y largo?",
+      "2": "¿Por qué dejar la nave en órbita en vez de estrellarla?",
+      "3": "¿Qué nos dice la sal sobre el interior de Ceres?"
+    }
+  },
+  "kepler": {
+    "voices": {
+      "memory": "Kepler · recuerdo"
+    },
+    "wake": {
+      "1": "Este no se quedó en ningún mundo: sigue a la Tierra alrededor del Sol. Pero ya no puede contestar: le dimos las buenas noches.",
+      "2": "Miro. Cuento. Vuelvo a mirar.",
+      "sceneAlt": "El Sol en el centro, la órbita de la Tierra y, detrás de la Tierra, un punto: el telescopio Kepler."
+    },
+    "identity": {
+      "1": "Soy Kepler, un telescopio. Durante años miré la misma ventana del cielo, en la constelación del Cisne, con unas 150.000 estrellas dentro.",
+      "sceneAlt": "Un telescopio cilíndrico con un parasol inclinado en la boca, resaltado en cian, y un panel solar curvo."
+    },
+    "journey": {
+      "1": "No orbito la Tierra: viajo alrededor del Sol, siguiendo a la Tierra, para que nada me tape la vista.",
+      "sceneAlt": "El telescopio sigue a la Tierra por su órbita, cada vez un poco más atrás."
+    },
+    "arrival": {
+      "1": "Mi truco es sencillo. Cuando un planeta pasa delante de su estrella, la estrella se apaga un poquito. Yo medía esos parpadeos.",
+      "sceneAlt": "Un cono de visión sale del telescopio hacia un campo de estrellas lejano."
+    },
+    "work": {
+      "1": "Encontré más de 2.600 planetas. Descubrí que hay más planetas que estrellas. ¿Quieres cazar uno?",
+      "sceneAlt": "Miles de estrellas en el campo de visión; algunas parpadean un instante.",
+      "cards": {
+        "1": "Más planetas que estrellas",
+        "2": "Kepler-11 y sus seis planetas",
+        "3": "K2: equilibrio con luz"
+      }
+    },
+    "lastSignal": {
+      "1": "En 2013 se me rompió una rueda que me ayudaba a apuntar. Mis ingenieros me enseñaron a equilibrarme con la presión de la luz del Sol. Seguí cazando cinco años más, hasta que se acabó mi combustible.",
+      "2": "Retiro: {{date}}.",
+      "sceneAlt": "Flechas holográficas de luz solar empujan suavemente el telescopio; luego su luz se apaga."
+    },
+    "legacy": {
+      "1": "Me dieron las buenas noches el mismo día en que, siglos atrás, murió el astrónomo cuyo nombre llevo. Otros telescopios siguen buscando mundos por mí.",
+      "sceneAlt": "La cámara se aleja hasta ver todo el sistema solar."
+    },
+    "pro": "Entre el 20 % y el 50 % de las estrellas visibles probablemente tienen planetas pequeños, quizá rocosos, en su zona habitable; el tamaño de planeta más común está entre el de la Tierra y el de Neptuno, un tipo ausente en nuestro sistema solar. K2 completó 19 campañas cuando se esperaban 10.",
+    "aula": {
+      "1": "¿Cómo puede la sombra de un planeta delatarlo?",
+      "2": "¿Qué significa «zona habitable»?",
+      "3": "¿Por qué crees que los ingenieros no se rindieron con la rueda rota?"
+    }
+  },
+  "pioneer": {
+    "voices": {
+      "p10": "Pioneer 10",
+      "p11": "Pioneer 11",
+      "p10m": "Pioneer 10 · recuerdo"
+    },
+    "wake": {
+      "1": "Última parada, la más lejana. Tu señal tardará casi un día en llegar… y ellas ya no pueden contestar. Envíala igualmente: es un saludo.",
+      "2": "Si alguien me encuentra… llevo una carta.",
+      "sceneAlt": "El sistema solar entero visto desde muy lejos, con dos líneas que se alejan del Sol en direcciones distintas."
+    },
+    "identity": {
+      "1": "Somos Pioneer 10 y Pioneer 11. Yo fui la primera en cruzar el cinturón de asteroides y en pasar junto a Júpiter. Mi hermana fue la primera en visitar Saturno.",
+      "sceneAlt": "Una sonda con una gran antena parabólica y dos brazos con generadores; la antena y la placa brillan en cian."
+    },
+    "journey": {
+      "1": "Después de los planetas gigantes no frenamos. Seguimos hacia fuera, cada una en una dirección distinta.",
+      "sceneAlt": "Dos trayectorias se separan después de pasar junto a Júpiter y Saturno."
+    },
+    "arrival": {
+      "1": "En Júpiter tomé unas 500 imágenes, con su Gran Mancha Roja. La radiación era tan fuerte que algunos de mis instrumentos recibieron órdenes falsas, pero aguanté.",
+      "sceneAlt": "La sonda pasa junto a un gran planeta de bandas con una mancha roja."
+    },
+    "work": {
+      "1": "Llevamos una placa dorada con un dibujo de dos personas, nuestro sistema solar y un mapa de púlsares que dice desde dónde salimos. Es como una carta en una botella lanzada al mar de estrellas.",
+      "sceneAlt": "La sonda gira lentamente sobre su eje; su placa dorada refleja la luz lejana del Sol.",
+      "cards": {
+        "1": "La placa",
+        "2": "Júpiter de cerca",
+        "3": "Saturno de cerca"
+      }
+    },
+    "lastSignal": {
+      "1": "Yo me callé primero, en 1995.",
+      "2": "Yo envié mi último susurro en 2003, desde tan lejos que tardó más de once horas en llegar. Mi energía ya no alcanzaba para hablar.",
+      "sceneAlt": "La sonda se convierte en un punto diminuto que se aleja del Sol."
+    },
+    "legacy": {
+      "1": "Voy hacia Aldebarán, el ojo rojo del Toro. Llegaré cerca dentro de unos dos millones de años.",
+      "2": "Yo voy hacia el Águila. Nos abrieron el camino a otras sondas, las Voyager, que todavía hablan.",
+      "3": "Esta semana, Voyager 1 llegó a un día-luz de la Tierra. El relevo sigue.",
+      "3b": "En noviembre de 2026, Voyager 1 llegó a un día-luz de la Tierra. El relevo sigue.",
+      "sceneAlt": "La cámara se aleja hasta que el Sol es solo una estrella más."
+    },
+    "pro": "El último contacto con Pioneer 10 llegó desde 12.230 millones de km; hoy, según efemérides públicas, está a unas 141 UA del Sol y se aleja a 11,87 km/s; Pioneer 11, a unas 118 UA, a 11,13 km/s. La placa muestra la posición del Sol respecto a 14 púlsares.",
+    "aula": {
+      "1": "¿Qué dibujarías en una placa para alguien que no habla ningún idioma humano?",
+      "2": "¿Qué se siente al mandar un mensaje que tardará un día en llegar?",
+      "3": "¿Por qué dos millones de años es un viaje «corto» en el espacio?"
+    }
+  }
+}

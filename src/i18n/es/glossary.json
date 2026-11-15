@@ -1,1 +1,154 @@
-{}
+{
+  "sol": {
+    "term": "sol",
+    "def": "Un día en Marte: unas 24 horas y 40 minutos."
+  },
+  "regolith": {
+    "term": "regolito",
+    "def": "Capa de polvo y fragmentos de roca que cubre la Luna y otros mundos sin aire."
+  },
+  "lander": {
+    "term": "aterrizador",
+    "def": "Nave que se posa en la superficie y trabaja sin moverse de su sitio."
+  },
+  "rover": {
+    "term": "rover",
+    "def": "Vehículo con ruedas que se desplaza por la superficie de otro mundo."
+  },
+  "orbiter": {
+    "term": "orbitador",
+    "def": "Nave que da vueltas alrededor de un mundo sin posarse en él."
+  },
+  "probe": {
+    "term": "sonda",
+    "def": "Nave que viaja lejos para explorar; las Pioneer son sondas."
+  },
+  "descent-stage": {
+    "term": "etapa de descenso",
+    "def": "Base del módulo lunar Apollo: lo posó en la Luna y allí se quedó."
+  },
+  "ascent-stage": {
+    "term": "etapa de ascenso",
+    "def": "Parte superior del módulo lunar que despegaba con los astronautas para volver a la nave en órbita."
+  },
+  "seismometer": {
+    "term": "sismómetro",
+    "def": "Instrumento que mide las vibraciones del suelo."
+  },
+  "magnitude": {
+    "term": "magnitud",
+    "def": "Número que indica cuánta energía liberó un sismo."
+  },
+  "retroreflector": {
+    "term": "retrorreflector",
+    "def": "Conjunto de prismas que devuelve la luz justo hacia donde vino; sirve para medir la distancia a la Luna con láser."
+  },
+  "light-time": {
+    "term": "tiempo de luz",
+    "def": "Lo que tarda la luz, o una señal de radio, en ir de un lugar a otro."
+  },
+  "au": {
+    "term": "unidad astronómica (UA)",
+    "def": "Distancia media entre la Tierra y el Sol: 149.597.870,7 km."
+  },
+  "orbital-elements": {
+    "term": "elementos orbitales",
+    "def": "Seis números que describen la forma, el tamaño y la orientación de una órbita."
+  },
+  "eccentricity": {
+    "term": "excentricidad",
+    "def": "Cuánto se aleja una órbita de ser un círculo perfecto."
+  },
+  "kepler-equation": {
+    "term": "ecuación de Kepler",
+    "def": "Fórmula que relaciona el tiempo con la posición de un cuerpo en su órbita."
+  },
+  "barycenter": {
+    "term": "baricentro",
+    "def": "Punto de equilibrio alrededor del cual giran dos cuerpos, como la Tierra y la Luna."
+  },
+  "sublimation": {
+    "term": "sublimación",
+    "def": "Paso directo de sólido a gas, sin pasar por líquido."
+  },
+  "perchlorate": {
+    "term": "perclorato",
+    "def": "Sal que contiene cloro y oxígeno; Phoenix la encontró en el suelo de Marte."
+  },
+  "silica": {
+    "term": "sílice",
+    "def": "Mineral hecho de silicio y oxígeno; abundante, es pista de agua caliente en el pasado."
+  },
+  "brine": {
+    "term": "salmuera",
+    "def": "Agua con mucha sal disuelta."
+  },
+  "sodium-carbonate": {
+    "term": "carbonato de sodio",
+    "def": "Sal blanca que forma las manchas brillantes del cráter Occator, en Ceres."
+  },
+  "dust-devil": {
+    "term": "remolino de polvo",
+    "def": "Torbellino de viento que levanta polvo; en Marte a veces limpió paneles solares."
+  },
+  "dust-storm": {
+    "term": "tormenta de polvo global",
+    "def": "Tormenta que puede cubrir casi todo Marte y oscurecer el Sol durante semanas."
+  },
+  "solar-panel": {
+    "term": "panel solar",
+    "def": "Superficie que convierte la luz del Sol en electricidad."
+  },
+  "rtg": {
+    "term": "generador termoeléctrico de radioisótopos (RTG)",
+    "def": "Fuente de electricidad que usa el calor de un material radiactivo; no depende del Sol."
+  },
+  "ion-propulsion": {
+    "term": "propulsión iónica",
+    "def": "Motor que expulsa átomos cargados a gran velocidad: empuje muy suave, pero durante mucho tiempo."
+  },
+  "xenon": {
+    "term": "xenón",
+    "def": "Gas noble que usaba Dawn como combustible de su motor iónico."
+  },
+  "hydrazine": {
+    "term": "hidracina",
+    "def": "Combustible de los pequeños propulsores que orientan una nave."
+  },
+  "transit": {
+    "term": "tránsito",
+    "def": "Paso de un planeta por delante de su estrella, que baja un poco su brillo."
+  },
+  "light-curve": {
+    "term": "curva de luz",
+    "def": "Gráfico del brillo de una estrella a lo largo del tiempo."
+  },
+  "exoplanet": {
+    "term": "exoplaneta",
+    "def": "Planeta que gira alrededor de una estrella distinta del Sol."
+  },
+  "asteroid-belt": {
+    "term": "cinturón de asteroides",
+    "def": "Zona entre Marte y Júpiter con millones de cuerpos rocosos."
+  },
+  "gravity-assist": {
+    "term": "asistencia gravitatoria",
+    "def": "Maniobra que usa la gravedad de un planeta para cambiar la velocidad o la dirección de una nave."
+  },
+  "heliosphere": {
+    "term": "heliosfera",
+    "def": "Burbuja que crea el viento del Sol a su alrededor."
+  },
+  "deep-space-network": {
+    "term": "Red de Espacio Profundo",
+    "def": "Red de grandes antenas de NASA repartidas por el mundo para comunicarse con naves lejanas."
+  },
+  "carrier-signal": {
+    "term": "señal portadora",
+    "def": "Onda de radio básica que lleva los datos; a veces es lo único que llega de una nave lejana."
+  },
+  "plaque": {
+    "term": "placa",
+    "def": "Lámina grabada con un mensaje, como las de las Pioneer o la del Apollo 11."
+  }
+}

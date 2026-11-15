@@ -10,3 +10,4 @@ blob-report
 lighthouse-*.html
 .vite
 *.tsbuildinfo
+.claude/launch.json

@@ -37,3 +37,13 @@
   código ni en los commits.
 - Decisión: la declaración de IA vive en `AI_DISCLOSURE.md`, el `README.md`, el campo `description` de `package.json`, la
   meta descripción de `index.html` y la página Acerca de (requisito de las reglas de Space Apps), pero no en comentarios de código.
+
+## 2026-11-14 — Popover propio en lugar de la API nativa `popover`
+- Contexto: la Parte 16.5 sugiere `popover="auto"`; jsdom no lo implementa y las pruebas de `SourceBadge` deben correr en Vitest.
+- Decisión: `Popover` gestiona su estado, se posiciona con `getBoundingClientRect`, se cierra con Esc o clic fuera y devuelve el foco.
+- Por qué: mismo comportamiento accesible en todos los navegadores y en las pruebas.
+
+## 2026-11-14 — Guiones como datos
+- `src/data/script.ts` describe, por capítulo y momento, quién habla y qué dato se interpola; el texto vive en `chapters.json`.
+- Las líneas de la Bitácora usan `ref` (frase del dato con sus fuentes) o `k` + `vars` (plantilla con valores de `machines.ts`).
+- Las tarjetas de "El trabajo" toman el título de i18n y el cuerpo del dato, con su `SourceBadge`.

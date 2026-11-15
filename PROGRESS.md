@@ -1,6 +1,6 @@
 # Progreso
 
-## Fase actual: 0 — Preparación
+## Fase actual: 1 — Datos, textos y accesibilidad base
 
 ## Hecho
 - [x] Proyecto Vite + React 19 + TypeScript 5.9 con las versiones fijadas de la Parte 5 (sin conflictos de dependencias).
@@ -11,6 +11,13 @@
 - [x] Router con todas las rutas y `document.title` por ruta; `AppShell` con `TopBar`, `SkipLink` y `Footer`.
 - [x] Datos de las 15 máquinas, sitios, fuentes y efemérides (adelantado de la fase 1).
 - [x] Documentos: PLAN, PROGRESS, DECISIONS, SOURCES (generado), README, AI_DISCLOSURE, CREDITS.
+- [x] Fase 1: guiones de los 15 capítulos ES/EN (`chapters.json`) como datos (`script.ts`) con `sceneAlt`, Modo Pro y Modo Aula.
+- [x] Fase 1: glosario (38 términos), 45 preguntas del quiz, línea de tiempo derivada, actos, unidades.
+- [x] Fase 1: `astro`, `signal`, `format`, `coords`, `storage`, `rng`, `device`, `resolve` con pruebas (tabla 14.3 al 0,5 %).
+- [x] Fase 1: primitivas (Button, Toggle, Dialog, Popover, Tabs, Slider, Card3D, Badge, Toast), SourceBadge, FactCard, VoiceLine con glosario y "Escuchar".
+- [x] Fase 1: SettingsPanel (7 pestañas), índice de capítulos (tecla M), atajos, avisos `aria-live`, `?aula`, `?lite`, `?lang`.
+- [x] Fase 1: `/lectura` con los 15 capítulos, prólogo, actos, epílogo, datos y fuentes; pósters SVG generados.
+- [x] Fase 1: axe sin infracciones graves en `/lectura`; prueba de paridad de idiomas en verde.
 
 ## Pendiente
 - [ ] Fases 1–9.
@@ -33,6 +40,7 @@
 
 ## Tamaños del build (gzip)
 - Fase 0: `index-*.js` 142,9 KB · `index-*.css` 11,3 KB.
+- Fase 1: `index-*.js` 176,8 KB · `index-*.css` 13,7 KB.
 
 ## Problemas conocidos
 - Ninguno.

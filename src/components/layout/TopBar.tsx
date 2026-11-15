@@ -92,9 +92,9 @@ export function TopBar() {
       <Link
         to="/"
         className="font-heading text-[0.95rem] font-extrabold tracking-[0.06em] text-ink no-underline sm:text-base"
-        aria-label={t('top.home')}
       >
         {t('brand')}
+        <span className="sr-only"> · {t('top.home')}</span>
       </Link>
       {chapter && (
         <span className="hidden truncate border-l border-line pl-3 font-mono text-[0.8125rem] text-ink-dim lg:inline">
@@ -107,10 +107,9 @@ export function TopBar() {
           type="button"
           className="btn btn-subtle btn-sm font-mono"
           onClick={() => setLocale(locale === 'es' ? 'en' : 'es')}
-          aria-label={t('top.switchTo')}
-          lang={locale === 'es' ? 'en' : 'es'}
         >
-          {t('top.switchShort')}
+          <span lang={locale === 'es' ? 'en' : 'es'}>{t('top.switchShort')}</span>
+          <span className="sr-only"> · {t('top.switchTo')}</span>
         </button>
         <button
           type="button"

@@ -1,1 +1,87 @@
-{}
+{
+  "worlds": {
+    "moon": "Moon",
+    "mars": "Mars",
+    "small-bodies": "Small worlds",
+    "deep-space": "Deep space"
+  },
+  "worldsAct": {
+    "moon": "Act I",
+    "mars": "Act II",
+    "small-bodies": "Act III",
+    "deep-space": "Act IV"
+  },
+  "types": {
+    "lander": "Lander",
+    "rover": "Rover",
+    "instrument": "Instrument",
+    "orbiter": "Orbiter",
+    "helicopter": "Helicopter",
+    "telescope": "Telescope",
+    "probe": "Probe"
+  },
+  "status": {
+    "silent-surface": "Silent on the surface",
+    "silent-orbit": "Silent in orbit",
+    "drifting": "Drifting",
+    "still-useful": "Still useful"
+  },
+  "beats": {
+    "wake": "Wake-up",
+    "identity": "Who I am",
+    "journey": "The journey",
+    "arrival": "Arrival",
+    "work": "The work",
+    "lastSignal": "Last signal",
+    "legacy": "Legacy"
+  },
+  "siteKinds": {
+    "lander": "Landers",
+    "rover-end": "Rovers",
+    "instrument": "Instruments",
+    "impact": "Impacts",
+    "retroreflector": "Still working"
+  },
+  "siteKind": {
+    "lander": "Lander",
+    "rover-end": "Rover's final position",
+    "instrument": "Instrument",
+    "impact": "Impact",
+    "retroreflector": "Retroreflector"
+  },
+  "arrivalKind": {
+    "landing": "Arrival on the surface",
+    "orbit": "Orbit insertion",
+    "flyby": "Flyby"
+  },
+  "dates": {
+    "launch": "Launch",
+    "arrival": "Arrival",
+    "lastSignal": "Last signal",
+    "missionEnd": "Declared end of mission",
+    "planned": "Plan"
+  },
+  "lightMethod": {
+    "mean": "mean distance",
+    "ephemeris": "JPL ephemeris",
+    "range": "range",
+    "extrapolated": "linear extrapolation",
+    "off": "transmitter off"
+  },
+  "bodies": {
+    "earth": "Earth",
+    "moon": "the Moon",
+    "mars": "Mars",
+    "eros": "433 Eros",
+    "ceres": "Ceres",
+    "kepler": "Kepler",
+    "pioneer10": "Pioneer 10",
+    "pioneer11": "Pioneer 11"
+  },
+  "timeline": {
+    "launch": "Launch",
+    "arrival": "Arrival",
+    "lastSignal": "Last signal",
+    "missionEnd": "End of mission"
+  }
+}

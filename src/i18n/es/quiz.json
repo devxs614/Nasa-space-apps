@@ -1,1 +1,392 @@
-{}
+{
+  "surveyor": {
+    "q1": {
+      "prompt": "Antes del Apollo, ¿qué temían algunos científicos sobre el suelo lunar?",
+      "a": "Que fuera un polvo tan profundo que una nave se hundiera",
+      "b": "Que fuera hielo resbaladizo",
+      "c": "Que estuviera cubierto de agua",
+      "d": "Que fuera metal magnético",
+      "explain": "Las patas apenas se hundieron: el suelo era como arena húmeda y aguantaba un módulo lunar."
+    },
+    "q2": {
+      "prompt": "¿Cuántas zanjas cavó la pala del Surveyor 3?",
+      "a": "4",
+      "b": "1",
+      "c": "12",
+      "d": "40",
+      "explain": "Además hizo 4 pruebas de carga y 13 de impacto."
+    },
+    "q3": {
+      "prompt": "¿Qué se llevaron a la Tierra los astronautas del Apollo 12 que lo visitaron?",
+      "a": "Piezas como la cámara y la pala",
+      "b": "El aterrizador completo",
+      "c": "Nada: solo lo fotografiaron",
+      "d": "Su panel solar",
+      "explain": "Pete Conrad y Alan Bean las recuperaron para estudiar casi 2,5 años de exposición en la Luna."
+    }
+  },
+  "apollo-lm": {
+    "q1": {
+      "prompt": "¿Cuántas etapas de descenso de las misiones Apollo con astronautas siguen en la Luna?",
+      "a": "6",
+      "b": "1",
+      "c": "3",
+      "d": "12",
+      "explain": "Apollo 11, 12, 14, 15, 16 y 17."
+    },
+    "q2": {
+      "prompt": "¿Por qué la etapa de descenso se quedaba en la Luna?",
+      "a": "Servía de plataforma de lanzamiento para la etapa de ascenso",
+      "b": "El viento lunar era demasiado fuerte",
+      "c": "Se dejaba como casa para futuras tripulaciones",
+      "d": "Siempre se rompía al aterrizar",
+      "explain": "La mitad superior despegaba desde ella y la base se quedaba."
+    },
+    "q3": {
+      "prompt": "¿Cuántos mensajes de buena voluntad lleva el disco del Apollo 11?",
+      "a": "73",
+      "b": "7",
+      "c": "195",
+      "d": "1",
+      "explain": "Mensajes de líderes de países de todo el mundo, entre ellos México y Ecuador."
+    }
+  },
+  "alsep": {
+    "q1": {
+      "prompt": "Tras el impacto de la etapa de ascenso del Apollo 12, ¿cuánto tiempo registró vibraciones el sismómetro?",
+      "a": "Unos 55 minutos",
+      "b": "2 segundos",
+      "c": "Una semana",
+      "d": "No registró nada",
+      "explain": "La Luna «sonó» mucho tiempo, una pista de cómo es su interior."
+    },
+    "q2": {
+      "prompt": "¿Cuándo se apagaron todas las estaciones ALSEP?",
+      "a": "El 30 de septiembre de 1977",
+      "b": "En 1972, al irse el último astronauta",
+      "c": "En 2003",
+      "d": "Siguen encendidas",
+      "explain": "NASA priorizó otros usos del presupuesto; los retrorreflectores, que no necesitan energía, se siguen usando."
+    },
+    "q3": {
+      "prompt": "Un pulso láser enviado a los retrorreflectores, ¿cuánto tarda en ir y volver?",
+      "a": "Unos 2,6 segundos",
+      "b": "Unos 8 minutos",
+      "c": "Un día",
+      "d": "Es instantáneo",
+      "explain": "La luz recorre unos 385.000 km de ida y otros tantos de vuelta."
+    }
+  },
+  "lrv": {
+    "q1": {
+      "prompt": "¿Cuántos vehículos lunares LRV quedaron en la Luna?",
+      "a": "3",
+      "b": "1",
+      "c": "6",
+      "d": "Ninguno; volvieron a la Tierra",
+      "explain": "Uno por cada misión Apollo 15, 16 y 17."
+    },
+    "q2": {
+      "prompt": "¿Por qué los astronautas no se alejaban más de cierta distancia del módulo lunar?",
+      "a": "Tenían que poder volver caminando si el rover fallaba",
+      "b": "La radio solo llegaba a 100 m",
+      "c": "El LRV no podía girar",
+      "d": "Se lo prohibía un reglamento de tráfico lunar",
+      "explain": "El límite se calculaba para que pudieran volver a pie; el vehículo nunca falló."
+    },
+    "q3": {
+      "prompt": "¿Por qué el polvo que lanzaban las ruedas caía en arcos limpios?",
+      "a": "En la Luna no hay aire que lo frene",
+      "b": "El polvo lunar es magnético",
+      "c": "Las ruedas tenían ventiladores",
+      "d": "Por la rotación de la Luna",
+      "explain": "Sin aire, cada grano sigue una parábola perfecta."
+    }
+  },
+  "viking": {
+    "q1": {
+      "prompt": "¿En qué año aterrizaron los dos Viking?",
+      "a": "1976",
+      "b": "1969",
+      "c": "1997",
+      "d": "2004",
+      "explain": "Fueron los primeros aterrizadores de NASA en Marte."
+    },
+    "q2": {
+      "prompt": "¿Qué encontró el instrumento que buscaba moléculas orgánicas en el suelo?",
+      "a": "No las detectó",
+      "b": "Bacterias vivas",
+      "c": "Fósiles",
+      "d": "Plantas microscópicas",
+      "explain": "Por eso la pregunta sobre la vida sigue abierta."
+    },
+    "q3": {
+      "prompt": "¿Por qué dejó de transmitir el Viking 2 en 1980?",
+      "a": "Fallaron sus baterías",
+      "b": "Lo golpeó un meteorito",
+      "c": "Lo enterró una duna",
+      "d": "Se quedó sin combustible",
+      "explain": "Sus últimos datos llegaron el 11 de abril de 1980."
+    }
+  },
+  "sojourner": {
+    "q1": {
+      "prompt": "¿Qué fue Sojourner?",
+      "a": "El primer rover que rodó por Marte",
+      "b": "El primer helicóptero marciano",
+      "c": "Un satélite de comunicaciones",
+      "d": "Un módulo con astronautas",
+      "explain": "Llegó con Mars Pathfinder el 4 de julio de 1997 a Ares Vallis."
+    },
+    "q2": {
+      "prompt": "¿Quién eligió su nombre?",
+      "a": "Una niña de 12 años, en un concurso",
+      "b": "Los astronautas del Apollo",
+      "c": "Un programa de ordenador",
+      "d": "Nadie: es un código técnico",
+      "explain": "Significa «viajero» y honra a Sojourner Truth."
+    },
+    "q3": {
+      "prompt": "¿Por qué no se podía conducir a Sojourner en directo con un mando?",
+      "a": "La señal tardaba minutos en llegar a Marte",
+      "b": "No tenía antena",
+      "c": "Solo se movía de noche",
+      "d": "Funcionaba con un cable",
+      "explain": "Ese día la luz tardaba unos 10,6 minutos en llegar (estimación calculada por esta web)."
+    }
+  },
+  "spirit": {
+    "q1": {
+      "prompt": "¿Qué destapó la rueda bloqueada de Spirit al arrastrarse?",
+      "a": "Suelo con más del 90 % de sílice",
+      "b": "Un meteorito de hierro",
+      "c": "Hielo de dióxido de carbono",
+      "d": "Un fósil",
+      "explain": "Es una pista de agua caliente en el pasado de Marte."
+    },
+    "q2": {
+      "prompt": "¿Qué limpiaba a veces sus paneles solares?",
+      "a": "Remolinos de polvo",
+      "b": "La lluvia marciana",
+      "c": "Un brazo con escobilla",
+      "d": "Los astronautas",
+      "explain": "Tras una limpieza, la energía podía subir mucho de golpe."
+    },
+    "q3": {
+      "prompt": "¿Dónde quedó atrapada Spirit en 2009?",
+      "a": "En suelo blando en «Troy», junto a Home Plate",
+      "b": "En el fondo de Valles Marineris",
+      "c": "En el polo norte",
+      "d": "Dentro de una cueva",
+      "explain": "Se hundió el 1 de mayo de 2009 y allí sigue."
+    }
+  },
+  "opportunity": {
+    "q1": {
+      "prompt": "¿Cuánto tenía que durar su misión?",
+      "a": "90 soles",
+      "b": "5 años",
+      "c": "1 sol",
+      "d": "15 años",
+      "explain": "Vivió más de 5.000 soles."
+    },
+    "q2": {
+      "prompt": "¿Cuántos kilómetros recorrió en total?",
+      "a": "45,16 km",
+      "b": "1 km",
+      "c": "4,5 km",
+      "d": "450 km",
+      "explain": "Completó una maratón en el sol 3.968."
+    },
+    "q3": {
+      "prompt": "¿Qué rover superó su récord de distancia?",
+      "a": "Perseverance, el 11 de octubre de 2026",
+      "b": "Curiosity, en 2015",
+      "c": "Sojourner, en 1997",
+      "d": "Nadie lo ha superado",
+      "explain": "Perseverance llegó a 45,22 km gracias en gran parte a su conducción autónoma."
+    }
+  },
+  "phoenix": {
+    "q1": {
+      "prompt": "¿Dónde aterrizó Phoenix?",
+      "a": "En las llanuras árticas de Marte, Vastitas Borealis",
+      "b": "En el ecuador, junto a un volcán",
+      "c": "En Valles Marineris",
+      "d": "En la luna Fobos",
+      "explain": "A unos 68° de latitud norte, el 25 de mayo de 2008."
+    },
+    "q2": {
+      "prompt": "¿Qué eran los grumos blancos que desaparecieron de su zanja?",
+      "a": "Hielo de agua que se sublimó",
+      "b": "Sal que se llevó el viento",
+      "c": "Nieve de dióxido de carbono que se derritió",
+      "d": "Reflejos de la cámara",
+      "explain": "Pasó de sólido a gas sin volverse líquido."
+    },
+    "q3": {
+      "prompt": "¿Qué sal sorprendió a los científicos?",
+      "a": "El perclorato",
+      "b": "El nitrato de plata",
+      "c": "El sulfato de cobre",
+      "d": "El yoduro de potasio",
+      "explain": "Baja el punto de congelación del agua y algunos microbios de la Tierra lo usan como alimento."
+    }
+  },
+  "insight": {
+    "q1": {
+      "prompt": "¿Cuántos sismos escuchó InSight?",
+      "a": "1.319",
+      "b": "3",
+      "c": "50",
+      "d": "Ninguno",
+      "explain": "Algunos los causaron meteoritos al chocar."
+    },
+    "q2": {
+      "prompt": "¿De qué magnitud fue el sismo más fuerte?",
+      "a": "4,7",
+      "b": "9,5",
+      "c": "1,0",
+      "d": "7,8",
+      "explain": "Hizo vibrar el planeta durante horas."
+    },
+    "q3": {
+      "prompt": "¿Por qué terminó su misión en 2022?",
+      "a": "El polvo cubrió sus paneles solares",
+      "b": "Un sismo lo volcó",
+      "c": "Se quedó sin combustible",
+      "d": "Se congeló su antena",
+      "explain": "NASA la declaró terminada el 21 de diciembre de 2022 tras dos intentos de contacto fallidos."
+    }
+  },
+  "ingenuity": {
+    "q1": {
+      "prompt": "¿Qué logró Ingenuity por primera vez?",
+      "a": "Un vuelo propulsado y controlado en otro planeta",
+      "b": "Aterrizar en un asteroide",
+      "c": "Traer muestras a la Tierra",
+      "d": "Cruzar el cinturón de asteroides",
+      "explain": "Voló en el aire marciano, muchísimo más fino que el de la Tierra."
+    },
+    "q2": {
+      "prompt": "Estaba diseñado para un máximo de 5 vuelos. ¿Cuántos hizo?",
+      "a": "72",
+      "b": "5",
+      "c": "12",
+      "d": "500",
+      "explain": "En casi tres años, con unos 17 km y 128,8 minutos de vuelo en total."
+    },
+    "q3": {
+      "prompt": "¿Qué falló en su último vuelo?",
+      "a": "Su navegación no encontró suficientes referencias sobre arena lisa",
+      "b": "Chocó con Perseverance",
+      "c": "Una tormenta lo arrastró",
+      "d": "Se congeló su batería",
+      "explain": "Sin texturas que seguir, el aterrizaje fue brusco y dañó sus palas."
+    }
+  },
+  "near": {
+    "q1": {
+      "prompt": "¿Qué hizo NEAR Shoemaker por primera vez en la historia?",
+      "a": "Posarse en un asteroide",
+      "b": "Orbitar Marte",
+      "c": "Salir del sistema solar",
+      "d": "Fotografiar Plutón",
+      "explain": "Se posó en 433 Eros el 12 de febrero de 2001."
+    },
+    "q2": {
+      "prompt": "¿Estaba diseñada para aterrizar?",
+      "a": "No; se posó al final de su misión",
+      "b": "Sí, con patas",
+      "c": "Sí, con paracaídas",
+      "d": "Sí, con bolsas de aire",
+      "explain": "Era un orbitador y aun así siguió enviando datos desde la superficie."
+    },
+    "q3": {
+      "prompt": "¿A qué velocidad tocó la superficie?",
+      "a": "A unos 6,4 km/h, como un paso rápido",
+      "b": "A 1.000 km/h",
+      "c": "A 100 km/h",
+      "d": "A 0 km/h: flotó",
+      "explain": "La gravedad de Eros es muchísimo más débil que la de la Tierra."
+    }
+  },
+  "dawn": {
+    "q1": {
+      "prompt": "¿Alrededor de qué dos mundos orbitó Dawn?",
+      "a": "Vesta y Ceres",
+      "b": "La Luna y Marte",
+      "c": "Eros y Ceres",
+      "d": "Júpiter y Saturno",
+      "explain": "Fue la primera nave en orbitar dos cuerpos distintos más allá de la Tierra."
+    },
+    "q2": {
+      "prompt": "¿Qué tipo de motor usaba?",
+      "a": "Propulsión iónica con xenón",
+      "b": "Velas solares",
+      "c": "Un motor nuclear",
+      "d": "Hélices",
+      "explain": "Empuje muy suave pero constante, alimentado por paneles solares; llevaba 425 kg de xenón."
+    },
+    "q3": {
+      "prompt": "¿Qué son las manchas brillantes del cráter Occator?",
+      "a": "Sales, sobre todo carbonato de sodio",
+      "b": "Hielo de agua pura",
+      "c": "Lava de un volcán activo",
+      "d": "Metal pulido",
+      "explain": "Subieron como salmuera; es el mayor depósito de carbonatos visto fuera de la Tierra."
+    }
+  },
+  "kepler": {
+    "q1": {
+      "prompt": "¿Cómo encontraba planetas Kepler?",
+      "a": "Midiendo la pequeña bajada de brillo cuando un planeta pasa delante de su estrella",
+      "b": "Fotografiándolos de cerca",
+      "c": "Escuchando sus señales de radio",
+      "d": "Visitándolos",
+      "explain": "Es el método de tránsitos de la mini-experiencia."
+    },
+    "q2": {
+      "prompt": "¿Cuántos planetas fuera del sistema solar descubrió?",
+      "a": "Más de 2.600",
+      "b": "9",
+      "c": "Unos 50",
+      "d": "Más de un millón",
+      "explain": "Sus datos indican que hay más planetas que estrellas."
+    },
+    "q3": {
+      "prompt": "¿Por qué se retiró en 2018?",
+      "a": "Se quedó sin combustible",
+      "b": "Chocó con un asteroide",
+      "c": "Lo trajeron a la Tierra",
+      "d": "Se rompió su espejo",
+      "explain": "Se retiró el 30 de octubre y recibió sus órdenes finales el 15 de noviembre de 2018, aniversario de la muerte de Johannes Kepler."
+    }
+  },
+  "pioneer": {
+    "q1": {
+      "prompt": "¿Cuándo llegó la última señal de Pioneer 10?",
+      "a": "El 23 de enero de 2003",
+      "b": "El 20 de julio de 1969",
+      "c": "El 1 de enero de 2020",
+      "d": "Todavía transmite",
+      "explain": "Su energía ya no alcanzaba para el transmisor; un último intento en 2006 falló."
+    },
+    "q2": {
+      "prompt": "¿Cuánto tardó esa última señal en llegar a la Tierra?",
+      "a": "Unas 11 horas y 20 minutos",
+      "b": "1,3 segundos",
+      "c": "8 minutos",
+      "d": "3 años",
+      "explain": "Salió desde unos 12.230 millones de km."
+    },
+    "q3": {
+      "prompt": "¿Qué llevan las Pioneer para quien las encuentre?",
+      "a": "Una placa grabada con un mensaje en dibujos",
+      "b": "Un disco con música",
+      "c": "Semillas de plantas",
+      "d": "Una cápsula con cartas",
+      "explain": "Muestra quiénes la enviaron y desde dónde (el disco con música es de las Voyager)."
+    }
+  }
+}

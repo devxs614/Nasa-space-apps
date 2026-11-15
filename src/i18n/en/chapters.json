@@ -1,1 +1,744 @@
-{}
+{
+  "prologue": {
+    "1": "Listen. What you hear is the silence of space.",
+    "2": "From Earth we listen to the universe with giant antennas. For years, many machines spoke to us from very far away.",
+    "3": "Some no longer answer. They ran out of light, warmth or fuel. But they are not lost: we know where each one is.",
+    "census": "{{total}} silent machines · {{moon}} on the Moon · {{mars}} on Mars · {{small}} on small worlds · {{deep}} in deep space.",
+    "5": "I'm LUMI, a listening probe. Well… a probe made up for this journey. What I say is a story; what the Mission Log says is real and checked.",
+    "6": "The machines will talk to you too. Their voices are imagined, but their stories are true. Will you help me wake them up?",
+    "8": "Heading for the Moon. Light gets there in just over a second. We'll go a little slower.",
+    "antennas": "The antennas are spread around the planet, so one is always facing the right patch of sky.",
+    "voicesTitle": "The four voices of this journey",
+    "exampleMachine": "I'm a machine. My voice is imagined, but what I tell you really happened.",
+    "exampleLumi": "I'm LUMI. I guide you, ask you things and sometimes joke.",
+    "exampleLog": "Mission Log: checked facts, with date, unit and source.",
+    "exampleYou": "You: the signal operator. The buttons talk to you.",
+    "sceneAlt": {
+      "title": "Earth at night turns slowly as seen from orbit, its city lights glowing.",
+      "antennas": "Three points of light switch on across Earth: antennas listening to space.",
+      "census": "Fifteen ghost points appear around Earth, linked by dotted lines toward their worlds.",
+      "lumi": "A small glowing probe, LUMI, drifts toward the camera.",
+      "choose": "The stars line up into two paths.",
+      "launch": "The camera turns and flies toward the Moon, leaving a trail of light."
+    },
+    "title": "Prologue: Silence"
+  },
+  "acts": {
+    "moon": {
+      "title": "The Moon: First Steps",
+      "lumi": "Before a person could walk on the Moon, machines had to check that the ground would hold.",
+      "sceneAlt": "The Moon appears from high orbit and its ghost markers light up one by one."
+    },
+    "mars": {
+      "title": "Mars: Following the Water",
+      "lumi": "Mars is a frozen desert. These machines came to ask if it was always like that.",
+      "sceneAlt": "Red Mars, wrapped in a salmon-colored glow of atmosphere, turns as seven markers light up."
+    },
+    "small-bodies": {
+      "title": "Small Worlds",
+      "lumi": "Asteroids are leftovers from building the Solar System. They're like forgotten toolboxes.",
+      "sceneAlt": "A long, peanut-shaped asteroid floats in harsh sunlight."
+    },
+    "deep-space": {
+      "title": "Deep Space",
+      "lumi": "Some machines never stayed on any world. They are still traveling.",
+      "sceneAlt": "The Sun glows small in the center as the camera pulls back to show the planets' orbits."
+    }
+  },
+  "epilogue": {
+    "1": "Fifteen machines. None of them is lost. All of them left something behind.",
+    "2": "Surveyor told Apollo where to step. Sojourner taught Spirit and Opportunity to roll. Viking asked the question that Phoenix and Perseverance keep asking. Kepler passed the torch to other planet hunters. Pioneer opened the way for the Voyagers.",
+    "4": "Every one of these machines was imagined by people who, as kids, looked up at the sky like you do now. Some, like Valerie, chose their names when they were children.",
+    "5": "Your turn. Write a message for whoever finds these machines a hundred years from now.",
+    "6": "Your signal is ready. You are the next signal.",
+    "chainTitle": "The chain",
+    "yearTitle": "What happened in 2026",
+    "youTitle": "You are the next signal",
+    "creditsTitle": "Credits",
+    "sceneAlt": {
+      "chain": "Holographic outlines of the fifteen machines pass a spark of light along, one after another.",
+      "year": "Earth and the Moon appear together in warm light.",
+      "you": "Particles of light gather over the starfield.",
+      "credits": "The credits roll slowly over the starfield."
+    },
+    "title": "Epilogue: The Relay"
+  },
+  "surveyor": {
+    "voices": {
+      "s3": "Surveyor 3"
+    },
+    "wake": {
+      "1": "Five scouts sleep here. They arrived before any people did. Press and hold to send them a signal.",
+      "2": "Signal? Checking legs… checking camera… Hello. We are the Surveyors.",
+      "sceneAlt": "The Moon from orbit, with five ghost markers pulsing over the Surveyor landing sites."
+    },
+    "identity": {
+      "1": "We're five siblings: Surveyor 1, 3, 5, 6 and 7. They sent us with a very serious question: can the Moon's ground hold up a spacecraft? Some people feared a sea of dust that would swallow everything.",
+      "sceneAlt": "A three-legged lander turns slowly on gray ground; its scoop and TV camera glow with a cyan outline."
+    },
+    "journey": {
+      "1": "We left Florida one after another, between 1966 and 1968. Not all of us made it: two siblings were lost on the way. Those of us who arrived, arrived for them too.",
+      "sceneAlt": "An arc of light draws itself from Earth to the Moon as you scroll."
+    },
+    "arrival": {
+      "1": "My landing was… bouncy. Shiny rocks fooled my radar and my engine didn't shut off in time. I bounced once, I bounced twice, and on the third touch I stayed put.",
+      "sceneAlt": "Surveyor 3 descends on its engines, bounces twice and settles on the plain."
+    },
+    "work": {
+      "1": "Look at my scoop: it scrapes, pushes and taps the ground. Want to know what I found? Moon soil is like wet sand. And it holds. It holds!",
+      "sceneAlt": "In front of the lander, the scoop moves through the regolith, leaving small grooves.",
+      "cards": {
+        "1": "The ground holds a spacecraft",
+        "2": "Surveyor 6's hop",
+        "3": "Surveyor 5's chemistry"
+      }
+    },
+    "lastSignal": {
+      "1": "When the lunar night came, I went quiet. Two weeks of darkness is a lot of cold for a small machine.",
+      "2": "Surveyor 3's last contact: {{date}}.",
+      "sceneAlt": "Sunlight fades over the plain and the lander turns back into a faint hologram."
+    },
+    "legacy": {
+      "1": "Two and a half years later I heard footsteps. Two Apollo 12 astronauts came to visit and took my camera back to Earth to study it. I had said the ground would hold… and there they were, standing on it.",
+      "2": "Thanks to them, people knew where to step.",
+      "sceneAlt": "The camera pulls back to show the whole Moon and points to the next site: Apollo 11."
+    },
+    "pro": "The soil strength measured by Surveyor 3 (about 0.7 kg/cm²) was enough for the lunar module. Surveyor 7 was sent to the highlands next to Tycho because the earlier landers had already covered what Apollo needed.",
+    "aula": {
+      "1": "Why send robots before people?",
+      "2": "What would you have measured first?",
+      "3": "Why do you think Surveyor 3 bounced?"
+    }
+  },
+  "apollo-lm": {
+    "wake": {
+      "1": "Six sites, six spacecraft split in half. The bottom half stayed here. Send your signal to Eagle, the first one.",
+      "2": "Tranquility Base here… well, what's left of it. Hello.",
+      "sceneAlt": "The Moon from orbit, with six ghost markers over the Apollo sites; one pulses brighter: Eagle's."
+    },
+    "identity": {
+      "1": "I'm Eagle's descent stage. My job was to bring two people down to the ground. Then, to be the launch pad so the other half could lift off.",
+      "sceneAlt": "An octagonal base wrapped in gold foil on four splayed legs; the legs and the plaque glow with a cyan outline."
+    },
+    "journey": {
+      "1": "I traveled folded up, tucked under the main spacecraft. When we reached the Moon, I opened my four legs like a golden spider.",
+      "sceneAlt": "An arc of light links Earth with the Sea of Tranquility."
+    },
+    "arrival": {
+      "1": "My engine kicked up dust that shot out in straight lines, because there's no air here to slow it down. And then: contact.",
+      "2": "Landing: {{date}} · {{site}}.",
+      "sceneAlt": "The lander comes down; dust streaks out in straight lines from the nozzle and the legs touch the ground."
+    },
+    "work": {
+      "1": "Six times, six sisters came down to six different places. Pick one and I'll tell you who walked beside me.",
+      "sceneAlt": "The descent stage rests on the ground, surrounded by footprints; a holographic ascent stage waits on top.",
+      "cards": {
+        "1": "The Apollo 11 plaque",
+        "2": "73 messages of peace",
+        "3": "21.55 kg of Moon"
+      }
+    },
+    "lastSignal": {
+      "1": "I never had a radio to talk to Earth: my last task was to stay still while the other half left. I watched its light fade away. I knew they were going home.",
+      "2": "Eagle's time on the surface: {{time}}.",
+      "sceneAlt": "The holographic ascent stage lifts off and flies away; the golden base stays behind alone."
+    },
+    "legacy": {
+      "1": "On my leg I carry a plaque that says we came in peace. I like to think the next ones to arrive will read it.",
+      "2": "And on a tiny disc next to it there are messages from 73 countries. Mexico and Ecuador are among them.",
+      "sceneAlt": "The camera pulls back toward the whole Moon and points to the Apollo 12 site."
+    },
+    "pro": "The descent stage had a dry mass of 2,034 kg and carried 8,248 kg of propellant; nearly all of it was used in the final braking. Eagle's ascent stage was left in lunar orbit and its fate is unknown.",
+    "aula": {
+      "1": "Why leave half a spacecraft on the Moon?",
+      "2": "What message would you leave?",
+      "3": "How does dust behave when there is no air?"
+    }
+  },
+  "alsep": {
+    "voices": {
+      "retro": "Retroreflector"
+    },
+    "wake": {
+      "1": "These instruments kept working on their own after the astronauts left. One of them still answers to light.",
+      "2": "Shhh… I'm listening. I'm always listening.",
+      "sceneAlt": "The Moon from orbit, with markers over the ALSEP stations and a glint on the Apollo 15 retroreflector."
+    },
+    "identity": {
+      "1": "I'm a science station. I have an ear for tremors, a nose for gas, a skin for the solar wind. And a warm plutonium heart that gave me power.",
+      "sceneAlt": "A central station with a helical antenna, a finned generator and a seismometer under a silver blanket, highlighted in cyan."
+    },
+    "journey": {
+      "1": "I arrived in boxes, like flat-pack furniture. The astronauts set me out on the ground, pointed me at Earth and said goodbye.",
+      "sceneAlt": "An arc of light runs from Earth to the Ocean of Storms."
+    },
+    "arrival": {
+      "1": "The day after I was set up, they crashed Intrepid's ascent stage on purpose, not far from me. And the ground shook, and shook, and kept shaking for almost an hour.",
+      "sceneAlt": "Rings of vibration spread across the ground from the horizon to the instruments."
+    },
+    "work": {
+      "1": "With my sisters I formed a network of ears spread across the Moon. And my cousins, the mirrors, send back the light of lasers fired from Earth.",
+      "sceneAlt": "A laser beam comes down from the black sky to a panel of prisms, which lights up.",
+      "cards": {
+        "1": "A network of ears",
+        "2": "The Moon is drifting away",
+        "3": "Mirrors still at work"
+      }
+    },
+    "lastSignal": {
+      "1": "One day in 1977 they asked me to stop talking. I wasn't broken: there were other things to pay for back on Earth. I understood.",
+      "sceneAlt": "The instrument lights go out one by one; only the prism panel keeps shining."
+    },
+    "legacy": {
+      "1": "I don't need power. Every time a laser pulse reaches me, I send it back. That's how we know the Moon moves away from Earth by about 3.8 centimeters every year.",
+      "2": "It's the only part of this story that still answers.",
+      "sceneAlt": "The camera pulls back toward the Moon and points to the Apollo 15 site, where a lunar rover was left."
+    },
+    "pro": "The seismometer detected deep quakes, shallow quakes and impacts; the long ringing is explained by a very fractured, dry outer layer that scatters the waves. The first retroreflector was placed by Apollo 11, and today the distance is measured to about a millimeter.",
+    "aula": {
+      "1": "Why does the Moon \"ring\" for so long if there is no air?",
+      "2": "What device do you know that needs no power?",
+      "3": "Would you switch off an instrument that still works? Why?"
+    }
+  },
+  "lrv": {
+    "wake": {
+      "1": "Can you hear that engine? No, you can't: there's no air here. But these cars really did race across the Moon.",
+      "2": "Finally! Shall we go for a drive?",
+      "sceneAlt": "The Moon from orbit, with three markers at the Apollo 15, 16 and 17 sites."
+    },
+    "identity": {
+      "1": "I'm the Lunar Roving Vehicle. I weigh about as much as a big motorcycle, but I can carry two astronauts, tools and rocks. They brought me folded up on the side of the lunar module.",
+      "sceneAlt": "A four-wheeled vehicle with two seats and an umbrella antenna; its wire-mesh wheels glow in cyan."
+    },
+    "journey": {
+      "1": "I traveled folded like a beach chair. When we arrived, the astronauts pulled some straps and I opened up wheel by wheel.",
+      "sceneAlt": "An arc of light links Earth with Hadley–Apennine."
+    },
+    "arrival": {
+      "1": "My wheels aren't rubber: they're metal mesh, because rubber would be ruined by the Moon's cold and heat.",
+      "sceneAlt": "Close-up of a wire-mesh wheel with chevrons on gray dust."
+    },
+    "work": {
+      "1": "Grab the controller! My batteries don't recharge, so every kilometer counts. And never go so far that you can't walk back.",
+      "sceneAlt": "The vehicle drives on, throwing up arcs of dust that fall right away, with no air to hold them.",
+      "cards": {
+        "1": "27.8 · 26.7 · 35.9 km",
+        "2": "The broken fender",
+        "3": "The 18 km/h record"
+      }
+    },
+    "lastSignal": {
+      "1": "My batteries ran out and here I stayed, parked, with the dust of my last drive still stuck to my wheels.",
+      "sceneAlt": "The parked vehicle stays still as the light turns low and cold."
+    },
+    "legacy": {
+      "1": "Without me, my astronauts couldn't have reached the mountains and valleys where the best rocks were. The next lunar rovers already know what I learned.",
+      "sceneAlt": "The camera pulls away from the Moon and turns toward a red dot: Mars."
+    },
+    "pro": "The distance limit was set so the astronauts could walk back if the vehicle failed; it never did. Each wheel had its own motor.",
+    "aula": {
+      "1": "Why not use rubber wheels?",
+      "2": "What happens to dust when there is no air?",
+      "3": "How would you plan a route with batteries that can't be recharged?"
+    }
+  },
+  "viking": {
+    "voices": {
+      "v1": "Viking 1",
+      "v2": "Viking 2"
+    },
+    "wake": {
+      "1": "Mars is much farther away: your signal will take minutes, not seconds. Watch the counter.",
+      "2": "…Received. Sister, can you hear me? We have a visitor.",
+      "3": "I hear you. From the other side of the planet, as always.",
+      "sceneAlt": "Mars from orbit, with two ghost markers far apart: Chryse Planitia and Utopia Planitia."
+    },
+    "identity": {
+      "1": "We're twins. We arrived in 1976 with a huge question: is there life on Mars?",
+      "sceneAlt": "A three-legged hexagonal lander with a dish antenna; its sampler arm glows in cyan."
+    },
+    "journey": {
+      "1": "Each of us rode along with our orbiter. First we looked from above to pick a good spot. When the chosen one turned out too rocky, we looked for another.",
+      "sceneAlt": "A very long arc of light runs from Earth to Mars."
+    },
+    "arrival": {
+      "1": "Heat shield, parachute, retrorockets… and ground. Minutes later I took the first picture a machine had ever taken from the surface of Mars.",
+      "2": "Viking 1 landing: {{date}} · {{site}}.",
+      "sceneAlt": "The lander comes down on its retrorockets over a rocky, rust-colored plain."
+    },
+    "work": {
+      "1": "With my arm I scooped up soil and carried it to my lab. We offered it food, we heated it, we sniffed it. Some tests seemed to say yes. Others said no.",
+      "sceneAlt": "The arm reaches out, scoops reddish soil and pours it into a hopper on the lander.",
+      "cards": {
+        "1": "Biology tests",
+        "2": "Sulfur everywhere",
+        "3": "Mars seen from above"
+      }
+    },
+    "lastSignal": {
+      "1": "My batteries gave out first, in 1980.",
+      "2": "I kept going until 1982, when a wrong command left me unable to talk. Humans make mistakes too. What matters is learning from them.",
+      "sceneAlt": "Dust settles over the lander and the Martian sunset light fades."
+    },
+    "legacy": {
+      "1": "We didn't answer the big question. But we taught people to ask it better. Others came later with better tools.",
+      "2": "Sometimes science moves forward with a \"we don't know yet\".",
+      "sceneAlt": "The camera pulls back to the whole of Mars and points to Ares Vallis."
+    },
+    "pro": "Added together, the biology tests could be read as a weak positive, but the spectrometer found no organic compounds at a threshold of 10 to 100 parts per billion. Could chemistry alone, without life, explain it all? It is still debated.",
+    "aula": {
+      "1": "What evidence would convince you there is life?",
+      "2": "Why is a \"we don't know\" result valuable?",
+      "3": "What would you do differently on the next mission?"
+    }
+  },
+  "sojourner": {
+    "wake": {
+      "1": "Now look for someone very small, about the size of a microwave oven.",
+      "2": "Down here! I'm small, but I was the first.",
+      "sceneAlt": "Mars from orbit, with a ghost marker in Ares Vallis."
+    },
+    "identity": {
+      "1": "I'm Sojourner, the first rover to roll across Mars. My name was chosen by a 12-year-old girl, Valerie, in a contest. It means traveler, and it honors Sojourner Truth, who fought for freedom.",
+      "sceneAlt": "A tiny six-wheeled rover with a flat solar panel; its suspension glows in cyan."
+    },
+    "journey": {
+      "1": "I traveled inside a pyramid-shaped lander, wrapped in airbags like a present.",
+      "sceneAlt": "An arc of light links Earth with Mars."
+    },
+    "arrival": {
+      "1": "We bounced about fifteen times! Some bounces were as high as a five-story building. When we finally stopped, the petals opened and I rolled down a ramp.",
+      "sceneAlt": "A cluster of airbags bounces across the plain, then opens like a flower and the rover appears."
+    },
+    "work": {
+      "1": "I moved very slowly and never wandered far from the lander: it was my phone to Earth. My drivers sent me commands that took minutes to arrive. Do you dare to drive me like that?",
+      "sceneAlt": "The little rover creeps between big rocks, close to its lander.",
+      "cards": {
+        "1": "Clues of ancient water",
+        "2": "Thousands of images",
+        "3": "Carl Sagan Memorial Station"
+      }
+    },
+    "lastSignal": {
+      "1": "One day the lander stopped talking to Earth, and so did I. I'm sure I drove around a bit, waiting for it.",
+      "2": "The mission's last transmission: {{date}}.",
+      "sceneAlt": "The sun sets behind the rocks and the rover stays still next to the lander."
+    },
+    "legacy": {
+      "1": "After me came bigger, braver rovers. But someone had to turn the first wheel.",
+      "2": "The rovers that came later also got names chosen by students.",
+      "sceneAlt": "The camera pulls back toward Mars and points to Gusev crater."
+    },
+    "pro": "The lander was renamed Carl Sagan Memorial Station; the mission returned 2.3 billion bits and more than 16,500 lander images, and its rounded pebbles suggest running water in the past.",
+    "aula": {
+      "1": "How would you drive if every command took minutes?",
+      "2": "What would you name a rover, and why?",
+      "3": "Why use airbags?"
+    }
+  },
+  "spirit": {
+    "wake": {
+      "1": "Gusev crater. A very stubborn rover lives here. Send her a signal; be patient, Mars is far away.",
+      "2": "Hello? Sorry about the dust. I've been here a while.",
+      "sceneAlt": "Mars from orbit, with a ghost marker in Gusev crater."
+    },
+    "identity": {
+      "1": "I'm Spirit. They built me to work for 90 Martian days. I worked for more than six years.",
+      "sceneAlt": "A six-wheeled rover with solar wings and a camera mast; its right front wheel glows in cyan."
+    },
+    "journey": {
+      "1": "I have a twin, Opportunity. We left Earth a few weeks apart and landed on opposite sides of Mars.",
+      "sceneAlt": "Two arcs of light leave Earth toward opposite sides of Mars."
+    },
+    "arrival": {
+      "1": "Like Sojourner, I arrived wrapped in airbags. My crater may have been a lake a very long time ago. I came to find out.",
+      "sceneAlt": "Airbags bounce between gentle hills and come to rest on pale ground."
+    },
+    "work": {
+      "1": "In 2006 my right front wheel stopped turning. So I learned to drive backward, dragging it. And one day in 2007, that broken wheel dug a furrow… and bright white soil appeared.",
+      "sceneAlt": "The rover backs up dragging a wheel that leaves a furrow; inside it, white soil gleams.",
+      "cards": {
+        "1": "More than 90% silica",
+        "2": "The wind that cleaned my panels",
+        "3": "Home Plate"
+      }
+    },
+    "lastSignal": {
+      "1": "In 2009 I sank into soft sand, at a place called Troy. My friends on Earth tried everything to get me out. I stayed put, watching, like a science station. And when winter came, I fell asleep.",
+      "2": "Last signal: {{date}} · End of mission: {{end}}.",
+      "sceneAlt": "The rover sits sunk in soft sand; dust covers its panels and the winter light fades."
+    },
+    "legacy": {
+      "1": "I learned something I'll give you as a gift: what looks like a breakdown can be the start of a discovery.",
+      "2": "That white soil is a clue to hot water on ancient Mars, the kind of place where microbes live on Earth.",
+      "sceneAlt": "The camera pulls back toward Mars and points to Meridiani Planum, on the other side of the planet."
+    },
+    "pro": "On Earth, opaline silica like Home Plate's forms in hot springs or fumaroles; both are full of microbial life on our planet, which is why it is one of the twin rovers' most important finds.",
+    "aula": {
+      "1": "Can you remember a mistake that taught you something?",
+      "2": "Why did white soil catch the scientists' attention?",
+      "3": "What would you have done to get Spirit out of the sand?"
+    }
+  },
+  "opportunity": {
+    "wake": {
+      "1": "Meridiani Planum. This rover went farther than anyone… for many years.",
+      "2": "Is it time to run already? I'm ready.",
+      "sceneAlt": "Mars from orbit, with a ghost marker in Meridiani Planum."
+    },
+    "identity": {
+      "1": "I'm Opportunity. They asked me for 90 sols and one kilometer. I gave them more than 5,000 sols and 45 kilometers.",
+      "sceneAlt": "A six-wheeled rover with large solar panels glowing in cyan."
+    },
+    "journey": {
+      "1": "I came to a place chosen from orbit because it had hematite, a mineral that usually forms in water.",
+      "sceneAlt": "An arc of light links Earth with Meridiani Planum."
+    },
+    "arrival": {
+      "1": "I bounced and rolled inside my airbags… and ended up right inside a small crater, Eagle. Like a hole in one.",
+      "sceneAlt": "The airbags roll across a smooth plain and drop into a small crater."
+    },
+    "work": {
+      "1": "The rocks in Eagle told me there had been a lake, though a very acidic one. I found little balls of hematite we called blueberries. And at Endeavour crater, cracks filled with gypsum left by friendlier water.",
+      "sceneAlt": "The rover crosses a plain dotted with tiny dark spheres to the rim of a big crater.",
+      "cards": {
+        "1": "Blueberries",
+        "2": "Gypsum at Endeavour",
+        "3": "A marathon in 11 years"
+      }
+    },
+    "lastSignal": {
+      "1": "In 2018 a dust storm came and covered the whole planet. The sky went dark. My panels stopped drinking light.",
+      "2": "Last signal: {{date}}, sol {{sol}}.",
+      "3": "You may have read that Opportunity said \"my battery is low and it's getting dark\". That is a poetic translation of its last data, not a real message.",
+      "sceneAlt": "A dust storm darkens the sky; the rover slowly disappears and is left as a faint hologram."
+    },
+    "legacy": {
+      "1": "I rest in a valley called Perseverance. And in 2026, a rover called Perseverance beat my record. I love that coincidence.",
+      "sceneAlt": "The camera pulls back toward Mars and points to the distant Martian Arctic."
+    },
+    "pro": "The marathon was completed on sol 3,968 with 42.198 km on the odometer; part of the way was driven backward because of a steering fault. Perseverance beat Opportunity's 45.16 km with 45.22 km on 11 October 2026, largely thanks to its self-driving.",
+    "aula": {
+      "1": "What helps you keep going on something long?",
+      "2": "Why is dust so dangerous for a solar-powered machine?",
+      "3": "What's the difference between acidic water and life-friendly water?"
+    }
+  },
+  "phoenix": {
+    "wake": {
+      "1": "We're going almost to Mars's north pole. It's freezing. Send the signal and wait.",
+      "2": "Such low light… Hello. Martian Arctic here.",
+      "sceneAlt": "Mars from orbit seen from the north, with a marker near the polar cap."
+    },
+    "identity": {
+      "1": "I'm Phoenix. I landed farther north than anyone before me. I came to dig and to taste the frozen ground.",
+      "sceneAlt": "A lander with two round solar panels and a robotic arm glowing in cyan."
+    },
+    "journey": {
+      "1": "My name belongs to a legendary bird.",
+      "sceneAlt": "An arc of light runs from Earth toward northern Mars."
+    },
+    "arrival": {
+      "1": "I came down on a parachute and retrorockets onto a plain full of polygons, like a tiled floor made by ice.",
+      "2": "Landing: {{date}} · {{site}}.",
+      "sceneAlt": "The lander descends on retrorockets over ground split into polygons."
+    },
+    "work": {
+      "1": "With my arm I dug a trench. Little white bits appeared. Four days later, they were gone! It was water ice that turned straight into gas.",
+      "sceneAlt": "The arm digs a shallow trench and white clumps gleam at the bottom.",
+      "cards": {
+        "1": "Water ice",
+        "2": "A surprise salt: perchlorate",
+        "3": "Water confirmed"
+      }
+    },
+    "lastSignal": {
+      "1": "Winter came and the Sun went away. My panels needed light. I fell asleep under a blanket of frost. When spring came back, one of my panels was no longer in place.",
+      "2": "Last signal: {{date}}.",
+      "sceneAlt": "Frost covers the lander and one of its panels bends under the weight."
+    },
+    "legacy": {
+      "1": "Now we know there is ice under the ground of Mars, within reach of a scoop. Someday someone will use it to drink or to make fuel.",
+      "sceneAlt": "The camera pulls back and points to Elysium Planitia, near the equator."
+    },
+    "pro": "The TEGA instrument heated a sample and detected water vapor, which led to the official announcement of water on Mars on 31 July 2008; perchlorate lowers the freezing point of water and can be food for some microbes on Earth.",
+    "aula": {
+      "1": "What's the difference between melting and sublimating?",
+      "2": "Why does finding ice matter for future astronauts?",
+      "3": "How would you protect a machine from frost?"
+    }
+  },
+  "insight": {
+    "wake": {
+      "1": "Elysium Planitia. This machine wasn't looking for rocks: it was listening. Send the signal and stay quiet.",
+      "2": "Shhh… Mars is speaking. Can you hear it?",
+      "sceneAlt": "Mars from orbit, with a ghost marker in Elysium Planitia."
+    },
+    "identity": {
+      "1": "I'm InSight. My ear was a seismometer so sensitive it could feel very distant tremors. It was built in France; my heat probe, in Germany; my wind sensors, in Spain.",
+      "sceneAlt": "A lander with two round panels; in front, on the ground, a copper-colored dome glows in cyan."
+    },
+    "journey": {
+      "1": "I launched from California. Two tiny spacecraft, the size of a briefcase, came along and told the story of my landing almost live.",
+      "sceneAlt": "An arc of light runs from Earth to Mars, followed by two tiny dots."
+    },
+    "arrival": {
+      "1": "I landed on a smooth plain, perfect for listening. My arm placed the seismometer on the ground and covered it with a dome to shield it from the wind.",
+      "sceneAlt": "The lander's arm sets the dome down on the flat ground."
+    },
+    "work": {
+      "1": "I heard 1,319 marsquakes. Some were caused by meteorites hitting the ground. The strongest, magnitude 4.7, made the planet ring for hours. Thanks to them we learned what Mars is like inside.",
+      "sceneAlt": "Rings of seismic waves ripple across the ground around the dome.",
+      "cards": {
+        "1": "A liquid core",
+        "2": "Ice under a new crater",
+        "3": "The mole that couldn't dig"
+      }
+    },
+    "lastSignal": {
+      "1": "Dust slowly covered my panels, like red snow. My last selfie already looked like sand. In the end, my power ran out.",
+      "2": "Last signal: {{date}} · End of mission: {{end}}.",
+      "sceneAlt": "Red dust covers the panels until the lander can barely be seen."
+    },
+    "legacy": {
+      "1": "Scientists are still studying what I heard. In 2023 they found something new in my data: a layer of molten rock around the core.",
+      "2": "Science doesn't end when the machine switches off.",
+      "sceneAlt": "The camera pulls back toward Mars and points to Jezero crater."
+    },
+    "pro": "Seismic waves that crossed the core in 2021 made it possible to revise its radius from 1,800–1,850 km to about 1,650–1,700 km, with a layer of molten silicate about 150 km thick above it. The HP3 mole could not advance because the soil was cohesive and did not give it the friction it needed.",
+    "aula": {
+      "1": "How can you know what's inside a planet without opening it?",
+      "2": "Why is it good that science changes its mind with new data?",
+      "3": "Which mission failure do you find most instructive?"
+    }
+  },
+  "ingenuity": {
+    "wake": {
+      "1": "Jezero crater. The star of this story weighs less than a big bottle of water… and it flew.",
+      "2": "Up again? Yes, please!",
+      "sceneAlt": "Mars from orbit, with a ghost marker in Jezero crater."
+    },
+    "identity": {
+      "1": "I'm Ingenuity, the first helicopter on another planet. My blades spin much, much faster than an Earth helicopter's, because Martian air is super thin.",
+      "sceneAlt": "A tiny helicopter with four thin legs and two stacked rotors glowing in cyan."
+    },
+    "journey": {
+      "1": "I rode along on the belly of the Perseverance rover. I carried a treasure: a tiny piece of fabric from the Wright brothers' first airplane.",
+      "sceneAlt": "An arc of light links Earth with Jezero crater."
+    },
+    "arrival": {
+      "1": "Perseverance set me down gently and drove away to watch. On 19 April 2021 I rose three meters for 39 seconds. It doesn't sound like much. It was history.",
+      "sceneAlt": "The helicopter lifts off and hovers low; behind it, the holographic outline of a rover."
+    },
+    "work": {
+      "1": "They asked me for five flights. I made seventy-two. I scouted the way for my rover and flew over dunes and rocks.",
+      "sceneAlt": "The helicopter flies over dunes and rocks, its rotors blurred into discs.",
+      "cards": {
+        "1": "72 flights",
+        "2": "17 km and 128.8 minutes",
+        "3": "A piece of the Wright Flyer"
+      }
+    },
+    "lastSignal": {
+      "1": "On my flight 72 I passed over smooth dunes, with no stones or marks. My camera couldn't find anything to follow. I landed too fast and my blades broke. I can't fly anymore.",
+      "sceneAlt": "The helicopter rests on a dune; a piece of blade lies a few meters away."
+    },
+    "legacy": {
+      "1": "But I'm still awake. Every day I check my systems, take a picture and write down the temperature. I'm saving it all for whoever comes to find me at Valinor Hills.",
+      "2": "The next helicopters on other worlds will learn from its last flight.",
+      "sceneAlt": "The camera pulls away from Mars toward the asteroid belt."
+    },
+    "pro": "With 1.8 kg and 1.2 m coaxial rotors spinning at about 2,400 rpm, Ingenuity flew 128.8 minutes in total; the 2024 investigation was the first aircraft accident investigation on another planet. Its memory could hold about 20 years of daily data.",
+    "aula": {
+      "1": "Why is it harder to fly in thin air?",
+      "2": "How do you navigate without GPS?",
+      "3": "What would you say to whoever finds it?"
+    }
+  },
+  "near": {
+    "wake": {
+      "1": "This peanut-shaped rock is the asteroid Eros. On top of it sits a spacecraft that was never meant to land… and landed.",
+      "2": "You came all this way to see me? How sweet.",
+      "sceneAlt": "Asteroid Eros, long and cratered, spins slowly; a marker pulses on its surface."
+    },
+    "identity": {
+      "1": "I'm NEAR Shoemaker. I was the first spacecraft to circle an asteroid. My last name honors a geologist who dreamed about space rocks.",
+      "sceneAlt": "An octagonal spacecraft with four fanned solar panels and a dish antenna glowing in cyan."
+    },
+    "journey": {
+      "1": "On the way I waved at another asteroid, Mathilde. Then I missed my date: an engine burn failed and I flew right past Eros. I had to make one more loop around the Sun and come back a year later.",
+      "sceneAlt": "The spacecraft traces an arc that sweeps past Eros and returns on a second loop."
+    },
+    "arrival": {
+      "1": "I arrived on Valentine's Day in the year 2000. For a year I took pictures of Eros from every angle.",
+      "sceneAlt": "The spacecraft orbits the asteroid, showing craters and a large saddle-shaped hollow."
+    },
+    "work": {
+      "1": "At the end of my mission, my engineers had a wild idea: what if it goes down? Nobody had designed me for that. I came down slowly, taking pictures, and touched the ground at the speed of a person walking fast.",
+      "sceneAlt": "The spacecraft descends very slowly to the asteroid's surface and kicks up a little dust as it touches.",
+      "cards": {
+        "1": "First to orbit an asteroid",
+        "2": "First to land on one",
+        "3": "160,000 images"
+      }
+    },
+    "lastSignal": {
+      "1": "I kept talking from the ground for about two weeks. Then the cold, the terrible cold, put me to sleep.",
+      "2": "Last signal: {{date}}.",
+      "sceneAlt": "Shadow creeps over the landed spacecraft and its light goes out."
+    },
+    "legacy": {
+      "1": "Now other spacecraft visit asteroids, take samples and even push one aside to learn how to protect Earth.",
+      "2": "And a fun fact: geologist Eugene Shoemaker made it to the Moon too. A probe carried a small portion of his ashes. See the Lunar Prospector extra entry.",
+      "sceneAlt": "The camera pulls back toward the asteroid belt, where Vesta and Ceres shine."
+    },
+    "pro": "The landing on 12 February 2001 was at about 6.4 km/h, just south of the Himeros saddle; during the descent it took 69 high-resolution images and, once on the surface, it sent data for about two weeks, until the −173 °C cold shut it down.",
+    "aula": {
+      "1": "Why do we want to study asteroids?",
+      "2": "What are the risks of landing a spacecraft that wasn't built for it?",
+      "3": "What would you do if you missed an important date?"
+    }
+  },
+  "dawn": {
+    "wake": {
+      "1": "In the asteroid belt, a spacecraft with huge wings circles a dwarf planet. Send it a signal; you'll see how long it takes.",
+      "2": "Slowly… slowly… hello. I always go slowly, but I go far.",
+      "sceneAlt": "Flattened Vesta and dark Ceres, with two bright spots, float in the faint light of the distant Sun."
+    },
+    "identity": {
+      "1": "I'm Dawn. I was the first spacecraft to orbit two different worlds beyond Earth: Vesta and Ceres. My secret is an ion engine that pushes very gently, but never stops.",
+      "sceneAlt": "A spacecraft with two very long solar wings; at its base, an engine glows blue, highlighted in cyan."
+    },
+    "journey": {
+      "1": "I swung past Mars so its gravity would give me a push. Then I fired my blue engine for years. A push as gentle as the weight of a sheet of paper, every single day.",
+      "2": "The sheet-of-paper comparison is a storytelling image, not a measured fact.",
+      "sceneAlt": "The spacecraft leaves a blue trail of particles as it travels from Vesta toward Ceres."
+    },
+    "arrival": {
+      "1": "First Vesta, in 2011: a world with a mountain twice as tall as Everest. Then I moved on to Ceres and arrived in 2015.",
+      "sceneAlt": "The spacecraft reaches Vesta, with its great basin and central peak, then heads off toward Ceres."
+    },
+    "work": {
+      "1": "On Ceres I saw some super-bright spots. Ice? No: salt. Salt that came up from inside, mixed with water. And a lonely mountain that may have been a volcano of icy water.",
+      "sceneAlt": "Ceres turns below the spacecraft; two white spots shine inside a crater.",
+      "cards": {
+        "1": "Two worlds",
+        "2": "The spots of Occator",
+        "3": "Ahuna Mons"
+      }
+    },
+    "lastSignal": {
+      "1": "To point myself I used a little of another fuel, hydrazine. In 2018 the last drop ran out. I could no longer aim my antenna at Earth.",
+      "2": "End of mission: {{end}}.",
+      "sceneAlt": "The blue glow of the engine fades and the spacecraft keeps circling Ceres in silence."
+    },
+    "legacy": {
+      "1": "I didn't crash and I didn't get lost. I'm still circling Ceres, and I will for decades. I'm a spinning monument.",
+      "sceneAlt": "The camera pulls away from the asteroid belt toward the Sun and Earth's orbit."
+    },
+    "pro": "Dawn used solar electric propulsion with 425 kg of xenon; it traveled about 6.9 billion km in 11 years and in its last orbits came down to about 35 km above Ceres. The spots in Occator are mostly sodium carbonate.",
+    "aula": {
+      "1": "Which is better: a strong, short push or a gentle, long one?",
+      "2": "Why leave the spacecraft in orbit instead of crashing it?",
+      "3": "What does the salt tell us about the inside of Ceres?"
+    }
+  },
+  "kepler": {
+    "voices": {
+      "memory": "Kepler · memory"
+    },
+    "wake": {
+      "1": "This one never stayed on any world: it follows Earth around the Sun. But it can't answer anymore: we said goodnight to it.",
+      "2": "I watch. I count. I watch again.",
+      "sceneAlt": "The Sun in the center, Earth's orbit and, behind Earth, a dot: the Kepler telescope."
+    },
+    "identity": {
+      "1": "I'm Kepler, a telescope. For years I watched the same window of sky, in the constellation Cygnus, with about 150,000 stars inside.",
+      "sceneAlt": "A cylindrical telescope with a tilted sunshade over its opening, highlighted in cyan, and a curved solar panel."
+    },
+    "journey": {
+      "1": "I don't orbit Earth: I travel around the Sun, trailing behind Earth, so nothing blocks my view.",
+      "sceneAlt": "The telescope follows Earth along its orbit, falling a little farther behind each time."
+    },
+    "arrival": {
+      "1": "My trick is simple. When a planet passes in front of its star, the star dims a tiny bit. I measured those winks.",
+      "sceneAlt": "A cone of vision reaches out from the telescope toward a distant field of stars."
+    },
+    "work": {
+      "1": "I found more than 2,600 planets. I found out there are more planets than stars. Want to catch one?",
+      "sceneAlt": "Thousands of stars fill the field of view; some dim for a moment.",
+      "cards": {
+        "1": "More planets than stars",
+        "2": "Kepler-11 and its six planets",
+        "3": "K2: balancing on light"
+      }
+    },
+    "lastSignal": {
+      "1": "In 2013 a wheel that helped me point broke. My engineers taught me to balance myself on the pressure of sunlight. I kept hunting for five more years, until my fuel ran out.",
+      "2": "Retirement: {{date}}.",
+      "sceneAlt": "Holographic arrows of sunlight gently push the telescope; then its light goes out."
+    },
+    "legacy": {
+      "1": "They said goodnight to me on the same day that, centuries ago, the astronomer whose name I carry died. Other telescopes keep looking for worlds for me.",
+      "sceneAlt": "The camera pulls back until the whole Solar System is in view."
+    },
+    "pro": "20% to 50% of the stars we can see probably have small, possibly rocky planets in their habitable zones; the most common planet size is between Earth and Neptune, a kind our Solar System lacks. K2 completed 19 campaigns when 10 were hoped for.",
+    "aula": {
+      "1": "How can a planet's shadow give it away?",
+      "2": "What does \"habitable zone\" mean?",
+      "3": "Why do you think the engineers didn't give up after the wheel broke?"
+    }
+  },
+  "pioneer": {
+    "voices": {
+      "p10": "Pioneer 10",
+      "p11": "Pioneer 11",
+      "p10m": "Pioneer 10 · memory"
+    },
+    "wake": {
+      "1": "Last stop, the farthest one. Your signal will take almost a day to arrive… and they can no longer answer. Send it anyway: it's a hello.",
+      "2": "If anyone finds me… I'm carrying a letter.",
+      "sceneAlt": "The whole Solar System seen from very far away, with two lines leaving the Sun in different directions."
+    },
+    "identity": {
+      "1": "We're Pioneer 10 and Pioneer 11. I was the first to cross the asteroid belt and to fly past Jupiter. My sister was the first to visit Saturn.",
+      "sceneAlt": "A probe with a big dish antenna and two arms holding generators; the antenna and the plaque glow in cyan."
+    },
+    "journey": {
+      "1": "After the giant planets we didn't stop. We kept heading outward, each one in a different direction.",
+      "sceneAlt": "Two paths split apart after passing Jupiter and Saturn."
+    },
+    "arrival": {
+      "1": "At Jupiter I took about 500 images, including the Great Red Spot. The radiation was so strong that some of my instruments got false commands, but I held on.",
+      "sceneAlt": "The probe flies past a large banded planet with a red spot."
+    },
+    "work": {
+      "1": "We carry a golden plaque with a drawing of two people, our Solar System and a map of pulsars that says where we came from. It's like a letter in a bottle thrown into the sea of stars.",
+      "sceneAlt": "The probe spins slowly on its axis; its golden plaque catches the distant sunlight.",
+      "cards": {
+        "1": "The plaque",
+        "2": "Jupiter up close",
+        "3": "Saturn up close"
+      }
+    },
+    "lastSignal": {
+      "1": "I went quiet first, in 1995.",
+      "2": "I sent my last whisper in 2003, from so far away that it took more than eleven hours to arrive. My power was no longer enough to talk.",
+      "sceneAlt": "The probe becomes a tiny dot moving away from the Sun."
+    },
+    "legacy": {
+      "1": "I'm heading toward Aldebaran, the red eye of the Bull. I'll pass near it in about two million years.",
+      "2": "I'm heading toward the Eagle. We opened the way for other probes, the Voyagers, which are still talking.",
+      "3": "This week, Voyager 1 reached one light-day from Earth. The relay goes on.",
+      "3b": "In November 2026, Voyager 1 reached one light-day from Earth. The relay goes on.",
+      "sceneAlt": "The camera pulls back until the Sun is just one more star."
+    },
+    "pro": "The last contact with Pioneer 10 came from 12.23 billion km away; today, according to public ephemerides, it is about 141 AU from the Sun and receding at 11.87 km/s; Pioneer 11 is about 118 AU away, at 11.13 km/s. The plaque shows the Sun's position relative to 14 pulsars.",
+    "aula": {
+      "1": "What would you draw on a plaque for someone who speaks no human language?",
+      "2": "How does it feel to send a message that will take a day to arrive?",
+      "3": "Why is two million years a \"short\" trip in space?"
+    }
+  }
+}

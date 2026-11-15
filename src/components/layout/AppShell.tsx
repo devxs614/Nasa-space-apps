@@ -2,11 +2,19 @@ import { Outlet } from 'react-router';
 import { SkipLink } from './SkipLink';
 import { TopBar } from './TopBar';
 import { Footer } from './Footer';
+import { ChapterIndex } from './ChapterIndex';
+import { LiveRegion } from './LiveRegion';
+import { SettingsPanel } from '../settings/SettingsPanel';
+import { Toaster } from '../ui/Toast';
 import { useHtmlAttributes } from '../../hooks/useHtmlAttributes';
+import { useHotkeys } from '../../hooks/useHotkeys';
+import { useQueryModes } from '../../hooks/useQueryModes';
 
 /** Envuelve todas las rutas (Parte 16.2). */
 export function AppShell() {
   useHtmlAttributes();
+  useHotkeys();
+  useQueryModes();
   return (
     <>
       <SkipLink />
@@ -16,6 +24,10 @@ export function AppShell() {
         <Outlet />
       </main>
       <Footer />
+      <SettingsPanel />
+      <ChapterIndex />
+      <Toaster />
+      <LiveRegion />
     </>
   );
 }

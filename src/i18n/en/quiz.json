@@ -1,1 +1,392 @@
-{}
+{
+  "surveyor": {
+    "q1": {
+      "prompt": "Before Apollo, what did some scientists fear about the lunar ground?",
+      "a": "That it was dust so deep a spacecraft would sink",
+      "b": "That it was slippery ice",
+      "c": "That it was covered in water",
+      "d": "That it was magnetic metal",
+      "explain": "The legs barely sank in: the soil was like wet sand and could hold a lunar module."
+    },
+    "q2": {
+      "prompt": "How many trenches did Surveyor 3's scoop dig?",
+      "a": "4",
+      "b": "1",
+      "c": "12",
+      "d": "40",
+      "explain": "It also made 4 bearing tests and 13 impact tests."
+    },
+    "q3": {
+      "prompt": "What did the Apollo 12 astronauts who visited it take back to Earth?",
+      "a": "Parts such as the camera and the scoop",
+      "b": "The whole lander",
+      "c": "Nothing: they only photographed it",
+      "d": "Its solar panel",
+      "explain": "Pete Conrad and Alan Bean recovered them to study almost 2.5 years of exposure on the Moon."
+    }
+  },
+  "apollo-lm": {
+    "q1": {
+      "prompt": "How many descent stages from crewed Apollo missions are still on the Moon?",
+      "a": "6",
+      "b": "1",
+      "c": "3",
+      "d": "12",
+      "explain": "Apollo 11, 12, 14, 15, 16 and 17."
+    },
+    "q2": {
+      "prompt": "Why did the descent stage stay on the Moon?",
+      "a": "It was the launch pad for the ascent stage",
+      "b": "The lunar wind was too strong",
+      "c": "It was left as a home for future crews",
+      "d": "It always broke on landing",
+      "explain": "The top half lifted off from it and the base stayed behind."
+    },
+    "q3": {
+      "prompt": "How many goodwill messages are on the Apollo 11 disc?",
+      "a": "73",
+      "b": "7",
+      "c": "195",
+      "d": "1",
+      "explain": "Messages from leaders of countries around the world, including Mexico and Ecuador."
+    }
+  },
+  "alsep": {
+    "q1": {
+      "prompt": "After the Apollo 12 ascent stage impact, how long did the seismometer record vibrations?",
+      "a": "About 55 minutes",
+      "b": "2 seconds",
+      "c": "A week",
+      "d": "It recorded nothing",
+      "explain": "The Moon \"rang\" for a long time, a clue about what its interior is like."
+    },
+    "q2": {
+      "prompt": "When were all the ALSEP stations switched off?",
+      "a": "On 30 September 1977",
+      "b": "In 1972, when the last astronaut left",
+      "c": "In 2003",
+      "d": "They are still on",
+      "explain": "NASA chose other uses for its budget; the retroreflectors, which need no power, are still in use."
+    },
+    "q3": {
+      "prompt": "How long does a laser pulse sent to the retroreflectors take to go and come back?",
+      "a": "About 2.6 seconds",
+      "b": "About 8 minutes",
+      "c": "A day",
+      "d": "It is instant",
+      "explain": "Light travels about 385,000 km there and the same distance back."
+    }
+  },
+  "lrv": {
+    "q1": {
+      "prompt": "How many LRVs were left on the Moon?",
+      "a": "3",
+      "b": "1",
+      "c": "6",
+      "d": "None; they came back to Earth",
+      "explain": "One for each of Apollo 15, 16 and 17."
+    },
+    "q2": {
+      "prompt": "Why didn't the astronauts drive beyond a certain distance from the lunar module?",
+      "a": "They had to be able to walk back if the rover failed",
+      "b": "The radio only reached 100 m",
+      "c": "The LRV couldn't turn",
+      "d": "A lunar traffic rule forbade it",
+      "explain": "The limit was set so they could walk back; the vehicle never failed."
+    },
+    "q3": {
+      "prompt": "Why did the dust thrown by the wheels fall in clean arcs?",
+      "a": "There is no air on the Moon to slow it down",
+      "b": "Lunar dust is magnetic",
+      "c": "The wheels had fans",
+      "d": "Because of the Moon's rotation",
+      "explain": "Without air, every grain follows a perfect parabola."
+    }
+  },
+  "viking": {
+    "q1": {
+      "prompt": "In what year did both Vikings land?",
+      "a": "1976",
+      "b": "1969",
+      "c": "1997",
+      "d": "2004",
+      "explain": "They were NASA's first landers on Mars."
+    },
+    "q2": {
+      "prompt": "What did the instrument looking for organic molecules in the soil find?",
+      "a": "It did not detect any",
+      "b": "Living bacteria",
+      "c": "Fossils",
+      "d": "Microscopic plants",
+      "explain": "That is why the question about life is still open."
+    },
+    "q3": {
+      "prompt": "Why did Viking 2 stop transmitting in 1980?",
+      "a": "Its batteries failed",
+      "b": "A meteorite hit it",
+      "c": "A dune buried it",
+      "d": "It ran out of fuel",
+      "explain": "Its last data arrived on 11 April 1980."
+    }
+  },
+  "sojourner": {
+    "q1": {
+      "prompt": "What was Sojourner?",
+      "a": "The first rover to roll across Mars",
+      "b": "The first Mars helicopter",
+      "c": "A communications satellite",
+      "d": "A crewed module",
+      "explain": "It arrived with Mars Pathfinder on 4 July 1997 in Ares Vallis."
+    },
+    "q2": {
+      "prompt": "Who chose its name?",
+      "a": "A 12-year-old girl, in a contest",
+      "b": "The Apollo astronauts",
+      "c": "A computer program",
+      "d": "Nobody: it's a technical code",
+      "explain": "It means \"traveler\" and honors Sojourner Truth."
+    },
+    "q3": {
+      "prompt": "Why couldn't Sojourner be driven live with a joystick?",
+      "a": "The signal took minutes to reach Mars",
+      "b": "It had no antenna",
+      "c": "It only moved at night",
+      "d": "It ran on a cable",
+      "explain": "That day light took about 10.6 minutes to arrive (an estimate calculated by this website)."
+    }
+  },
+  "spirit": {
+    "q1": {
+      "prompt": "What did Spirit's jammed wheel uncover as it dragged?",
+      "a": "Soil with more than 90% silica",
+      "b": "An iron meteorite",
+      "c": "Carbon dioxide ice",
+      "d": "A fossil",
+      "explain": "It is a clue to hot water in Mars's past."
+    },
+    "q2": {
+      "prompt": "What sometimes cleaned its solar panels?",
+      "a": "Dust devils",
+      "b": "Martian rain",
+      "c": "An arm with a brush",
+      "d": "Astronauts",
+      "explain": "After a cleaning, its power could jump a lot all at once."
+    },
+    "q3": {
+      "prompt": "Where did Spirit get stuck in 2009?",
+      "a": "In soft soil at \"Troy\", next to Home Plate",
+      "b": "At the bottom of Valles Marineris",
+      "c": "At the north pole",
+      "d": "Inside a cave",
+      "explain": "It bogged down on 1 May 2009 and is still there."
+    }
+  },
+  "opportunity": {
+    "q1": {
+      "prompt": "How long was its mission supposed to last?",
+      "a": "90 sols",
+      "b": "5 years",
+      "c": "1 sol",
+      "d": "15 years",
+      "explain": "It lasted more than 5,000 sols."
+    },
+    "q2": {
+      "prompt": "How many kilometers did it drive in total?",
+      "a": "45.16 km",
+      "b": "1 km",
+      "c": "4.5 km",
+      "d": "450 km",
+      "explain": "It completed a marathon on sol 3,968."
+    },
+    "q3": {
+      "prompt": "Which rover beat its distance record?",
+      "a": "Perseverance, on 11 October 2026",
+      "b": "Curiosity, in 2015",
+      "c": "Sojourner, in 1997",
+      "d": "Nobody has beaten it",
+      "explain": "Perseverance reached 45.22 km, largely thanks to its self-driving."
+    }
+  },
+  "phoenix": {
+    "q1": {
+      "prompt": "Where did Phoenix land?",
+      "a": "On the Arctic plains of Mars, Vastitas Borealis",
+      "b": "At the equator, next to a volcano",
+      "c": "In Valles Marineris",
+      "d": "On the moon Phobos",
+      "explain": "At about 68° north latitude, on 25 May 2008."
+    },
+    "q2": {
+      "prompt": "What were the white clumps that vanished from its trench?",
+      "a": "Water ice that sublimated",
+      "b": "Salt blown away by the wind",
+      "c": "Carbon dioxide snow that melted",
+      "d": "Camera reflections",
+      "explain": "It went from solid to gas without becoming liquid."
+    },
+    "q3": {
+      "prompt": "Which salt surprised the scientists?",
+      "a": "Perchlorate",
+      "b": "Silver nitrate",
+      "c": "Copper sulfate",
+      "d": "Potassium iodide",
+      "explain": "It lowers the freezing point of water and some microbes on Earth use it as food."
+    }
+  },
+  "insight": {
+    "q1": {
+      "prompt": "How many marsquakes did InSight hear?",
+      "a": "1,319",
+      "b": "3",
+      "c": "50",
+      "d": "None",
+      "explain": "Some were caused by meteorites hitting the ground."
+    },
+    "q2": {
+      "prompt": "What was the magnitude of the strongest quake?",
+      "a": "4.7",
+      "b": "9.5",
+      "c": "1.0",
+      "d": "7.8",
+      "explain": "It made the planet ring for hours."
+    },
+    "q3": {
+      "prompt": "Why did its mission end in 2022?",
+      "a": "Dust covered its solar panels",
+      "b": "A quake tipped it over",
+      "c": "It ran out of fuel",
+      "d": "Its antenna froze",
+      "explain": "NASA declared it over on 21 December 2022 after two failed contact attempts."
+    }
+  },
+  "ingenuity": {
+    "q1": {
+      "prompt": "What did Ingenuity achieve for the first time?",
+      "a": "A powered, controlled flight on another planet",
+      "b": "Landing on an asteroid",
+      "c": "Bringing samples to Earth",
+      "d": "Crossing the asteroid belt",
+      "explain": "It flew in Martian air, far thinner than Earth's."
+    },
+    "q2": {
+      "prompt": "It was designed for at most 5 flights. How many did it make?",
+      "a": "72",
+      "b": "5",
+      "c": "12",
+      "d": "500",
+      "explain": "In almost three years, with about 17 km and 128.8 minutes of flight in total."
+    },
+    "q3": {
+      "prompt": "What went wrong on its last flight?",
+      "a": "Its navigation couldn't find enough references over smooth sand",
+      "b": "It crashed into Perseverance",
+      "c": "A storm dragged it away",
+      "d": "Its battery froze",
+      "explain": "With no texture to follow, the landing was rough and damaged its blades."
+    }
+  },
+  "near": {
+    "q1": {
+      "prompt": "What did NEAR Shoemaker do for the first time in history?",
+      "a": "Land on an asteroid",
+      "b": "Orbit Mars",
+      "c": "Leave the Solar System",
+      "d": "Photograph Pluto",
+      "explain": "It landed on 433 Eros on 12 February 2001."
+    },
+    "q2": {
+      "prompt": "Was it designed to land?",
+      "a": "No; it set down at the end of its mission",
+      "b": "Yes, with legs",
+      "c": "Yes, with a parachute",
+      "d": "Yes, with airbags",
+      "explain": "It was an orbiter, and it still kept sending data from the surface."
+    },
+    "q3": {
+      "prompt": "How fast was it going when it touched the surface?",
+      "a": "About 6.4 km/h, like a brisk walk",
+      "b": "1,000 km/h",
+      "c": "100 km/h",
+      "d": "0 km/h: it floated",
+      "explain": "Eros's gravity is much, much weaker than Earth's."
+    }
+  },
+  "dawn": {
+    "q1": {
+      "prompt": "Which two worlds did Dawn orbit?",
+      "a": "Vesta and Ceres",
+      "b": "The Moon and Mars",
+      "c": "Eros and Ceres",
+      "d": "Jupiter and Saturn",
+      "explain": "It was the first spacecraft to orbit two different bodies beyond Earth."
+    },
+    "q2": {
+      "prompt": "What kind of engine did it use?",
+      "a": "Ion propulsion with xenon",
+      "b": "Solar sails",
+      "c": "A nuclear engine",
+      "d": "Propellers",
+      "explain": "A very gentle but constant push, powered by solar panels; it carried 425 kg of xenon."
+    },
+    "q3": {
+      "prompt": "What are the bright spots in Occator crater?",
+      "a": "Salts, mostly sodium carbonate",
+      "b": "Pure water ice",
+      "c": "Lava from an active volcano",
+      "d": "Polished metal",
+      "explain": "They came up as brine; it is the largest carbonate deposit seen outside Earth."
+    }
+  },
+  "kepler": {
+    "q1": {
+      "prompt": "How did Kepler find planets?",
+      "a": "By measuring the small dip in brightness when a planet passes in front of its star",
+      "b": "By photographing them up close",
+      "c": "By listening to their radio signals",
+      "d": "By visiting them",
+      "explain": "It's the transit method from the mini-experience."
+    },
+    "q2": {
+      "prompt": "How many planets outside the Solar System did it discover?",
+      "a": "More than 2,600",
+      "b": "9",
+      "c": "About 50",
+      "d": "More than a million",
+      "explain": "Its data show there are more planets than stars."
+    },
+    "q3": {
+      "prompt": "Why was it retired in 2018?",
+      "a": "It ran out of fuel",
+      "b": "It hit an asteroid",
+      "c": "It was brought back to Earth",
+      "d": "Its mirror broke",
+      "explain": "It was retired on 30 October and received its final commands on 15 November 2018, the anniversary of Johannes Kepler's death."
+    }
+  },
+  "pioneer": {
+    "q1": {
+      "prompt": "When did Pioneer 10's last signal arrive?",
+      "a": "On 23 January 2003",
+      "b": "On 20 July 1969",
+      "c": "On 1 January 2020",
+      "d": "It is still transmitting",
+      "explain": "Its power was no longer enough for the transmitter; a final attempt in 2006 failed."
+    },
+    "q2": {
+      "prompt": "How long did that last signal take to reach Earth?",
+      "a": "About 11 hours and 20 minutes",
+      "b": "1.3 seconds",
+      "c": "8 minutes",
+      "d": "3 years",
+      "explain": "It left from about 12.23 billion km away."
+    },
+    "q3": {
+      "prompt": "What do the Pioneers carry for whoever finds them?",
+      "a": "An engraved plaque with a message in drawings",
+      "b": "A record with music",
+      "c": "Plant seeds",
+      "d": "A capsule with letters",
+      "explain": "It shows who sent it and from where (the record with music belongs to the Voyagers)."
+    }
+  }
+}

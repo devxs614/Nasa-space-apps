@@ -1,1 +1,154 @@
-{}
+{
+  "sol": {
+    "term": "sol",
+    "def": "A day on Mars: about 24 hours and 40 minutes."
+  },
+  "regolith": {
+    "term": "regolith",
+    "def": "The layer of dust and rock fragments that covers the Moon and other airless worlds."
+  },
+  "lander": {
+    "term": "lander",
+    "def": "A spacecraft that sets down on a surface and works without moving from its spot."
+  },
+  "rover": {
+    "term": "rover",
+    "def": "A wheeled vehicle that drives across the surface of another world."
+  },
+  "orbiter": {
+    "term": "orbiter",
+    "def": "A spacecraft that circles a world without landing on it."
+  },
+  "probe": {
+    "term": "probe",
+    "def": "A spacecraft that travels far away to explore; the Pioneers are probes."
+  },
+  "descent-stage": {
+    "term": "descent stage",
+    "def": "The base of the Apollo lunar module: it landed on the Moon and stayed there."
+  },
+  "ascent-stage": {
+    "term": "ascent stage",
+    "def": "The top part of the lunar module, which lifted off with the astronauts to return to the spacecraft in orbit."
+  },
+  "seismometer": {
+    "term": "seismometer",
+    "def": "An instrument that measures vibrations of the ground."
+  },
+  "magnitude": {
+    "term": "magnitude",
+    "def": "A number that tells how much energy a quake released."
+  },
+  "retroreflector": {
+    "term": "retroreflector",
+    "def": "A set of prisms that sends light straight back where it came from; it is used to measure the distance to the Moon with lasers."
+  },
+  "light-time": {
+    "term": "light time",
+    "def": "How long light, or a radio signal, takes to travel from one place to another."
+  },
+  "au": {
+    "term": "astronomical unit (AU)",
+    "def": "The average distance between Earth and the Sun: 149,597,870.7 km."
+  },
+  "orbital-elements": {
+    "term": "orbital elements",
+    "def": "Six numbers that describe the shape, size and orientation of an orbit."
+  },
+  "eccentricity": {
+    "term": "eccentricity",
+    "def": "How far an orbit is from being a perfect circle."
+  },
+  "kepler-equation": {
+    "term": "Kepler's equation",
+    "def": "A formula that links time with the position of a body along its orbit."
+  },
+  "barycenter": {
+    "term": "barycenter",
+    "def": "The balance point that two bodies, like Earth and the Moon, orbit around."
+  },
+  "sublimation": {
+    "term": "sublimation",
+    "def": "Going straight from solid to gas, without becoming liquid."
+  },
+  "perchlorate": {
+    "term": "perchlorate",
+    "def": "A salt that contains chlorine and oxygen; Phoenix found it in the soil of Mars."
+  },
+  "silica": {
+    "term": "silica",
+    "def": "A mineral made of silicon and oxygen; when abundant, it is a clue to hot water in the past."
+  },
+  "brine": {
+    "term": "brine",
+    "def": "Water with a lot of dissolved salt."
+  },
+  "sodium-carbonate": {
+    "term": "sodium carbonate",
+    "def": "A white salt that forms the bright spots of Occator crater, on Ceres."
+  },
+  "dust-devil": {
+    "term": "dust devil",
+    "def": "A whirlwind that lifts dust; on Mars it sometimes cleaned solar panels."
+  },
+  "dust-storm": {
+    "term": "global dust storm",
+    "def": "A storm that can cover almost all of Mars and darken the Sun for weeks."
+  },
+  "solar-panel": {
+    "term": "solar panel",
+    "def": "A surface that turns sunlight into electricity."
+  },
+  "rtg": {
+    "term": "radioisotope thermoelectric generator (RTG)",
+    "def": "A source of electricity that uses the heat of a radioactive material; it does not depend on the Sun."
+  },
+  "ion-propulsion": {
+    "term": "ion propulsion",
+    "def": "An engine that shoots out charged atoms at high speed: a very gentle push, but for a very long time."
+  },
+  "xenon": {
+    "term": "xenon",
+    "def": "A noble gas that Dawn used as fuel for its ion engine."
+  },
+  "hydrazine": {
+    "term": "hydrazine",
+    "def": "Fuel for the small thrusters that point a spacecraft."
+  },
+  "transit": {
+    "term": "transit",
+    "def": "When a planet passes in front of its star and dims it slightly."
+  },
+  "light-curve": {
+    "term": "light curve",
+    "def": "A graph of a star's brightness over time."
+  },
+  "exoplanet": {
+    "term": "exoplanet",
+    "def": "A planet that orbits a star other than the Sun."
+  },
+  "asteroid-belt": {
+    "term": "asteroid belt",
+    "def": "The zone between Mars and Jupiter with millions of rocky bodies."
+  },
+  "gravity-assist": {
+    "term": "gravity assist",
+    "def": "A maneuver that uses a planet's gravity to change a spacecraft's speed or direction."
+  },
+  "heliosphere": {
+    "term": "heliosphere",
+    "def": "The bubble the Sun's wind blows around it."
+  },
+  "deep-space-network": {
+    "term": "Deep Space Network",
+    "def": "NASA's network of large antennas around the world for talking to distant spacecraft."
+  },
+  "carrier-signal": {
+    "term": "carrier signal",
+    "def": "The basic radio wave that carries data; sometimes it is all that arrives from a distant spacecraft."
+  },
+  "plaque": {
+    "term": "plaque",
+    "def": "An engraved plate with a message, like those on the Pioneers or on Apollo 11."
+  }
+}
