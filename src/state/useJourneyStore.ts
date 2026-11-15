@@ -86,7 +86,12 @@ export type DemoDrive = Pick<
   'chapterId' | 'beat' | 'beatProgress' | 'section' | 'sectionProgress'
 > & { fx: Partial<Record<FxKey, number>> };
 
-const IDLE_SIGNAL: JourneyState['signal'] = { status: 'idle', target: null, etaMs: 0, startedAt: 0 };
+const IDLE_SIGNAL: JourneyState['signal'] = {
+  status: 'idle',
+  target: null,
+  etaMs: 0,
+  startedAt: 0,
+};
 const sameFx = (a: Partial<Record<FxKey, number>>, b: Partial<Record<FxKey, number>>) => {
   const ka = Object.keys(a) as FxKey[];
   return ka.length === Object.keys(b).length && ka.every((k) => a[k] === b[k]);
@@ -125,9 +130,7 @@ export const useJourneyStore = create<JourneyState>()((set, get) => ({
       beat,
       beatProgress: p,
       section: null,
-      ...(changedChapter
-        ? { signal: { ...IDLE_SIGNAL }, fx: {} }
-        : {}),
+      ...(changedChapter ? { signal: { ...IDLE_SIGNAL }, fx: {} } : {}),
     });
   },
   setSection: (section, progress) => {
@@ -159,7 +162,8 @@ export const useJourneyStore = create<JourneyState>()((set, get) => ({
         : [...s.atlasHidden, kind],
     })),
   setAtlasDayNight: (on) => set({ atlasDayNight: on }),
-  sendAtlasCommand: (type) => set((s) => ({ atlasCommand: { type, n: (s.atlasCommand?.n ?? 0) + 1 } })),
+  sendAtlasCommand: (type) =>
+    set((s) => ({ atlasCommand: { type, n: (s.atlasCommand?.n ?? 0) + 1 } })),
   resetAtlas: () =>
     set({ atlasSiteId: null, atlasHidden: [], atlasDayNight: false, atlasCommand: null }),
   setExpress: (on) => set({ express: on }),

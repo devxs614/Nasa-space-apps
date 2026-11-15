@@ -83,3 +83,8 @@
 - Decisión: la página describe al equipo de forma general y enlaza a los contribuidores del repositorio. `README.md` y `CREDITS.md`
   conservan el hueco `[Team name]` para que el equipo lo complete antes de entregar.
 
+
+## 2026-11-15 — Línea de tiempo con desplazamiento horizontal nativo
+- La Parte 8.11 sugiere una sección fijada con scroll horizontal. Se usa una región con desplazamiento horizontal nativo (rueda con
+  Mayús, arrastre táctil y flechas izquierda/derecha con el foco), sin fijar la página.
+- Por qué: no secuestra el scroll vertical, funciona con lectores de pantalla y en móvil o con movimiento reducido pasa a lista vertical.

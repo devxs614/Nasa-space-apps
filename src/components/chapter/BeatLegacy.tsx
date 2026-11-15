@@ -9,6 +9,7 @@ import { nextMachine } from '../../data/machines';
 import { PatchButton } from './PatchButton';
 import { scrollToEl } from '../../hooks/useLenis';
 import { NasaImage } from '../media/NasaImage';
+import { Quiz } from '../quiz/Quiz';
 
 /** "Legado": dónde está hoy, cadena de herencia, parche, Modo Pro y preguntas de aula. */
 export function BeatLegacy({ machine, standalone }: { machine: Machine; standalone?: boolean }) {
@@ -34,6 +35,7 @@ export function BeatLegacy({ machine, standalone }: { machine: Machine; standalo
       <PatchButton machine={machine} />
       <ProPanel machine={machine} />
       {classroom && <AulaQuestions machine={machine} />}
+      <Quiz machine={machine} />
       {!standalone && (
         <button
           type="button"

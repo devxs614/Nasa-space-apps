@@ -97,7 +97,7 @@ export function ChapterSection({ machine, standalone }: ChapterSectionProps) {
           case 'lastSignal':
             return <BeatLastSignal key={b} machine={machine} />;
           case 'legacy':
-            return <BeatLegacy key={b} machine={machine} />;
+            return <BeatLegacy key={b} machine={machine} standalone={standalone} />;
         }
       })}
     </Tag>

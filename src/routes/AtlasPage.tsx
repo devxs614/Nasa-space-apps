@@ -188,7 +188,10 @@ export function AtlasPage({ body }: AtlasPageProps) {
                     onChange={() => toggleKind(k)}
                     className="h-4 w-4 accent-[var(--signal)]"
                   />
-                  <span aria-hidden="true" className={cx('h-2.5 w-2.5 rounded-full', KIND_DOT[k])} />
+                  <span
+                    aria-hidden="true"
+                    className={cx('h-2.5 w-2.5 rounded-full', KIND_DOT[k])}
+                  />
                   {t(`common:siteKinds.${k}`)}
                 </label>
               );

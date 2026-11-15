@@ -102,8 +102,7 @@ export function demoFrame(ms: number, moonLightMs: number): DemoFrame {
     };
   }
   // La botella de Pioneer: la cámara se aleja hasta ver el sistema solar entero.
-  if (t < 25_600)
-    return { ...base, step, chapterId: 'pioneer', beat: 'identity', signal: 'idle' };
+  if (t < 25_600) return { ...base, step, chapterId: 'pioneer', beat: 'identity', signal: 'idle' };
   return {
     ...base,
     step,

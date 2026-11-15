@@ -104,7 +104,8 @@ export function SourcesPage() {
                     <ExternalLink size={14} className="mt-1.5 shrink-0" aria-hidden="true" />
                   </a>
                   <p className="text-[0.9375rem] text-ink-dim">
-                    {s.publisher} · {t('sources.accessed', { date: formatDate(s.accessed, locale) })}
+                    {s.publisher} ·{' '}
+                    {t('sources.accessed', { date: formatDate(s.accessed, locale) })}
                   </p>
                 </li>
               ))}
