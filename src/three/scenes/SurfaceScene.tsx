@@ -10,6 +10,7 @@ import { PerseveranceSilhouette } from '../machines/models/mars2';
 import { ModeContext } from '../machines/parts/mat';
 import { surfaceVariant } from '../../lib/scenes';
 import { useJourneyStore } from '../../state/useJourneyStore';
+import { useAppStore } from '../../state/useAppStore';
 import { descentOffset } from '../cameraShots';
 import { DUST_COLORS } from '../materials';
 import { dustAmount, lastSignalDim, revealTarget, smooth } from './useReveal';
@@ -34,7 +35,7 @@ export function SurfaceScene({ world }: { world: 'moon' | 'mars' }) {
   const pulseFrom = useMemo(() => new Vector3(-40, 60, -80), []);
   const pulseTo = useMemo(() => new Vector3(0, F * 0.6, 0), [F]);
 
-  useFrame((state) => {
+  useFrame((state, delta) => {
     const js = useJourneyStore.getState();
     const p = js.chapterId === id && js.beat === 'arrival' ? js.beatProgress : 1;
     const arriving = js.chapterId === id && js.beat === 'arrival';
@@ -49,7 +50,12 @@ export function SurfaceScene({ world }: { world: 'moon' | 'mars' }) {
             ? 1.2 + Math.sin(state.clock.elapsedTime) * 0.1
             : 0;
       }
-      holder.current.position.y = y;
+      // El despegue de Ingenuity sube con suavidad; con movimiento reducido, corte directo.
+      const cur = holder.current.position.y;
+      holder.current.position.y =
+        id === 'ingenuity' && !arriving && !useAppStore.getState().reducedMotion
+          ? cur + (y - cur) * (1 - Math.exp(-Math.min(delta, 0.1) * 3))
+          : y;
       holder.current.visible = !(arriving && AIRBAG.has(id) && p < 0.72);
     }
     if (bag.current) {

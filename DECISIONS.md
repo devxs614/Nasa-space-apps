@@ -68,3 +68,18 @@
 ## 2026-11-14 — Puntos del riel de progreso de 24 px en móvil
 - Quince puntos de 44 px no caben en 360 px de ancho. Se usan objetivos de 24×24 px (mínimo de WCAG 2.5.8) en móvil y 28 px en
   escritorio; el índice de capítulos (tecla M) ofrece objetivos de 44 px.
+
+## 2026-11-15 — El Modo Demo conduce el store, no el scroll
+- Contexto: la Parte 3.3 pide un recorrido automático de 30 s exactos por los cinco momentos estrella, grabable sin editar.
+- Opciones: (a) desplazar la página con Lenis y dejar que ScrollTrigger mueva las escenas; (b) escribir el estado de la escena
+  directamente desde una función pura del tiempo.
+- Decisión: `demoFrame(ms)` devuelve capítulo, momento, progreso y efectos, y `demoDrive` los escribe en `useJourneyStore`.
+  Mientras `demo` es verdadero, `setBeat` y `setSection` (el scroll) se ignoran, y el contenido de la página queda oculto.
+- Por qué: la duración no depende de la altura de las secciones, del idioma ni del tamaño de texto; se puede probar con Vitest; y
+  funciona igual con movimiento reducido. Un `setInterval` de respaldo hace avanzar la demo si el navegador limita los fotogramas.
+
+## 2026-11-15 — El equipo en la página Acerca de
+- Contexto: no hay nombres de integrantes en la especificación y no se inventan datos de personas.
+- Decisión: la página describe al equipo de forma general y enlaza a los contribuidores del repositorio. `README.md` y `CREDITS.md`
+  conservan el hueco `[Team name]` para que el equipo lo complete antes de entregar.
+

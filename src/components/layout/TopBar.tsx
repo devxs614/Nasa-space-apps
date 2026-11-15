@@ -85,7 +85,7 @@ export function TopBar() {
       ref={ref}
       onFocus={() => setHidden(false)}
       className={cx(
-        'no-print fixed inset-x-0 top-0 z-20 flex h-14 items-center gap-2 border-b border-line bg-void/70 px-3 backdrop-blur-md transition-transform duration-300 sm:px-5',
+        'site-chrome no-print fixed inset-x-0 top-0 z-20 flex h-14 items-center gap-2 border-b border-line bg-void/70 px-3 backdrop-blur-md transition-transform duration-300 sm:px-5',
         hidden && '-translate-y-full',
       )}
     >

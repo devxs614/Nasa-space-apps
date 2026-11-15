@@ -1,6 +1,6 @@
 # Progreso
 
-## Fase actual: 5 — Núcleo completo y despliegue (en curso)
+## Fase actual: 6 — Quiz, atlas y línea de tiempo
 
 ## Hecho
 - [x] Proyecto Vite + React 19 + TypeScript 5.9 con las versiones fijadas de la Parte 5 (sin conflictos de dependencias).
@@ -21,7 +21,9 @@
 - [x] Fase 2: lienzo único en diferido con calidad adaptativa (PerformanceMonitor, AdaptiveDpr), estrellas con shader, director de escenas y rig de cámara amortiguado.
 - [x] Fase 2: mundos procedurales (Tierra nocturna, Luna, Marte con atmósfera, Eros, Vesta, Ceres), dioramas de superficie con 6 variantes, Kepler y sistema exterior en escala logarítmica, prólogo y epílogo.
 - [x] Fase 2: 15 modelos procedurales con revelado holográfico por planos de recorte, polvo, pieza clave con contorno y GLB opcional.
-- [x] Fase 5 (parcial): postal del epílogo en PNG, /pasaporte (parches, rango, quizzes, constelaciones, descarga, reinicio) y /maquinas (filtros, búsqueda bilingüe, fichas extra y visor 3D con botones).
+- [x] Fase 5: /fuentes (105 fuentes agrupadas por máquina, buscador, aviso legal y nota de estimaciones) y /acerca (reto, código visual de hecho y ficción con un ejemplo de cada tipo, equipo, declaración de IA, créditos y privacidad).
+- [x] Fase 5: Modo Demo (`?demo=1` o botón de la portada): 30 s por los cinco momentos estrella con subtítulos en inglés, dato real por paso, `data-demo-state`, salir con Esc y repetir; pruebas de unidad y e2e.
+- [x] Fase 5: postal del epílogo en PNG, /pasaporte (parches, rango, quizzes, constelaciones, descarga, reinicio) y /maquinas (filtros, búsqueda bilingüe, fichas extra y visor 3D con botones).
 - [x] Fase 4: las 15 mini-experiencias de la Parte 13 con "Saltar", "Ver resultado" (exprés), modo sin presión, controles de ratón, táctil y teclado, resumen `aria-live` y etiqueta de simulación ilustrativa; una prueba e2e por acto.
 - [x] Fase 4: cliente de images-api.nasa.gov con caché, tiempo límite y descarte de derechos de terceros; `NasaImage` con póster de respaldo.
 - [x] Fase 3: señal completa (mantener 1,2 s o pulsar, Enter/Espacio, envío automático de LUMI al 60 %), tiempo de luz con compresión, variantes de Luna (tiempo real), Kepler (transmisor apagado), Ceres (rango) y Pioneer (fecha de llegada del saludo).
@@ -30,8 +32,9 @@
 - [x] Fase 2: Lenis + ScrollTrigger, prólogo, portadas de acto, 15 capítulos con sus 7 momentos, riel de progreso, enlaces profundos, estática entre escenas, redirección a `/lectura` sin WebGL 2.
 
 ## Pendiente
-- [ ] Fase 5: páginas /fuentes y /acerca (siguen como esqueleto), Modo Demo (?demo=1, 30 s con subtítulos), prueba e2e de la demo.
-- [ ] Fases 6–9: quiz en el capítulo, atlas con SiteList, línea de tiempo, audio (efectos, ambientes, sonificaciones), pulido y QA final.
+- [ ] Fase 6: quiz en el capítulo, atlas con SiteList y línea de tiempo.
+- [ ] Fases 7–9: audio (efectos, ambientes, sonificaciones), pulido y QA final.
+- [ ] Equipo humano: nombre del equipo e integrantes en README.md y CREDITS.md (la página Acerca de enlaza a los contribuidores del repositorio), y enlace del vídeo de 30 s.
 
 ## Datos por verificar
 - machines.ts › apollo-lm, alsep, lrv — fecha de lanzamiento de las misiones Apollo (no está en la Parte 11; se omite).
@@ -53,8 +56,10 @@
 - Fase 0: `index-*.js` 142,9 KB · `index-*.css` 11,3 KB.
 - Fase 1: `index-*.js` 176,8 KB · `index-*.css` 13,7 KB.
 - Fase 2: `index-*.js` ≈ 199 KB inicial · `Experience-*.js` ≈ 176 KB (diferido) · `PostFX-*.js` ≈ 25 KB (diferido).
+- Fase 5: JS inicial (entrada + precargas) 287 KB · `index-*.js` 161 KB · `Experience-*.js` 177 KB (diferido) · `PostFX-*.js` 25 KB (diferido) · CSS 15,6 KB. Límite: 500 KB.
 
 ## Problemas conocidos
 - El despliegue a GitHub Pages falla en `actions/configure-pages` hasta que se active Pages en el repositorio (Settings → Pages → Source: GitHub Actions). El build de CI pasa.
 - InSight: el corte del interior es una ilustración aproximada; la Parte 11 no publica el radio de Marte, así que no se dibuja a escala. TODO(verificar).
+- Pruebas e2e en local: usar `NO_OPEN=1 npx playwright test --workers=3`. Sin `NO_OPEN`, `vite preview` abre una pestaña del navegador del sistema, y con muchos procesos el 3D por software (SwiftShader) agota los tiempos de espera.
 - Solo en desarrollo (StrictMode): React registra un aviso de desmontaje del lienzo de R3F al montar dos veces los efectos. En la compilación de producción no aparece ningún error en consola.

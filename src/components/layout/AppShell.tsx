@@ -12,6 +12,9 @@ import { useQueryModes } from '../../hooks/useQueryModes';
 import { useSceneSync } from '../../hooks/useSceneSync';
 import { ExperienceSlot } from './ExperienceSlot';
 import { StaticTransition } from './StaticTransition';
+import { DemoMode } from '../demo/DemoMode';
+import { useJourneyStore } from '../../state/useJourneyStore';
+import { cx } from '../../lib/cx';
 
 /** Envuelve todas las rutas (Parte 16.2). */
 export function AppShell() {
@@ -19,6 +22,8 @@ export function AppShell() {
   useHotkeys();
   useQueryModes();
   useSceneSync();
+  // En los atlas el lienzo recibe el puntero: el contenido solo lo captura en sus paneles.
+  const canvasInteractive = useJourneyStore((s) => s.canvasInteractive);
   return (
     <>
       <SkipLink />
@@ -26,12 +31,17 @@ export function AppShell() {
       <StaticTransition />
       <div className="overlay-grain" aria-hidden="true" />
       <TopBar />
-      <main id="contenido" tabIndex={-1} className="relative z-10 outline-none">
+      <main
+        id="contenido"
+        tabIndex={-1}
+        className={cx('relative z-10 outline-none', canvasInteractive && 'pointer-events-none')}
+      >
         <Outlet />
       </main>
       <Footer />
       <SettingsPanel />
       <ChapterIndex />
+      <DemoMode />
       <Toaster />
       <LiveRegion />
     </>

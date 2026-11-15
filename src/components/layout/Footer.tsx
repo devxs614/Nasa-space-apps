@@ -6,7 +6,7 @@ export const REPO_URL = 'https://github.com/devxs614/Nasa-space-apps';
 export function Footer() {
   const { t } = useTranslation('ui');
   return (
-    <footer className="relative z-10 border-t border-line bg-void/90 px-6 py-10 sm:px-10 lg:px-16">
+    <footer className="site-chrome relative z-10 border-t border-line bg-void/90 px-6 py-10 sm:px-10 lg:px-16">
       <div className="mx-auto max-w-5xl">
         <p className="reading-col text-[0.9375rem] text-ink-dim">{t('footer.disclaimer')}</p>
         <nav aria-label={t('footer.nav')} className="no-print mt-6">

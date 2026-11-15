@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { useAppStore } from '../state/useAppStore';
 import { useUiStore } from '../state/useUiStore';
+import { useJourneyStore } from '../state/useJourneyStore';
 import { AudioEngine } from '../audio/AudioEngine';
 
 export const SEND_SIGNAL_EVENT = 'ultima:send-signal';
@@ -42,7 +43,7 @@ export function useHotkeys(): void {
     const onKey = (e: KeyboardEvent) => {
       const app = useAppStore.getState();
       if (!app.hotkeysOn || e.metaKey || e.ctrlKey || e.altKey) return;
-      if (isTyping(e.target)) return;
+      if (isTyping(e.target) || useJourneyStore.getState().demo) return;
       const ui = useUiStore.getState();
       if (ui.settingsOpen || ui.indexOpen) return;
       const onJourney = pathname === '/' || pathname === '';

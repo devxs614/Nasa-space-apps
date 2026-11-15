@@ -506,3 +506,22 @@ dialog::backdrop {
   animation: none;
   stroke-dasharray: none;
 }
+
+/* ─── Modo Demo (Parte 3.3) ────────────────────────────────────── */
+[data-demo='true'] #contenido,
+[data-demo='true'] .site-chrome {
+  visibility: hidden;
+}
+.demo-subtitle {
+  text-shadow: 0 2px 18px rgb(5 6 10 / 0.9);
+  animation: demo-in var(--dur-slow) var(--ease-out) both;
+}
+@keyframes demo-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+[data-reduced-motion='true'] .demo-subtitle {
+  animation: none;
+}

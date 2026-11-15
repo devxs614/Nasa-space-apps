@@ -6,7 +6,7 @@ export function SkipLink() {
   const cls =
     'btn btn-primary fixed top-2 left-2 z-[60] -translate-y-24 focus:translate-y-0 focus-visible:translate-y-0';
   return (
-    <div className="no-print">
+    <div className="site-chrome no-print">
       <a href="#contenido" className={cls}>
         {t('skip.content')}
       </a>
