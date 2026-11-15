@@ -1,6 +1,6 @@
 # Progreso
 
-## Fase actual: 4 — Mini-experiencias
+## Fase actual: 5 — Núcleo completo y despliegue (en curso)
 
 ## Hecho
 - [x] Proyecto Vite + React 19 + TypeScript 5.9 con las versiones fijadas de la Parte 5 (sin conflictos de dependencias).
@@ -21,6 +21,7 @@
 - [x] Fase 2: lienzo único en diferido con calidad adaptativa (PerformanceMonitor, AdaptiveDpr), estrellas con shader, director de escenas y rig de cámara amortiguado.
 - [x] Fase 2: mundos procedurales (Tierra nocturna, Luna, Marte con atmósfera, Eros, Vesta, Ceres), dioramas de superficie con 6 variantes, Kepler y sistema exterior en escala logarítmica, prólogo y epílogo.
 - [x] Fase 2: 15 modelos procedurales con revelado holográfico por planos de recorte, polvo, pieza clave con contorno y GLB opcional.
+- [x] Fase 5 (parcial): postal del epílogo en PNG, /pasaporte (parches, rango, quizzes, constelaciones, descarga, reinicio) y /maquinas (filtros, búsqueda bilingüe, fichas extra y visor 3D con botones).
 - [x] Fase 4: las 15 mini-experiencias de la Parte 13 con "Saltar", "Ver resultado" (exprés), modo sin presión, controles de ratón, táctil y teclado, resumen `aria-live` y etiqueta de simulación ilustrativa; una prueba e2e por acto.
 - [x] Fase 4: cliente de images-api.nasa.gov con caché, tiempo límite y descarte de derechos de terceros; `NasaImage` con póster de respaldo.
 - [x] Fase 3: señal completa (mantener 1,2 s o pulsar, Enter/Espacio, envío automático de LUMI al 60 %), tiempo de luz con compresión, variantes de Luna (tiempo real), Kepler (transmisor apagado), Ceres (rango) y Pioneer (fecha de llegada del saludo).
@@ -29,7 +30,8 @@
 - [x] Fase 2: Lenis + ScrollTrigger, prólogo, portadas de acto, 15 capítulos con sus 7 momentos, riel de progreso, enlaces profundos, estática entre escenas, redirección a `/lectura` sin WebGL 2.
 
 ## Pendiente
-- [ ] Fases 1–9.
+- [ ] Fase 5: páginas /fuentes y /acerca (siguen como esqueleto), Modo Demo (?demo=1, 30 s con subtítulos), prueba e2e de la demo.
+- [ ] Fases 6–9: quiz en el capítulo, atlas con SiteList, línea de tiempo, audio (efectos, ambientes, sonificaciones), pulido y QA final.
 
 ## Datos por verificar
 - machines.ts › apollo-lm, alsep, lrv — fecha de lanzamiento de las misiones Apollo (no está en la Parte 11; se omite).

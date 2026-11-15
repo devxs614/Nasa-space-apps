@@ -56,7 +56,9 @@ export function Patch({
       viewBox="0 0 200 200"
       width={size}
       height={size}
-      className={cx(locked && 'opacity-35 grayscale', animate && 'patch-stitch', className)}
+      className={cx(animate && 'patch-stitch', className)}
+      style={locked ? { filter: 'grayscale(1)', opacity: 0.35 } : undefined}
+      data-export={withText ? undefined : ''}
     >
       <title id={`${uid}-t`}>{t('passport.patchOf', { name: machine.name[locale] })}</title>
       <desc id={`${uid}-d`}>{desc}</desc>
@@ -72,7 +74,7 @@ export function Patch({
           d={shape}
           transform="translate(100 100) scale(1.0) translate(-100 -100)"
           fill="none"
-          stroke="var(--amber)"
+          stroke="#ffb547"
           strokeWidth="6"
         />
       )}
@@ -139,7 +141,7 @@ export function Patch({
           </g>
         ))}
       {state === 'gold' && (
-        <path d="M100 2 l4 8 9 1 -7 6 2 9 -8 -5 -8 5 2 -9 -7 -6 9 -1z" fill="var(--amber)" />
+        <path d="M100 2 l4 8 9 1 -7 6 2 9 -8 -5 -8 5 2 -9 -7 -6 9 -1z" fill="#ffb547" />
       )}
       {locked && (
         <g transform="translate(150 150)" fill="none" stroke="#e8eef7" strokeWidth="3">

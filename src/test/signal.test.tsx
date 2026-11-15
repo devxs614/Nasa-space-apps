@@ -78,6 +78,6 @@ describe('Patch', () => {
     rerender(<Patch machine={MACHINES_BY_ID.opportunity} state="earned" />);
     expect(screen.getByRole('img')).toHaveAccessibleName(/Conseguido/);
     rerender(<Patch machine={MACHINES_BY_ID.opportunity} state="gold" />);
-    expect(screen.getByRole('img').querySelector('[stroke="var(--amber)"]')).not.toBeNull();
+    expect(screen.getByRole('img').querySelector('[stroke="#ffb547"]')).not.toBeNull();
   });
 });
