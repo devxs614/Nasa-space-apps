@@ -77,6 +77,11 @@
 - Metas de la Parte 19.7: rendimiento 70+ en `/` y 90+ en `/lectura` móvil. `/lectura` queda en 77 por el JS inicial
   (≈ 293 KB gzip con los textos de los dos idiomas) en la red 4G lenta simulada; cargar solo el idioma activo es la siguiente mejora.
   La cifra de `/` se midió sin GPU; en un equipo con GPU el 3D no ocupa el hilo principal. Repetir en la URL publicada.
+- Panel `?debug=1` (calidad baja, Chromium sin GPU): La Travesía en Opportunity 63 llamadas y 46.082 triángulos;
+  en Pioneer 8 llamadas y 44.018 triángulos; atlas de Marte 34 llamadas; capítulo de Apollo 72 llamadas. Máximo 72 de
+  las 150 permitidas por fotograma.
+- Despliegue de la fase 9 en GitHub Pages correcto: portada, rutas profundas (servidas por `404.html`), `lectura-es.html`,
+  `lectura-en.html`, `og-image.png` y `robots.txt` responden bajo `/Nasa-space-apps/`.
 
 ## Problemas conocidos
 - InSight: el corte del interior es una ilustración aproximada; la Parte 11 no publica el radio de Marte, así que no se dibuja a escala. TODO(verificar).
