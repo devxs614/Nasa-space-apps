@@ -77,21 +77,25 @@
 - Fase 9 (idiomas en diferido): JS inicial (entrada + precargas del idioma y de la ruta) 266 KB en la portada, 264 KB en un capítulo suelto, 199 KB en `/lectura` y 192 KB en `/fuentes` · entrada `index-*.js` 138 KB · textos `es-*.js` 31 KB y `en-*.js` 30 KB · `ChapterSection-*.js` 64 KB · `Experience-*.js` 177 KB + `three.core-*.js` 102 KB (diferidos) · `PostFX-*.js` 25 KB (diferido).
 - Fase 9 (corrección de equipos lentos): JS inicial 267 KB en la portada, 265 KB en un capítulo suelto, 200 KB en `/lectura` y 193 KB en `/fuentes` · entrada `index-*.js` 134 KB. Sin cambios apreciables: `loadable.tsx` pesa menos de 1 KB.
 
-## Lighthouse (fase 9, compilación de producción en local)
+## Lighthouse (fase 9)
+Web publicada (https://devxs614.github.io/Nasa-space-apps/, commit ff8c742), Chromium con la GPU del equipo:
+
 | Ruta | Rendimiento | Accesibilidad | Buenas prácticas | SEO | Notas |
 | --- | --- | --- | --- | --- | --- |
-| `/` (escritorio) | 58 | 100 | 100 | 100 | 3D por software (SwiftShader) en Chromium sin GPU; FCP 0,8 s, LCP 2,0 s, TBT 1.150 ms, CLS 0. Antes de los idiomas en diferido: 51 (FCP 1,3 s, LCP 2,6 s) |
-| `/lectura` (móvil) | 81 | 100 | 100 | 100 | FCP 2,5 s, LCP 3,5 s, TBT 290 ms, CLS 0. Antes de los idiomas en diferido: 77 (FCP 3,5 s, LCP 4,0 s); al empezar la fase 9: 18 (TBT 2.080 ms, CLS 0,38) |
+| `/` (escritorio) | 89 | 100 | 100 | 100 | FCP 0,5 s, LCP 0,9 s, TBT 220 ms, CLS 0. Meta de la Parte 19.7: 70 o más |
+| `/lectura` (móvil) | 94 | 100 | 100 | 100 | FCP 2,0 s, LCP 2,8 s, TBT 90 ms, CLS 0. Meta: 90 o más |
 
-- Medido sobre be562ae con la máquina cargada (carga ≈ 9), así que las cifras son pesimistas.
-- Metas de la Parte 19.7: rendimiento 70+ en `/` y 90+ en `/lectura` móvil. `/lectura` queda en 81 en la red 4G lenta simulada
-  (199 KB gzip de JS inicial). La cifra de `/` se midió sin GPU: el 3D por software ocupa el hilo principal (TBT), cosa que
-  no pasa en un equipo con GPU. Repetir las dos en la URL publicada.
+- Las dos metas de la Parte 19.7 se cumplen. Antes de las correcciones de este commit, la web publicada daba 69 y 96 en la
+  portada (dos 404 de texturas opcionales en la consola) y Lighthouse no podía medir `/lectura` porque GitHub Pages la
+  servía con estado 404.
+- Historial en local (compilación de producción, 3D por software y máquina cargada, cifras pesimistas): `/lectura` móvil
+  18 → 77 → 81 y `/` 34 → 51 → 58 a lo largo de la fase 9.
 - Panel `?debug=1` (calidad baja, Chromium sin GPU): La Travesía en Opportunity 63 llamadas y 46.082 triángulos;
   en Pioneer 8 llamadas y 44.018 triángulos; atlas de Marte 34 llamadas; capítulo de Apollo 72 llamadas. Máximo 72 de
   las 150 permitidas por fotograma.
-- Despliegue de la fase 9 en GitHub Pages correcto: portada, rutas profundas (servidas por `404.html`), `lectura-es.html`,
-  `lectura-en.html`, `og-image.png` y `robots.txt` responden bajo `/Nasa-space-apps/`.
+- Despliegue en GitHub Pages (ff8c742): portada, las 23 rutas profundas (con y sin barra final) y los archivos estáticos
+  (`lectura-es.html`, `lectura-en.html`, `og-image.png`, `robots.txt`, `last-signal-slides.pdf`) responden 200 bajo
+  `/Nasa-space-apps/`; una ruta inexistente responde 404 con la página "Señal perdida".
 
 ## Equipos lentos (fase 9, compilación de producción en local)
 Tiempo hasta que La Travesía está montada en la portada (`/?lang=es`), frenando la CPU de Chromium con
