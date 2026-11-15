@@ -41,6 +41,7 @@ export function BeatWake({ machine }: { machine: Machine }) {
       setProgress(p);
       setCharging(p > 0);
       if (p > 0 && p < 0.05) playSfx('charge');
+      if (p === 0) playSfx('chargeStop');
     },
     [setCharging],
   );

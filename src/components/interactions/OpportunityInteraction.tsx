@@ -82,7 +82,7 @@ export function OpportunityInteraction({ express, onComplete, onSkip }: Interact
         step={0.05}
         format={(v) => String(Math.floor(v))}
         onChange={(v) => {
-          if (Math.floor(v) !== Math.floor(year)) playSfx('tick');
+          if (Math.floor(odometer(v)) !== Math.floor(odometer(year))) playSfx('tick');
           setYear(v);
         }}
       />

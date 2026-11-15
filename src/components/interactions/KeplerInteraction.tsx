@@ -5,6 +5,8 @@ import { Shell, useDone } from './Shell';
 import { Toggle } from '../ui/Toggle';
 import { createRng } from '../../lib/rng';
 import { playSfx } from '../../audio/play';
+import { createTone, type ToneHandle } from '../../audio/sonify';
+import { useAppStore } from '../../state/useAppStore';
 
 const STARS = [
   { period: 5.2, depth: 0.12, width: 0.7 },
@@ -40,6 +42,18 @@ export function KeplerInteraction({
   const time = useRef(0);
   const lastHitCycle = useRef(-1);
   const rng = useRef(createRng(1630));
+  const soundOn = useAppStore((s) => s.soundOn);
+  const tone = useRef<ToneHandle | null>(null);
+
+  // Sonificación de la curva de luz (Parte 15.5): 660 Hz de base; cada caída baja el tono.
+  useEffect(() => {
+    if (!flag || !soundOn || !active || done) return;
+    tone.current = createTone('sine', 660, 0.05);
+    return () => {
+      tone.current?.stop();
+      tone.current = null;
+    };
+  }, [flag, soundOn, active, done]);
 
   useEffect(() => {
     if (!active || done) return;
@@ -51,6 +65,7 @@ export function KeplerInteraction({
       time.current += dt * SPEED;
       const s = STARS[star]!;
       const d = inTransit(s, time.current);
+      tone.current?.setFreq(660 * (1 - (1 - brightness(s, time.current, 0)) * 4));
       setDimming((p) => {
         if (d && !p && flag) playSfx('tick');
         return d;

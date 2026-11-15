@@ -1,6 +1,6 @@
 # Progreso
 
-## Fase actual: 7 — Audio y narración
+## Fase actual: 8 — Pulido visual, imágenes de NASA y rendimiento
 
 ## Hecho
 - [x] Proyecto Vite + React 19 + TypeScript 5.9 con las versiones fijadas de la Parte 5 (sin conflictos de dependencias).
@@ -21,6 +21,7 @@
 - [x] Fase 2: lienzo único en diferido con calidad adaptativa (PerformanceMonitor, AdaptiveDpr), estrellas con shader, director de escenas y rig de cámara amortiguado.
 - [x] Fase 2: mundos procedurales (Tierra nocturna, Luna, Marte con atmósfera, Eros, Vesta, Ceres), dioramas de superficie con 6 variantes, Kepler y sistema exterior en escala logarítmica, prólogo y epílogo.
 - [x] Fase 2: 15 modelos procedurales con revelado holográfico por planos de recorte, polvo, pieza clave con contorno y GLB opcional.
+- [x] Fase 7: 15 efectos sintetizados con Web Audio (envolventes sin clics, máximo 8 voces), ambientes generativos por acto con fundido de 2,5 s (mitad de osciladores en calidad baja), silencio y línea plana en "Última señal", sonificaciones (sismos de ALSEP e InSight, curva de luz de Kepler, rotor de Ingenuity, motor iónico de Dawn, odómetro de Opportunity) y narración automática por momento tras un gesto; pruebas de que nada suena antes del gesto y de que el interruptor silencia en menos de 300 ms.
 - [x] Fase 6: quiz "¿Te acuerdas?" al final de cada capítulo (45 preguntas, barajado por intento, parche dorado con 3 de 3, Modo Aula sin puntuación); atlas de la Luna y de Marte con capas, `SiteList` accesible y ficha del sitio; `/linea-de-tiempo` con barras reales, duración planeada, llegada, filtro por mundo, orden por duración y lista vertical en móvil o con movimiento reducido.
 - [x] Fase 5: /fuentes (105 fuentes agrupadas por máquina, buscador, aviso legal y nota de estimaciones) y /acerca (reto, código visual de hecho y ficción con un ejemplo de cada tipo, equipo, declaración de IA, créditos y privacidad).
 - [x] Fase 5: Modo Demo (`?demo=1` o botón de la portada): 30 s por los cinco momentos estrella con subtítulos en inglés, dato real por paso, `data-demo-state`, salir con Esc y repetir; pruebas de unidad y e2e.
@@ -33,7 +34,7 @@
 - [x] Fase 2: Lenis + ScrollTrigger, prólogo, portadas de acto, 15 capítulos con sus 7 momentos, riel de progreso, enlaces profundos, estática entre escenas, redirección a `/lectura` sin WebGL 2.
 
 ## Pendiente
-- [ ] Fases 7–9: audio (efectos, ambientes, sonificaciones), pulido y QA final.
+- [ ] Fases 8–9: pulido, presupuesto de rendimiento, imagen para redes y QA final.
 - [ ] Equipo humano: nombre del equipo e integrantes en README.md y CREDITS.md (la página Acerca de enlaza a los contribuidores del repositorio), y enlace del vídeo de 30 s.
 
 ## Datos por verificar

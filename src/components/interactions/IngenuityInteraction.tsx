@@ -5,6 +5,8 @@ import { Shell, useDone } from './Shell';
 import { Toggle } from '../ui/Toggle';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { playSfx } from '../../audio/play';
+import { createTone, type ToneHandle } from '../../audio/sonify';
+import { useAppStore } from '../../state/useAppStore';
 import { cx } from '../../lib/cx';
 
 const WAYPOINTS = [20, 50, 82]; // % horizontal
@@ -33,6 +35,22 @@ export function IngenuityInteraction({
   const keys = useRef<Record<string, boolean>>({});
   const need = mars ? 2400 : 400; // ilustrativo: en Marte hace falta girar mucho más rápido
   const green = rpm >= need * 0.95;
+  const soundOn = useAppStore((s) => s.soundOn);
+  const rotor = useRef<ToneHandle | null>(null);
+
+  // Sonido del rotor: diente de sierra filtrado cuya frecuencia sigue las rpm (Parte 15.3).
+  useEffect(() => {
+    if (!soundOn || !active) return;
+    rotor.current = createTone('sawtooth', 30, 0.0001, 900);
+    return () => {
+      rotor.current?.stop();
+      rotor.current = null;
+    };
+  }, [soundOn, active]);
+  useEffect(() => {
+    rotor.current?.setFreq(30 + rpm / 30);
+    rotor.current?.setLevel(rpm > 50 ? 0.05 : 0.0001);
+  }, [rpm]);
 
   useEffect(() => () => setFx('fly', 0), [setFx]);
   useEffect(() => {

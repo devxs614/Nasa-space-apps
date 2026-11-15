@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router';
 import { SkipLink } from './SkipLink';
 import { TopBar } from './TopBar';
@@ -15,6 +16,10 @@ import { StaticTransition } from './StaticTransition';
 import { DemoMode } from '../demo/DemoMode';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { cx } from '../../lib/cx';
+
+const AudioBridge = lazy(() =>
+  import('../../audio/AudioBridge').then((m) => ({ default: m.AudioBridge })),
+);
 
 /** Envuelve todas las rutas (Parte 16.2). */
 export function AppShell() {
@@ -44,6 +49,9 @@ export function AppShell() {
       <DemoMode />
       <Toaster />
       <LiveRegion />
+      <Suspense fallback={null}>
+        <AudioBridge />
+      </Suspense>
     </>
   );
 }

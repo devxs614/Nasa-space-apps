@@ -4,6 +4,8 @@ import type { InteractionProps } from './types';
 import { Shell, useDone } from './Shell';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { SourceBadge } from '../ui/SourceBadge';
+import { createHiss } from '../../audio/sonify';
+import { useAppStore } from '../../state/useAppStore';
 
 const GOAL = 100;
 
@@ -29,6 +31,14 @@ export function DawnInteraction({
     ionFuel: 1,
   });
   const hist = useRef<{ c: number; i: number }[]>([]);
+  const soundOn = useAppStore((s) => s.soundOn);
+
+  // Motor iónico: ruido rosa suave con paso alto en 3 kHz mientras está encendido (Parte 15.3).
+  useEffect(() => {
+    if (!ion || !soundOn) return;
+    const h = createHiss(0.03);
+    return () => h.stop();
+  }, [ion, soundOn]);
 
   useEffect(() => {
     setFx('ion', ion ? 1 : 0.2);
