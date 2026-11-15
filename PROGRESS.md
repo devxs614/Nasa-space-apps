@@ -3,6 +3,7 @@
 ## Fase actual: 9 — QA final y entrega (código congelado: a partir de aquí, solo correcciones)
 
 ## Hecho
+- [x] Fase 9 (corrección de rendimiento): un fragmento por idioma (la primera carga solo descarga el idioma activo y el otro llega en segundo plano), La Travesía en su propio fragmento con Lenis y ScrollTrigger, y precarga en `index.html` del idioma y de la página de la ruta que se abre; pruebas `e2e/locales.spec.ts` e `i18n.test.ts`.
 - [x] Fase 9: humo completo de la Parte 19.6 (tecla M e índice, cambio a inglés con `lang="en"`, parche "Conseguido" en el pasaporte), axe en diez rutas (se añade `/atlas/marte`), prueba de cadenas literales en JSX (Parte 19.4), sin `TODO` en la compilación ni logotipos de NASA.
 - [x] Fase 9: rendimiento de `/lectura` (los capítulos 3–15 se montan en una transición de React y los capítulos fuera de pantalla usan `content-visibility`), `<main>` con altura mínima de pantalla (CLS 0), `robots.txt`; Lighthouse en la tabla de abajo.
 - [x] Fase 9: paquete de entrega de la Parte 20: `SUBMISSION.md` (textos del formulario en inglés), subtítulos `docs/video/last-signal-30s.srt` y README con controles de calidad y enlaces.
@@ -67,6 +68,7 @@
 - Fase 2: `index-*.js` ≈ 199 KB inicial · `Experience-*.js` ≈ 176 KB (diferido) · `PostFX-*.js` ≈ 25 KB (diferido).
 - Fase 5: JS inicial (entrada + precargas) 287 KB · `index-*.js` 161 KB · `Experience-*.js` 177 KB (diferido) · `PostFX-*.js` 25 KB (diferido) · CSS 15,6 KB. Límite: 500 KB.
 - Fase 8: JS inicial (entrada + precargas) 293 KB · `Experience-*.js` 170 KB + `three.core-*.js` 98 KB (diferidos) · `PostFX-*.js` 23 KB (diferido) · CSS 16 KB. Lectura estática: 647 KB (ES) y 642 KB (EN) sin comprimir, con el CSS en línea.
+- Fase 9 (idiomas en diferido): JS inicial (entrada + precargas del idioma y de la ruta) 266 KB en la portada, 264 KB en un capítulo suelto, 199 KB en `/lectura` y 192 KB en `/fuentes` · entrada `index-*.js` 138 KB · textos `es-*.js` 31 KB y `en-*.js` 30 KB · `ChapterSection-*.js` 64 KB · `Experience-*.js` 177 KB + `three.core-*.js` 102 KB (diferidos) · `PostFX-*.js` 25 KB (diferido).
 
 ## Lighthouse (fase 9, compilación de producción en local)
 | Ruta | Rendimiento | Accesibilidad | Buenas prácticas | SEO | Notas |
@@ -75,7 +77,8 @@
 | `/lectura` (móvil) | 77 | 100 | 100 | 100 | Antes de la fase 9: 18 (TBT 2.080 ms, CLS 0,38). Ahora FCP 3,5 s, LCP 4,0 s, TBT 160 ms, CLS 0 |
 
 - Metas de la Parte 19.7: rendimiento 70+ en `/` y 90+ en `/lectura` móvil. `/lectura` queda en 77 por el JS inicial
-  (≈ 293 KB gzip con los textos de los dos idiomas) en la red 4G lenta simulada; cargar solo el idioma activo es la siguiente mejora.
+  (≈ 293 KB gzip con los textos de los dos idiomas) en la red 4G lenta simulada. Después de esa medición, el idioma activo se carga
+  solo y `/lectura` baja a 199 KB de JS inicial: la tabla es anterior a ese cambio y hay que repetirla en la URL publicada.
   La cifra de `/` se midió sin GPU; en un equipo con GPU el 3D no ocupa el hilo principal. Repetir en la URL publicada.
 - Panel `?debug=1` (calidad baja, Chromium sin GPU): La Travesía en Opportunity 63 llamadas y 46.082 triángulos;
   en Pioneer 8 llamadas y 44.018 triángulos; atlas de Marte 34 llamadas; capítulo de Apollo 72 llamadas. Máximo 72 de

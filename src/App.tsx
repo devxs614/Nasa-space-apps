@@ -1,36 +1,24 @@
-import { lazy, Suspense, type ReactNode } from 'react';
+import { Suspense, type ReactNode } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router';
 import { AppShell } from './components/layout/AppShell';
 import { RouteFallback } from './components/layout/RouteFallback';
+import { lazyPage } from './lib/loadable';
 
-// La Travesía también va en su propio fragmento: las rutas secundarias no la descargan y, en la
-// portada, `index.html` la precarga en paralelo con el fragmento de entrada (ver vite.config.ts).
-const JourneyPage = lazy(() =>
-  import('./routes/JourneyPage').then((m) => ({ default: m.JourneyPage })),
+// Cada página va en su propio fragmento (La Travesía también): las rutas secundarias no la
+// descargan y, en la portada, `index.html` la precarga en paralelo con el fragmento de entrada
+// (ver vite.config.ts). Se cargan con `lazyPage`, no con `React.lazy` (ver src/lib/loadable.tsx).
+const JourneyPage = lazyPage(() => import('./routes/JourneyPage').then((m) => m.JourneyPage));
+const AtlasPage = lazyPage(() => import('./routes/AtlasPage').then((m) => m.AtlasPage));
+const CatalogPage = lazyPage(() => import('./routes/CatalogPage').then((m) => m.CatalogPage));
+const ChapterPage = lazyPage(() => import('./routes/ChapterPage').then((m) => m.ChapterPage));
+const TimelinePage = lazyPage(() => import('./routes/TimelinePage').then((m) => m.TimelinePage));
+const PassportPage = lazyPage(() => import('./routes/PassportPage').then((m) => m.PassportPage));
+const SourcesPage = lazyPage(() => import('./routes/SourcesPage').then((m) => m.SourcesPage));
+const AboutPage = lazyPage(() => import('./routes/AboutPage').then((m) => m.AboutPage));
+const ReadingModePage = lazyPage(() =>
+  import('./routes/ReadingModePage').then((m) => m.ReadingModePage),
 );
-const AtlasPage = lazy(() => import('./routes/AtlasPage').then((m) => ({ default: m.AtlasPage })));
-const CatalogPage = lazy(() =>
-  import('./routes/CatalogPage').then((m) => ({ default: m.CatalogPage })),
-);
-const ChapterPage = lazy(() =>
-  import('./routes/ChapterPage').then((m) => ({ default: m.ChapterPage })),
-);
-const TimelinePage = lazy(() =>
-  import('./routes/TimelinePage').then((m) => ({ default: m.TimelinePage })),
-);
-const PassportPage = lazy(() =>
-  import('./routes/PassportPage').then((m) => ({ default: m.PassportPage })),
-);
-const SourcesPage = lazy(() =>
-  import('./routes/SourcesPage').then((m) => ({ default: m.SourcesPage })),
-);
-const AboutPage = lazy(() => import('./routes/AboutPage').then((m) => ({ default: m.AboutPage })));
-const ReadingModePage = lazy(() =>
-  import('./routes/ReadingModePage').then((m) => ({ default: m.ReadingModePage })),
-);
-const NotFoundPage = lazy(() =>
-  import('./routes/NotFoundPage').then((m) => ({ default: m.NotFoundPage })),
-);
+const NotFoundPage = lazyPage(() => import('./routes/NotFoundPage').then((m) => m.NotFoundPage));
 
 const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -70,6 +58,7 @@ export function App() {
   );
 }
 
+/** Red de seguridad: si algo dentro de la página suspende sin su propio límite, se ve el aviso de carga. */
 function Lazy({ el }: { el: ReactNode }) {
   return <Suspense fallback={<RouteFallback />}>{el}</Suspense>;
 }

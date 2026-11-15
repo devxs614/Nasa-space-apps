@@ -109,3 +109,17 @@
 - Contexto: con varias páginas dibujando 3D por software a la vez, el temporizador de la señal se retrasaba y la prueba
   "respuesta archivada en menos de 5 s" fallaba por la CPU de la máquina, no por la lógica.
 - Decisión: esa prueba usa `?lite=1`, como prevé la Parte 19.6; el resto de pruebas de humo siguen con el 3D activo.
+
+## 2026-11-15 — Un fragmento por idioma y precarga según la ruta
+- Contexto: el JS inicial llevaba los textos de los dos idiomas y La Travesía aunque se abriera otra ruta (≈ 293 KB gzip),
+  y `/lectura` en móvil se quedaba en 77 en Lighthouse.
+- Decisión: cada idioma vive en su fragmento (`src/i18n/locales/es.ts` y `en.ts`). `main.tsx` espera los textos del idioma
+  activo antes de pintar (`?lang`, luego el guardado y, en la primera visita, el del navegador) y el otro idioma se descarga
+  cuando el navegador está libre, para que el cambio siga funcionando sin red. `setLocale` solo cambia `locale` cuando los
+  textos ya están; si no se pueden descargar, la web sigue en el idioma actual.
+- `JourneyPage` pasa a `React.lazy`. Lenis y ScrollTrigger se quedan en su fragmento: lo que está en el paquete inicial
+  (el Modo Demo) los maneja a través de `src/lib/scrollBridge.ts`, sin importarlos.
+- Un plugin de Vite (`preloadHints` en `vite.config.ts`) escribe en `index.html` un script mínimo que precarga, en paralelo
+  con la entrada, el idioma y la página de la ruta que se abre. Si no acierta, la app carga igual, un poco más tarde.
+- Resultado (gzip): portada 266 KB, capítulo suelto 264 KB, `/lectura` 199 KB y `/fuentes` 192 KB, frente a 293 KB en todas.
+- Pruebas: `e2e/locales.spec.ts` (idioma guardado, `?lang`, cambio sin red, fallo de descarga y precargas) y `i18n.test.ts`.

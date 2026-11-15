@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { hasWebGL2 } from '../../lib/device';
@@ -6,6 +6,7 @@ import { useUiStore } from '../../state/useUiStore';
 import { useToast } from '../ui/Toast';
 import { useJourneyStore, type SceneKey } from '../../state/useJourneyStore';
 import { publicUrl } from '../../lib/assets';
+import { loadable } from '../../lib/loadable';
 
 const POSTER: Partial<Record<SceneKey, string>> = {
   prologue: 'scene-prologue',
@@ -37,7 +38,13 @@ function ScenePoster() {
   );
 }
 
-const Experience = lazy(() => import('../../three/Experience'));
+// Si el fragmento del 3D no se puede descargar, se muestra el póster fijo de la escena.
+const Experience = loadable(() => import('../../three/Experience').then((m) => m.default), {
+  onError: (err) => {
+    console.error('3D', err);
+    useUiStore.getState().setThreeFailed(true);
+  },
+});
 
 /** Monta el lienzo 3D (en diferido) salvo en /lectura o sin WebGL 2 (Parte 17.9). */
 export function ExperienceSlot() {
@@ -62,9 +69,5 @@ export function ExperienceSlot() {
 
   if (failed && !reading) return <ScenePoster />;
   if (!webgl || reading) return null;
-  return (
-    <Suspense fallback={null}>
-      <Experience />
-    </Suspense>
-  );
+  return <Experience />;
 }

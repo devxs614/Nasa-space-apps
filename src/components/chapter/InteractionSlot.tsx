@@ -1,4 +1,4 @@
-import { Component, lazy, Suspense, useMemo, type ComponentType, type ReactNode } from 'react';
+import { Component, Suspense, useMemo, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Machine, MachineId } from '../../data/types';
 import type { InteractionProps } from '../interactions/types';
@@ -6,6 +6,7 @@ import { Poster } from '../media/Poster';
 import { useAppStore } from '../../state/useAppStore';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { INTERACTIONS } from '../interactions/registry';
+import { loadable, type Loadable } from '../../lib/loadable';
 
 class SlotBoundary extends Component<
   { children: ReactNode; fallback: ReactNode },
@@ -23,17 +24,20 @@ class SlotBoundary extends Component<
   }
 }
 
-const cache = new Map<MachineId, ComponentType<InteractionProps>>();
-function lazyFor(id: MachineId) {
+const cache = new Map<MachineId, Loadable<InteractionProps>>();
+function loadableFor(id: MachineId) {
   let c = cache.get(id);
   if (!c) {
-    c = lazy(INTERACTIONS[id]);
+    c = loadable(() => INTERACTIONS[id]().then((m) => m.default));
     cache.set(id, c);
   }
   return c;
 }
 
-/** Carga la interacción con React.lazy y Suspense, con póster mientras carga y límite de error (Parte 16.4). */
+/**
+ * Carga la interacción en diferido (ver src/lib/loadable.tsx), con póster mientras llega y límite
+ * de error (Parte 16.4).
+ */
 export function InteractionSlot({
   machine,
   active,
@@ -46,7 +50,7 @@ export function InteractionSlot({
   const { t } = useTranslation('ui');
   const reduced = useAppStore((s) => s.reducedMotion);
   const express = useJourneyStore((s) => s.express);
-  const Interaction = useMemo(() => lazyFor(machine.id), [machine.id]);
+  const Interaction = useMemo(() => loadableFor(machine.id), [machine.id]);
   const loading = (
     <div className="space-y-2" role="status">
       <Poster name={machine.id} alt="" className="max-w-[420px] opacity-60" />
@@ -63,6 +67,7 @@ export function InteractionSlot({
     >
       <Suspense fallback={loading}>
         <Interaction
+          fallback={loading}
           machineId={machine.id}
           active={active}
           reducedMotion={reduced}

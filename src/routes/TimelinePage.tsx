@@ -8,7 +8,7 @@ import { MACHINES_BY_ID } from '../data/machines';
 import { WORLDS } from '../data/ids';
 import type { World } from '../data/types';
 import { useAppStore } from '../state/useAppStore';
-import { diffYMD, formatDate, formatNumber } from '../lib/format';
+import { diffYMD, formatDate, formatList, formatNumber } from '../lib/format';
 import { cx } from '../lib/cx';
 
 const PX_PER_YEAR = 44;
@@ -45,11 +45,7 @@ function useSpanText() {
     if (d.years) parts.push(t('clock.years', { count: d.years }));
     if (d.months) parts.push(t('clock.months', { count: d.months }));
     if (d.days && !d.years) parts.push(t('clock.days', { count: d.days }));
-    const span = parts.length
-      ? new Intl.ListFormat(t('clock.listLocale'), { style: 'long', type: 'conjunction' }).format(
-          parts,
-        )
-      : t('timeline.sameDay');
+    const span = parts.length ? formatList(parts, t('clock.listLocale')) : t('timeline.sameDay');
     return t('timeline.lasted', { span });
   };
 }

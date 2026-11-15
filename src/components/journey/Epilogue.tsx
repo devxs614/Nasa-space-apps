@@ -1,13 +1,15 @@
-import { lazy, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { StorySection } from './Section';
 import { VoiceLine } from '../chapter/VoiceLine';
 import { EPILOGUE_2026 } from '../../data/machines';
 import { useAppStore } from '../../state/useAppStore';
 import { Badge } from '../ui/Badge';
+import { loadable } from '../../lib/loadable';
 
-const PostcardMaker = lazy(() =>
-  import('../passport/PostcardMaker').then((m) => ({ default: m.PostcardMaker })),
+// Si la postal no se puede descargar, el epílogo se lee igual sin ella.
+const PostcardMaker = loadable(
+  () => import('../passport/PostcardMaker').then((m) => m.PostcardMaker),
+  { onError: (err) => console.error('postal', err) },
 );
 
 /** Epílogo "El relevo" (Partes 8.8 y 12.7). */
@@ -59,9 +61,7 @@ export function Epilogue() {
           {t('chapters:epilogue.youTitle')}
         </h3>
         <VoiceLine speaker="lumi" text={t('chapters:epilogue.5')} />
-        <Suspense fallback={null}>
-          <PostcardMaker />
-        </Suspense>
+        <PostcardMaker />
       </div>
       <div className={block}>
         <h3 className="font-heading text-[length:var(--fs-h2)] font-bold">

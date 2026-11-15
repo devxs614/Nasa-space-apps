@@ -41,16 +41,16 @@ test('la tecla M abre el índice, Esc lo cierra y elegir Opportunity lleva a su 
 }) => {
   await page.goto('/?lang=es');
   await expect(page.locator('main')).toBeVisible();
+  // La Travesía llega en su propio fragmento: los atajos se prueban con ella ya montada.
+  await expect(page.locator('#ch-surveyor')).toBeAttached();
   const dialog = page.getByRole('dialog', { name: 'Índice de capítulos' });
   await page.keyboard.press('m');
   await expect(dialog).toBeVisible();
   await page.keyboard.press('Escape');
   await expect(dialog).toBeHidden();
-  // El evento `close` del <dialog> llega después del cierre visual; reintenta la M hasta que abra.
-  await expect(async () => {
-    await page.keyboard.press('m');
-    await expect(dialog).toBeVisible({ timeout: 1000 });
-  }).toPass();
+  // M justo después de Esc: el evento `close` atrasado del <dialog> no debe cerrar el índice nuevo.
+  await page.keyboard.press('m');
+  await expect(dialog).toBeVisible();
   await dialog.getByRole('button', { name: /Opportunity/ }).click();
   await expect(dialog).toBeHidden();
   await expect(page).toHaveURL(/#opportunity$/);

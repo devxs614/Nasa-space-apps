@@ -1,4 +1,3 @@
-import { lazy, Suspense } from 'react';
 import { Outlet } from 'react-router';
 import { SkipLink } from './SkipLink';
 import { TopBar } from './TopBar';
@@ -17,10 +16,12 @@ import { ThreeNotices } from './ThreeNotices';
 import { DemoMode } from '../demo/DemoMode';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { cx } from '../../lib/cx';
+import { loadable } from '../../lib/loadable';
 
-const AudioBridge = lazy(() =>
-  import('../../audio/AudioBridge').then((m) => ({ default: m.AudioBridge })),
-);
+// Sin el puente de audio la web funciona igual, en silencio.
+const AudioBridge = loadable(() => import('../../audio/AudioBridge').then((m) => m.AudioBridge), {
+  onError: (err) => console.error('audio', err),
+});
 /** Envuelve todas las rutas (Parte 16.2). */
 export function AppShell() {
   useHtmlAttributes();
@@ -53,9 +54,7 @@ export function AppShell() {
       <ThreeNotices />
       <Toaster />
       <LiveRegion />
-      <Suspense fallback={null}>
-        <AudioBridge />
-      </Suspense>
+      <AudioBridge />
     </>
   );
 }

@@ -30,8 +30,12 @@ export default defineConfig({
       },
     },
     {
+      // El WebKit de Playwright ejecuta el JS mucho más despacio que Safari (sobre todo en Windows):
+      // La Travesía tarda 10–20 s en montarse, así que este proyecto espera más antes de fallar.
       name: 'webkit',
       testMatch: /smoke\.spec\.ts/,
+      timeout: 120_000,
+      expect: { timeout: 30_000 },
       use: { ...devices['Desktop Safari'] },
     },
   ],

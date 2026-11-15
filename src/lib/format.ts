@@ -44,6 +44,37 @@ export function diffYMD(
   return { years, months, days };
 }
 
+/**
+ * Crear un formateador de `Intl` es caro (cientos de veces más que usarlo) y La Travesía muestra
+ * cientos de fechas: se crea uno por idioma y estilo, y se reutiliza.
+ */
+const DATE_STYLES = {
+  date: { dateStyle: 'long', timeZone: 'UTC' },
+  dateTime: { dateStyle: 'long', timeStyle: 'short', timeZone: 'UTC' },
+  monthYear: { month: 'long', year: 'numeric', timeZone: 'UTC' },
+} as const satisfies Record<string, Intl.DateTimeFormatOptions>;
+const dfCache = new Map<string, Intl.DateTimeFormat>();
+function df(locale: Locale, style: keyof typeof DATE_STYLES): Intl.DateTimeFormat {
+  const k = `${locale}|${style}`;
+  let f = dfCache.get(k);
+  if (!f) {
+    f = new Intl.DateTimeFormat(locale, DATE_STYLES[style]);
+    dfCache.set(k, f);
+  }
+  return f;
+}
+
+const lfCache = new Map<string, Intl.ListFormat>();
+/** "2 años, 3 meses y 4 días" / "2 years, 3 months, and 4 days". */
+export function formatList(parts: readonly string[], locale: string): string {
+  let f = lfCache.get(locale);
+  if (!f) {
+    f = new Intl.ListFormat(locale, { style: 'long', type: 'conjunction' });
+    lfCache.set(locale, f);
+  }
+  return f.format(parts);
+}
+
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}/;
 export function isIsoDate(v: unknown): v is string {
   return typeof v === 'string' && ISO_DATE.test(v);
@@ -53,21 +84,13 @@ export function isIsoDate(v: unknown): v is string {
 export function formatDate(iso: string, locale: Locale, withTime = false): string {
   const hasTime = iso.length > 10;
   const d = new Date(hasTime ? iso : `${iso}T00:00:00Z`);
-  const opts: Intl.DateTimeFormatOptions =
-    withTime && hasTime
-      ? { dateStyle: 'long', timeStyle: 'short', timeZone: 'UTC' }
-      : { dateStyle: 'long', timeZone: 'UTC' };
-  const s = new Intl.DateTimeFormat(locale, opts).format(d);
+  const s = df(locale, withTime && hasTime ? 'dateTime' : 'date').format(d);
   return withTime && hasTime ? `${s} UTC` : s;
 }
 
 export function formatMonthYear(iso: string, locale: Locale): string {
   const d = new Date(`${iso.slice(0, 10)}T00:00:00Z`);
-  return new Intl.DateTimeFormat(locale, {
-    month: 'long',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(d);
+  return df(locale, 'monthYear').format(d);
 }
 
 export function yearOf(iso: string): number {

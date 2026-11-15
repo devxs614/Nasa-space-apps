@@ -18,14 +18,19 @@ export function Dialog({ open, onClose, title, children, wide, full, className }
   const { t } = useTranslation('ui');
   const ref = useRef<HTMLDialogElement>(null);
   const returnTo = useRef<HTMLElement | null>(null);
+  // Cierres pedidos por el estado (`open` pasó a false) cuyo evento `close` todavía no ha llegado.
+  const closedByState = useRef(0);
 
   useEffect(() => {
     const d = ref.current;
     if (!d) return;
     if (open && !d.open) {
-      returnTo.current = document.activeElement as HTMLElement | null;
+      // Si se reabre antes de que llegue el `close` anterior, el foco vuelve al disparador original.
+      if (closedByState.current === 0)
+        returnTo.current = document.activeElement as HTMLElement | null;
       d.showModal();
     } else if (!open && d.open) {
+      closedByState.current += 1;
       d.close();
     }
   }, [open]);
@@ -34,7 +39,12 @@ export function Dialog({ open, onClose, title, children, wide, full, className }
     const d = ref.current;
     if (!d) return;
     const onCloseEvt = () => {
-      onClose();
+      const byState = closedByState.current > 0;
+      if (byState) closedByState.current -= 1;
+      // `close` llega en una tarea aparte: si el diálogo ya se reabrió (Esc y M seguidas), es un
+      // cierre antiguo y no debe cerrar el diálogo nuevo.
+      if (d.open) return;
+      if (!byState) onClose();
       const el = returnTo.current;
       if (el && document.contains(el)) el.focus();
     };
