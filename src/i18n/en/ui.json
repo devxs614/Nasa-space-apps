@@ -115,10 +115,12 @@
     "colTitle": "Title",
     "colPublisher": "Publisher",
     "colAccessed": "Accessed",
-    "count": "{{n}} sources",
+    "count_one": "{{count}} source",
+    "count_other": "{{count}} sources",
     "disclaimerTitle": "Notice",
     "none": "No source matches your search.",
-    "groupCount": "{{n}} sources in this group",
+    "groupCount_one": "{{count}} source in this group",
+    "groupCount_other": "{{count}} sources in this group",
     "toChapter": "Open the chapter on {{name}}"
   },
   "beat": {
@@ -462,7 +464,7 @@
       "storm": "Global dust storm",
       "relay": "Perseverance beats the record",
       "interp": "Distances between milestones are interpolated.",
-      "success": "You reached the end of the road. Perseverance took the relay."
+      "success": "You reached the end of the road. Perseverance took up the baton."
     },
     "phoenix": {
       "title": "What disappeared",
@@ -606,7 +608,8 @@
     "decade": "Decade",
     "status": "Status",
     "all": "All",
-    "results": "{{n}} results",
+    "results_one": "{{count}} result",
+    "results_other": "{{count}} results",
     "years": "Launch {{launch}} · Last signal {{last}}",
     "arrivalYears": "Arrival {{arrival}} · Last signal {{last}}",
     "view3d": "View in 3D",
@@ -636,7 +639,7 @@
     "examples": {
       "machine": "The machine's voice: imagined narration, in italics with big quotation marks.",
       "lumi": "LUMI, the fictional guide: a cyan bubble with its avatar.",
-      "log": "Mission Log: checked facts with their source.",
+      "log": "Mission Log: verified facts with their source.",
       "photo": "Real photo: with NASA title, date and credit.",
       "render": "3D recreation: not a photo.",
       "sonification": "Sonification: data turned into sound; in space there is no air to carry sound."
@@ -699,7 +702,8 @@
     "introMoon": "Each beacon marks a machine still on the Moon, at its real coordinates. Spin the globe or use the list.",
     "introMars": "Each beacon marks a machine still on Mars, at its real coordinates. Spin the globe or use the list.",
     "sites": "Sites",
-    "sitesCount": "{{n}} sites shown",
+    "sitesCount_one": "{{count}} site shown",
+    "sitesCount_other": "{{count}} sites shown",
     "layers": "Layers",
     "listHint": "Pick a site: the globe turns toward it.",
     "none": "No sites with these layers. Turn one on.",
@@ -746,7 +750,8 @@
     "estimateNote": "Durations and bars are calculated by this website from the verified dates.",
     "noLaunch": "The bar starts at arrival.",
     "open": "Open the chapter on {{name}}",
-    "count": "{{n}} machines",
+    "count_one": "{{count}} machine",
+    "count_other": "{{count}} machines",
     "row": "{{name}}: from {{from}} to {{to}}"
   }
 }

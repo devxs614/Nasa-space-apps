@@ -14,7 +14,7 @@
       "b": "1",
       "c": "12",
       "d": "40",
-      "explain": "It also made 4 bearing tests and 13 impact tests."
+      "explain": "It also ran 4 bearing tests and 13 impact tests."
     },
     "q3": {
       "prompt": "What did the Apollo 12 astronauts who visited it take back to Earth?",
@@ -62,7 +62,7 @@
     },
     "q2": {
       "prompt": "When were all the ALSEP stations switched off?",
-      "a": "On 30 September 1977",
+      "a": "On September 30, 1977",
       "b": "In 1972, when the last astronaut left",
       "c": "In 2003",
       "d": "They are still on",
@@ -126,7 +126,7 @@
       "b": "A meteorite hit it",
       "c": "A dune buried it",
       "d": "It ran out of fuel",
-      "explain": "Its last data arrived on 11 April 1980."
+      "explain": "Its last data arrived on April 11, 1980."
     }
   },
   "sojourner": {
@@ -136,7 +136,7 @@
       "b": "The first Mars helicopter",
       "c": "A communications satellite",
       "d": "A crewed module",
-      "explain": "It arrived with Mars Pathfinder on 4 July 1997 in Ares Vallis."
+      "explain": "It arrived with Mars Pathfinder on July 4, 1997, in Ares Vallis."
     },
     "q2": {
       "prompt": "Who chose its name?",
@@ -170,7 +170,7 @@
       "b": "Martian rain",
       "c": "An arm with a brush",
       "d": "Astronauts",
-      "explain": "After a cleaning, its power could jump a lot all at once."
+      "explain": "After a cleaning, its power could jump sharply."
     },
     "q3": {
       "prompt": "Where did Spirit get stuck in 2009?",
@@ -178,7 +178,7 @@
       "b": "At the bottom of Valles Marineris",
       "c": "At the north pole",
       "d": "Inside a cave",
-      "explain": "It bogged down on 1 May 2009 and is still there."
+      "explain": "It bogged down on May 1, 2009, and is still there."
     }
   },
   "opportunity": {
@@ -200,7 +200,7 @@
     },
     "q3": {
       "prompt": "Which rover beat its distance record?",
-      "a": "Perseverance, on 11 October 2026",
+      "a": "Perseverance, on October 11, 2026",
       "b": "Curiosity, in 2015",
       "c": "Sojourner, in 1997",
       "d": "Nobody has beaten it",
@@ -214,7 +214,7 @@
       "b": "At the equator, next to a volcano",
       "c": "In Valles Marineris",
       "d": "On the moon Phobos",
-      "explain": "At about 68° north latitude, on 25 May 2008."
+      "explain": "At about 68° north latitude, on May 25, 2008."
     },
     "q2": {
       "prompt": "What were the white clumps that vanished from its trench?",
@@ -256,7 +256,7 @@
       "b": "A quake tipped it over",
       "c": "It ran out of fuel",
       "d": "Its antenna froze",
-      "explain": "NASA declared it over on 21 December 2022 after two failed contact attempts."
+      "explain": "NASA declared it over on December 21, 2022, after two failed contact attempts."
     }
   },
   "ingenuity": {
@@ -292,7 +292,7 @@
       "b": "Orbit Mars",
       "c": "Leave the Solar System",
       "d": "Photograph Pluto",
-      "explain": "It landed on 433 Eros on 12 February 2001."
+      "explain": "It landed on 433 Eros on February 12, 2001."
     },
     "q2": {
       "prompt": "Was it designed to land?",
@@ -360,15 +360,15 @@
       "b": "It hit an asteroid",
       "c": "It was brought back to Earth",
       "d": "Its mirror broke",
-      "explain": "It was retired on 30 October and received its final commands on 15 November 2018, the anniversary of Johannes Kepler's death."
+      "explain": "It was retired on October 30 and received its final commands on November 15, 2018, the anniversary of Johannes Kepler's death."
     }
   },
   "pioneer": {
     "q1": {
       "prompt": "When did Pioneer 10's last signal arrive?",
-      "a": "On 23 January 2003",
-      "b": "On 20 July 1969",
-      "c": "On 1 January 2020",
+      "a": "On January 23, 2003",
+      "b": "On July 20, 1969",
+      "c": "On January 1, 2020",
       "d": "It is still transmitting",
       "explain": "Its power was no longer enough for the transmitter; a final attempt in 2006 failed."
     },

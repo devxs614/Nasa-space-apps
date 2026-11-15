@@ -109,7 +109,7 @@ export function TimelinePage() {
         {byDuration ? t('timeline.sortDate') : t('timeline.sortDuration')}
       </button>
       <p className="font-mono text-[0.875rem] text-ink-dim" aria-live="polite">
-        {t('timeline.count', { n: rows.length })}
+        {t('timeline.count', { count: rows.length })}
       </p>
     </div>
   );

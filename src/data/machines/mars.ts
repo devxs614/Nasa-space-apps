@@ -21,7 +21,7 @@ export const viking: Machine = {
     sourceIds: ['nasa-viking1', 'nasa-viking'],
     note: L(
       'El Viking 2 envió sus últimos datos el 11 de abril de 1980, cuando fallaron sus baterías. El Viking 1 dejó de operar el 11 de noviembre de 1982 tras un comando defectuoso enviado desde la Tierra que interrumpió las comunicaciones.',
-      'Viking 2 sent its last data on 11 April 1980, when its batteries failed. Viking 1 stopped operating on 11 November 1982 after a faulty command sent from Earth cut off communications.',
+      'Viking 2 sent its last data on April 11, 1980, when its batteries failed. Viking 1 stopped operating on November 11, 1982, after a faulty command sent from Earth cut off communications.',
     ),
   },
   facts: [
@@ -31,7 +31,7 @@ export const viking: Machine = {
       '1975-08-20',
       L(
         'Viking 1 despegó el 20 de agosto de 1975 y Viking 2 el 9 de septiembre de 1975, en cohetes Titan IIIE-Centaur.',
-        'Viking 1 launched on 20 August 1975 and Viking 2 on 9 September 1975, on Titan IIIE-Centaur rockets.',
+        'Viking 1 launched on August 20, 1975, and Viking 2 on September 9, 1975, on Titan IIIE-Centaur rockets.',
       ),
       ['nasa-viking1', 'nasa-viking'],
     ),
@@ -41,7 +41,7 @@ export const viking: Machine = {
       '1976-07-20T11:53:06Z',
       L(
         'El 20 de julio de 1976 a las 11:53:06 UTC en 22,483° N, 47,94° O, en las laderas occidentales de Chryse Planitia, a unos 28 km del blanco previsto.',
-        'On 20 July 1976 at 11:53:06 UTC at 22.483° N, 47.94° W, on the western slopes of Chryse Planitia, about 28 km from the planned target.',
+        'On July 20, 1976, at 11:53:06 UTC at 22.483° N, 47.94° W, on the western slopes of Chryse Planitia, about 28 km from the planned target.',
       ),
       ['nasa-viking1'],
     ),
@@ -61,7 +61,7 @@ export const viking: Machine = {
       '20 · VII',
       L(
         'El Viking 1 aterrizó justo siete años después del Apollo 11: también un 20 de julio (cálculo a partir de las fechas).',
-        'Viking 1 landed exactly seven years after Apollo 11: also on a 20 July (calculated from the dates).',
+        'Viking 1 landed seven years to the day after Apollo 11: also on July 20 (calculated from the dates).',
       ),
       ['nasa-viking1', 'nssdca-a11-lm'],
     ),
@@ -81,7 +81,7 @@ export const viking: Machine = {
       '1976-09-03',
       L(
         'El 3 de septiembre de 1976 en 47,64° N, 134,29° E (planetocéntrico), Utopia Planitia, a 6.725 km del Viking 1.',
-        'On 3 September 1976 at 47.64° N, 134.29° E (planetocentric), Utopia Planitia, 6,725 km from Viking 1.',
+        'On September 3, 1976, at 47.64° N, 134.29° E (planetocentric), Utopia Planitia, 6,725 km from Viking 1.',
       ),
       ['nasa-viking', 'nasa-astrobio-viking'],
     ),
@@ -112,7 +112,7 @@ export const viking: Machine = {
       '1976-07-28',
       L(
         'El 28 de julio de 1976 el brazo entregó la primera muestra al laboratorio biológico. Sumando cuatro muestras, los datos biológicos podían leerse como un "positivo débil", pero la prueba principal de compuestos orgánicos dio negativo con un umbral de 10 a 100 partes por mil millones.',
-        'On 28 July 1976 the arm delivered the first sample to the biology lab. Across four samples, the biology data could be read as a "weak positive", but the main test for organic compounds came out negative at a threshold of 10 to 100 parts per billion.',
+        'On July 28, 1976, the arm delivered the first sample to the biology lab. Across four samples, the biology data could be read as a "weak positive", but the main test for organic compounds came out negative at a threshold of 10 to 100 parts per billion.',
       ),
       ['nasa-viking1'],
     ),
@@ -159,7 +159,7 @@ export const viking: Machine = {
       '1980-04-11',
       L(
         'Últimos datos el 11 de abril de 1980, cuando fallaron sus baterías.',
-        'Last data on 11 April 1980, when its batteries failed.',
+        'Last data on April 11, 1980, when its batteries failed.',
       ),
       ['nasa-viking', 'nasa-astrobio-viking'],
     ),
@@ -169,7 +169,7 @@ export const viking: Machine = {
       '1982-11-11',
       L(
         'Rebautizado Thomas Mutch Memorial Station en enero de 1982; dejó de operar el 11 de noviembre de 1982 tras un comando defectuoso enviado desde la Tierra.',
-        'Renamed Thomas Mutch Memorial Station in January 1982; it stopped operating on 11 November 1982 after a faulty command sent from Earth.',
+        'Renamed Thomas Mutch Memorial Station in January 1982; it stopped operating on November 11, 1982, after a faulty command sent from Earth.',
       ),
       ['nasa-viking1'],
     ),
@@ -241,7 +241,7 @@ export const sojourner: Machine = {
       '1996-12-04',
       L(
         'El 4 de diciembre de 1996 desde Cabo Cañaveral, en un Delta II 7925.',
-        'On 4 December 1996 from Cape Canaveral, on a Delta II 7925.',
+        'On December 4, 1996, from Cape Canaveral, on a Delta II 7925.',
       ),
       ['nasa-pathfinder'],
     ),
@@ -251,7 +251,7 @@ export const sojourner: Machine = {
       '1997-07-04',
       L(
         'El 4 de julio de 1997 en Ares Vallis, una antigua llanura de inundación, en 19,13° N, 33,22° O.',
-        'On 4 July 1997 in Ares Vallis, an ancient flood plain, at 19.13° N, 33.22° W.',
+        'On July 4, 1997, in Ares Vallis, an ancient flood plain, at 19.13° N, 33.22° W.',
       ),
       ['nasa-pathfinder', 'jpl-mpf-factsheet'],
     ),
@@ -272,7 +272,7 @@ export const sojourner: Machine = {
       10.6,
       L(
         '10,6 kg y 30 cm de alto; bajó por una rampa inclinada 20° en la noche del 5 de julio, durante el sol 2.',
-        '10.6 kg and 30 cm tall; it rolled down a ramp tilted 20° on the night of 5 July, during sol 2.',
+        '10.6 kg and 30 cm tall; it rolled down a ramp tilted 20° on the night of July 5, during sol 2.',
       ),
       ['nasa-pathfinder'],
       { unit: 'kg' },
@@ -313,7 +313,7 @@ export const sojourner: Machine = {
       '1997-09-27',
       L(
         'La última transmisión de la misión llegó el 27 de septiembre de 1997.',
-        "The mission's last transmission arrived on 27 September 1997.",
+        "The mission's last transmission arrived on September 27, 1997.",
       ),
       ['nasa-pathfinder'],
     ),
@@ -379,7 +379,7 @@ export const spirit: Machine = {
   planned: {
     text: L(
       '90 días marcianos, hasta alrededor del 4 de abril de 2004.',
-      '90 Martian days, until around 4 April 2004.',
+      '90 Martian days, until around April 4, 2004.',
     ),
     sourceIds: ['nasa-spirit'],
     days: 91,
@@ -391,7 +391,7 @@ export const spirit: Machine = {
       '2004-01-04',
       L(
         'El 4 de enero de 2004 en UTC (3 de enero en California), en el cráter Gusev, quizá un antiguo lago.',
-        'On 4 January 2004 UTC (3 January in California), in Gusev crater, possibly an ancient lake.',
+        'On January 4, 2004 UTC (January 3 in California), in Gusev crater, possibly an ancient lake.',
       ),
       ['nasa-mer', 'jpl-spirit-end'],
     ),
@@ -441,7 +441,7 @@ export const spirit: Machine = {
       '2009-05-01',
       L(
         'El 1 de mayo de 2009 se hundió en suelo blando en "Troy", en el lado oeste de Home Plate.',
-        'On 1 May 2009 it bogged down in soft soil at "Troy", on the west side of Home Plate.',
+        'On May 1, 2009, it bogged down in soft soil at "Troy", on the west side of Home Plate.',
       ),
       ['astronomy-spirit'],
     ),
@@ -451,7 +451,7 @@ export const spirit: Machine = {
       '2010-01-26',
       L(
         'El 26 de enero de 2010 NASA redefinió su misión como plataforma científica inmóvil.',
-        'On 26 January 2010 NASA redefined its mission as a stationary science platform.',
+        'On January 26, 2010, NASA redefined its mission as a stationary science platform.',
       ),
       ['nasa-spirit'],
     ),
@@ -461,7 +461,7 @@ export const spirit: Machine = {
       2208,
       L(
         'Última señal el 22 de marzo de 2010 (sol 2.208), al llegar el invierno.',
-        'Last signal on 22 March 2010 (sol 2,208), as winter arrived.',
+        'Last signal on March 22, 2010 (sol 2,208), as winter arrived.',
       ),
       ['nasa-spirit', 'jpl-spirit-end'],
       { unit: 'sol' },
@@ -472,7 +472,7 @@ export const spirit: Machine = {
       '2011-05-25',
       L(
         'El 25 de mayo de 2011, tras más de 1.300 comandos sin respuesta; la causa más probable fue un frío excesivo que dejó sin efecto sus calefactores.',
-        'On 25 May 2011, after more than 1,300 unanswered commands; the most likely cause was extreme cold that overwhelmed its heaters.',
+        'On May 25, 2011, after more than 1,300 unanswered commands; the most likely cause was extreme cold that overwhelmed its heaters.',
       ),
       ['nasa-spirit', 'jpl-spirit-end'],
     ),
@@ -552,7 +552,7 @@ export const opportunity: Machine = {
       '2004-01-25',
       L(
         'El 25 de enero de 2004 en UTC (24 de enero en California), en Meridiani Planum, dentro del pequeño cráter Eagle.',
-        'On 25 January 2004 UTC (24 January in California), in Meridiani Planum, inside the small Eagle crater.',
+        'On January 25, 2004 UTC (January 24 in California), in Meridiani Planum, inside the small Eagle crater.',
       ),
       ['nasa-mer', 'rocketstem-opportunity'],
     ),
@@ -611,7 +611,7 @@ export const opportunity: Machine = {
       42.198,
       L(
         'El 24 de marzo de 2015 (sol 3.968) su odómetro pasó de 42,195 km: 42,198 km tras unos 11 años y 2 meses.',
-        'On 24 March 2015 (sol 3,968) its odometer passed 42.195 km: 42.198 km after about 11 years and 2 months.',
+        'On March 24, 2015 (sol 3,968) its odometer passed 42.195 km: 42.198 km after about 11 years and 2 months.',
       ),
       ['nasa-marathon', 'nasa-sciencecasts-marathon'],
       { unit: 'km' },
@@ -632,7 +632,7 @@ export const opportunity: Machine = {
       5111,
       L(
         'Última señal el 10 de junio de 2018, sol 5.111, en plena tormenta de polvo que cubrió el planeta.',
-        'Last signal on 10 June 2018, sol 5,111, during a dust storm that covered the whole planet.',
+        'Last signal on June 10, 2018, sol 5,111, during a dust storm that covered the whole planet.',
       ),
       ['jpl-opportunity-end', 'sciencenews-opportunity'],
       { unit: 'sol' },
@@ -643,7 +643,7 @@ export const opportunity: Machine = {
       1000,
       L(
         'Más de mil comandos; el último intento fue la noche del 12 de febrero de 2019, mientras sonaba la canción "I\'ll Be Seeing You" de Billie Holiday.',
-        'More than a thousand commands; the final attempt was on the night of 12 February 2019, while the song "I\'ll Be Seeing You" by Billie Holiday played.',
+        'More than a thousand commands; the final attempt was on the night of February 12, 2019, while the song "I\'ll Be Seeing You" by Billie Holiday played.',
       ),
       ['jpl-opportunity-end', 'planetary-opportunity'],
     ),
@@ -653,7 +653,7 @@ export const opportunity: Machine = {
       '2019-02-13',
       L(
         'NASA declaró el fin de la misión el 13 de febrero de 2019.',
-        'NASA declared the mission over on 13 February 2019.',
+        'NASA declared the mission over on February 13, 2019.',
       ),
       ['jpl-opportunity-end'],
     ),
@@ -663,7 +663,7 @@ export const opportunity: Machine = {
       45.16,
       L(
         '45,16 km: récord de distancia en otro mundo hasta el 11 de octubre de 2026.',
-        '45.16 km: the off-world distance record until 11 October 2026.',
+        '45.16 km: the off-world distance record until October 11, 2026.',
       ),
       ['nasa-mer'],
       { unit: 'km' },
@@ -674,7 +674,7 @@ export const opportunity: Machine = {
       45.22,
       L(
         'El 11 de octubre de 2026, en su sol 2.006, Perseverance alcanzó 45,22 km y superó la marca de Opportunity en unos 5,5 años.',
-        'On 11 October 2026, on its sol 2,006, Perseverance reached 45.22 km and beat Opportunity’s mark in about 5.5 years.',
+        'On October 11, 2026, on its sol 2,006, Perseverance reached 45.22 km and beat Opportunity’s mark in about 5.5 years.',
       ),
       ['nasa-perseverance-record', 'petapixel-record'],
       { unit: 'km' },
@@ -715,7 +715,7 @@ export const opportunity: Machine = {
   legacy: {
     text: L(
       'Su récord duró hasta 2026, cuando lo superó un rover que lleva justo el nombre del valle donde descansa.',
-      'Its record lasted until 2026, when it was beaten by a rover named exactly like the valley where it rests.',
+      'Its record lasted until 2026, when it was beaten by a rover with the same name as the valley where it rests.',
     ),
     to: ['epilogue'],
   },
@@ -749,7 +749,7 @@ export const phoenix: Machine = {
       'launch',
       L('Lanzamiento', 'Launch'),
       '2007-08-04',
-      L('El 4 de agosto de 2007, en un Delta II.', 'On 4 August 2007, on a Delta II.'),
+      L('El 4 de agosto de 2007, en un Delta II.', 'On August 4, 2007, on a Delta II.'),
       ['nasa-phoenix'],
     ),
     fact(
@@ -758,7 +758,7 @@ export const phoenix: Machine = {
       '2008-05-25',
       L(
         'El 25 de mayo de 2008 en 68,22° N, 234,25° E (125,75° O), en Vastitas Borealis, las llanuras árticas.',
-        'On 25 May 2008 at 68.22° N, 234.25° E (125.75° W), in Vastitas Borealis, the Arctic plains.',
+        'On May 25, 2008, at 68.22° N, 234.25° E (125.75° W), in Vastitas Borealis, the Arctic plains.',
       ),
       ['nasa-phoenix'],
     ),
@@ -768,7 +768,7 @@ export const phoenix: Machine = {
       68.22,
       L(
         'Aterrizó más al norte que cualquier nave anterior, a la latitud equivalente al norte de Alaska; fue el primer aterrizador fijo exitoso desde el Viking 2, unos 32 años después.',
-        'It landed farther north than any spacecraft before, at the equivalent latitude of northern Alaska; it was the first successful stationary lander since Viking 2, some 32 years later.',
+        'It landed farther north than any spacecraft before, at a latitude equivalent to that of northern Alaska; it was the first successful stationary lander since Viking 2, some 32 years later.',
       ),
       ['nasa-phoenix-overview'],
       { unit: '° N' },
@@ -786,7 +786,7 @@ export const phoenix: Machine = {
       4,
       L(
         'Grumos brillantes en la zanja "Dodo-Goldilocks" desaparecieron en cuatro días: era hielo de agua (conclusión del 19 de junio de 2008). Pasó de sólido a gas sin volverse líquido.',
-        'Bright clumps in the "Dodo-Goldilocks" trench vanished within four days: it was water ice (concluded on 19 June 2008). It went from solid to gas without becoming liquid.',
+        'Bright clumps in the "Dodo-Goldilocks" trench vanished within four days: it was water ice (concluded on June 19, 2008). It went from solid to gas without becoming liquid.',
       ),
       ['nasa-phoenix'],
       { unit: 'd' },
@@ -797,7 +797,7 @@ export const phoenix: Machine = {
       '2008-07-31',
       L(
         'El 31 de julio de 2008 NASA anunció agua en Marte: el instrumento TEGA calentó una muestra y detectó vapor de agua.',
-        'On 31 July 2008 NASA announced water on Mars: the TEGA instrument heated a sample and detected water vapor.',
+        'On July 31, 2008, NASA announced water on Mars: the TEGA instrument heated a sample and detected water vapor.',
       ),
       ['nasa-phoenix'],
     ),
@@ -817,7 +817,7 @@ export const phoenix: Machine = {
       '2008-11-02',
       L(
         'El 2 de noviembre de 2008, cuando el invierno dejó sin luz sus paneles solares.',
-        'On 2 November 2008, when winter left its solar panels without light.',
+        'On November 2, 2008, when winter left its solar panels without light.',
       ),
       ['nasa-phoenix', 'spaceflightnow-phoenix'],
     ),
@@ -886,7 +886,7 @@ export const insight: Machine = {
       '2018-05-05',
       L(
         'El 5 de mayo de 2018 desde la base Vandenberg, California, en un Atlas V.',
-        'On 5 May 2018 from Vandenberg base, California, on an Atlas V.',
+        'On May 5, 2018, from Vandenberg base, California, on an Atlas V.',
       ),
       ['nasa-insight'],
     ),
@@ -906,7 +906,7 @@ export const insight: Machine = {
       '2018-11-26',
       L(
         'El 26 de noviembre de 2018 en el oeste de Elysium Planitia, hacia 4,5° N, 135,9° E, a unos 600 km del cráter Gale de Curiosity.',
-        "On 26 November 2018 in western Elysium Planitia, near 4.5° N, 135.9° E, about 600 km from Curiosity's Gale crater.",
+        "On November 26, 2018, in western Elysium Planitia, near 4.5° N, 135.9° E, about 600 km from Curiosity's Gale crater.",
       ),
       ['nasa-insight'],
     ),
@@ -937,7 +937,7 @@ export const insight: Machine = {
       4.7,
       L(
         'Magnitud 4,7 el 4 de mayo de 2022 (sol 1.222).',
-        'Magnitude 4.7 on 4 May 2022 (sol 1,222).',
+        'Magnitude 4.7 on May 4, 2022 (sol 1,222).',
       ),
       ['popsci-insight', 'livescience-insight'],
     ),
@@ -978,7 +978,7 @@ export const insight: Machine = {
       '2022-04-24',
       L(
         'El 24 de abril de 2022 (sol 1.211), ya muy cubierta de polvo.',
-        'On 24 April 2022 (sol 1,211), already heavily covered in dust.',
+        'On April 24, 2022 (sol 1,211), already heavily covered in dust.',
       ),
       ['vatican-insight'],
     ),
@@ -988,7 +988,7 @@ export const insight: Machine = {
       '2022-12-21',
       L(
         'Declarado el 21 de diciembre de 2022 tras dos intentos de contacto fallidos; el polvo en los paneles agotó su energía.',
-        'Declared on 21 December 2022 after two failed contact attempts; dust on its panels drained its power.',
+        'Declared on December 21, 2022, after two failed contact attempts; dust on its panels drained its power.',
       ),
       ['nasa-insight-end', 'engadget-insight'],
     ),
@@ -1059,7 +1059,7 @@ export const ingenuity: Machine = {
       '2021-02-18',
       L(
         'El 18 de febrero de 2021, enganchado bajo el rover Perseverance, en el cráter Jezero.',
-        'On 18 February 2021, attached under the Perseverance rover, in Jezero crater.',
+        'On February 18, 2021, attached under the Perseverance rover, in Jezero crater.',
       ),
       ['foxweather-ingenuity'],
     ),
@@ -1069,7 +1069,7 @@ export const ingenuity: Machine = {
       '2021-04-19',
       L(
         'El 19 de abril de 2021: 39,1 s a unos 3 m de altura; el primer vuelo propulsado y controlado en otro planeta.',
-        'On 19 April 2021: 39.1 s at about 3 m high; the first powered, controlled flight on another planet.',
+        'On April 19, 2021: 39.1 s at about 3 m high; the first powered, controlled flight on another planet.',
       ),
       ['nasa-wright-history', 'nasa-ingenuity'],
     ),
@@ -1129,14 +1129,14 @@ export const ingenuity: Machine = {
       'lastFlight',
       L('Último vuelo', 'Last flight'),
       '2024-01-18',
-      L('Vuelo 72, el 18 de enero de 2024.', 'Flight 72, on 18 January 2024.'),
+      L('Vuelo 72, el 18 de enero de 2024.', 'Flight 72, on January 18, 2024.'),
       ['nasa-ingenuity'],
     ),
     fact(
       'end',
       L('Fin de misión', 'End of mission'),
       '2024-01-25',
-      L('El 25 de enero de 2024.', 'On 25 January 2024.'),
+      L('El 25 de enero de 2024.', 'On January 25, 2024.'),
       ['nasa-ingenuity'],
     ),
     fact(
@@ -1166,7 +1166,7 @@ export const ingenuity: Machine = {
       20,
       L(
         'El 16 de abril de 2024 el equipo recibió su última transmisión. Un parche de software le ordena despertar cada día, revisar sus sistemas, tomar una foto y registrar temperaturas, guardando los datos a bordo; su memoria podría almacenar unos 20 años de datos diarios.',
-        'On 16 April 2024 the team received its last transmission. A software patch tells it to wake up every day, check its systems, take a picture and log temperatures, storing the data on board; its memory could hold about 20 years of daily data.',
+        'On April 16, 2024, the team received its last transmission. A software patch tells it to wake up every day, check its systems, take a picture and log temperatures, storing the data on board; its memory could hold about 20 years of daily data.',
       ),
       ['nasa-ingenuity-goodbye', 'phys-ingenuity'],
       { unit: 'a', approx: true },

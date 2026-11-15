@@ -208,7 +208,7 @@ export function AtlasPage({ body }: AtlasPageProps) {
               {t('atlas.sites')}
             </h2>
             <p className="font-mono text-[0.8125rem] text-ink-dim" aria-live="polite">
-              {t('atlas.sitesCount', { n: visible.length })}
+              {t('atlas.sitesCount', { count: visible.length })}
             </p>
           </div>
           <p className="mb-2 text-[0.9375rem] text-ink-dim">{t('atlas.listHint')}</p>

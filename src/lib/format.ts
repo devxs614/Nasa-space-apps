@@ -50,7 +50,8 @@ export function diffYMD(
  */
 const DATE_STYLES = {
   date: { dateStyle: 'long', timeZone: 'UTC' },
-  dateTime: { dateStyle: 'long', timeStyle: 'short', timeZone: 'UTC' },
+  // h23: las horas son UTC y el texto las escribe de 0 a 23 ("00:04 UTC", no "12:04 AM UTC").
+  dateTime: { dateStyle: 'long', timeStyle: 'short', timeZone: 'UTC', hourCycle: 'h23' },
   monthYear: { month: 'long', year: 'numeric', timeZone: 'UTC' },
 } as const satisfies Record<string, Intl.DateTimeFormatOptions>;
 const dfCache = new Map<string, Intl.DateTimeFormat>();

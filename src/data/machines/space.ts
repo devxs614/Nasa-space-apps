@@ -21,7 +21,7 @@ export const near: Machine = {
     sourceIds: ['nasa-near'],
     note: L(
       'Vencida por un frío extremo de −173 °C. El 10 de diciembre de 2002 NASA intentó contactarla sin éxito.',
-      'Overcome by extreme cold of −173 °C. On 10 December 2002 NASA tried to contact it without success.',
+      'Overcome by extreme cold of −173 °C. On December 10, 2002, NASA tried to contact it without success.',
     ),
   },
   facts: [
@@ -29,7 +29,7 @@ export const near: Machine = {
       'launch',
       L('Lanzamiento', 'Launch'),
       '1996-02-17T20:43:27Z',
-      L('El 17 de febrero de 1996 a las 20:43:27 UTC.', 'On 17 February 1996 at 20:43:27 UTC.'),
+      L('El 17 de febrero de 1996 a las 20:43:27 UTC.', 'On February 17, 1996, at 20:43:27 UTC.'),
       ['nasa-near'],
     ),
     fact(
@@ -38,7 +38,7 @@ export const near: Machine = {
       1200,
       L(
         'El 27 de junio de 1997 pasó a unos 1.200 km del asteroide Mathilde.',
-        'On 27 June 1997 it flew about 1,200 km from the asteroid Mathilde.',
+        'On June 27, 1997, it flew about 1,200 km from the asteroid Mathilde.',
       ),
       ['nasa-near'],
       { unit: 'km', approx: true },
@@ -49,7 +49,7 @@ export const near: Machine = {
       3827,
       L(
         'El 20 de diciembre de 1998 se abortó un encendido clave; la nave pasó de largo junto a Eros el 23 de diciembre a unos 3.827 km y tuvo que dar una vuelta más alrededor del Sol.',
-        'On 20 December 1998 a key engine burn aborted; the spacecraft flew past Eros on 23 December at about 3,827 km and had to make one more loop around the Sun.',
+        'On December 20, 1998, a key engine burn aborted; the spacecraft flew past Eros on December 23 at about 3,827 km and had to make one more loop around the Sun.',
       ),
       ['nasa-near'],
       { unit: 'km', approx: true },
@@ -60,7 +60,7 @@ export const near: Machine = {
       '2000-02-14',
       L(
         'El 14 de febrero de 2000 (Día de San Valentín), un año más tarde de lo previsto: el primer objeto humano en orbitar un asteroide.',
-        "On 14 February 2000 (Valentine's Day), a year later than planned: the first human-made object to orbit an asteroid.",
+        "On February 14, 2000 (Valentine's Day), a year later than planned: the first human-made object to orbit an asteroid.",
       ),
       ['nasa-near'],
     ),
@@ -70,7 +70,7 @@ export const near: Machine = {
       '2000-03-14',
       L(
         'El 14 de marzo de 2000 NASA la rebautizó NEAR Shoemaker en honor del geólogo Eugene M. Shoemaker (1928–1997).',
-        'On 14 March 2000 NASA renamed it NEAR Shoemaker in honor of geologist Eugene M. Shoemaker (1928–1997).',
+        'On March 14, 2000, NASA renamed it NEAR Shoemaker in honor of geologist Eugene M. Shoemaker (1928–1997).',
       ),
       ['nasa-near'],
     ),
@@ -80,7 +80,7 @@ export const near: Machine = {
       6.4,
       L(
         'El 12 de febrero de 2001 a las 19:44 UTC, justo al sur de la silla llamada Himeros, a unos 6,4 km/h. No estaba diseñada para posarse.',
-        'On 12 February 2001 at 19:44 UTC, just south of the saddle called Himeros, at about 6.4 km/h. It was not designed to land.',
+        'On February 12, 2001, at 19:44 UTC, just south of the saddle called Himeros, at about 6.4 km/h. It was not designed to land.',
       ),
       ['nasa-near'],
       { unit: 'km/h', approx: true },
@@ -112,7 +112,7 @@ export const near: Machine = {
       -173,
       L(
         'El 28 de febrero de 2001, vencida por un frío extremo de −173 °C.',
-        'On 28 February 2001, overcome by extreme cold of −173 °C.',
+        'On February 28, 2001, overcome by extreme cold of −173 °C.',
       ),
       ['nasa-near'],
       { unit: '°C' },
@@ -123,7 +123,7 @@ export const near: Machine = {
       '2002-12-10',
       L(
         'El 10 de diciembre de 2002 NASA intentó contactarla sin éxito.',
-        'On 10 December 2002 NASA tried to contact it without success.',
+        'On December 10, 2002, NASA tried to contact it without success.',
       ),
       ['nasa-near'],
     ),
@@ -187,7 +187,7 @@ export const dawn: Machine = {
     sourceIds: ['jpl-dawn-end'],
     note: L(
       'No respondió en las sesiones de comunicación del 31 de octubre y el 1 de noviembre de 2018: se le acabó la hidracina que usaba para orientarse.',
-      'It did not respond during the communication sessions of 31 October and 1 November 2018: it had run out of the hydrazine it used to point itself.',
+      'It did not respond during the communication sessions of October 31 and November 1, 2018: it had run out of the hydrazine it used to point itself.',
     ),
   },
   missionEnd: { date: '2018-11-01', sourceIds: ['jpl-dawn-end', 'nasa-dawn-107840'] },
@@ -196,7 +196,7 @@ export const dawn: Machine = {
       'launch',
       L('Lanzamiento', 'Launch'),
       '2007-09-27',
-      L('El 27 de septiembre de 2007.', 'On 27 September 2007.'),
+      L('El 27 de septiembre de 2007.', 'On September 27, 2007.'),
       ['nasa-dawn-highlights', 'nasa-dawn'],
     ),
     fact(
@@ -205,7 +205,7 @@ export const dawn: Machine = {
       '2009-02-17',
       L(
         'El 17 de febrero de 2009 la gravedad de Marte le dio un empujón.',
-        "On 17 February 2009 Mars's gravity gave it a push.",
+        "On February 17, 2009, Mars's gravity gave it a push.",
       ),
       ['nasa-dawn-highlights'],
     ),
@@ -226,7 +226,7 @@ export const dawn: Machine = {
       '2011-07-16',
       L(
         'El 16 de julio de 2011: la primera nave en orbitar un objeto del cinturón principal de asteroides.',
-        'On 16 July 2011: the first spacecraft to orbit an object in the main asteroid belt.',
+        'On July 16, 2011: the first spacecraft to orbit an object in the main asteroid belt.',
       ),
       ['nasa-dawn-history'],
     ),
@@ -236,7 +236,7 @@ export const dawn: Machine = {
       '2012-09-05',
       L(
         'El 5 de septiembre de 2012, tras unos 14 meses en órbita.',
-        'On 5 September 2012, after about 14 months in orbit.',
+        'On September 5, 2012, after about 14 months in orbit.',
       ),
       ['nasa-dawn-history', 'nasa-dawn-140784'],
     ),
@@ -246,7 +246,7 @@ export const dawn: Machine = {
       '2015-03-06',
       L(
         'El 6 de marzo de 2015: la primera nave en orbitar dos cuerpos distintos más allá de la Tierra y la primera en visitar un planeta enano, cuatro meses antes de que New Horizons pasara por Plutón.',
-        'On 6 March 2015: the first spacecraft to orbit two different bodies beyond Earth and the first to visit a dwarf planet, four months before New Horizons flew past Pluto.',
+        'On March 6, 2015: the first spacecraft to orbit two different bodies beyond Earth and the first to visit a dwarf planet, four months before New Horizons flew past Pluto.',
       ),
       ['nasa-dawn-140784', 'jpl-dawn-end'],
     ),
@@ -307,7 +307,7 @@ export const dawn: Machine = {
       '2018-11-01',
       L(
         'No respondió en las sesiones del 31 de octubre y el 1 de noviembre de 2018: se le acabó la hidracina que usaba para orientarse.',
-        'It did not respond during the sessions of 31 October and 1 November 2018: it had run out of the hydrazine it used to point itself.',
+        'It did not respond during the sessions of October 31 and November 1, 2018: it had run out of the hydrazine it used to point itself.',
       ),
       ['jpl-dawn-end'],
     ),
@@ -379,7 +379,7 @@ export const kepler: Machine = {
       'launch',
       L('Lanzamiento', 'Launch'),
       '2009-03-06',
-      L('El 6 de marzo de 2009.', 'On 6 March 2009.'),
+      L('El 6 de marzo de 2009.', 'On March 6, 2009.'),
       ['nasa-kepler'],
     ),
     fact(
@@ -446,7 +446,7 @@ export const kepler: Machine = {
       '2018-10-30',
       L(
         'El 30 de octubre de 2018, al quedarse sin combustible para la ciencia.',
-        'On 30 October 2018, when it ran out of fuel for science.',
+        'On October 30, 2018, when it ran out of fuel for science.',
       ),
       ['nasa-kepler'],
     ),
@@ -456,7 +456,7 @@ export const kepler: Machine = {
       '2018-11-15',
       L(
         'El 15 de noviembre de 2018 recibió los comandos finales que apagaron sus comunicaciones, en el aniversario de la muerte del astrónomo Johannes Kepler (1630).',
-        'On 15 November 2018 it received the final commands that turned off its communications, on the anniversary of the death of astronomer Johannes Kepler (1630).',
+        'On November 15, 2018, it received the final commands that turned off its communications, on the anniversary of the death of astronomer Johannes Kepler (1630).',
       ),
       ['nasa-kepler-goodnight', 'solardaily-kepler'],
     ),
@@ -530,7 +530,7 @@ export const pioneer: Machine = {
     sourceIds: ['nasa-pioneer10', 'nasa-pioneer11'],
     note: L(
       'Pioneer 10 envió su última señal el 23 de enero de 2003, desde 12.230 millones de km: tardó 11 h 20 min en llegar. Pioneer 11 tuvo su contacto final el 30 de septiembre de 1995, a 44,1 UA, y envió unos minutos de datos de ingeniería el 24 de noviembre de 1995.',
-      'Pioneer 10 sent its last signal on 23 January 2003, from 12.23 billion km: it took 11 h 20 min to arrive. Pioneer 11 made final contact on 30 September 1995, at 44.1 AU, and sent a few minutes of engineering data on 24 November 1995.',
+      'Pioneer 10 sent its last signal on January 23, 2003, from 12.23 billion km: it took 11 h 20 min to arrive. Pioneer 11 made final contact on September 30, 1995, at 44.1 AU, and sent a few minutes of engineering data on November 24, 1995.',
     ),
   },
   planned: {
@@ -549,7 +549,7 @@ export const pioneer: Machine = {
       258,
       L(
         'El 2 de marzo de 1972 (fecha de Florida), en un Atlas-Centaur; 258 kg; diseñada para 21 meses, duró más de 30 años.',
-        'On 2 March 1972 (Florida date), on an Atlas-Centaur; 258 kg; designed for 21 months, it lasted more than 30 years.',
+        'On March 2, 1972 (Florida date), on an Atlas-Centaur; 258 kg; designed for 21 months, it lasted more than 30 years.',
       ),
       ['nasa-pioneer10'],
       { unit: 'kg' },
@@ -560,7 +560,7 @@ export const pioneer: Machine = {
       4,
       L(
         'Pioneer 10 fue la primera nave en cruzar el cinturón de asteroides, en pasar junto a Júpiter y en tomar rumbo para salir del sistema solar, y el primer objeto humano en cruzar la órbita de Neptuno (13 de junio de 1983). Pioneer 11 fue la primera en estudiar Saturno de cerca.',
-        "Pioneer 10 was the first spacecraft to cross the asteroid belt, to fly past Jupiter and to head out of the Solar System, and the first human-made object to cross Neptune's orbit (13 June 1983). Pioneer 11 was the first to study Saturn up close.",
+        "Pioneer 10 was the first spacecraft to cross the asteroid belt, to fly past Jupiter and to head out of the Solar System, and the first human-made object to cross Neptune's orbit (June 13, 1983). Pioneer 11 was the first to study Saturn up close.",
       ),
       ['nasa-pioneer10', 'nasa-pioneer11'],
     ),
@@ -570,7 +570,7 @@ export const pioneer: Machine = {
       130354,
       L(
         'Máximo acercamiento el 4 de diciembre de 1973, a 130.354 km; unas 500 imágenes, incluida la Gran Mancha Roja.',
-        'Closest approach on 4 December 1973, at 130,354 km; about 500 images, including the Great Red Spot.',
+        'Closest approach on December 4, 1973, at 130,354 km; about 500 images, including the Great Red Spot.',
       ),
       ['nasa-pioneer10'],
       { unit: 'km' },
@@ -602,7 +602,7 @@ export const pioneer: Machine = {
       '2003-01-23',
       L(
         'El 23 de enero de 2003, desde 12.230 millones de km: la señal tardó 11 h 20 min en llegar; su energía ya no alcanzaba para el transmisor. Un último intento en 2006 falló.',
-        'On 23 January 2003, from 12.23 billion km: the signal took 11 h 20 min to arrive; its power was no longer enough for the transmitter. A final attempt in 2006 failed.',
+        'On January 23, 2003, from 12.23 billion km: the signal took 11 h 20 min to arrive; its power was no longer enough for the transmitter. A final attempt in 2006 failed.',
       ),
       ['nasa-pioneer10'],
     ),
@@ -622,7 +622,7 @@ export const pioneer: Machine = {
       '1998-02-17',
       L(
         'Fue el objeto humano más lejano hasta que Voyager 1 la superó el 17 de febrero de 1998.',
-        'It was the most distant human-made object until Voyager 1 overtook it on 17 February 1998.',
+        'It was the most distant human-made object until Voyager 1 overtook it on February 17, 1998.',
       ),
       ['nasa-pioneer10'],
     ),
@@ -643,7 +643,7 @@ export const pioneer: Machine = {
       21000,
       L(
         'Lanzada en abril de 1973; pasó a unos 21.000 km de las nubes de Saturno el 1 de septiembre de 1979 y aportó la primera prueba clara de su campo magnético.',
-        "Launched in April 1973; it passed about 21,000 km above Saturn's clouds on 1 September 1979 and gave the first clear evidence of its magnetic field.",
+        "Launched in April 1973; it passed about 21,000 km above Saturn's clouds on September 1, 1979, and gave the first clear evidence of its magnetic field.",
       ),
       ['nasa-pioneer11'],
       { unit: 'km', approx: true },
@@ -654,7 +654,7 @@ export const pioneer: Machine = {
       44.1,
       L(
         'Contacto final el 30 de septiembre de 1995 a 44,1 UA; unos minutos de datos de ingeniería el 24 de noviembre de 1995.',
-        'Final contact on 30 September 1995 at 44.1 AU; a few minutes of engineering data on 24 November 1995.',
+        'Final contact on September 30, 1995, at 44.1 AU; a few minutes of engineering data on November 24, 1995.',
       ),
       ['nasa-pioneer11'],
       { unit: 'UA' },
@@ -701,7 +701,7 @@ export const pioneer: Machine = {
   legacy: {
     text: L(
       'Abrieron el camino a las Voyager, que siguen activas; alrededor del 13 de noviembre de 2026 Voyager 1 alcanzó un día-luz de distancia de la Tierra.',
-      'They opened the way for the Voyagers, which are still active; around 13 November 2026 Voyager 1 reached one light-day from Earth.',
+      'They opened the way for the Voyagers, which are still active; around November 13, 2026, Voyager 1 reached one light-day from Earth.',
     ),
     to: ['epilogue'],
   },

@@ -260,7 +260,7 @@ export function CatalogPage() {
           />
         </form>
         <p className="mb-4 font-mono text-[0.875rem] text-ink-dim" aria-live="polite">
-          {t('catalog.results', { n: machines.length + extras.length })}
+          {t('catalog.results', { count: machines.length + extras.length })}
         </p>
         {machines.length + extras.length === 0 && <p>{t('catalog.none')}</p>}
         <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -4,14 +4,14 @@
     "2": "From Earth we listen to the universe with giant antennas. For years, many machines spoke to us from very far away.",
     "3": "Some no longer answer. They ran out of light, warmth or fuel. But they are not lost: we know where each one is.",
     "census": "{{total}} silent machines · {{moon}} on the Moon · {{mars}} on Mars · {{small}} on small worlds · {{deep}} in deep space.",
-    "5": "I'm LUMI, a listening probe. Well… a probe made up for this journey. What I say is a story; what the Mission Log says is real and checked.",
+    "5": "I'm LUMI, a listening probe. Well… a probe made up for this journey. What I say is a story; what the Mission Log says is real and verified.",
     "6": "The machines will talk to you too. Their voices are imagined, but their stories are true. Will you help me wake them up?",
     "8": "Heading for the Moon. Light gets there in just over a second. We'll go a little slower.",
     "antennas": "The antennas are spread around the planet, so one is always facing the right patch of sky.",
     "voicesTitle": "The four voices of this journey",
     "exampleMachine": "I'm a machine. My voice is imagined, but what I tell you really happened.",
     "exampleLumi": "I'm LUMI. I guide you, ask you things and sometimes joke.",
-    "exampleLog": "Mission Log: checked facts, with date, unit and source.",
+    "exampleLog": "Mission Log: verified facts, with date, unit and source.",
     "exampleYou": "You: the signal operator. The buttons talk to you.",
     "sceneAlt": {
       "title": "Earth at night turns slowly as seen from orbit, its city lights glowing.",
@@ -160,7 +160,7 @@
       "retro": "Retroreflector"
     },
     "wake": {
-      "1": "These instruments kept working on their own after the astronauts left. One of them still answers to light.",
+      "1": "These instruments kept working on their own after the astronauts left. One of them still responds to light.",
       "2": "Shhh… I'm listening. I'm always listening.",
       "sceneAlt": "The Moon from orbit, with markers over the ALSEP stations and a glint on the Apollo 15 retroreflector."
     },
@@ -278,7 +278,7 @@
     },
     "lastSignal": {
       "1": "My batteries gave out first, in 1980.",
-      "2": "I kept going until 1982, when a wrong command left me unable to talk. Humans make mistakes too. What matters is learning from them.",
+      "2": "I kept going until 1982, when a faulty command left me unable to talk. Humans make mistakes too. What matters is learning from them.",
       "sceneAlt": "Dust settles over the lander and the Martian sunset light fades."
     },
     "legacy": {
@@ -377,7 +377,7 @@
     "pro": "On Earth, opaline silica like Home Plate's forms in hot springs or fumaroles; both are full of microbial life on our planet, which is why it is one of the twin rovers' most important finds.",
     "aula": {
       "1": "Can you remember a mistake that taught you something?",
-      "2": "Why did white soil catch the scientists' attention?",
+      "2": "Why did the white soil catch the scientists' attention?",
       "3": "What would you have done to get Spirit out of the sand?"
     }
   },
@@ -418,9 +418,9 @@
       "1": "I rest in a valley called Perseverance. And in 2026, a rover called Perseverance beat my record. I love that coincidence.",
       "sceneAlt": "The camera pulls back toward Mars and points to the distant Martian Arctic."
     },
-    "pro": "The marathon was completed on sol 3,968 with 42.198 km on the odometer; part of the way was driven backward because of a steering fault. Perseverance beat Opportunity's 45.16 km with 45.22 km on 11 October 2026, largely thanks to its self-driving.",
+    "pro": "The marathon was completed on sol 3,968 with 42.198 km on the odometer; part of the way was driven backward because of a steering fault. Perseverance beat Opportunity's 45.16 km with 45.22 km on October 11, 2026, largely thanks to its self-driving.",
     "aula": {
-      "1": "What helps you keep going on something long?",
+      "1": "What helps you keep going when something takes a long time?",
       "2": "Why is dust so dangerous for a solar-powered machine?",
       "3": "What's the difference between acidic water and life-friendly water?"
     }
@@ -462,7 +462,7 @@
       "1": "Now we know there is ice under the ground of Mars, within reach of a scoop. Someday someone will use it to drink or to make fuel.",
       "sceneAlt": "The camera pulls back and points to Elysium Planitia, near the equator."
     },
-    "pro": "The TEGA instrument heated a sample and detected water vapor, which led to the official announcement of water on Mars on 31 July 2008; perchlorate lowers the freezing point of water and can be food for some microbes on Earth.",
+    "pro": "The TEGA instrument heated a sample and detected water vapor, which led to the official announcement of water on Mars on July 31, 2008; perchlorate lowers the freezing point of water and can be food for some microbes on Earth.",
     "aula": {
       "1": "What's the difference between melting and sublimating?",
       "2": "Why does finding ice matter for future astronauts?",
@@ -480,7 +480,7 @@
       "sceneAlt": "A lander with two round panels; in front, on the ground, a copper-colored dome glows in cyan."
     },
     "journey": {
-      "1": "I launched from California. Two tiny spacecraft, the size of a briefcase, came along and told the story of my landing almost live.",
+      "1": "I launched from California. Two tiny spacecraft, each the size of a briefcase, came along and told the story of my landing almost live.",
       "sceneAlt": "An arc of light runs from Earth to Mars, followed by two tiny dots."
     },
     "arrival": {
@@ -528,7 +528,7 @@
       "sceneAlt": "An arc of light links Earth with Jezero crater."
     },
     "arrival": {
-      "1": "Perseverance set me down gently and drove away to watch. On 19 April 2021 I rose three meters for 39 seconds. It doesn't sound like much. It was history.",
+      "1": "Perseverance set me down gently and drove away to watch. On April 19, 2021, I rose three meters for 39 seconds. It doesn't sound like much. It was history.",
       "sceneAlt": "The helicopter lifts off and hovers low; behind it, the holographic outline of a rover."
     },
     "work": {
@@ -541,7 +541,7 @@
       }
     },
     "lastSignal": {
-      "1": "On my flight 72 I passed over smooth dunes, with no stones or marks. My camera couldn't find anything to follow. I landed too fast and my blades broke. I can't fly anymore.",
+      "1": "On my 72nd flight I passed over smooth dunes, with no rocks or marks. My camera couldn't find anything to follow. I landed too fast and my blades broke. I can't fly anymore.",
       "sceneAlt": "The helicopter rests on a dune; a piece of blade lies a few meters away."
     },
     "legacy": {
@@ -549,7 +549,7 @@
       "2": "The next helicopters on other worlds will learn from its last flight.",
       "sceneAlt": "The camera pulls away from Mars toward the asteroid belt."
     },
-    "pro": "With 1.8 kg and 1.2 m coaxial rotors spinning at about 2,400 rpm, Ingenuity flew 128.8 minutes in total; the 2024 investigation was the first aircraft accident investigation on another planet. Its memory could hold about 20 years of daily data.",
+    "pro": "At 1.8 kg, with 1.2 m coaxial rotors spinning at about 2,400 rpm, Ingenuity flew for 128.8 minutes in total; the 2024 investigation was the first aircraft accident investigation on another planet. Its memory could hold about 20 years of daily data.",
     "aula": {
       "1": "Why is it harder to fly in thin air?",
       "2": "How do you navigate without GPS?",
@@ -575,7 +575,7 @@
       "sceneAlt": "The spacecraft orbits the asteroid, showing craters and a large saddle-shaped hollow."
     },
     "work": {
-      "1": "At the end of my mission, my engineers had a wild idea: what if it goes down? Nobody had designed me for that. I came down slowly, taking pictures, and touched the ground at the speed of a person walking fast.",
+      "1": "At the end of my mission, my engineers had a wild idea: what if we set it down? Nobody had designed me for that. I came down slowly, taking pictures, and touched the ground at the speed of a person walking fast.",
       "sceneAlt": "The spacecraft descends very slowly to the asteroid's surface and kicks up a little dust as it touches.",
       "cards": {
         "1": "First to orbit an asteroid",
@@ -593,7 +593,7 @@
       "2": "And a fun fact: geologist Eugene Shoemaker made it to the Moon too. A probe carried a small portion of his ashes. See the Lunar Prospector extra entry.",
       "sceneAlt": "The camera pulls back toward the asteroid belt, where Vesta and Ceres shine."
     },
-    "pro": "The landing on 12 February 2001 was at about 6.4 km/h, just south of the Himeros saddle; during the descent it took 69 high-resolution images and, once on the surface, it sent data for about two weeks, until the −173 °C cold shut it down.",
+    "pro": "The landing on February 12, 2001, was at about 6.4 km/h, just south of the Himeros saddle; during the descent it took 69 high-resolution images and, once on the surface, it sent data for about two weeks, until the −173 °C cold shut it down.",
     "aula": {
       "1": "Why do we want to study asteroids?",
       "2": "What are the risks of landing a spacecraft that wasn't built for it?",

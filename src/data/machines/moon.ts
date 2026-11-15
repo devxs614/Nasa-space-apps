@@ -45,7 +45,7 @@ export const surveyor: Machine = {
       2,
       L(
         'Surveyor 2 se estrelló (septiembre de 1966); Surveyor 4 perdió contacto 2,5 minutos antes de tocar suelo (17 de julio de 1967).',
-        'Surveyor 2 crashed (September 1966); Surveyor 4 lost contact 2.5 minutes before touchdown (17 July 1967).',
+        'Surveyor 2 crashed (September 1966); Surveyor 4 lost contact 2.5 minutes before touchdown (July 17, 1967).',
       ),
       ['nssdca-surveyor'],
     ),
@@ -75,7 +75,7 @@ export const surveyor: Machine = {
       '1966-06-02T06:17:36Z',
       L(
         'Alunizó el 2 de junio de 1966 a las 06:17:36 UTC en 2,45° S, 43,21° O (Flamsteed P) y tomó más de 10.000 fotos en su primer día lunar.',
-        'Landed on 2 June 1966 at 06:17:36 UTC at 2.45° S, 43.21° W (Flamsteed P) and took more than 10,000 pictures in its first lunar day.',
+        'Landed on June 2, 1966, at 06:17:36 UTC at 2.45° S, 43.21° W (Flamsteed P) and took more than 10,000 pictures in its first lunar day.',
       ),
       ['nssdca-surveyor', 'nasa-surveyor1-1966'],
     ),
@@ -85,7 +85,7 @@ export const surveyor: Machine = {
       '1967-04-20T00:04:17Z',
       L(
         'Lanzado el 17 de abril de 1967; alunizó el 20 de abril a las 00:04:17 UTC en 3,01° S, 23,34° O, en el Océano de las Tormentas.',
-        'Launched on 17 April 1967; landed on 20 April at 00:04:17 UTC at 3.01° S, 23.34° W, in the Ocean of Storms.',
+        'Launched on April 17, 1967; landed on April 20 at 00:04:17 UTC at 3.01° S, 23.34° W, in the Ocean of Storms.',
       ),
       ['nasa-surveyor3', 'nssdca-surveyor'],
     ),
@@ -105,7 +105,7 @@ export const surveyor: Machine = {
       6326,
       L(
         '6.326 fotos; con su pala cavó 4 zanjas e hizo 4 pruebas de carga y 13 de impacto. El suelo se parecía a arena húmeda, con una resistencia de unos 0,7 kg/cm², suficiente para un módulo lunar.',
-        '6,326 pictures; with its scoop it dug 4 trenches and made 4 bearing tests and 13 impact tests. The soil was like wet sand, with a strength of about 0.7 kg/cm², enough for a lunar module.',
+        '6,326 pictures; with its scoop it dug 4 trenches and ran 4 bearing tests and 13 impact tests. The soil was like wet sand, with a strength of about 0.7 kg/cm², enough for a lunar module.',
       ),
       ['nasa-surveyor3'],
     ),
@@ -133,7 +133,7 @@ export const surveyor: Machine = {
       '1967-09-11T00:46:44Z',
       L(
         'Alunizó el 11 de septiembre de 1967 en 1,41° N, 23,18° E, en el Mar de la Tranquilidad, y analizó la química del suelo con un instrumento de dispersión alfa.',
-        'Landed on 11 September 1967 at 1.41° N, 23.18° E, in the Sea of Tranquility, and analyzed the soil chemistry with an alpha-scattering instrument.',
+        'Landed on September 11, 1967, at 1.41° N, 23.18° E, in the Sea of Tranquility, and analyzed the soil chemistry with an alpha-scattering instrument.',
       ),
       ['nssdca-surveyor'],
     ),
@@ -143,7 +143,7 @@ export const surveyor: Machine = {
       29952,
       L(
         'Lanzado el 7 de noviembre de 1967; alunizó el 10 de noviembre en 0,46° N, 1,37° O (Sinus Medii) y envió 29.952 imágenes.',
-        'Launched on 7 November 1967; landed on 10 November at 0.46° N, 1.37° W (Sinus Medii) and returned 29,952 images.',
+        'Launched on November 7, 1967; landed on November 10 at 0.46° N, 1.37° W (Sinus Medii) and returned 29,952 images.',
       ),
       ['nasa-surveyor6', 'nssdca-surveyor'],
     ),
@@ -153,7 +153,7 @@ export const surveyor: Machine = {
       3,
       L(
         'El 17 de noviembre de 1967 encendió sus motores 2,5 s, se elevó unos 3 m y se posó unos 2,5 m al oeste: el primer despegue desde la Luna.',
-        'On 17 November 1967 it fired its engines for 2.5 s, rose about 3 m and set down about 2.5 m to the west: the first liftoff from the Moon.',
+        'On November 17, 1967, it fired its engines for 2.5 s, rose about 3 m and set down about 2.5 m to the west: the first liftoff from the Moon.',
       ),
       ['nasa-surveyor6', 'lroc-surveyor6'],
       { unit: 'm', approx: true },
@@ -164,7 +164,7 @@ export const surveyor: Machine = {
       '1968-01-10T01:05:36Z',
       L(
         'Lanzado el 7 de enero de 1968; alunizó el 10 de enero a las 01:05:36 UTC en 40,86° S, 11,47° O, en el borde norte del cráter Tycho, en las tierras altas.',
-        'Launched on 7 January 1968; landed on 10 January at 01:05:36 UTC at 40.86° S, 11.47° W, on the northern rim of Tycho crater, in the highlands.',
+        'Launched on January 7, 1968; landed on January 10 at 01:05:36 UTC at 40.86° S, 11.47° W, on the northern rim of Tycho crater, in the highlands.',
       ),
       ['nssdca-surveyor'],
     ),
@@ -320,7 +320,7 @@ export const apolloLm: Machine = {
       '1969-07-22',
       L(
         'La etapa de ascenso del Eagle se soltó en órbita lunar el 22 de julio de 1969; se supone que cayó en 1 a 4 meses, pero su destino exacto no se conoce.',
-        "Eagle's ascent stage was released in lunar orbit on 22 July 1969; it is thought to have crashed within 1 to 4 months, but its exact fate is unknown.",
+        "Eagle's ascent stage was released in lunar orbit on July 22, 1969; it is thought to have crashed within 1 to 4 months, but its exact fate is unknown.",
       ),
       ['nssdca-a11-lm'],
     ),
@@ -494,7 +494,7 @@ export const alsep: Machine = {
       48,
       L(
         '48 kg, con paneles solares; se encendió el 21 de julio de 1969 y dejó de transmitir el 3 de agosto de 1969.',
-        '48 kg, solar powered; switched on 21 July 1969 and stopped transmitting on 3 August 1969.',
+        '48 kg, solar powered; switched on July 21, 1969, and stopped transmitting on August 3, 1969.',
       ),
       ['nssdca-a11-lm'],
       { unit: 'kg' },
@@ -526,7 +526,7 @@ export const alsep: Machine = {
       25,
       L(
         'Caja de 25 kg con una antena de 58 cm apuntada a la Tierra; desplegada el 19 de noviembre de 1969 en 3,0094° S, 23,4246° O.',
-        'A 25 kg box with a 58 cm antenna aimed at Earth; deployed on 19 November 1969 at 3.0094° S, 23.4246° W.',
+        'A 25 kg box with a 58 cm antenna aimed at Earth; deployed on November 19, 1969, at 3.0094° S, 23.4246° W.',
       ),
       ['nssdca-a12-alsep'],
       { unit: 'kg' },
@@ -537,7 +537,7 @@ export const alsep: Machine = {
       55,
       L(
         'El 20 de noviembre de 1969 la etapa de ascenso del Intrepid se estrelló a propósito en 3,94° S, 21,20° O: el primer sismo lunar artificial registrado. El suelo siguió vibrando unos 55 minutos.',
-        "On 20 November 1969 Intrepid's ascent stage was crashed on purpose at 3.94° S, 21.20° W: the first artificial moonquake ever recorded. The ground kept vibrating for about 55 minutes.",
+        "On November 20, 1969, Intrepid's ascent stage was crashed on purpose at 3.94° S, 21.20° W: the first artificial moonquake ever recorded. The ground kept vibrating for about 55 minutes.",
       ),
       ['nssdca-a12-alsep', 'apollo12-seismic'],
       { unit: 'min', approx: true },
@@ -558,7 +558,7 @@ export const alsep: Machine = {
       '1977-09-30',
       L(
         'Todas las estaciones se apagaron el 30 de septiembre de 1977; NASA consideró que seguir era menos prioritario que otros usos del presupuesto.',
-        'All stations were switched off on 30 September 1977; NASA judged that continuing was a lower priority than other uses of its budget.',
+        'All stations were switched off on September 30, 1977; NASA judged that continuing was a lower priority than other uses of its budget.',
       ),
       ['nasa-pr-77-203', 'ntrs-alsep-termination'],
     ),
@@ -568,7 +568,7 @@ export const alsep: Machine = {
       '10¹²',
       L(
         'Más de un billón (10¹²) de bits y más de 29 años de funcionamiento sumando todas las estaciones.',
-        'More than a trillion (10¹²) bits and more than 29 years of operation adding up all the stations.',
+        'More than a trillion (10¹²) bits, and more than 29 years of operation when all the stations are added together.',
       ),
       ['nasa-pr-77-203'],
     ),
@@ -705,7 +705,7 @@ export const lrv: Machine = {
       36,
       L(
         'Dos baterías de 36 V de plata-zinc e hidróxido de potasio, no recargables, de 121 Ah.',
-        'Two non-rechargeable 36 V silver-zinc potassium hydroxide batteries of 121 Ah.',
+        'Two non-rechargeable 36 V, 121 Ah silver-zinc potassium hydroxide batteries.',
       ),
       ['nssdca-lrv'],
       { unit: 'V' },

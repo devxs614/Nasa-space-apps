@@ -65,7 +65,7 @@ export function SourcesPage() {
         </label>
       </form>
       <p className="mb-8 font-mono text-[0.875rem] text-ink-dim" aria-live="polite">
-        {total === 0 ? t('sources.none') : t('sources.count', { n: total })}
+        {total === 0 ? t('sources.none') : t('sources.count', { count: total })}
       </p>
 
       <div className="space-y-10">
@@ -87,7 +87,7 @@ export function SourcesPage() {
                 {g.name}
               </h2>
               <p className="font-mono text-[0.8125rem] text-ink-dim">
-                {t('sources.groupCount', { n: g.sources.length })}
+                {t('sources.groupCount', { count: g.sources.length })}
               </p>
             </div>
             <ul className="space-y-3">
