@@ -1,0 +1,86 @@
+:root {
+  /* Base */
+  --void: #05060a;
+  --deep: #0b0f1a;
+  --panel: rgba(14, 20, 34, 0.62);
+  --panel-solid: #111827;
+  --line: rgba(160, 200, 255, 0.18);
+  --line-strong: rgba(160, 200, 255, 0.36);
+  --text: #e8eef7;
+  --text-dim: #9aa7bd;
+
+  /* Señales */
+  --signal: #5ef2ff;
+  --amber: #ffb547;
+  --phosphor: #7cffb2;
+  --alert: #ff6b81;
+
+  /* Mundos */
+  --moon: #c9ccd3;
+  --regolith: #8e8f94;
+  --mars: #e2683c;
+  --mars-dust: #c7895b;
+  --asteroid: #a3876b;
+  --ceres-salt: #f2f0e6;
+  --deep-space: #8a7cff;
+
+  /* Acento contextual: cada acto lo sobrescribe */
+  --accent: var(--signal);
+
+  /* Tipografía */
+  --font-display: 'Unbounded Variable', system-ui, sans-serif;
+  --font-body: 'Atkinson Hyperlegible Next Variable', system-ui, sans-serif;
+  --font-voice: 'Fraunces Variable', Georgia, serif;
+  --font-data: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --fs-display-xl: clamp(3.2rem, 9vw, 9rem);
+  --fs-display-l: clamp(2.6rem, 6.5vw, 6rem);
+  --fs-h1: clamp(2rem, 4.5vw, 3.75rem);
+  --fs-h2: clamp(1.5rem, 3vw, 2.5rem);
+  --fs-h3: clamp(1.25rem, 2vw, 1.6rem);
+  --fs-body-l: 1.25rem;
+  --fs-body: 1.125rem;
+  --fs-small: 0.9375rem;
+  --fs-micro: 0.8125rem;
+
+  /* Ritmo */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-24: 96px;
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --radius-pill: 999px;
+
+  /* Movimiento */
+  --dur-fast: 160ms;
+  --dur-base: 320ms;
+  --dur-slow: 700ms;
+  --dur-cine: 1600ms;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+}
+[data-act='moon'] {
+  --accent: #a8d8ff;
+}
+[data-act='mars'] {
+  --accent: #ff8a5c;
+}
+[data-act='small-bodies'] {
+  --accent: #e6c79c;
+}
+[data-act='deep-space'] {
+  --accent: #a99bff;
+}
+[data-contrast='high'] {
+  --panel: var(--panel-solid);
+  --line: #ffffff;
+  --line-strong: #ffffff;
+  --text-dim: #d5dbe5;
+}

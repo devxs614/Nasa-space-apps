@@ -1,0 +1,74 @@
+{
+  "brand": "LAST SIGNAL",
+  "brandOther": "ÚLTIMA SEÑAL",
+  "tagline": "Abandoned, but not forgotten",
+  "concept": "Fifteen machines are still out there, silent. They are not lost: we know exactly where they are. Send them a signal and hear what they came to discover.",
+  "routes": {
+    "journey": "The Journey",
+    "atlasMoon": "Moon Atlas",
+    "atlasMars": "Mars Atlas",
+    "catalog": "Machine catalog",
+    "timeline": "Timeline",
+    "passport": "Passport",
+    "sources": "Sources",
+    "about": "About",
+    "reading": "Reading mode",
+    "notFound": "Signal lost"
+  },
+  "top": {
+    "language": "Language",
+    "switchTo": "Switch to Spanish",
+    "switchShort": "ES",
+    "soundOn": "Sound on",
+    "soundOff": "Turn on sound",
+    "soundResume": "Sound: tap to resume",
+    "settings": "Settings",
+    "menu": "Chapter index",
+    "pause": "Pause animations",
+    "resume": "Resume animations",
+    "help": "Help and shortcuts",
+    "home": "Go to The Journey"
+  },
+  "skip": {
+    "content": "Skip to content",
+    "reading": "Go to reading mode"
+  },
+  "footer": {
+    "disclaimer": "Independent project created for the NASA Space Apps Challenge 2026. Not affiliated with or endorsed by NASA. NASA does not endorse any non-U.S. Government entity and is not responsible for information contained on non-U.S. Government websites.",
+    "sources": "Data sources and credits",
+    "ai": "Use of AI statement",
+    "repo": "Project source code",
+    "nav": "Footer links"
+  },
+  "common": {
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "loading": "Tuning in…",
+    "yes": "Yes",
+    "noThanks": "No, thanks",
+    "on": "On",
+    "off": "Off",
+    "open": "Open",
+    "share": "Share",
+    "copied": "Link copied to the clipboard",
+    "goToChapter": "Go to chapter",
+    "readMore": "Read more"
+  },
+  "notFound": {
+    "title": "Signal lost",
+    "body": "This address is not responding. Maybe the machine you are looking for is somewhere else in the Solar System.",
+    "home": "Back to The Journey"
+  },
+  "clock": {
+    "years_one": "{{count}} year",
+    "years_other": "{{count}} years",
+    "months_one": "{{count}} month",
+    "months_other": "{{count}} months",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "silentFor": "Silent for {{span}}",
+    "listLocale": "en"
+  }
+}

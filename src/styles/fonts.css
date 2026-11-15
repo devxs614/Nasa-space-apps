@@ -1,0 +1,8 @@
+/* Fuentes OFL alojadas en el propio sitio (Fontsource). Cada CSS declara font-display: swap
+   y rangos unicode por subconjunto, así el navegador solo descarga latin y latin-ext. */
+@import '@fontsource-variable/unbounded/wght.css';
+@import '@fontsource-variable/atkinson-hyperlegible-next/wght.css';
+@import '@fontsource-variable/atkinson-hyperlegible-next/wght-italic.css';
+@import '@fontsource-variable/fraunces/wght-italic.css';
+@import '@fontsource-variable/fraunces/wght.css';
+@import '@fontsource-variable/jetbrains-mono/wght.css';

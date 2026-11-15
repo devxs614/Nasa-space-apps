@@ -1,0 +1,77 @@
+{
+  "brand": "ÚLTIMA SEÑAL",
+  "brandOther": "LAST SIGNAL",
+  "tagline": "Abandonadas, pero no olvidadas",
+  "concept": "Quince máquinas siguen ahí afuera, en silencio. No están perdidas: sabemos exactamente dónde están. Envíales una señal y escucha lo que vinieron a descubrir.",
+  "routes": {
+    "journey": "La Travesía",
+    "atlasMoon": "Atlas de la Luna",
+    "atlasMars": "Atlas de Marte",
+    "catalog": "Catálogo de máquinas",
+    "timeline": "Línea de tiempo",
+    "passport": "Pasaporte",
+    "sources": "Fuentes",
+    "about": "Acerca de",
+    "reading": "Modo lectura",
+    "notFound": "Señal perdida"
+  },
+  "top": {
+    "language": "Idioma",
+    "switchTo": "Cambiar a inglés",
+    "switchShort": "EN",
+    "soundOn": "Sonido activado",
+    "soundOff": "Activar sonido",
+    "soundResume": "Sonido: toca para reanudar",
+    "settings": "Ajustes",
+    "menu": "Índice de capítulos",
+    "pause": "Pausar animaciones",
+    "resume": "Reanudar animaciones",
+    "help": "Ayuda y atajos",
+    "home": "Ir a La Travesía"
+  },
+  "skip": {
+    "content": "Saltar al contenido",
+    "reading": "Ir al modo lectura"
+  },
+  "footer": {
+    "disclaimer": "Proyecto independiente creado para el NASA Space Apps Challenge 2026. No está afiliado ni respaldado por NASA. NASA no respalda a entidades ajenas al Gobierno de EE. UU. ni es responsable de la información de sitios externos.",
+    "sources": "Fuentes y créditos de datos",
+    "ai": "Declaración de uso de IA",
+    "repo": "Código fuente del proyecto",
+    "nav": "Enlaces del pie de página"
+  },
+  "common": {
+    "close": "Cerrar",
+    "back": "Volver",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "loading": "Sintonizando…",
+    "yes": "Sí",
+    "noThanks": "No, gracias",
+    "on": "Activado",
+    "off": "Desactivado",
+    "open": "Abrir",
+    "share": "Compartir",
+    "copied": "Enlace copiado al portapapeles",
+    "goToChapter": "Ir al capítulo",
+    "readMore": "Leer más"
+  },
+  "notFound": {
+    "title": "Señal perdida",
+    "body": "Esta dirección no responde. Quizá la máquina que buscas está en otra parte del sistema solar.",
+    "home": "Volver a La Travesía"
+  },
+  "clock": {
+    "years_one": "{{count}} año",
+    "years_other": "{{count}} años",
+    "years_many": "{{count}} años",
+    "months_one": "{{count}} mes",
+    "months_other": "{{count}} meses",
+    "months_many": "{{count}} meses",
+    "days_one": "{{count}} día",
+    "days_other": "{{count}} días",
+    "days_many": "{{count}} días",
+    "silentFor": "En silencio desde hace {{span}}",
+    "listLocale": "es"
+  }
+}

@@ -1,0 +1,10 @@
+[
+  {
+    "file": "textures/moon_color_2k.jpg",
+    "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_2k.jpg",
+    "page": "https://svs.gsfc.nasa.gov/4720"
+  },
+  { "file": "textures/mars_color_2k.jpg", "url": null, "page": "https://science.nasa.gov/3d-resources/mars" },
+  { "file": "textures/earth_night_2k.jpg", "url": null, "page": "https://science.nasa.gov/earth/earth-observatory/earth-at-night/maps" },
+  { "file": "textures/starmap_4k.jpg", "url": null, "page": "https://svs.gsfc.nasa.gov/4851" }
+]
