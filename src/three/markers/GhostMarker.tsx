@@ -57,7 +57,25 @@ export function GhostMarker({
   const opacity = dim ? 0.25 : 1;
   return (
     <group ref={g} position={position} quaternion={quaternion}>
-      <mesh position={[0, h / 2, 0]} onClick={onSelect}>
+      {onSelect && (
+        <mesh
+          position={[0, h * 0.55, 0]}
+          onClick={(e) => {
+            e.stopPropagation();
+            onSelect();
+          }}
+          onPointerOver={() => {
+            document.body.style.cursor = 'pointer';
+          }}
+          onPointerOut={() => {
+            document.body.style.cursor = '';
+          }}
+        >
+          <sphereGeometry args={[Math.max(0.42, h * 0.6), 10, 8]} />
+          <meshBasicMaterial transparent opacity={0} depthWrite={false} />
+        </mesh>
+      )}
+      <mesh position={[0, h / 2, 0]}>
         <cylinderGeometry args={[0.012, 0.03, h, 8, 1, true]} />
         <meshBasicMaterial
           color={col}
@@ -67,7 +85,7 @@ export function GhostMarker({
           depthWrite={false}
         />
       </mesh>
-      <mesh position={[0, h, 0]} onClick={onSelect}>
+      <mesh position={[0, h, 0]}>
         <sphereGeometry args={[active ? 0.09 : 0.06, 12, 8]} />
         <meshBasicMaterial color={col} transparent opacity={opacity} />
       </mesh>

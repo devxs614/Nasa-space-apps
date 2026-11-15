@@ -14,6 +14,8 @@ import { useQuality } from '../quality';
 import { assetExists, publicUrl } from '../../lib/assets';
 import { useJourneyStore } from '../../state/useJourneyStore';
 
+const Y_AXIS = new Vector3(0, 1, 0);
+
 export type PlanetKind = 'moon' | 'mars' | 'ceres' | 'vesta' | 'earth' | 'asteroid';
 const KIND_INDEX: Record<PlanetKind, number> = {
   moon: 0,
@@ -37,6 +39,8 @@ export interface PlanetProps {
   position?: [number, number, number];
   rotationY?: number;
   spin?: number;
+  /** Giro del Sol alrededor del eje del planeta (rad/s): mueve la línea de día y noche. */
+  sunSpin?: number;
   atmosphere?: { color: string; intensity: number };
   children?: ReactNode;
 }
@@ -50,6 +54,7 @@ export function Planet({
   position,
   rotationY = 0,
   spin = 0,
+  sunSpin = 0,
   atmosphere,
   children,
 }: PlanetProps) {
@@ -76,7 +81,8 @@ export function Planet({
   useEffect(() => {
     (material.uniforms.uSunDir!.value as Vector3).set(...sunDir).normalize();
     material.uniforms.uOctaves!.value = octaves;
-  }, [material, sunDir, octaves]);
+    // `sunSpin` en las dependencias: al apagar el giro, el Sol vuelve a su sitio.
+  }, [material, sunDir, octaves, sunSpin]);
   useEffect(() => () => material.dispose(), [material]);
 
   useEffect(() => {
@@ -131,9 +137,14 @@ export function Planet({
     return () => atmo?.dispose();
   }, [atmo, atmosphere]);
 
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
+    const paused = useJourneyStore.getState().paused;
     if (kind === 'mars') material.uniforms.uStorm!.value = useJourneyStore.getState().fx.storm ?? 0;
-    if (spin && !useJourneyStore.getState().paused) material.uniforms.uTime!.value += delta * spin;
+    if (spin && !paused) material.uniforms.uTime!.value += delta * spin;
+    if (sunSpin && !paused) {
+      (material.uniforms.uSunDir!.value as Vector3).applyAxisAngle(Y_AXIS, delta * sunSpin);
+      state.invalidate();
+    }
   });
 
   return (
