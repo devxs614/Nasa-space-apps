@@ -2,7 +2,9 @@
 import { access, mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 
-const manifest = JSON.parse(await readFile(new URL('./assets.manifest.json', import.meta.url), 'utf8'));
+const manifest = JSON.parse(
+  await readFile(new URL('./assets.manifest.json', import.meta.url), 'utf8'),
+);
 let ready = 0;
 
 for (const asset of manifest) {
@@ -32,5 +34,7 @@ for (const asset of manifest) {
   }
 }
 
-console.log(`${ready}/${manifest.length} recursos opcionales listos. La web funciona igual sin ellos.`);
+console.log(
+  `${ready}/${manifest.length} recursos opcionales listos. La web funciona igual sin ellos.`,
+);
 process.exitCode = 0;

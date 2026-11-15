@@ -11,8 +11,10 @@ test('la portada carga con el título', async ({ page }) => {
   await expect(page.locator('main')).toBeVisible();
 });
 
+// Con ?lite=1: con varias páginas dibujando 3D por software (SwiftShader) a la vez, el hilo principal se
+// retrasa y la prueba mediría la CPU de la máquina, no la lógica de la señal (Parte 19.6).
 test('la señal llega y muestra la respuesta archivada', async ({ page }) => {
-  await page.goto('/maquinas/surveyor');
+  await page.goto('/maquinas/surveyor?lite=1');
   const btn = page.getByRole('button', {
     name: /Enviar señal a Surveyor|Send a signal to Surveyor/,
   });
@@ -22,10 +24,46 @@ test('la señal llega y muestra la respuesta archivada', async ({ page }) => {
   await expect(page.getByText(/Respuesta archivada|Archived reply/).first()).toBeVisible();
 });
 
-test('recibir parche marca el capítulo como completado', async ({ page }) => {
-  await page.goto('/maquinas/surveyor');
+test('recibir parche marca el capítulo como completado y aparece en el pasaporte', async ({
+  page,
+}) => {
+  await page.goto('/maquinas/surveyor?lang=es');
   await page.getByRole('button', { name: /Recibir parche|Receive patch/ }).click();
   await expect(page.getByText(/Parche conseguido|Patch earned/).first()).toBeVisible();
+  await page.goto('/pasaporte?lang=es');
+  const surveyor = page.locator('[data-patch="surveyor"]');
+  await expect(surveyor).toHaveAttribute('data-state', 'earned');
+  await expect(surveyor).toContainText('Conseguido');
+});
+
+test('la tecla M abre el índice, Esc lo cierra y elegir Opportunity lleva a su capítulo', async ({
+  page,
+}) => {
+  await page.goto('/?lang=es');
+  await expect(page.locator('main')).toBeVisible();
+  const dialog = page.getByRole('dialog', { name: 'Índice de capítulos' });
+  await page.keyboard.press('m');
+  await expect(dialog).toBeVisible();
+  await page.keyboard.press('Escape');
+  await expect(dialog).toBeHidden();
+  // El evento `close` del <dialog> llega después del cierre visual; reintenta la M hasta que abra.
+  await expect(async () => {
+    await page.keyboard.press('m');
+    await expect(dialog).toBeVisible({ timeout: 1000 });
+  }).toPass();
+  await dialog.getByRole('button', { name: /Opportunity/ }).click();
+  await expect(dialog).toBeHidden();
+  await expect(page).toHaveURL(/#opportunity$/);
+  await expect(page.locator('#ch-opportunity')).toBeInViewport({ timeout: 15_000 });
+});
+
+test('cambiar a inglés pone lang="en" y traduce la barra superior', async ({ page }) => {
+  await page.goto('/?lang=es');
+  await expect(page.locator('html')).toHaveAttribute('lang', 'es');
+  await page.getByRole('button', { name: /Cambiar a inglés/ }).click();
+  await expect(page.locator('html')).toHaveAttribute('lang', 'en');
+  await expect(page.getByRole('button', { name: /Switch to Spanish/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Settings/ }).first()).toBeVisible();
 });
 
 test('/lectura contiene los 15 capítulos', async ({ page }) => {

@@ -41,7 +41,7 @@ for (const [lang, file] of [
   await blockNasa(page);
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto(`${base}/lectura?lang=${lang}`, { waitUntil: 'networkidle' });
-  await page.waitForSelector('[data-chapter]');
+  await page.waitForFunction(() => document.querySelectorAll('[data-chapter]').length === 15);
   await page.waitForTimeout(800);
   const html = await page.evaluate(() => {
     // CSS en línea, sin @font-face (las fuentes caen a las del sistema) para que funcione sin JavaScript.

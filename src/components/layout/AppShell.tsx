@@ -40,7 +40,10 @@ export function AppShell() {
       <main
         id="contenido"
         tabIndex={-1}
-        className={cx('relative z-10 outline-none', canvasInteractive && 'pointer-events-none')}
+        className={cx(
+          'relative z-10 min-h-svh outline-none',
+          canvasInteractive && 'pointer-events-none',
+        )}
       >
         <Outlet />
       </main>

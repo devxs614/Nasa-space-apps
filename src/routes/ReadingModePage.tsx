@@ -1,4 +1,6 @@
+import { startTransition, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useLocation } from 'react-router';
 import { Printer } from 'lucide-react';
 import { PageShell } from '../components/layout/PageShell';
 import { MACHINES, EPILOGUE_2026 } from '../data/machines';
@@ -43,7 +45,7 @@ function ChapterArticle({ machine }: { machine: Machine }) {
     <article
       id={`lectura-${machine.id}`}
       data-chapter={machine.id}
-      className="print-break border-t border-line pt-12"
+      className="print-break cv-auto border-t border-line pt-12"
       aria-labelledby={`h-${machine.id}`}
     >
       <p className="font-mono text-[0.8125rem] tracking-[0.2em] text-accent uppercase">
@@ -125,6 +127,14 @@ export function ReadingModePage() {
   const { t } = useTranslation(['ui', 'chapters', 'common']);
   const locale = useAppStore((s) => s.locale);
   const c = census();
+  // Primero el comienzo; los demás capítulos en una transición que cede el hilo (Parte 5.9, móvil).
+  const [full, setFull] = useState(false);
+  const { hash } = useLocation();
+  useEffect(() => startTransition(() => setFull(true)), []);
+  useEffect(() => {
+    if (!full || !hash) return;
+    document.getElementById(decodeURIComponent(hash.slice(1)))?.scrollIntoView({ block: 'start' });
+  }, [full, hash]);
   return (
     <PageShell
       title={t('routes.reading')}
@@ -185,29 +195,31 @@ export function ReadingModePage() {
           <div className="mt-8 space-y-16">
             {act.machines.map((id) => {
               const m = MACHINES.find((x) => x.id === id);
-              return m ? <ChapterArticle key={id} machine={m} /> : null;
+              return m && (full || m.order <= 2) ? <ChapterArticle key={id} machine={m} /> : null;
             })}
           </div>
         </div>
       ))}
-      <section
-        className="print-break mt-16 space-y-4 border-t border-line pt-12"
-        aria-labelledby="h-epilogue"
-      >
-        <h2 id="h-epilogue" className="font-heading text-[length:var(--fs-h2)] font-bold">
-          {t('chapters:epilogue.title')}
-        </h2>
-        <VoiceLine speaker="lumi" text={t('chapters:epilogue.1')} />
-        <VoiceLine speaker="lumi" text={t('chapters:epilogue.2')} />
-        <h3 className="pt-4 font-heading text-[length:var(--fs-h3)]">
-          {t('chapters:epilogue.yearTitle')}
-        </h3>
-        {EPILOGUE_2026.map((e) => (
-          <VoiceLine key={e.id} speaker="log" text={e.text[locale]} sourceIds={e.sourceIds} />
-        ))}
-        <VoiceLine speaker="lumi" text={t('chapters:epilogue.4')} />
-        <VoiceLine speaker="lumi" text={t('chapters:epilogue.5')} />
-      </section>
+      {full && (
+        <section
+          className="print-break mt-16 space-y-4 border-t border-line pt-12"
+          aria-labelledby="h-epilogue"
+        >
+          <h2 id="h-epilogue" className="font-heading text-[length:var(--fs-h2)] font-bold">
+            {t('chapters:epilogue.title')}
+          </h2>
+          <VoiceLine speaker="lumi" text={t('chapters:epilogue.1')} />
+          <VoiceLine speaker="lumi" text={t('chapters:epilogue.2')} />
+          <h3 className="pt-4 font-heading text-[length:var(--fs-h3)]">
+            {t('chapters:epilogue.yearTitle')}
+          </h3>
+          {EPILOGUE_2026.map((e) => (
+            <VoiceLine key={e.id} speaker="log" text={e.text[locale]} sourceIds={e.sourceIds} />
+          ))}
+          <VoiceLine speaker="lumi" text={t('chapters:epilogue.4')} />
+          <VoiceLine speaker="lumi" text={t('chapters:epilogue.5')} />
+        </section>
+      )}
     </PageShell>
   );
 }

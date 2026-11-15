@@ -10,6 +10,7 @@ const routes = [
   '/fuentes',
   '/acerca',
   '/atlas/luna',
+  '/atlas/marte',
   '/linea-de-tiempo',
 ];
 

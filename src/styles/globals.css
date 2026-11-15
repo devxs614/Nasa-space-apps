@@ -192,6 +192,12 @@
   font-size: var(--fs-small);
   line-height: 1.55;
 }
+/* Capítulos de /lectura fuera de pantalla: el navegador no los pinta hasta acercarse (Parte 5.9). */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 2400px;
+}
+
 .reading-col {
   max-width: 62ch;
 }
@@ -452,6 +458,9 @@ dialog::backdrop {
 
 /* ─── Impresión (modo lectura) ─────────────────────────────────── */
 @media print {
+  .cv-auto {
+    content-visibility: visible;
+  }
   html,
   body {
     background: #fff !important;

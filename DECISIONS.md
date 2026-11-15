@@ -97,3 +97,15 @@
   cambiar los textos.
 - Nombre: no se llaman `lectura.html` porque `vite preview` y GitHub Pages resolverían la ruta `/lectura` de la app hacia ese archivo.
 - El `noscript` de `index.html` usa `%BASE_URL%` para que los enlaces funcionen bajo la subruta del repositorio.
+
+## 2026-11-15 — `/lectura` se monta en dos pasos
+- Contexto: en móvil, montar los 15 capítulos (≈ 6.000 nodos) en una sola tarea bloqueaba el hilo 2 s (Lighthouse 18).
+- Decisión: se montan el prólogo y los dos primeros capítulos; el resto y el epílogo llegan en una transición de React
+  (`startTransition`), que cede el hilo cada pocos milisegundos. Los capítulos fuera de pantalla usan
+  `content-visibility: auto` (desactivado al imprimir). El enlace `#lectura-<id>` se resuelve cuando ya está todo.
+- Por qué: TBT de 2.080 a 160 ms sin quitar contenido; la página sigue completa para imprimir, buscar y leer en voz alta.
+
+## 2026-11-15 — La prueba de la señal se ejecuta con `?lite=1`
+- Contexto: con varias páginas dibujando 3D por software a la vez, el temporizador de la señal se retrasaba y la prueba
+  "respuesta archivada en menos de 5 s" fallaba por la CPU de la máquina, no por la lógica.
+- Decisión: esa prueba usa `?lite=1`, como prevé la Parte 19.6; el resto de pruebas de humo siguen con el 3D activo.

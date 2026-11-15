@@ -70,7 +70,9 @@ export function OpportunityInteraction({ express, onComplete, onSkip }: Interact
             </li>
           ))}
           {year >= 2018.44 && (
-            <li className="text-phosphor">2026 · {t('ix.opportunity.relay')} (45,22 km)</li>
+            <li className="text-phosphor">
+              2026 · {t('ix.opportunity.relay')} ({formatNumber(45.22, locale, 2, 2)} km)
+            </li>
           )}
         </ol>
       </div>

@@ -1,8 +1,11 @@
 # Progreso
 
-## Fase actual: 9 — QA final y entrega
+## Fase actual: 9 — QA final y entrega (código congelado: a partir de aquí, solo correcciones)
 
 ## Hecho
+- [x] Fase 9: humo completo de la Parte 19.6 (tecla M e índice, cambio a inglés con `lang="en"`, parche "Conseguido" en el pasaporte), axe en diez rutas (se añade `/atlas/marte`), prueba de cadenas literales en JSX (Parte 19.4), sin `TODO` en la compilación ni logotipos de NASA.
+- [x] Fase 9: rendimiento de `/lectura` (los capítulos 3–15 se montan en una transición de React y los capítulos fuera de pantalla usan `content-visibility`), `<main>` con altura mínima de pantalla (CLS 0), `robots.txt`; Lighthouse en la tabla de abajo.
+- [x] Fase 9: paquete de entrega de la Parte 20: `SUBMISSION.md` (textos del formulario en inglés), subtítulos `docs/video/last-signal-30s.srt` y README con controles de calidad y enlaces.
 - [x] Fase 8: avisos del 3D (toast al activar solo el modo ligero; pregunta "¿Cambiar a modo ligero?" si los FPS bajan de 24 durante 5 s en calidad baja, una vez por visita; "Reintentar 3D" tras un fallo y modo ligero tras dos pérdidas de contexto) y póster fijo de la escena cuando el 3D falla.
 - [x] Fase 8: imagen para redes `og-image.png` (1200×630) y versiones de lectura estáticas sin JavaScript `lectura-es.html` y `lectura-en.html` (enlazadas desde `noscript`, axe sin infracciones) generadas con `npm run prerender`; pruebas de unidad de los avisos y e2e de la lectura estática.
 - [x] Proyecto Vite + React 19 + TypeScript 5.9 con las versiones fijadas de la Parte 5 (sin conflictos de dependencias).
@@ -36,7 +39,10 @@
 - [x] Fase 2: Lenis + ScrollTrigger, prólogo, portadas de acto, 15 capítulos con sus 7 momentos, riel de progreso, enlaces profundos, estática entre escenas, redirección a `/lectura` sin WebGL 2.
 
 ## Pendiente
-- [ ] Fase 9: QA final (axe en todas las rutas, revisión de contenido, informe de entrega).
+- [ ] Revisión manual de la Parte 19.8 en dispositivos reales (Chrome, Edge, Firefox, Safari 17+ en macOS e iOS, Android de gama media) y con lector de pantalla (VoiceOver, NVDA).
+- [ ] Lectura completa de la versión inglesa por una persona con inglés fluido (Parte 19.9).
+- [ ] Vídeo de 30 s (o 7 diapositivas) con subtítulos en inglés, subido con enlace público, y enlace en README.md y en el formulario.
+- [ ] Formulario de entrega con los textos de `SUBMISSION.md`; probar todos los enlaces en una ventana privada.
 - [ ] Equipo humano: nombre del equipo e integrantes en README.md y CREDITS.md (la página Acerca de enlaza a los contribuidores del repositorio), y enlace del vídeo de 30 s.
 
 ## Datos por verificar
@@ -61,6 +67,16 @@
 - Fase 2: `index-*.js` ≈ 199 KB inicial · `Experience-*.js` ≈ 176 KB (diferido) · `PostFX-*.js` ≈ 25 KB (diferido).
 - Fase 5: JS inicial (entrada + precargas) 287 KB · `index-*.js` 161 KB · `Experience-*.js` 177 KB (diferido) · `PostFX-*.js` 25 KB (diferido) · CSS 15,6 KB. Límite: 500 KB.
 - Fase 8: JS inicial (entrada + precargas) 293 KB · `Experience-*.js` 170 KB + `three.core-*.js` 98 KB (diferidos) · `PostFX-*.js` 23 KB (diferido) · CSS 16 KB. Lectura estática: 647 KB (ES) y 642 KB (EN) sin comprimir, con el CSS en línea.
+
+## Lighthouse (fase 9, compilación de producción en local)
+| Ruta | Rendimiento | Accesibilidad | Buenas prácticas | SEO | Notas |
+| --- | --- | --- | --- | --- | --- |
+| `/` (escritorio) | 51 | 100 | 100 | 92 → 100 con `robots.txt` | 3D por software (SwiftShader) en Chromium sin GPU; FCP 1,3 s, LCP 2,6 s, TBT 800 ms, CLS 0 |
+| `/lectura` (móvil) | 77 | 100 | 100 | 100 | Antes de la fase 9: 18 (TBT 2.080 ms, CLS 0,38). Ahora FCP 3,5 s, LCP 4,0 s, TBT 160 ms, CLS 0 |
+
+- Metas de la Parte 19.7: rendimiento 70+ en `/` y 90+ en `/lectura` móvil. `/lectura` queda en 77 por el JS inicial
+  (≈ 293 KB gzip con los textos de los dos idiomas) en la red 4G lenta simulada; cargar solo el idioma activo es la siguiente mejora.
+  La cifra de `/` se midió sin GPU; en un equipo con GPU el 3D no ocupa el hilo principal. Repetir en la URL publicada.
 
 ## Problemas conocidos
 - InSight: el corte del interior es una ilustración aproximada; la Parte 11 no publica el radio de Marte, así que no se dibuja a escala. TODO(verificar).

@@ -1,0 +1,21 @@
+1
+00:00:00,000 --> 00:00:02,000
+Hi, I'm [Name], from team [Team].
+
+2
+00:00:02,000 --> 00:00:05,000
+Our challenge: Abandoned but not Forgotten.
+
+3
+00:00:05,000 --> 00:00:10,000
+LAST SIGNAL: fifteen machines we left behind. One last message each.
+
+4
+00:00:10,000 --> 00:00:20,000
+Scroll through each machine's life, try its job, and send a signal home,
+with real light time from JPL data. Every fact links to its NASA source.
+
+5
+00:00:20,000 --> 00:00:30,000
+Their signals stopped. Their stories don't have to.
+In English and Spanish, for everyone.

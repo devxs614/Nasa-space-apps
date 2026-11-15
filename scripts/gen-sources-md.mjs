@@ -1,7 +1,9 @@
 // Genera SOURCES.md a partir de src/data/sources.ts (Node 22.6+ con eliminación de tipos).
 import { writeFile } from 'node:fs/promises';
 const { SOURCES } = await import('../src/data/sources.ts');
-const rows = SOURCES.map((s) => `| \`${s.id}\` | ${s.title} | ${s.publisher} | ${s.url} | ${s.accessed} |`);
+const rows = SOURCES.map(
+  (s) => `| \`${s.id}\` | ${s.title} | ${s.publisher} | ${s.url} | ${s.accessed} |`,
+);
 const md = `# Sources
 
 Every number, date, name and coordinate shown in LAST SIGNAL comes from \`src/data/\` and links to one of these sources.

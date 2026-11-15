@@ -71,6 +71,17 @@ on non-U.S. Government websites.
 
 See [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).
 
+## Quality checks
+
+`npm run typecheck`, `npm run lint`, `npm run test` (unit, data, i18n parity, components and a check for untranslated
+JSX text) and `npm run test:e2e` (smoke, axe on ten routes, mini-experiences, demo mode and the no-JavaScript pages).
+Lighthouse results are recorded in [`PROGRESS.md`](PROGRESS.md).
+
+## Submission
+
+The texts for the Space Apps submission form are in [`SUBMISSION.md`](SUBMISSION.md); English subtitles for the
+30-second video are in [`docs/video/last-signal-30s.srt`](docs/video/last-signal-30s.srt).
+
 ## Team
 
 [Team name] — [member names and roles]
