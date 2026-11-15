@@ -291,5 +291,11 @@
     "discoveries": "Discoveries",
     "sources": "Sources for this chapter",
     "dates": "Key dates"
+  },
+  "passport": {
+    "patchOf": "{{name}} patch",
+    "locked": "Locked: complete chapter {{n}}",
+    "earned": "Earned",
+    "earnedOn": "Earned on {{date}}"
   }
 }

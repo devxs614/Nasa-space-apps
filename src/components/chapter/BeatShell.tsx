@@ -47,12 +47,14 @@ export function BeatShell({
   const setBeat = useJourneyStore((s) => s.setBeat);
   const reduced = useAppStore((s) => s.reducedMotion);
   const [describe, setDescribe] = useState(false);
+  const progressCb = useRef(onProgress);
+  progressCb.current = onProgress;
 
   useScrollProgress(
     ref,
     (p) => {
       setBeat(machine.id, beat, p);
-      onProgress?.(p);
+      progressCb.current?.(p);
     },
     [machine.id, beat],
   );

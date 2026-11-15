@@ -119,15 +119,30 @@
 }
 .hud-corners {
   --c: var(--line-strong);
-  background:
-    linear-gradient(var(--c), var(--c)) top left / 14px 1px no-repeat,
-    linear-gradient(var(--c), var(--c)) top left / 1px 14px no-repeat,
-    linear-gradient(var(--c), var(--c)) top right / 14px 1px no-repeat,
-    linear-gradient(var(--c), var(--c)) top right / 1px 14px no-repeat,
-    linear-gradient(var(--c), var(--c)) bottom left / 14px 1px no-repeat,
-    linear-gradient(var(--c), var(--c)) bottom left / 1px 14px no-repeat,
-    linear-gradient(var(--c), var(--c)) bottom right / 14px 1px no-repeat,
-    linear-gradient(var(--c), var(--c)) bottom right / 1px 14px no-repeat;
+  background-image:
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c)),
+    linear-gradient(var(--c), var(--c)), linear-gradient(var(--c), var(--c));
+  background-position:
+    top left,
+    top left,
+    top right,
+    top right,
+    bottom left,
+    bottom left,
+    bottom right,
+    bottom right;
+  background-size:
+    14px 1px,
+    1px 14px,
+    14px 1px,
+    1px 14px,
+    14px 1px,
+    1px 14px,
+    14px 1px,
+    1px 14px;
+  background-repeat: no-repeat;
 }
 .overlay-grain {
   position: fixed;
@@ -460,4 +475,34 @@ dialog::backdrop {
   .print-break {
     break-before: page;
   }
+}
+
+/* ─── Parches: animación de "bordado" (Parte 14.5) ─────────────── */
+@keyframes stitch-draw {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes stitch-fill {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.patch-stitch .patch-glyph {
+  stroke-dasharray: 1;
+  animation: stitch-draw var(--dur-cine) var(--ease-out) both;
+}
+.patch-stitch .patch-seam {
+  animation: stitch-fill var(--dur-base) var(--ease-out) var(--dur-cine) both;
+}
+[data-reduced-motion='true'] .patch-stitch .patch-glyph,
+[data-reduced-motion='true'] .patch-stitch .patch-seam {
+  animation: none;
+  stroke-dasharray: none;
 }

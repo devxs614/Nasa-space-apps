@@ -295,5 +295,11 @@
     "discoveries": "Descubrimientos",
     "sources": "Fuentes de este capítulo",
     "dates": "Fechas clave"
+  },
+  "passport": {
+    "patchOf": "Parche de {{name}}",
+    "locked": "Bloqueado: completa el capítulo {{n}}",
+    "earned": "Conseguido",
+    "earnedOn": "Conseguido el {{date}}"
   }
 }

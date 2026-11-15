@@ -10,6 +10,7 @@ import { ActCover } from '../components/journey/ActCover';
 import { Epilogue } from '../components/journey/Epilogue';
 import { ChapterSection } from '../components/chapter/ChapterSection';
 import { ProgressRail } from '../components/layout/ProgressRail';
+import { HudFrame } from '../components/hud/HudFrame';
 import { ACTS } from '../data/acts';
 import { MACHINES_BY_ID } from '../data/machines';
 
@@ -45,6 +46,7 @@ export function JourneyPage() {
   return (
     <div className="relative">
       <ProgressRail />
+      <HudFrame visible={chapterId !== null} />
       <Prologue />
       {ACTS.map((act) => (
         <div key={act.world}>
