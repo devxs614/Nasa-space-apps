@@ -13,14 +13,18 @@ test('la portada carga con el título', async ({ page }) => {
 
 // Con ?lite=1: con varias páginas dibujando 3D por software (SwiftShader) a la vez, el hilo principal se
 // retrasa y la prueba mediría la CPU de la máquina, no la lógica de la señal (Parte 19.6).
-test('la señal llega y muestra la respuesta archivada', async ({ page }) => {
+test('la señal llega y muestra la respuesta archivada', async ({ page }, info) => {
   await page.goto('/maquinas/surveyor?lite=1');
   const btn = page.getByRole('button', {
     name: /Enviar señal a Surveyor|Send a signal to Surveyor/,
   });
   await btn.focus();
   await page.keyboard.press('Enter');
-  await expect(page.getByTestId('archived-reply')).toBeVisible({ timeout: 5000 });
+  // La respuesta debe llegar en menos de 5 s. El WebKit de Playwright arranca el 3D por software
+  // bloqueando el hilo unos 5 s (Chromium, 0,3 s): ahí solo se comprueba que llega.
+  await expect(page.getByTestId('archived-reply')).toBeVisible({
+    timeout: info.project.name === 'webkit' ? 30_000 : 5000,
+  });
   await expect(page.getByText(/Respuesta archivada|Archived reply/).first()).toBeVisible();
 });
 

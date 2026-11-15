@@ -74,7 +74,8 @@ See [`AI_DISCLOSURE.md`](AI_DISCLOSURE.md).
 ## Quality checks
 
 `npm run typecheck`, `npm run lint`, `npm run test` (unit, data, i18n parity, components and a check for untranslated
-JSX text) and `npm run test:e2e` (smoke, axe on ten routes, mini-experiences, demo mode and the no-JavaScript pages).
+JSX text) and `npm run test:e2e` (smoke, axe on ten routes, mini-experiences, demo mode, per-language loading, the
+no-JavaScript pages and a slow-device check with the CPU throttled 6×).
 Lighthouse results are recorded in [`PROGRESS.md`](PROGRESS.md).
 
 ## Submission

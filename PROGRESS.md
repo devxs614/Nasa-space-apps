@@ -4,6 +4,7 @@
 
 ## Hecho
 - [x] Fase 9 (corrección): la portada ya no se queda en "Sintonizando…" en equipos lentos (páginas en diferido con `lazyPage` en lugar de `React.lazy`, reloj UTC fuera de React, formateadores de fecha reutilizados) y el índice de capítulos ya no se cierra solo con Esc y M seguidas; pruebas `loadable.test.tsx`, `dialog.test.tsx` y `regressions.test.tsx` (página cara en diferido con actualizaciones constantes, reloj UTC sin commits de React, sin `React.lazy` en el DOM).
+- [x] Fase 9 (corrección de pruebas): `axe /` espera a que La Travesía esté montada antes de auditar (desde que la portada va en su propio fragmento podía auditar solo el aviso "Sintonizando…"); con los 15 capítulos en el DOM sigue sin infracciones graves en escritorio y en móvil. `e2e/slow-device.spec.ts` comprueba, con la CPU seis veces más lenta, que La Travesía, el 3D y las 15 mini-experiencias llegan a montarse.
 - [x] Fase 9 (corrección de rendimiento): un fragmento por idioma (la primera carga solo descarga el idioma activo y el otro llega en segundo plano), La Travesía en su propio fragmento con Lenis y ScrollTrigger, y precarga en `index.html` del idioma y de la página de la ruta que se abre; pruebas `e2e/locales.spec.ts` e `i18n.test.ts`.
 - [x] Fase 9: humo completo de la Parte 19.6 (tecla M e índice, cambio a inglés con `lang="en"`, parche "Conseguido" en el pasaporte), axe en diez rutas (se añade `/atlas/marte`), prueba de cadenas literales en JSX (Parte 19.4), sin `TODO` en la compilación ni logotipos de NASA.
 - [x] Fase 9: rendimiento de `/lectura` (los capítulos 3–15 se montan en una transición de React y los capítulos fuera de pantalla usan `content-visibility`), `<main>` con altura mínima de pantalla (CLS 0), `robots.txt`; Lighthouse en la tabla de abajo.
@@ -70,6 +71,7 @@
 - Fase 5: JS inicial (entrada + precargas) 287 KB · `index-*.js` 161 KB · `Experience-*.js` 177 KB (diferido) · `PostFX-*.js` 25 KB (diferido) · CSS 15,6 KB. Límite: 500 KB.
 - Fase 8: JS inicial (entrada + precargas) 293 KB · `Experience-*.js` 170 KB + `three.core-*.js` 98 KB (diferidos) · `PostFX-*.js` 23 KB (diferido) · CSS 16 KB. Lectura estática: 647 KB (ES) y 642 KB (EN) sin comprimir, con el CSS en línea.
 - Fase 9 (idiomas en diferido): JS inicial (entrada + precargas del idioma y de la ruta) 266 KB en la portada, 264 KB en un capítulo suelto, 199 KB en `/lectura` y 192 KB en `/fuentes` · entrada `index-*.js` 138 KB · textos `es-*.js` 31 KB y `en-*.js` 30 KB · `ChapterSection-*.js` 64 KB · `Experience-*.js` 177 KB + `three.core-*.js` 102 KB (diferidos) · `PostFX-*.js` 25 KB (diferido).
+- Fase 9 (corrección de equipos lentos): JS inicial 267 KB en la portada, 265 KB en un capítulo suelto, 200 KB en `/lectura` y 193 KB en `/fuentes` · entrada `index-*.js` 134 KB. Sin cambios apreciables: `loadable.tsx` pesa menos de 1 KB.
 
 ## Lighthouse (fase 9, compilación de producción en local)
 | Ruta | Rendimiento | Accesibilidad | Buenas prácticas | SEO | Notas |
@@ -87,8 +89,27 @@
 - Despliegue de la fase 9 en GitHub Pages correcto: portada, rutas profundas (servidas por `404.html`), `lectura-es.html`,
   `lectura-en.html`, `og-image.png` y `robots.txt` responden bajo `/Nasa-space-apps/`.
 
+## Equipos lentos (fase 9, compilación de producción en local)
+Tiempo hasta que La Travesía está montada en la portada (`/?lang=es`), frenando la CPU de Chromium con
+`Emulation.setCPUThrottlingRate` (÷4 se parece a un Android de gama media).
+
+| Medición | Antes (28badf4) | Después |
+| --- | --- | --- |
+| Chromium sin freno: capítulos montados | 0,7 s | 0,45 s |
+| Chromium CPU ÷4: capítulos montados | 90 s | 2,7 s |
+| Chromium CPU ÷6: capítulos montados | no aparecen en 2 min | 5,1 s |
+| WebKit de Playwright (Windows): capítulos montados | 20–36 s | 0,7 s |
+| Chromium CPU ÷4 / ÷6: las 15 mini-experiencias montadas | no antes que los capítulos (90 s / más de 2 min) | 7,6 s / 14 s |
+
+- Causa: con `React.lazy`, lo que llega en diferido se monta en un render de baja prioridad que cualquier otra
+  actualización reinicia y que nunca caduca; el reloj UTC de la barra superior actualizaba React cada segundo. Además,
+  `formatDate` creaba un `Intl.DateTimeFormat` en cada llamada (9 s de CPU con el freno ÷4). Ver `DECISIONS.md`.
+- Son mediciones en un portátil con 3D por software; falta repetirlas en un Android de gama media y en Safari reales.
+
 ## Problemas conocidos
 - InSight: el corte del interior es una ilustración aproximada; la Parte 11 no publica el radio de Marte, así que no se dibuja a escala. TODO(verificar).
-- Batería e2e completa sobre be562ae: 83 de 83 en 2,2 min (Chromium, móvil y WebKit) con la máquina libre. Cuando el equipo se congela o se suspende a mitad de una corrida, hay pruebas que tardan 15 min y fallan por tiempo; repetidas solas pasan en segundos.
-- Pruebas e2e en local: usar `NO_OPEN=1 npx playwright test --workers=3`. Sin `NO_OPEN`, `vite preview` abre una pestaña del navegador del sistema, y con muchos procesos el 3D por software (SwiftShader) agota los tiempos de espera.
+- Batería e2e completa sobre be562ae: 83 de 83 en 2,2 min (Chromium, móvil y WebKit) con la máquina libre. Cuando el equipo se congela o se suspende a mitad de una corrida, hay pruebas que tardan 15 min y fallan por tiempo; repetidas solas pasan en segundos (`npx playwright test --last-failed --workers=1`).
+- Pruebas e2e en local: usar `NO_OPEN=1 npx playwright test --workers=3` (o `--workers=2` si el equipo va cargado). Sin `NO_OPEN`, `vite preview` abre una pestaña del navegador del sistema, y con muchos procesos el 3D por software (SwiftShader) agota los tiempos de espera.
+- `axe /` audita los 15 capítulos: tarda alrededor de un minuto sola y 2,5 min con dos workers y el 3D por software, así que esa prueba tiene 360 s de límite.
+- El WebKit de Playwright ejecuta el JS mucho más despacio que Safari (sobre todo en Windows): su proyecto tiene 120 s por prueba y 30 s por comprobación, y en la prueba de la señal solo se comprueba que la respuesta llega (el arranque del 3D por software bloquea allí el hilo unos 5 s; en Chromium y en el móvil emulado se exige que llegue en menos de 5 s). No sustituye a la revisión en Safari real de la lista de pendientes.
 - Solo en desarrollo (StrictMode): React registra un aviso de desmontaje del lienzo de R3F al montar dos veces los efectos. En la compilación de producción no aparece ningún error en consola.

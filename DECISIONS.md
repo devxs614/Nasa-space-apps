@@ -138,6 +138,12 @@
   100 ms (con `React.lazy` no aparece en 4 s; con `lazyPage` sí), comprueba que el reloj UTC no hace commits de React y que
   ningún archivo del DOM vuelve a importar `lazy` de React. Una e2e con la CPU frenada no sirvió: según cuándo caigan los
   tics del reloj, la versión con el fallo a veces montaba en 7–9 s y otras no montaba en 60 s.
+- Solo queda un `React.lazy`, el posprocesado, que vive dentro del árbol propio de React Three Fiber. `formatList` reutiliza también su `Intl.ListFormat`.
+- Alternativas descartadas: volver a meter La Travesía en el fragmento de entrada (se pierde el ahorro en las demás rutas) y
+  quitar solo el reloj (cualquier otra actualización, como un aviso o el scroll, reinicia igual un render lento).
+- `e2e/slow-device.spec.ts` comprueba la versión corregida con la CPU seis veces más lenta (La Travesía, el 3D y las 15
+  mini-experiencias montadas, al abrir la portada y al llegar desde otra página). Sirve para ver que el arreglo aguanta en
+  un navegador real; el detector del fallo es la prueba de unidad de arriba.
 
 ## 2026-11-15 — Cierre atrasado del `<dialog>`
 - Contexto: el evento `close` del `<dialog>` nativo llega en una tarea aparte. Con Esc y M seguidas, el `close` antiguo
