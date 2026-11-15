@@ -1,6 +1,6 @@
 # Progreso
 
-## Fase actual: 1 — Datos, textos y accesibilidad base
+## Fase actual: 2 — Motor 3D y scroll
 
 ## Hecho
 - [x] Proyecto Vite + React 19 + TypeScript 5.9 con las versiones fijadas de la Parte 5 (sin conflictos de dependencias).
@@ -18,6 +18,10 @@
 - [x] Fase 1: SettingsPanel (7 pestañas), índice de capítulos (tecla M), atajos, avisos `aria-live`, `?aula`, `?lite`, `?lang`.
 - [x] Fase 1: `/lectura` con los 15 capítulos, prólogo, actos, epílogo, datos y fuentes; pósters SVG generados.
 - [x] Fase 1: axe sin infracciones graves en `/lectura`; prueba de paridad de idiomas en verde.
+- [x] Fase 2: lienzo único en diferido con calidad adaptativa (PerformanceMonitor, AdaptiveDpr), estrellas con shader, director de escenas y rig de cámara amortiguado.
+- [x] Fase 2: mundos procedurales (Tierra nocturna, Luna, Marte con atmósfera, Eros, Vesta, Ceres), dioramas de superficie con 6 variantes, Kepler y sistema exterior en escala logarítmica, prólogo y epílogo.
+- [x] Fase 2: 15 modelos procedurales con revelado holográfico por planos de recorte, polvo, pieza clave con contorno y GLB opcional.
+- [x] Fase 2: Lenis + ScrollTrigger, prólogo, portadas de acto, 15 capítulos con sus 7 momentos, riel de progreso, enlaces profundos, estática entre escenas, redirección a `/lectura` sin WebGL 2.
 
 ## Pendiente
 - [ ] Fases 1–9.
@@ -41,6 +45,7 @@
 ## Tamaños del build (gzip)
 - Fase 0: `index-*.js` 142,9 KB · `index-*.css` 11,3 KB.
 - Fase 1: `index-*.js` 176,8 KB · `index-*.css` 13,7 KB.
+- Fase 2: `index-*.js` ≈ 199 KB inicial · `Experience-*.js` ≈ 176 KB (diferido) · `PostFX-*.js` ≈ 25 KB (diferido).
 
 ## Problemas conocidos
-- Ninguno.
+- Solo en desarrollo (StrictMode): React registra un aviso de desmontaje del lienzo de R3F al montar dos veces los efectos. En la compilación de producción no aparece ningún error en consola.

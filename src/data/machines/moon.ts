@@ -12,6 +12,7 @@ export const surveyor: Machine = {
   type: 'lander',
   status: 'silent-surface',
   name: L('Surveyor 1, 3, 5, 6 y 7', 'Surveyor 1, 3, 5, 6 and 7'),
+  shortName: L('Surveyor', 'Surveyor'),
   chapterTitle: L('Los exploradores de avanzada', 'The Advance Scouts'),
   launch: { date: '1967-04-17', sourceIds: ['nasa-surveyor3'] },
   arrival: {
@@ -219,6 +220,7 @@ export const apolloLm: Machine = {
   type: 'lander',
   status: 'silent-surface',
   name: L('Etapas de descenso de los módulos lunares Apollo', 'Apollo Lunar Module descent stages'),
+  shortName: L('Apollo LM', 'Apollo LM'),
   chapterTitle: L('Las plataformas que se quedaron', 'The Platforms That Stayed'),
   arrival: { date: '1969-07-20T20:17:40Z', kind: 'landing', sourceIds: ['nssdca-a11-lm'] },
   lastSignal: {
@@ -454,6 +456,7 @@ export const alsep: Machine = {
   type: 'instrument',
   status: 'still-useful',
   name: L('ALSEP y retrorreflectores láser', 'ALSEP and laser retroreflectors'),
+  shortName: L('ALSEP', 'ALSEP'),
   chapterTitle: L('Los que escuchaban a la Luna', 'The Ones Who Listened to the Moon'),
   arrival: { date: '1969-11-19', kind: 'landing', sourceIds: ['nssdca-a12-alsep'] },
   lastSignal: {
@@ -652,6 +655,7 @@ export const lrv: Machine = {
   type: 'rover',
   status: 'silent-surface',
   name: L('Vehículo de exploración lunar (LRV)', 'Lunar Roving Vehicle (LRV)'),
+  shortName: L('LRV', 'LRV'),
   chapterTitle: L('Los autos de la Luna', 'The Cars of the Moon'),
   arrival: { date: '1971-07-30', kind: 'landing', sourceIds: ['nssdca-a15-lrv'] },
   lastSignal: {

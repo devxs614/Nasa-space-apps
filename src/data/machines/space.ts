@@ -9,6 +9,7 @@ export const near: Machine = {
   type: 'orbiter',
   status: 'silent-surface',
   name: L('NEAR Shoemaker', 'NEAR Shoemaker'),
+  shortName: L('NEAR', 'NEAR'),
   chapterTitle: L(
     'La que aterrizó sin estar diseñada para ello',
     'The One That Landed Without Being Built To',
@@ -361,6 +362,7 @@ export const kepler: Machine = {
   type: 'telescope',
   status: 'drifting',
   name: L('Telescopio espacial Kepler', 'Kepler space telescope'),
+  shortName: L('Kepler', 'Kepler'),
   chapterTitle: L('El cazador de planetas', 'The Planet Hunter'),
   launch: { date: '2009-03-06', sourceIds: ['nasa-kepler'] },
   lastSignal: {
@@ -519,6 +521,7 @@ export const pioneer: Machine = {
   type: 'probe',
   status: 'drifting',
   name: L('Pioneer 10 y Pioneer 11', 'Pioneer 10 and Pioneer 11'),
+  shortName: L('Pioneer', 'Pioneer'),
   chapterTitle: L('Las mensajeras de la botella', 'The Messengers in a Bottle'),
   launch: { date: '1972-03-02', sourceIds: ['nasa-pioneer10'] },
   arrival: { date: '1973-12-04', kind: 'flyby', sourceIds: ['nasa-pioneer10'] },

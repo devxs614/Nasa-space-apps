@@ -85,7 +85,7 @@ export function VoiceLine({
   }
   if (speaker === 'machine') {
     return (
-      <figure className={cx('relative', className)}>
+      <figure className={cx('relative rounded-card bg-void/80 p-4 backdrop-blur-sm', className)}>
         <figcaption className="mb-2 flex flex-wrap items-center gap-2 font-mono text-[0.8125rem] text-[#ffd59a]">
           <Sparkles size={14} aria-hidden="true" />
           <span>{t('badge.fiction')}</span>

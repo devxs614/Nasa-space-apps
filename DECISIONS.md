@@ -47,3 +47,24 @@
 - `src/data/script.ts` describe, por capítulo y momento, quién habla y qué dato se interpola; el texto vive en `chapters.json`.
 - Las líneas de la Bitácora usan `ref` (frase del dato con sus fuentes) o `k` + `vars` (plantilla con valores de `machines.ts`).
 - Las tarjetas de "El trabajo" toman el título de i18n y el cuerpo del dato, con su `SourceBadge`.
+
+## 2026-11-14 — Scroll sin `pin` de ScrollTrigger
+- Contexto: la Parte 8.2 pide fijar los momentos con `pin: true`; 105 secciones fijadas con textos de altura variable rompen el
+  reflujo a 320 px y el zoom al 200 %.
+- Decisión: cada momento es un tramo de `min-height` en `svh`; el lienzo 3D es `fixed` y hace de capa fijada. ScrollTrigger (sin
+  `pin`) informa el progreso con `start: 'top 55%'`/`end: 'bottom 55%'` y los textos entran con GSAP.
+- Por qué: el texto nunca queda cortado, funciona igual con scroll nativo (movimiento reducido) y cuesta menos en móviles.
+
+## 2026-11-14 — Sin `Html` de drei ni `useDetectGPU`
+- `Html` de drei crea raíces de React DOM que, con React 19, provocaban un error de desmontaje que congelaba el lienzo. Las etiquetas
+  de los marcadores se muestran en el DOM (lista del atlas, encabezados) y el panel `?debug=1` escribe en un `<pre>` normal.
+- `useDetectGPU` descarga tablas de rendimiento desde un CDN; la Parte 1.4.6 prohíbe llamadas externas salvo la de imágenes de NASA.
+  `estimateGpuTier()` estima el nivel con el renderer de WebGL, núcleos y memoria, sin red.
+
+## 2026-11-14 — Una sola escena montada
+- La Parte 9.15 permite mantener montadas las escenas orbitales del acto; se monta una sola escena a la vez y la transición la cubre
+  la estática de 300 ms del DOM. Menos memoria en móviles; el cambio sigue siendo inmediato.
+
+## 2026-11-14 — Puntos del riel de progreso de 24 px en móvil
+- Quince puntos de 44 px no caben en 360 px de ancho. Se usan objetivos de 24×24 px (mínimo de WCAG 2.5.8) en móvil y 28 px en
+  escritorio; el índice de capítulos (tecla M) ofrece objetivos de 44 px.

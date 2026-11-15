@@ -12,6 +12,7 @@ export const viking: Machine = {
   type: 'lander',
   status: 'silent-surface',
   name: L('Viking 1 y Viking 2', 'Viking 1 and Viking 2'),
+  shortName: L('Viking', 'Viking'),
   chapterTitle: L('Los primeros en buscar vida', 'The First to Look for Life'),
   launch: { date: '1975-08-20', sourceIds: ['nasa-viking1', 'nasa-viking'] },
   arrival: { date: '1976-07-20T11:53:06Z', kind: 'landing', sourceIds: ['nasa-viking1'] },
@@ -224,6 +225,7 @@ export const sojourner: Machine = {
   type: 'rover',
   status: 'silent-surface',
   name: L('Sojourner y Mars Pathfinder', 'Sojourner and Mars Pathfinder'),
+  shortName: L('Sojourner', 'Sojourner'),
   chapterTitle: L('El pequeño viajero', 'The Little Traveler'),
   launch: { date: '1996-12-04', sourceIds: ['nasa-pathfinder'] },
   arrival: {

@@ -12,3 +12,17 @@ if (root) {
     </StrictMode>,
   );
 }
+
+if (import.meta.env.DEV) {
+  void Promise.all([
+    import('./state/useJourneyStore'),
+    import('./state/useAppStore'),
+    import('./state/useUiStore'),
+  ]).then(([j, a, u]) => {
+    Object.assign(window, {
+      __journey: j.useJourneyStore,
+      __app: a.useAppStore,
+      __ui: u.useUiStore,
+    });
+  });
+}

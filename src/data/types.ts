@@ -68,6 +68,8 @@ export interface Machine {
   type: MachineType;
   status: Status;
   name: L10n;
+  /** Nombre corto para títulos monumentales. */
+  shortName?: L10n;
   chapterTitle: L10n;
   /** Ausente cuando la Parte 11 no publica la fecha (Apollo, Opportunity, Ingenuity): ver PROGRESS.md. */
   launch?: { date: string; sourceIds: string[] };
