@@ -13,6 +13,7 @@ import { useQueryModes } from '../../hooks/useQueryModes';
 import { useSceneSync } from '../../hooks/useSceneSync';
 import { ExperienceSlot } from './ExperienceSlot';
 import { StaticTransition } from './StaticTransition';
+import { ThreeNotices } from './ThreeNotices';
 import { DemoMode } from '../demo/DemoMode';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { cx } from '../../lib/cx';
@@ -47,6 +48,7 @@ export function AppShell() {
       <SettingsPanel />
       <ChapterIndex />
       <DemoMode />
+      <ThreeNotices />
       <Toaster />
       <LiveRegion />
       <Suspense fallback={null}>

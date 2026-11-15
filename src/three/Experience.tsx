@@ -20,6 +20,7 @@ import { CameraRig } from './CameraRig';
 import { QUALITY, estimateGpuTier, tierToQuality } from './quality';
 import { shouldStartLite } from '../lib/device';
 import { DebugPanel } from './DebugPanel';
+import { LowFpsWatcher } from './LowFpsWatcher';
 
 const PostFX = lazy(() => import('./PostFX'));
 const ORDER: Quality[] = ['low', 'medium', 'high'];
@@ -151,6 +152,7 @@ export default function Experience() {
             onFallback={fallback}
           />
           <AdaptiveDpr pixelated={false} />
+          <LowFpsWatcher />
           <Suspense fallback={null}>
             <Starfield />
             <SceneDirector />

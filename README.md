@@ -52,10 +52,14 @@ Requires Node.js 20.19+ or 22.12+. Optional public-domain textures: `npm run ass
 `.github/workflows/pages.yml` (enable Pages with "Source: GitHub Actions"). Vercel uses `vercel.json` and Netlify uses
 `public/_redirects` to rewrite deep links to `index.html`.
 
+`public/og-image.png` and the no-JavaScript reading pages (`public/lectura-es.html`, `public/lectura-en.html`) are generated
+from the built app and committed. After changing the story texts, regenerate them with `npm run build`, then
+`npx vite preview --port 4173` and `npm run prerender` in another terminal.
+
 ## Accessibility
 
 Keyboard-only navigation, screen-reader scene descriptions, text for everything you can hear, high-contrast
-and legible-font modes, reduced motion, lite mode and a reading mode without WebGL.
+and legible-font modes, reduced motion, lite mode, a reading mode without WebGL and static reading pages that need no JavaScript.
 
 ## Credits and licenses
 

@@ -10,6 +10,7 @@ export interface UiState {
   indexOpen: boolean;
   helpOpen: boolean;
   liteBanner: boolean;
+  liteAsk: boolean;
   noWebglBanner: boolean;
   threeFailed: boolean;
   contextLosses: number;
@@ -18,6 +19,7 @@ export interface UiState {
   setIndexOpen: (open: boolean) => void;
   setHelpOpen: (open: boolean) => void;
   setLiteBanner: (on: boolean) => void;
+  setLiteAsk: (on: boolean) => void;
   setThreeFailed: (on: boolean) => void;
   registerContextLoss: () => void;
 }
@@ -28,6 +30,7 @@ export const useUiStore = create<UiState>()((set) => ({
   indexOpen: false,
   helpOpen: false,
   liteBanner: false,
+  liteAsk: false,
   noWebglBanner: false,
   threeFailed: false,
   contextLosses: 0,
@@ -36,6 +39,7 @@ export const useUiStore = create<UiState>()((set) => ({
   setIndexOpen: (open) => set({ indexOpen: open }),
   setHelpOpen: (open) => set({ helpOpen: open }),
   setLiteBanner: (on) => set({ liteBanner: on }),
+  setLiteAsk: (on) => set({ liteAsk: on }),
   setThreeFailed: (on) => set({ threeFailed: on }),
   registerContextLoss: () => set((s) => ({ contextLosses: s.contextLosses + 1 })),
 }));

@@ -88,3 +88,12 @@
 - La Parte 8.11 sugiere una sección fijada con scroll horizontal. Se usa una región con desplazamiento horizontal nativo (rueda con
   Mayús, arrastre táctil y flechas izquierda/derecha con el foco), sin fijar la página.
 - Por qué: no secuestra el scroll vertical, funciona con lectores de pantalla y en móvil o con movimiento reducido pasa a lista vertical.
+
+## 2026-11-15 — Lectura estática generada y versionada en `public/`
+- Contexto: la Parte 17.10 pide que la historia se pueda leer sin JavaScript; GitHub Pages solo sirve archivos estáticos.
+- Decisión: `scripts/prerender.mjs` abre la app compilada con Playwright, toma `/lectura` en cada idioma, deja el CSS en línea (sin
+  fuentes web), quita scripts y controles que necesitan JavaScript, y guarda `public/lectura-es.html` y `public/lectura-en.html`.
+  Los archivos se versionan para que el despliegue no dependa de un navegador en CI; se regeneran con `npm run prerender` tras
+  cambiar los textos.
+- Nombre: no se llaman `lectura.html` porque `vite preview` y GitHub Pages resolverían la ruta `/lectura` de la app hacia ese archivo.
+- El `noscript` de `index.html` usa `%BASE_URL%` para que los enlaces funcionen bajo la subruta del repositorio.

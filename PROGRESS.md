@@ -1,8 +1,10 @@
 # Progreso
 
-## Fase actual: 8 — Pulido visual, imágenes de NASA y rendimiento
+## Fase actual: 9 — QA final y entrega
 
 ## Hecho
+- [x] Fase 8: avisos del 3D (toast al activar solo el modo ligero; pregunta "¿Cambiar a modo ligero?" si los FPS bajan de 24 durante 5 s en calidad baja, una vez por visita; "Reintentar 3D" tras un fallo y modo ligero tras dos pérdidas de contexto) y póster fijo de la escena cuando el 3D falla.
+- [x] Fase 8: imagen para redes `og-image.png` (1200×630) y versiones de lectura estáticas sin JavaScript `lectura-es.html` y `lectura-en.html` (enlazadas desde `noscript`, axe sin infracciones) generadas con `npm run prerender`; pruebas de unidad de los avisos y e2e de la lectura estática.
 - [x] Proyecto Vite + React 19 + TypeScript 5.9 con las versiones fijadas de la Parte 5 (sin conflictos de dependencias).
 - [x] Configuración de Vite, TypeScript estricto, ESLint plano con tipos, Prettier, Vitest y Playwright.
 - [x] `index.html` con idioma, viewport, theme-color, Open Graph, `noscript` y precarga de fuentes.
@@ -34,7 +36,7 @@
 - [x] Fase 2: Lenis + ScrollTrigger, prólogo, portadas de acto, 15 capítulos con sus 7 momentos, riel de progreso, enlaces profundos, estática entre escenas, redirección a `/lectura` sin WebGL 2.
 
 ## Pendiente
-- [ ] Fases 8–9: pulido, presupuesto de rendimiento, imagen para redes y QA final.
+- [ ] Fase 9: QA final (axe en todas las rutas, revisión de contenido, informe de entrega).
 - [ ] Equipo humano: nombre del equipo e integrantes en README.md y CREDITS.md (la página Acerca de enlaza a los contribuidores del repositorio), y enlace del vídeo de 30 s.
 
 ## Datos por verificar
@@ -58,9 +60,9 @@
 - Fase 1: `index-*.js` 176,8 KB · `index-*.css` 13,7 KB.
 - Fase 2: `index-*.js` ≈ 199 KB inicial · `Experience-*.js` ≈ 176 KB (diferido) · `PostFX-*.js` ≈ 25 KB (diferido).
 - Fase 5: JS inicial (entrada + precargas) 287 KB · `index-*.js` 161 KB · `Experience-*.js` 177 KB (diferido) · `PostFX-*.js` 25 KB (diferido) · CSS 15,6 KB. Límite: 500 KB.
+- Fase 8: JS inicial (entrada + precargas) 293 KB · `Experience-*.js` 170 KB + `three.core-*.js` 98 KB (diferidos) · `PostFX-*.js` 23 KB (diferido) · CSS 16 KB. Lectura estática: 647 KB (ES) y 642 KB (EN) sin comprimir, con el CSS en línea.
 
 ## Problemas conocidos
-- El despliegue a GitHub Pages falla en `actions/configure-pages` hasta que se active Pages en el repositorio (Settings → Pages → Source: GitHub Actions). El build de CI pasa.
 - InSight: el corte del interior es una ilustración aproximada; la Parte 11 no publica el radio de Marte, así que no se dibuja a escala. TODO(verificar).
 - Pruebas e2e en local: usar `NO_OPEN=1 npx playwright test --workers=3`. Sin `NO_OPEN`, `vite preview` abre una pestaña del navegador del sistema, y con muchos procesos el 3D por software (SwiftShader) agota los tiempos de espera.
 - Solo en desarrollo (StrictMode): React registra un aviso de desmontaje del lienzo de R3F al montar dos veces los efectos. En la compilación de producción no aparece ningún error en consola.
