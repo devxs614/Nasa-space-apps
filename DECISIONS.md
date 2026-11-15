@@ -123,3 +123,24 @@
   con la entrada, el idioma y la página de la ruta que se abre. Si no acierta, la app carga igual, un poco más tarde.
 - Resultado (gzip): portada 266 KB, capítulo suelto 264 KB, `/lectura` 199 KB y `/fuentes` 192 KB, frente a 293 KB en todas.
 - Pruebas: `e2e/locales.spec.ts` (idioma guardado, `?lang`, cambio sin red, fallo de descarga y precargas) y `i18n.test.ts`.
+
+## 2026-11-15 — Páginas en diferido sin `React.lazy`
+- Contexto: al pasar La Travesía a `React.lazy` (commit 28badf4), en equipos lentos la portada se quedaba en "Sintonizando…".
+  `React.lazy` monta lo que llega en un render de baja prioridad que cualquier actualización reinicia y que nunca caduca; el
+  reloj UTC de la barra superior actualizaba React cada segundo, así que si montar La Travesía tardaba más de 1 s no terminaba.
+  Con la CPU 4 veces más lenta tardaba ≈ 90 s; con 6 veces, no aparecía en 2 minutos.
+- Decisión (be562ae): `src/lib/loadable.tsx` con `lazyPage` (rutas: aviso de carga y "Intentar de nuevo" si falla la descarga)
+  y `loadable` (mini-experiencias, postal, lienzo 3D y puente de audio). El componente llega con una actualización normal,
+  que React pinta de una vez. El reloj UTC escribe la hora en el DOM sin pasar por React y `formatDate` reutiliza sus
+  `Intl.DateTimeFormat`.
+- Resultado: 2,7 s con la CPU 4× más lenta, 5 s con 6× y ≈ 0,45 s sin freno.
+- Prueba: `src/test/regressions.test.tsx` monta una página cara en diferido mientras otro componente actualiza React cada
+  100 ms (con `React.lazy` no aparece en 4 s; con `lazyPage` sí), comprueba que el reloj UTC no hace commits de React y que
+  ningún archivo del DOM vuelve a importar `lazy` de React. Una e2e con la CPU frenada no sirvió: según cuándo caigan los
+  tics del reloj, la versión con el fallo a veces montaba en 7–9 s y otras no montaba en 60 s.
+
+## 2026-11-15 — Cierre atrasado del `<dialog>`
+- Contexto: el evento `close` del `<dialog>` nativo llega en una tarea aparte. Con Esc y M seguidas, el `close` antiguo
+  cerraba el índice recién reabierto. La prueba de humo lo tapaba con reintentos.
+- Decisión: `Dialog` cuenta los cierres pedidos por el estado y descarta un `close` si el diálogo ya está abierto otra vez;
+  el foco vuelve al disparador original. Pruebas en `src/test/dialog.test.tsx`; la prueba de humo ya no reintenta.

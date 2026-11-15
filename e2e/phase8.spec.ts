@@ -27,6 +27,6 @@ test.describe('lectura estática sin JavaScript', () => {
 
 test('la ruta /lectura sigue siendo la app, no la página estática', async ({ page }) => {
   await page.goto('/lectura?lang=en');
-  await expect(page.locator('#root header')).toBeVisible();
+  await expect(page.locator('#root header.site-chrome')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1, name: 'Reading mode' })).toBeVisible();
 });

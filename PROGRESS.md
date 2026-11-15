@@ -3,6 +3,7 @@
 ## Fase actual: 9 — QA final y entrega (código congelado: a partir de aquí, solo correcciones)
 
 ## Hecho
+- [x] Fase 9 (corrección): la portada ya no se queda en "Sintonizando…" en equipos lentos (páginas en diferido con `lazyPage` en lugar de `React.lazy`, reloj UTC fuera de React, formateadores de fecha reutilizados) y el índice de capítulos ya no se cierra solo con Esc y M seguidas; pruebas `loadable.test.tsx`, `dialog.test.tsx` y `regressions.test.tsx` (página cara en diferido con actualizaciones constantes, reloj UTC sin commits de React, sin `React.lazy` en el DOM).
 - [x] Fase 9 (corrección de rendimiento): un fragmento por idioma (la primera carga solo descarga el idioma activo y el otro llega en segundo plano), La Travesía en su propio fragmento con Lenis y ScrollTrigger, y precarga en `index.html` del idioma y de la página de la ruta que se abre; pruebas `e2e/locales.spec.ts` e `i18n.test.ts`.
 - [x] Fase 9: humo completo de la Parte 19.6 (tecla M e índice, cambio a inglés con `lang="en"`, parche "Conseguido" en el pasaporte), axe en diez rutas (se añade `/atlas/marte`), prueba de cadenas literales en JSX (Parte 19.4), sin `TODO` en la compilación ni logotipos de NASA.
 - [x] Fase 9: rendimiento de `/lectura` (los capítulos 3–15 se montan en una transición de React y los capítulos fuera de pantalla usan `content-visibility`), `<main>` con altura mínima de pantalla (CLS 0), `robots.txt`; Lighthouse en la tabla de abajo.
@@ -40,7 +41,7 @@
 - [x] Fase 2: Lenis + ScrollTrigger, prólogo, portadas de acto, 15 capítulos con sus 7 momentos, riel de progreso, enlaces profundos, estática entre escenas, redirección a `/lectura` sin WebGL 2.
 
 ## Pendiente
-- [ ] Revisión manual de la Parte 19.8 en dispositivos reales (Chrome, Edge, Firefox, Safari 17+ en macOS e iOS, Android de gama media) y con lector de pantalla (VoiceOver, NVDA).
+- [ ] Revisión manual de la Parte 19.8 en dispositivos reales (Chrome, Edge, Firefox, Safari 17+ en macOS e iOS, Android de gama media) y con lector de pantalla (VoiceOver, NVDA). Incluye comprobar que la portada monta La Travesía en Safari real y en un Android de gama media (arreglo de be562ae; en el WebKit de Playwright ya pasa).
 - [ ] Lectura completa de la versión inglesa por una persona con inglés fluido (Parte 19.9).
 - [ ] Vídeo de 30 s (o 7 diapositivas) con subtítulos en inglés, subido con enlace público, y enlace en README.md y en el formulario.
 - [ ] Formulario de entrega con los textos de `SUBMISSION.md`; probar todos los enlaces en una ventana privada.
@@ -73,13 +74,13 @@
 ## Lighthouse (fase 9, compilación de producción en local)
 | Ruta | Rendimiento | Accesibilidad | Buenas prácticas | SEO | Notas |
 | --- | --- | --- | --- | --- | --- |
-| `/` (escritorio) | 51 | 100 | 100 | 92 → 100 con `robots.txt` | 3D por software (SwiftShader) en Chromium sin GPU; FCP 1,3 s, LCP 2,6 s, TBT 800 ms, CLS 0 |
-| `/lectura` (móvil) | 77 | 100 | 100 | 100 | Antes de la fase 9: 18 (TBT 2.080 ms, CLS 0,38). Ahora FCP 3,5 s, LCP 4,0 s, TBT 160 ms, CLS 0 |
+| `/` (escritorio) | 58 | 100 | 100 | 100 | 3D por software (SwiftShader) en Chromium sin GPU; FCP 0,8 s, LCP 2,0 s, TBT 1.150 ms, CLS 0. Antes de los idiomas en diferido: 51 (FCP 1,3 s, LCP 2,6 s) |
+| `/lectura` (móvil) | 81 | 100 | 100 | 100 | FCP 2,5 s, LCP 3,5 s, TBT 290 ms, CLS 0. Antes de los idiomas en diferido: 77 (FCP 3,5 s, LCP 4,0 s); al empezar la fase 9: 18 (TBT 2.080 ms, CLS 0,38) |
 
-- Metas de la Parte 19.7: rendimiento 70+ en `/` y 90+ en `/lectura` móvil. `/lectura` queda en 77 por el JS inicial
-  (≈ 293 KB gzip con los textos de los dos idiomas) en la red 4G lenta simulada. Después de esa medición, el idioma activo se carga
-  solo y `/lectura` baja a 199 KB de JS inicial: la tabla es anterior a ese cambio y hay que repetirla en la URL publicada.
-  La cifra de `/` se midió sin GPU; en un equipo con GPU el 3D no ocupa el hilo principal. Repetir en la URL publicada.
+- Medido sobre be562ae con la máquina cargada (carga ≈ 9), así que las cifras son pesimistas.
+- Metas de la Parte 19.7: rendimiento 70+ en `/` y 90+ en `/lectura` móvil. `/lectura` queda en 81 en la red 4G lenta simulada
+  (199 KB gzip de JS inicial). La cifra de `/` se midió sin GPU: el 3D por software ocupa el hilo principal (TBT), cosa que
+  no pasa en un equipo con GPU. Repetir las dos en la URL publicada.
 - Panel `?debug=1` (calidad baja, Chromium sin GPU): La Travesía en Opportunity 63 llamadas y 46.082 triángulos;
   en Pioneer 8 llamadas y 44.018 triángulos; atlas de Marte 34 llamadas; capítulo de Apollo 72 llamadas. Máximo 72 de
   las 150 permitidas por fotograma.
@@ -88,5 +89,6 @@
 
 ## Problemas conocidos
 - InSight: el corte del interior es una ilustración aproximada; la Parte 11 no publica el radio de Marte, así que no se dibuja a escala. TODO(verificar).
+- Batería e2e completa sobre be562ae: 83 de 83 en 2,2 min (Chromium, móvil y WebKit) con la máquina libre. Cuando el equipo se congela o se suspende a mitad de una corrida, hay pruebas que tardan 15 min y fallan por tiempo; repetidas solas pasan en segundos.
 - Pruebas e2e en local: usar `NO_OPEN=1 npx playwright test --workers=3`. Sin `NO_OPEN`, `vite preview` abre una pestaña del navegador del sistema, y con muchos procesos el 3D por software (SwiftShader) agota los tiempos de espera.
 - Solo en desarrollo (StrictMode): React registra un aviso de desmontaje del lienzo de R3F al montar dos veces los efectos. En la compilación de producción no aparece ningún error en consola.
