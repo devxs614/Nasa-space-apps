@@ -23,8 +23,13 @@ and Spanish, targets WCAG 2.2 AA, and still tells the whole story without WebGL.
 ## Link to Project Demo
 
 ```text
-[Public link to the 30-second video (YouTube "Unlisted" is fine) or to the 7-slide PDF]
+https://devxs614.github.io/Nasa-space-apps/last-signal-slides.pdf
 ```
+
+That is the seven-slide deck (cover included), published with the site: it opens without signing in. Before
+submitting, put the team name and members in `docs/slides/team.json`, run `npm run slides` and push. If the team
+records the 30-second video instead, replace the link with the public video link (YouTube "Unlisted" is fine);
+the form takes one demo link.
 
 The video subtitles are in [`docs/video/last-signal-30s.srt`](docs/video/last-signal-30s.srt). Record the site at
 `https://devxs614.github.io/Nasa-space-apps/?demo=1&lang=en` at 1920×1080.
@@ -115,4 +120,5 @@ by our code. No NASA logos, insignia, flags or mission identifiers are used as b
 - [ ] The video is 30 s or shorter with English subtitles, or the deck has 7 slides or fewer.
 - [ ] "NASA Data" and "Use of Artificial Intelligence" match the website and `AI_DISCLOSURE.md`.
 - [ ] No NASA logos or insignia, no recognizable minors, no personal data.
-- [ ] Team name and members added to `README.md` and `CREDITS.md`, and the demo link added to `README.md`.
+- [ ] Team name and members added to `README.md`, `CREDITS.md` and `docs/slides/team.json` (then `npm run slides`), and
+      the video link added to `README.md` if a video is recorded.

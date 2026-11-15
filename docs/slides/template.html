@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>LAST SIGNAL — NASA Space Apps Challenge 2026</title>
+    <!--
+      Seven slides, cover included (Space Apps limit). Built by `npm run slides`, which fills the
+      double-brace tokens with fresh screenshots of the site, the team in team.json and the fonts of the app.
+      Edit the texts here, then run the script again to regenerate public/last-signal-slides.pdf.
+    -->
+    <style>
+      @font-face {
+        font-family: 'Unbounded';
+        src: url('{{font.unbounded}}') format('woff2');
+        font-weight: 200 900;
+      }
+      @font-face {
+        font-family: 'Atkinson';
+        src: url('{{font.atkinson}}') format('woff2');
+        font-weight: 200 800;
+      }
+      @font-face {
+        font-family: 'Mono';
+        src: url('{{font.mono}}') format('woff2');
+        font-weight: 100 800;
+      }
+      @font-face {
+        font-family: 'Fraunces';
+        src: url('{{font.fraunces}}') format('woff2');
+        font-style: italic;
+        font-weight: 100 900;
+      }
+      @page {
+        size: 1280px 720px;
+        margin: 0;
+      }
+      :root {
+        --void: #05060a;
+        --panel: #111827;
+        --line: rgba(160, 200, 255, 0.26);
+        --text: #e8eef7;
+        --dim: #a9b5c9;
+        --signal: #5ef2ff;
+        --amber: #ffb547;
+        --phosphor: #7cffb2;
+        --moon: #a8d8ff;
+        --mars: #ff8a5c;
+        --small: #e6c79c;
+        --deep: #a99bff;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        background: var(--void);
+      }
+      body {
+        font-family: 'Atkinson', system-ui, sans-serif;
+        color: var(--text);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .slide {
+        position: relative;
+        width: 1280px;
+        height: 720px;
+        overflow: hidden;
+        padding: 58px 72px 64px;
+        background:
+          radial-gradient(1200px 500px at 85% -10%, rgba(94, 242, 255, 0.07), transparent 60%),
+          var(--void);
+        display: flex;
+        flex-direction: column;
+        break-after: page;
+        page-break-after: always;
+      }
+      .slide:last-of-type {
+        break-after: auto;
+        page-break-after: auto;
+      }
+      .kicker {
+        font-family: 'Mono', monospace;
+        font-size: 15px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--signal);
+      }
+      h1,
+      h2 {
+        font-family: 'Unbounded', sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+      }
+      h2 {
+        margin-top: 12px;
+        font-size: 44px;
+        line-height: 1.08;
+      }
+      .lead {
+        margin-top: 16px;
+        max-width: 900px;
+        font-size: 24px;
+        line-height: 1.4;
+        color: var(--dim);
+      }
+      .lead strong,
+      li strong {
+        color: var(--text);
+        font-weight: 700;
+      }
+      .foot {
+        position: absolute;
+        right: 72px;
+        bottom: 24px;
+        left: 72px;
+        display: flex;
+        justify-content: space-between;
+        font-family: 'Mono', monospace;
+        font-size: 12.5px;
+        letter-spacing: 0.08em;
+        color: #8793a8;
+      }
+      .shot {
+        display: block;
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #0b0f1a;
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.65);
+      }
+      .cols {
+        flex: 1;
+        display: grid;
+        gap: 44px;
+        align-items: center;
+        margin: 8px 0 26px;
+      }
+      ul.points {
+        list-style: none;
+        display: grid;
+        gap: 15px;
+        font-size: 21px;
+        line-height: 1.35;
+      }
+      ul.points li {
+        position: relative;
+        padding-left: 26px;
+        color: var(--dim);
+      }
+      ul.points li::before {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        border: 2px solid var(--signal);
+        border-radius: 50%;
+      }
+      .tag {
+        display: inline-block;
+        padding: 3px 12px;
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        font-family: 'Mono', monospace;
+        font-size: 14px;
+      }
+
+      /* 1 · Cover */
+      .cover {
+        padding: 70px 72px;
+        background: #000 url('{{img.cover}}') left 46% / auto 122% no-repeat;
+      }
+      .cover::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(5, 6, 10, 0.8) 0%,
+          rgba(5, 6, 10, 0.35) 44%,
+          transparent 62%
+        );
+      }
+      .cover > * {
+        position: relative;
+      }
+      .cover h1 {
+        margin-top: 150px;
+        font-size: 122px;
+        font-weight: 900;
+        line-height: 0.92;
+        letter-spacing: -0.02em;
+      }
+      .cover .tagline {
+        margin-top: 22px;
+        font-family: 'Fraunces', serif;
+        font-style: italic;
+        font-size: 31px;
+        color: #c5cfdf;
+      }
+      .cover .team {
+        position: absolute;
+        bottom: 64px;
+        left: 72px;
+        font-size: 22px;
+        line-height: 1.45;
+      }
+      .cover .team b {
+        display: block;
+        font-family: 'Mono', monospace;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: var(--signal);
+      }
+      .cover .team span {
+        color: var(--dim);
+      }
+
+      /* 2 · Four acts */
+      .acts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin-top: 28px;
+      }
+      .act {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--panel);
+      }
+      .act img {
+        display: block;
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+      }
+      .act div {
+        padding: 14px 18px 18px;
+        border-top: 3px solid var(--c);
+      }
+      .act .num {
+        font-family: 'Mono', monospace;
+        font-size: 13.5px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--c);
+      }
+      .act h3 {
+        margin-top: 4px;
+        font-family: 'Unbounded', sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+      }
+      .act p {
+        margin-top: 8px;
+        font-size: 16.5px;
+        line-height: 1.4;
+        color: var(--dim);
+      }
+
+      /* 3 · Seven moments */
+      .moments {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 22px;
+        list-style: none;
+        counter-reset: m;
+      }
+      .moments li {
+        counter-increment: m;
+        padding: 6px 13px;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 16px;
+        white-space: nowrap;
+      }
+      .moments li::before {
+        content: counter(m) ' ';
+        font-family: 'Mono', monospace;
+        color: var(--signal);
+      }
+
+      /* 4 · Mini-experiences */
+      .jobs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+        margin-top: 26px;
+      }
+      .job {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--panel);
+      }
+      .job .crop {
+        position: relative;
+        height: 318px;
+        overflow: hidden;
+        background: #111827;
+      }
+      .job .crop::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 46px;
+        background: linear-gradient(transparent, #111827);
+      }
+      .job img {
+        display: block;
+        width: 100%;
+      }
+      .job p {
+        padding: 14px 18px 16px;
+        border-top: 1px solid var(--line);
+        font-size: 18.5px;
+        line-height: 1.35;
+        color: var(--dim);
+      }
+      .job p b {
+        display: block;
+        color: var(--text);
+        font-size: 20px;
+      }
+
+      /* 5 · NASA data */
+      .sources {
+        margin-top: 18px;
+        list-style: none;
+        display: grid;
+        gap: 9px;
+        font-size: 18px;
+        line-height: 1.3;
+        color: var(--dim);
+      }
+      .sources li {
+        padding-left: 14px;
+        border-left: 2px solid var(--amber);
+      }
+      .sources b {
+        color: var(--text);
+      }
+
+      /* 6 · For everyone */
+      .stack {
+        position: relative;
+        height: 470px;
+      }
+      .stack .shot {
+        position: absolute;
+      }
+      .stack .back {
+        top: 0;
+        left: 0;
+        width: 580px;
+      }
+      .stack .front {
+        right: 0;
+        bottom: 0;
+        width: 400px;
+      }
+
+      /* 7 · Next */
+      .next {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .next div {
+        padding: 20px 22px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: var(--panel);
+        font-size: 18.5px;
+        line-height: 1.4;
+        color: var(--dim);
+      }
+      .next b {
+        display: block;
+        margin-bottom: 6px;
+        font-family: 'Unbounded', sans-serif;
+        font-size: 20px;
+        color: var(--text);
+      }
+      .visit {
+        display: flex;
+        align-items: center;
+        gap: 28px;
+        margin-top: 30px;
+      }
+      .visit img {
+        width: 168px;
+        height: 168px;
+        padding: 8px;
+        border-radius: 12px;
+        background: #fff;
+      }
+      .visit .url {
+        font-family: 'Mono', monospace;
+        font-size: 25px;
+        color: var(--signal);
+      }
+      .visit p {
+        margin-top: 8px;
+        font-size: 19px;
+        line-height: 1.45;
+        color: var(--dim);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 -->
+    <section class="slide cover">
+      <p class="kicker">NASA Space Apps Challenge 2026 · Abandoned but not Forgotten</p>
+      <h1>LAST SIGNAL</h1>
+      <p class="tagline">Fifteen machines we left behind. One last message from each.</p>
+      <p class="team">
+        <b>Team</b>
+        {{team}}<br />
+        <span>{{members}}</span>
+      </p>
+    </section>
+
+    <!-- 2 -->
+    <section class="slide">
+      <p class="kicker">The forgotten</p>
+      <h2>Fifteen machines, four worlds</h2>
+      <p class="lead">
+        From 1967 to 2024, these machines sent their last signals and stayed behind.
+        <strong>They are not lost: we know exactly where each one is.</strong>
+      </p>
+      <div class="acts">
+        <article class="act" style="--c: var(--moon)">
+          <img
+            src="{{img.act-moon}}"
+            alt="The Moon with markers on every landing site"
+            style="object-position: 72% 40%"
+          />
+          <div>
+            <p class="num">Act I · 1966–1977</p>
+            <h3>The Moon</h3>
+            <p>{{acts.moon}}</p>
+          </div>
+        </article>
+        <article class="act" style="--c: var(--mars)">
+          <img
+            src="{{img.act-mars}}"
+            alt="Mars with markers on every landing site"
+            style="object-position: 74% 42%"
+          />
+          <div>
+            <p class="num">Act II · 1976–2024</p>
+            <h3>Mars</h3>
+            <p>{{acts.mars}}</p>
+          </div>
+        </article>
+        <article class="act" style="--c: var(--small)">
+          <img
+            src="{{img.act-small-bodies}}"
+            alt="The Dawn spacecraft above a dwarf planet"
+            style="object-position: 62% 48%"
+          />
+          <div>
+            <p class="num">Act III · 1996–2018</p>
+            <h3>Small worlds</h3>
+            <p>{{acts.small-bodies}}</p>
+          </div>
+        </article>
+        <article class="act" style="--c: var(--deep)">
+          <img
+            src="{{img.act-deep-space}}"
+            alt="The orbits of the Solar System with a probe leaving it"
+            style="object-position: 66% 50%"
+          />
+          <div>
+            <p class="num">Act IV · 1972–2018</p>
+            <h3>Deep space</h3>
+            <p>{{acts.deep-space}}</p>
+          </div>
+        </article>
+      </div>
+      <p class="foot"><span>LAST SIGNAL</span><span>2 / 7</span></p>
+    </section>
+
+    <!-- 3 -->
+    <section class="slide">
+      <p class="kicker">The experience</p>
+      <h2>Scroll through a machine’s life</h2>
+      <div class="cols" style="grid-template-columns: 400px 1fr">
+        <div>
+          <ul class="points">
+            <li>
+              <strong>One 3D scene</strong> stays behind the page; every word lives in accessible
+              text.
+            </li>
+            <li>The machine speaks in <strong>labeled fiction</strong>.</li>
+            <li>
+              The mission log gives <strong>verified facts</strong>, each linked to its source.
+            </li>
+          </ul>
+          <ol class="moments" aria-label="The seven moments of every chapter">
+            <li>Wake-up</li>
+            <li>Who I am</li>
+            <li>The journey</li>
+            <li>Arrival</li>
+            <li>The work</li>
+            <li>Last signal</li>
+            <li>Legacy</li>
+          </ol>
+        </div>
+        <img
+          class="shot"
+          src="{{img.experience}}"
+          alt="Opportunity chapter: a fictional quote from the rover, two mission-log facts marked as verified, and Mars in 3D"
+        />
+      </div>
+      <p class="foot"><span>LAST SIGNAL</span><span>3 / 7</span></p>
+    </section>
+
+    <!-- 4 -->
+    <section class="slide">
+      <p class="kicker">Try their jobs</p>
+      <h2>15 hands-on mini-experiences</h2>
+      <div class="jobs">
+        <article class="job">
+          <div class="crop">
+            <img
+              src="{{img.ix-surveyor}}"
+              alt="Surveyor mini-experience: a hypothesis about the Moon’s ground, the landing and the scoop"
+            />
+          </div>
+          <p><b>Surveyor</b>Will the ground hold a spacecraft?</p>
+        </article>
+        <article class="job">
+          <div class="crop">
+            <img
+              src="{{img.ix-sojourner}}"
+              alt="Sojourner mini-experience: a grid of rocks and queued driving commands"
+            />
+          </div>
+          <p><b>Sojourner</b>Drive a rover when every command arrives late.</p>
+        </article>
+        <article class="job">
+          <div class="crop">
+            <img
+              src="{{img.ix-kepler}}"
+              alt="Kepler mini-experience: a light curve with two dips"
+            />
+          </div>
+          <p><b>Kepler</b>Catch a planet in a star’s light curve.</p>
+        </article>
+      </div>
+      <p class="lead" style="margin-top: 20px; font-size: 20px; max-width: none">
+        Mouse, touch or keyboard · no time pressure · always skippable · labeled “illustrative
+        simulation”.
+      </p>
+      <p class="foot"><span>LAST SIGNAL</span><span>4 / 7</span></p>
+    </section>
+
+    <!-- 5 -->
+    <section class="slide">
+      <p class="kicker">Real NASA data</p>
+      <h2>Send a signal. Wait for the light.</h2>
+      <div class="cols" style="grid-template-columns: 450px 1fr">
+        <div>
+          <p class="lead" style="margin-top: 0; font-size: 21px">
+            Today’s light time from Earth to each machine,
+            <strong>computed from JPL orbital elements</strong> and shown with an honest
+            time-compression badge.
+          </p>
+          <ul class="sources">
+            <li><b>NSSDCA</b> · mission facts, dates, landing sites</li>
+            <li><b>NASA Science and JPL</b> mission pages</li>
+            <li><b>JPL Solar System Dynamics</b> · planet positions</li>
+            <li><b>JPL Small-Body Database</b> · 433 Eros</li>
+            <li><b>NASA Image and Video Library</b> · photos with credit</li>
+          </ul>
+          <p style="margin-top: 16px; font-size: 18px; color: var(--phosphor)">
+            {{sources}} sources, each with its access date.
+          </p>
+        </div>
+        <img
+          class="shot"
+          src="{{img.signal}}"
+          alt="Signal sent to Opportunity: estimated light time of about eleven minutes, a compression badge, and the archived reply with its last signal date"
+        />
+      </div>
+      <p class="foot"><span>LAST SIGNAL</span><span>5 / 7</span></p>
+    </section>
+
+    <!-- 6 -->
+    <section class="slide">
+      <p class="kicker">For everyone</p>
+      <h2>Nobody is left out</h2>
+      <div class="cols" style="grid-template-columns: 450px 1fr">
+        <ul class="points">
+          <li><strong>English and Spanish</strong>, with full parity.</li>
+          <li><strong>WCAG 2.2 AA</strong>: keyboard, screen reader, scene descriptions.</li>
+          <li>Reduced motion, high contrast, legible font, larger text.</li>
+          <li>
+            <strong>Lite mode</strong> for modest devices; a <strong>reading mode</strong> with no
+            3D and no JavaScript.
+          </li>
+          <li><strong>Classroom mode</strong> with questions for teachers.</li>
+        </ul>
+        <div class="stack">
+          <img
+            class="shot back"
+            src="{{img.reading}}"
+            alt="Reading mode: a chapter as plain, printable text"
+          />
+          <img
+            class="shot front"
+            src="{{img.settings}}"
+            alt="Settings panel, Visual tab: contrast, legible font and text size"
+          />
+        </div>
+      </div>
+      <p class="foot"><span>LAST SIGNAL</span><span>6 / 7</span></p>
+    </section>
+
+    <!-- 7 -->
+    <section class="slide">
+      <p class="kicker">What’s next</p>
+      <h2>Their signals stopped.<br />Their stories don’t have to.</h2>
+      <div class="next">
+        <div><b>More machines</b>New chapters with the same rule: every fact with its source.</div>
+        <div><b>Teacher kits</b>Printable guides built on classroom mode.</div>
+        <div><b>A wall of postcards</b>Visitors share the message they send back.</div>
+      </div>
+      <div class="visit">
+        <img src="{{qr}}" alt="QR code that opens the website" />
+        <div>
+          <p class="url">devxs614.github.io/Nasa-space-apps</p>
+          <p>
+            Code and sources: github.com/devxs614/Nasa-space-apps<br />
+            Built with AI assistance — see AI_DISCLOSURE.md. Not affiliated with or endorsed by
+            NASA.
+          </p>
+        </div>
+      </div>
+      <p class="foot"><span>LAST SIGNAL</span><span>7 / 7</span></p>
+    </section>
+  </body>
+</html>

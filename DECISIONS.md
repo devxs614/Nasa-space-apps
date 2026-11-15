@@ -180,3 +180,16 @@
   El flujo de Pages lo ejecuta; Vercel y Netlify siguen con sus reescrituras.
 - Nota: no choca con la lectura estática (`lectura-es.html`, `lectura-en.html`): `lectura.html` es la app, no un texto fijo.
 
+## 2026-11-15 — La demo de la entrega son 7 diapositivas en PDF
+- Contexto: la entrega pide un vídeo de 30 s o 7 diapositivas como máximo (Parte 20.1). El vídeo necesita la voz o la tarjeta
+  del equipo; las diapositivas se pueden generar desde el propio proyecto.
+- Decisión: `scripts/make-slides.mjs` captura la app compilada (portada, un mundo por acto, un momento de capítulo, tres
+  mini-experiencias, la señal con su tiempo de luz, ajustes y modo lectura), rellena `docs/slides/template.html` e imprime
+  `public/last-signal-slides.pdf` con Chromium. Los nombres de las máquinas salen de la línea de tiempo y el número de
+  fuentes de `SOURCES.md`, para que el PDF no se desincronice de los datos. El código QR (`docs/slides/qr.svg`) se generó
+  una vez con el paquete `qrcode` y se comprobó con un lector: abre la web publicada.
+- El PDF va en `public/` para que tenga un enlace público sin registro en la misma web. El equipo se lee de
+  `docs/slides/team.json`; las capturas quedan en `docs/slides/.cache` (sin versionar).
+- Límites que comprueba el script: exactamente 7 diapositivas, 7 páginas en el PDF, ningún contenido desbordado, todas las
+  imágenes y fuentes cargadas.
+

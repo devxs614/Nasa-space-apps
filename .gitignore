@@ -11,3 +11,4 @@ lighthouse-*.html
 .vite
 *.tsbuildinfo
 .claude/launch.json
+docs/slides/.cache

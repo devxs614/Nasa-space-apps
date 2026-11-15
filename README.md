@@ -2,7 +2,9 @@
 
 > Fifteen machines we left on the Moon, on Mars and beyond. One last message from each.
 
-**Live site:** https://devxs614.github.io/Nasa-space-apps/ · **30-second demo:** [link to be added] ·
+**Live site:** https://devxs614.github.io/Nasa-space-apps/ ·
+**Demo (7 slides):** https://devxs614.github.io/Nasa-space-apps/last-signal-slides.pdf ·
+**30-second video:** [link to be added] ·
 **Challenge:** Abandoned but not Forgotten — NASA Space Apps Challenge 2026
 
 Fifteen machines are still out there, silent. They are not lost: we know exactly where they are.
@@ -83,6 +85,12 @@ Lighthouse results are recorded in [`PROGRESS.md`](PROGRESS.md).
 
 The texts for the Space Apps submission form are in [`SUBMISSION.md`](SUBMISSION.md); English subtitles for the
 30-second video are in [`docs/video/last-signal-30s.srt`](docs/video/last-signal-30s.srt).
+
+The seven-slide demo deck is `public/last-signal-slides.pdf`, published with the site. It is built from
+[`docs/slides/template.html`](docs/slides/template.html) with fresh screenshots of the app. To change the team on the
+cover, edit [`docs/slides/team.json`](docs/slides/team.json) and run `npm run build`, then
+`npx vite preview --port 4173` and `npm run slides` in another terminal (add `-- --reuse` to keep the screenshots
+already taken). The script refuses to write a deck with more than seven slides.
 
 ## Team
 

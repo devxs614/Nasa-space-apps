@@ -3,6 +3,7 @@
 ## Fase actual: 9 — QA final y entrega (código congelado: a partir de aquí, solo correcciones)
 
 ## Hecho
+- [x] Fase 9 (paquete de entrega): las 7 diapositivas de la Parte 20.7 en `public/last-signal-slides.pdf` (publicadas con la web), generadas con `npm run slides` desde `docs/slides/template.html` con capturas reales de la app, PDF etiquetado y con las fuentes del sitio; el script falla si hay más de 7 diapositivas, si algo se desborda o si el código QR no abre la web.
 - [x] Fase 9 (corrección): sin errores 404 en la consola por texturas y modelos opcionales (lista de `public/textures` y `public/models` hecha al compilar; `assets.test.ts`) y rutas profundas con estado 200 en GitHub Pages (`scripts/spa-routes.mjs` en el flujo de despliegue).
 - [x] Fase 9 (revisión del inglés): los textos en inglés escriben las fechas como la interfaz ("July 20, 1969"), las horas en UTC de 0 a 23 y los recuentos con su plural (`count` en catálogo, fuentes, atlas y línea de tiempo, también en español); el radio del núcleo de InSight lleva el separador de millares de cada idioma y dos citas usan la puntuación estadounidense. Barrido de los 2.017 textos en inglés (traducciones y datos) sin comas decimales, comillas o signos españoles, ortografía británica ni palabras en español; lectura completa de la narración, la interfaz y el quiz. Prueba `english.test.ts`; lecturas estáticas regeneradas.
 - [x] Fase 9 (corrección): al salir del Modo Demo, la página reaparece en el mismo commit de React en que se quita la demo (`useLayoutEffect`). Con `useEffect`, en un equipo saturado quedaba en blanco unos segundos y la prueba "Esc sale de la demo" fallaba por tiempo.
@@ -47,7 +48,7 @@
 ## Pendiente
 - [ ] Revisión manual de la Parte 19.8 en dispositivos reales (Chrome, Edge, Firefox, Safari 17+ en macOS e iOS, Android de gama media) y con lector de pantalla (VoiceOver, NVDA). Incluye comprobar que la portada monta La Travesía en Safari real y en un Android de gama media (arreglo de be562ae; en el WebKit de Playwright ya pasa).
 - [ ] Lectura completa de la versión inglesa por una persona con inglés fluido (Parte 19.9). Ya hay una pasada automática y una lectura hecha con el asistente de IA (ver "Hecho"); falta la de una persona.
-- [ ] Vídeo de 30 s (o 7 diapositivas) con subtítulos en inglés, subido con enlace público, y enlace en README.md y en el formulario.
+- [ ] Demo: las 7 diapositivas ya están publicadas; falta poner el nombre del equipo y los integrantes en `docs/slides/team.json` y regenerarlas (`npm run slides`). Opcional: grabar el vídeo de 30 s con subtítulos en inglés y usar ese enlace en su lugar.
 - [ ] Formulario de entrega con los textos de `SUBMISSION.md`; probar todos los enlaces en una ventana privada.
 - [ ] Equipo humano: nombre del equipo e integrantes en README.md y CREDITS.md (la página Acerca de enlaza a los contribuidores del repositorio), y enlace del vídeo de 30 s.
 
