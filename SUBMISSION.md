@@ -26,8 +26,9 @@ and Spanish, targets WCAG 2.2 AA, and still tells the whole story without WebGL.
 https://devxs614.github.io/Nasa-space-apps/last-signal-slides.pdf
 ```
 
-That is the seven-slide deck (cover included), published with the site: it opens without signing in. Before
-submitting, put the team name and members in `docs/slides/team.json`, run `npm run slides` and push. If the team
+That is the seven-slide deck (cover included), published with the site: it opens without signing in. The cover
+carries the team name and members from `docs/slides/team.json`; to change them, edit that file, run
+`npm run slides` and push. If the team
 records the 30-second video instead, replace the link with the public video link (YouTube "Unlisted" is fine);
 the form takes one demo link.
 

@@ -48,7 +48,7 @@
 ## Pendiente
 - [ ] Revisión manual de la Parte 19.8 en dispositivos reales (Chrome, Edge, Firefox, Safari 17+ en macOS e iOS, Android de gama media) y con lector de pantalla (VoiceOver, NVDA). Incluye comprobar que la portada monta La Travesía en Safari real y en un Android de gama media (arreglo de be562ae; en el WebKit de Playwright ya pasa).
 - [ ] Lectura completa de la versión inglesa por una persona con inglés fluido (Parte 19.9). Ya hay una pasada automática y una lectura hecha con el asistente de IA (ver "Hecho"); falta la de una persona.
-- [ ] Demo: las 7 diapositivas ya están publicadas; falta poner el nombre del equipo y los integrantes en `docs/slides/team.json` y regenerarlas (`npm run slides`). Opcional: grabar el vídeo de 30 s con subtítulos en inglés y usar ese enlace en su lugar.
+- [ ] Demo: las 7 diapositivas están publicadas con el equipo en la portada (fsociety7337). Opcional: grabar el vídeo de 30 s con subtítulos en inglés y usar ese enlace en su lugar.
 - [ ] Formulario de entrega con los textos de `SUBMISSION.md`; probar todos los enlaces en una ventana privada.
 - [ ] Equipo humano: nombre del equipo e integrantes en README.md y CREDITS.md (la página Acerca de enlaza a los contribuidores del repositorio), y enlace del vídeo de 30 s.
 
