@@ -121,5 +121,5 @@ by our code. No NASA logos, insignia, flags or mission identifiers are used as b
 - [ ] The video is 30 s or shorter with English subtitles, or the deck has 7 slides or fewer.
 - [ ] "NASA Data" and "Use of Artificial Intelligence" match the website and `AI_DISCLOSURE.md`.
 - [ ] No NASA logos or insignia, no recognizable minors, no personal data.
-- [ ] Team name and members added to `README.md`, `CREDITS.md` and `docs/slides/team.json` (then `npm run slides`), and
-      the video link added to `README.md` if a video is recorded.
+- [x] Team name and members are in `README.md`, `CREDITS.md` and `docs/slides/team.json` (fsociety7337).
+- [ ] The video link is added to `README.md` if a video is recorded.

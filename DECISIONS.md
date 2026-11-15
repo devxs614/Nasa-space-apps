@@ -82,6 +82,8 @@
 - Contexto: no hay nombres de integrantes en la especificación y no se inventan datos de personas.
 - Decisión: la página describe al equipo de forma general y enlaza a los contribuidores del repositorio. `README.md` y `CREDITS.md`
   conservan el hueco `[Team name]` para que el equipo lo complete antes de entregar.
+- Actualización: el equipo dio su nombre e integrantes (fsociety7337) y ya figuran en `README.md`, `CREDITS.md` y la portada de
+  las diapositivas; sin roles, porque no se indicaron. La página Acerca de no cambia.
 
 
 ## 2026-11-15 — Línea de tiempo con desplazamiento horizontal nativo

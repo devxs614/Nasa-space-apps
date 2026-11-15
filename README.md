@@ -94,4 +94,4 @@ already taken). The script refuses to write a deck with more than seven slides.
 
 ## Team
 
-[Team name] — [member names and roles]
+fsociety7337 — Danny Barahona and Dorian González

@@ -2,7 +2,7 @@
 
 ## Team
 
-[Team name] — [member names and roles]. No personal contact details are published here.
+fsociety7337 — Danny Barahona and Dorian González. No personal contact details are published here.
 
 ## Data
 

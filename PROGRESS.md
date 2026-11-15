@@ -50,7 +50,7 @@
 - [ ] Lectura completa de la versión inglesa por una persona con inglés fluido (Parte 19.9). Ya hay una pasada automática y una lectura hecha con el asistente de IA (ver "Hecho"); falta la de una persona.
 - [ ] Demo: las 7 diapositivas están publicadas con el equipo en la portada (fsociety7337). Opcional: grabar el vídeo de 30 s con subtítulos en inglés y usar ese enlace en su lugar.
 - [ ] Formulario de entrega con los textos de `SUBMISSION.md`; probar todos los enlaces en una ventana privada.
-- [ ] Equipo humano: nombre del equipo e integrantes en README.md y CREDITS.md (la página Acerca de enlaza a los contribuidores del repositorio), y enlace del vídeo de 30 s.
+- [ ] Enlace del vídeo de 30 s en README.md, si se graba. El nombre del equipo y los integrantes ya están en README.md, CREDITS.md y la portada de las diapositivas (la página Acerca de enlaza a los contribuidores del repositorio).
 
 ## Datos por verificar
 - machines.ts › apollo-lm, alsep, lrv — fecha de lanzamiento de las misiones Apollo (no está en la Parte 11; se omite).
