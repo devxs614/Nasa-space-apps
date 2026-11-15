@@ -283,7 +283,7 @@
     },
     "legacy": {
       "1": "We didn't answer the big question. But we taught people to ask it better. Others came later with better tools.",
-      "2": "Sometimes science moves forward with a \"we don't know yet\".",
+      "2": "Sometimes science moves forward with a \"we don't know yet.\"",
       "sceneAlt": "The camera pulls back to the whole of Mars and points to Ares Vallis."
     },
     "pro": "Added together, the biology tests could be read as a weak positive, but the spectrometer found no organic compounds at a threshold of 10 to 100 parts per billion. Could chemistry alone, without life, explain it all? It is still debated.",
@@ -411,7 +411,7 @@
     "lastSignal": {
       "1": "In 2018 a dust storm came and covered the whole planet. The sky went dark. My panels stopped drinking light.",
       "2": "Last signal: {{date}}, sol {{sol}}.",
-      "3": "You may have read that Opportunity said \"my battery is low and it's getting dark\". That is a poetic translation of its last data, not a real message.",
+      "3": "You may have read that Opportunity said, \"My battery is low and it's getting dark.\" That is a poetic translation of its last data, not a real message.",
       "sceneAlt": "A dust storm darkens the sky; the rover slowly disappears and is left as a faint hologram."
     },
     "legacy": {

@@ -3,6 +3,8 @@
 ## Fase actual: 9 — QA final y entrega (código congelado: a partir de aquí, solo correcciones)
 
 ## Hecho
+- [x] Fase 9 (revisión del inglés): los textos en inglés escriben las fechas como la interfaz ("July 20, 1969"), las horas en UTC de 0 a 23 y los recuentos con su plural (`count` en catálogo, fuentes, atlas y línea de tiempo, también en español); el radio del núcleo de InSight lleva el separador de millares de cada idioma y dos citas usan la puntuación estadounidense. Barrido de los 2.017 textos en inglés (traducciones y datos) sin comas decimales, comillas o signos españoles, ortografía británica ni palabras en español; lectura completa de la narración, la interfaz y el quiz. Prueba `english.test.ts`; lecturas estáticas regeneradas.
+- [x] Fase 9 (corrección): al salir del Modo Demo, la página reaparece en el mismo commit de React en que se quita la demo (`useLayoutEffect`). Con `useEffect`, en un equipo saturado quedaba en blanco unos segundos y la prueba "Esc sale de la demo" fallaba por tiempo.
 - [x] Fase 9 (corrección): la portada ya no se queda en "Sintonizando…" en equipos lentos (páginas en diferido con `lazyPage` en lugar de `React.lazy`, reloj UTC fuera de React, formateadores de fecha reutilizados) y el índice de capítulos ya no se cierra solo con Esc y M seguidas; pruebas `loadable.test.tsx`, `dialog.test.tsx` y `regressions.test.tsx` (página cara en diferido con actualizaciones constantes, reloj UTC sin commits de React, sin `React.lazy` en el DOM).
 - [x] Fase 9 (corrección de pruebas): `axe /` espera a que La Travesía esté montada antes de auditar (desde que la portada va en su propio fragmento podía auditar solo el aviso "Sintonizando…"); con los 15 capítulos en el DOM sigue sin infracciones graves en escritorio y en móvil. `e2e/slow-device.spec.ts` comprueba, con la CPU seis veces más lenta, que La Travesía, el 3D y las 15 mini-experiencias llegan a montarse.
 - [x] Fase 9 (corrección de rendimiento): un fragmento por idioma (la primera carga solo descarga el idioma activo y el otro llega en segundo plano), La Travesía en su propio fragmento con Lenis y ScrollTrigger, y precarga en `index.html` del idioma y de la página de la ruta que se abre; pruebas `e2e/locales.spec.ts` e `i18n.test.ts`.
@@ -43,7 +45,7 @@
 
 ## Pendiente
 - [ ] Revisión manual de la Parte 19.8 en dispositivos reales (Chrome, Edge, Firefox, Safari 17+ en macOS e iOS, Android de gama media) y con lector de pantalla (VoiceOver, NVDA). Incluye comprobar que la portada monta La Travesía en Safari real y en un Android de gama media (arreglo de be562ae; en el WebKit de Playwright ya pasa).
-- [ ] Lectura completa de la versión inglesa por una persona con inglés fluido (Parte 19.9).
+- [ ] Lectura completa de la versión inglesa por una persona con inglés fluido (Parte 19.9). Ya hay una pasada automática y una lectura hecha con el asistente de IA (ver "Hecho"); falta la de una persona.
 - [ ] Vídeo de 30 s (o 7 diapositivas) con subtítulos en inglés, subido con enlace público, y enlace en README.md y en el formulario.
 - [ ] Formulario de entrega con los textos de `SUBMISSION.md`; probar todos los enlaces en una ventana privada.
 - [ ] Equipo humano: nombre del equipo e integrantes en README.md y CREDITS.md (la página Acerca de enlaza a los contribuidores del repositorio), y enlace del vídeo de 30 s.
@@ -108,7 +110,7 @@ Tiempo hasta que La Travesía está montada en la portada (`/?lang=es`), frenand
 
 ## Problemas conocidos
 - InSight: el corte del interior es una ilustración aproximada; la Parte 11 no publica el radio de Marte, así que no se dibuja a escala. TODO(verificar).
-- Batería e2e completa sobre be562ae: 83 de 83 en 2,2 min (Chromium, móvil y WebKit) con la máquina libre. Cuando el equipo se congela o se suspende a mitad de una corrida, hay pruebas que tardan 15 min y fallan por tiempo; repetidas solas pasan en segundos (`npx playwright test --last-failed --workers=1`).
+- Batería e2e completa sobre be562ae: 83 de 83 en 2,2 min (Chromium, móvil y WebKit) con la máquina libre. Tras la revisión del inglés, con la máquina cargada (11,7 min): 82 de 85 a la primera y las otras 3 (dos de la demo y la del índice en WebKit) al repetirlas solas. Cuando el equipo se congela o se suspende a mitad de una corrida, hay pruebas que tardan 15 min y fallan por tiempo; repetidas solas pasan en segundos (`npx playwright test --last-failed --workers=1`).
 - Pruebas e2e en local: usar `NO_OPEN=1 npx playwright test --workers=3` (o `--workers=2` si el equipo va cargado). Sin `NO_OPEN`, `vite preview` abre una pestaña del navegador del sistema, y con muchos procesos el 3D por software (SwiftShader) agota los tiempos de espera.
 - `axe /` audita los 15 capítulos: tarda alrededor de un minuto sola y 2,5 min con dos workers y el 3D por software, así que esa prueba tiene 360 s de límite.
 - El WebKit de Playwright ejecuta el JS mucho más despacio que Safari (sobre todo en Windows): su proyecto tiene 120 s por prueba y 30 s por comprobación, y en la prueba de la señal solo se comprueba que la respuesta llega (el arranque del 3D por software bloquea allí el hilo unos 5 s; en Chromium y en el móvil emulado se exige que llegue en menos de 5 s). No sustituye a la revisión en Safari real de la lista de pendientes.

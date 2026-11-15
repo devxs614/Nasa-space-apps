@@ -64,7 +64,9 @@ export function InsightInteraction({
     requestAnimationFrame(step);
   };
 
-  const coreR = model === 2021 ? '1800–1850' : '1650–1700';
+  // Como en el texto del capítulo: "1,800–1,850" en inglés y "1.800–1.850" en español.
+  const thousands = locale === 'es' ? '.' : ',';
+  const coreR = (model === 2021 ? '1 800–1 850' : '1 650–1 700').replaceAll(' ', thousands);
   const coreScale = model === 2021 ? 0.54 : 0.495;
   return (
     <Shell

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation, useNavigate } from 'react-router';
 import { RotateCcw, X } from 'lucide-react';
@@ -75,8 +75,10 @@ function DemoRunner() {
     if (webgl && !onJourney) void navigate('/');
   }, [webgl, onJourney, navigate]);
 
-  // Mientras dura la demo, la página no se desplaza y su contenido queda oculto.
-  useEffect(() => {
+  // Mientras dura la demo, la página no se desplaza y su contenido queda oculto. Con useLayoutEffect
+  // la página reaparece en el mismo commit en que se quita la demo: con useEffect, en un equipo
+  // saturado quedaba en blanco hasta que React llegaba a ejecutar la limpieza.
+  useLayoutEffect(() => {
     const h = document.documentElement;
     h.dataset.demo = 'true';
     const prevOverflow = h.style.overflow;

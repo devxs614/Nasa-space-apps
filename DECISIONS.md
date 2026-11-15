@@ -150,3 +150,15 @@
   cerraba el índice recién reabierto. La prueba de humo lo tapaba con reintentos.
 - Decisión: `Dialog` cuenta los cierres pedidos por el estado y descarta un `close` si el diálogo ya está abierto otra vez;
   el foco vuelve al disparador original. Pruebas en `src/test/dialog.test.tsx`; la prueba de humo ya no reintenta.
+
+## 2026-11-15 — La versión inglesa, en inglés estadounidense de principio a fin
+- Contexto: la interfaz formatea las fechas con `Intl` (`en` → "July 20, 1969"), pero el texto corrido de los datos y de los
+  guiones decía "20 July 1969"; las horas UTC salían como "12:04 AM UTC" y varios recuentos decían "1 results".
+- Decisión: los textos en inglés siguen el mismo estilo que la interfaz (mes, día y año, con coma tras el año en mitad de
+  frase), `formatDate` usa el ciclo de 0 a 23 para las horas UTC, los recuentos usan los plurales de i18next (`count`) en los
+  dos idiomas y las citas llevan el punto dentro de las comillas. Los números con millares se escriben "1,800" en inglés y
+  "1.800" en español, también dentro de las mini-experiencias.
+- Guardas: `src/test/english.test.ts` falla si aparece una fecha con el día delante, una hora con AM/PM o un recuento sin
+  concordancia. El resto de la revisión (comas decimales, comillas españolas, ortografía británica, palabras en español) se
+  hizo con un barrido puntual de los 2.017 textos y no encontró nada.
+- Qué no cambia: ningún dato. Solo formato y puntuación; "poetic translation" se mantiene porque así lo dice el guion.
