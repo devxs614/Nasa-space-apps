@@ -28,9 +28,9 @@ test('D · el botón cian del motor iónico conserva su texto al pulsarlo', asyn
   await page.goto('/maquinas/dawn?lang=en');
   const ix = page.locator('[data-interaction]');
   await ix.getByRole('button', { name: 'Start', exact: true }).click();
-  await ix.getByRole('button', { name: 'Turn on the ion engine' }).click();
+  await ix.getByRole('button', { name: 'Turn on ion engine' }).click();
   // El texto dice lo que hará el siguiente toque y se sigue leyendo sobre el fondo cian.
-  const off = ix.getByRole('button', { name: 'Turn off the ion engine' });
+  const off = ix.getByRole('button', { name: 'Turn off ion engine' });
   await expect(off).toHaveAttribute('aria-pressed', 'true');
   await page.waitForTimeout(300); // transición de color
   const ratio = await page.evaluate<number>(
