@@ -135,8 +135,8 @@ export function InteractionShell({
           key: key ?? meta.stepKeys[n - 1] ?? s.key,
           vars,
         }));
-        setHint({ key: meta.hintKeys[n - 1] ?? '', visible: false });
-        if (phaseRef.current === 'playing') armHint();
+        // Cambiar de paso no es una acción del visitante: el contador de la pista sigue corriendo.
+        setHint((h) => ({ key: meta.hintKeys[n - 1] ?? '', vars, visible: h.visible }));
       },
       setHint: (key, vars) => setHint({ key, vars, visible: false }),
       touch,
@@ -152,7 +152,7 @@ export function InteractionShell({
       },
       sound,
     }),
-    [sound, touch, finish, armHint, meta],
+    [sound, touch, finish, meta],
   );
   const legacy = useMemo<LegacyBridge>(
     () => ({
