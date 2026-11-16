@@ -8,7 +8,7 @@ import { formatNumber } from '../../lib/format';
 import { quakeSample } from './AlsepInteraction';
 import { SourceBadge } from '../ui/SourceBadge';
 import { Badge } from '../ui/Badge';
-import { playSfx } from '../../audio/play';
+import { fx } from '../../audio/sfx';
 
 /** 10. InSight — "Escucha a Marte": sismógrafo con magnitud y corte del interior (2021 frente a 2023). */
 export function InsightInteraction({
@@ -16,6 +16,7 @@ export function InsightInteraction({
   reducedMotion,
   onComplete,
   onSkip,
+  api,
 }: InteractionProps) {
   const { t } = useTranslation('ui');
   const locale = useAppStore((s) => s.locale);
@@ -33,7 +34,7 @@ export function InsightInteraction({
     setUsed((u) => ({ ...u, quake: true }));
     const amp = (mag - 1.5) / 3.2;
     const dur = 6 + (mag - 2) * 3;
-    playSfx('quake', dur, amp);
+    api.sound.loop(fx.quake, dur, amp);
     const c = canvas.current;
     const ctx = c?.getContext('2d');
     if (!c || !ctx) return;

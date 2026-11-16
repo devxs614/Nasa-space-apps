@@ -2,6 +2,7 @@ import { useEffect, useRef, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { X } from 'lucide-react';
 import { cx } from '../../lib/cx';
+import { scrollBridge } from '../../lib/scrollBridge';
 
 export interface DialogProps {
   open: boolean;
@@ -33,6 +34,16 @@ export function Dialog({ open, onClose, title, children, wide, full, className }
       closedByState.current += 1;
       d.close();
     }
+  }, [open]);
+
+  // Con un diálogo abierto, la página de detrás no se desplaza (el scroll inercial se detiene).
+  useEffect(() => {
+    if (!open) return;
+    scrollBridge.stop();
+    return () => {
+      // El Modo Demo también detiene el scroll: si sigue activo, no se reanuda aquí.
+      if (document.documentElement.dataset.demo !== 'true') scrollBridge.start();
+    };
   }, [open]);
 
   useEffect(() => {
@@ -86,7 +97,14 @@ export function Dialog({ open, onClose, title, children, wide, full, className }
               <X size={20} strokeWidth={1.5} aria-hidden="true" />
             </button>
           </header>
-          <div className="overflow-y-auto overscroll-contain px-5 py-4">{children}</div>
+          {/* `data-lenis-prevent`: la rueda desplaza este panel y no la página (Lenis no la captura). */}
+          <div
+            className="scroll-area min-h-0 flex-1 px-5 py-4"
+            data-lenis-prevent=""
+            data-dialog-body=""
+          >
+            {children}
+          </div>
         </div>
       )}
     </dialog>

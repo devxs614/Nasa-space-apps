@@ -4,13 +4,13 @@ import { Link } from 'react-router';
 import { Dialog } from '../ui/Dialog';
 import { Tabs } from '../ui/Tabs';
 import { Toggle } from '../ui/Toggle';
-import { Slider } from '../ui/Slider';
+import { AudioMixer } from '../audio/AudioMixer';
 import { Button } from '../ui/Button';
 import { useAppStore, type Quality, type TextScale } from '../../state/useAppStore';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { useUiStore, type SettingsTab } from '../../state/useUiStore';
 import { AudioEngine, loadAudioPrefs, type AudioPrefs } from '../../audio/AudioEngine';
-import { useVoiceAvailable } from '../../hooks/useVoiceAvailable';
+import { useVoiceAvailable, useVoiceQuality } from '../../hooks/useVoiceAvailable';
 import { isPersistent } from '../../lib/storage';
 import { useToast } from '../ui/Toast';
 import { cx } from '../../lib/cx';
@@ -65,14 +65,15 @@ export function SettingsPanel() {
   const [prefs, setPrefs] = useState<AudioPrefs>(() => loadAudioPrefs());
   const [confirmReset, setConfirmReset] = useState(false);
   const voice = useVoiceAvailable(st.locale);
+  const voiceQuality = useVoiceQuality(st.locale);
   const { push } = useToast();
 
   const updatePrefs = (p: Partial<AudioPrefs>) => {
-    const next = { ...prefs, ...p };
+    // Se parte de lo guardado: el mezclador puede haber cambiado los niveles.
+    const next = { ...loadAudioPrefs(), ...p };
     setPrefs(next);
     AudioEngine.setPrefs(next);
   };
-  const pct = (v: number) => `${Math.round(v * 100)} %`;
   const qualityLabel = (q: Quality) => t(`settings.quality${q[0]?.toUpperCase()}${q.slice(1)}`);
 
   const toggleSound = (on: boolean) => {
@@ -198,41 +199,7 @@ export function SettingsPanel() {
       label: t('settings.tabs.sound'),
       panel: (
         <div className="divide-y divide-line">
-          <Toggle
-            checked={st.soundOn}
-            onChange={toggleSound}
-            label={t('settings.sound')}
-            description={t('settings.soundDesc')}
-          />
-          <div className="py-2">
-            <Slider
-              label={t('settings.ambience')}
-              value={prefs.ambience}
-              min={0}
-              max={1}
-              step={0.05}
-              format={pct}
-              onChange={(v) => updatePrefs({ ambience: v })}
-            />
-            <Slider
-              label={t('settings.sfx')}
-              value={prefs.sfx}
-              min={0}
-              max={1}
-              step={0.05}
-              format={pct}
-              onChange={(v) => updatePrefs({ sfx: v })}
-            />
-            <Slider
-              label={t('settings.voiceVol')}
-              value={prefs.voice}
-              min={0}
-              max={1}
-              step={0.05}
-              format={pct}
-              onChange={(v) => updatePrefs({ voice: v })}
-            />
-          </div>
+          <AudioMixer soundOn={st.soundOn} onToggleSound={toggleSound} />
           <Toggle
             checked={st.narrationOn}
             onChange={(v) => st.updateSettings({ narrationOn: v })}
@@ -240,6 +207,9 @@ export function SettingsPanel() {
             description={voice ? t('settings.narrationDesc') : t('settings.noVoice')}
             disabled={!voice}
           />
+          {voiceQuality === 'basic' && (
+            <p className="text-[0.9375rem] text-ink-dim">{t('settings.edgeVoice')}</p>
+          )}
           <Segmented<0.8 | 1 | 1.2>
             label={t('settings.narrationRate')}
             value={prefs.narrationRate}

@@ -7,7 +7,7 @@ import { useAppStore } from '../../state/useAppStore';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { formatNumber } from '../../lib/format';
 import { SourceBadge } from '../ui/SourceBadge';
-import { playSfx } from '../../audio/play';
+import { fx } from '../../audio/sfx';
 
 // Hitos con fecha y distancia de la Parte 11; entre ellos se interpola (se avisa en pantalla).
 const KNOWN: [number, number][] = [
@@ -31,7 +31,7 @@ function odometer(y: number): number {
 }
 
 /** 8. Opportunity — "La maratón": línea de tiempo 2004–2018 con odómetro y el relevo de Perseverance. */
-export function OpportunityInteraction({ express, onComplete, onSkip }: InteractionProps) {
+export function OpportunityInteraction({ express, onComplete, onSkip, api }: InteractionProps) {
   const { t } = useTranslation('ui');
   const locale = useAppStore((s) => s.locale);
   const setFx = useJourneyStore((s) => s.setFx);
@@ -84,7 +84,7 @@ export function OpportunityInteraction({ express, onComplete, onSkip }: Interact
         step={0.05}
         format={(v) => String(Math.floor(v))}
         onChange={(v) => {
-          if (Math.floor(odometer(v)) !== Math.floor(odometer(year))) playSfx('tick');
+          if (Math.floor(odometer(v)) !== Math.floor(odometer(year))) api.sound.play(fx.tick);
           setYear(v);
         }}
       />

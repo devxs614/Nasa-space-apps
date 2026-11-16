@@ -241,6 +241,67 @@
   box-shadow:
     0 0 0 1px var(--signal),
     0 0 32px rgb(94 242 255 / 0.55);
+  filter: brightness(1.08);
+}
+/* El texto de un botón principal no cambia de color en ningún estado: siempre oscuro sobre cian
+   (corrección D). Antes, `aria-pressed` lo ponía cian sobre cian y el botón parecía vacío. */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus-visible,
+.btn-primary[aria-pressed='true'] {
+  background: var(--signal);
+  color: #031417;
+  -webkit-text-fill-color: #031417;
+}
+.btn-primary:active {
+  transform: scale(0.98);
+}
+.btn-primary:disabled,
+.btn-primary[aria-disabled='true'] {
+  background: var(--panel-solid);
+  color: var(--text-dim);
+  -webkit-text-fill-color: var(--text-dim);
+  border: 1px dashed var(--line-strong);
+  box-shadow: none;
+  filter: none;
+  transform: none;
+  opacity: 1;
+  cursor: not-allowed;
+  /* Sin transición: a mitad del cambio de cian a oscuro el texto no se leería. */
+  transition: none;
+}
+.btn:disabled {
+  cursor: not-allowed;
+}
+.btn:disabled:not(.btn-primary) {
+  opacity: 0.55;
+}
+/* Primera acción evidente: un anillo que late hasta que se usa el control. */
+.btn-attention {
+  outline: 2px solid var(--signal);
+  outline-offset: 4px;
+  animation: btn-attention 1.4s ease-in-out infinite;
+}
+@keyframes btn-attention {
+  0%,
+  100% {
+    outline-offset: 3px;
+    outline-color: rgb(94 242 255 / 0.95);
+  }
+  50% {
+    outline-offset: 9px;
+    outline-color: rgb(94 242 255 / 0.15);
+  }
+}
+[data-reduced-motion='true'] .btn-attention,
+[data-paused='true'] .btn-attention {
+  animation: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-attention {
+    animation: none;
+  }
 }
 .btn-ghost {
   background: rgb(14 20 34 / 0.5);
@@ -277,9 +338,36 @@
   opacity: 0.55;
   cursor: not-allowed;
 }
-.btn[aria-pressed='true'] {
+.btn[aria-pressed='true']:not(.btn-primary) {
   border-color: var(--signal);
   color: var(--signal);
+}
+/* ─── Paneles con desplazamiento propio: barra siempre visible ─── */
+.scroll-area {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+.scroll-area::-webkit-scrollbar {
+  width: 12px;
+}
+.scroll-area::-webkit-scrollbar-track {
+  background: rgb(255 255 255 / 0.08);
+  border-radius: 999px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: var(--signal);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+/* Firefox no admite ::-webkit-scrollbar; en Chrome estas propiedades anularían las de arriba. */
+@supports not selector(::-webkit-scrollbar) {
+  .scroll-area {
+    scrollbar-width: auto;
+    scrollbar-color: var(--signal) rgb(255 255 255 / 0.08);
+  }
 }
 
 /* ─── Tarjetas 3D (Parte 16.5) ─────────────────────────────────── */

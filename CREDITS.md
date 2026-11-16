@@ -30,7 +30,10 @@ Without those files, every globe, texture and spacecraft is generated procedural
 
 ## Sound
 
-All sound is synthesized live with the Web Audio API by our own code. No recordings, music or real voices are used.
+All sound is synthesized live with the Web Audio API by our own code. No recordings or real voices are used.
+
+The optional background music is original generative music created live by this site (`src/audio/music/`): one theme
+per act, with its own volume in the audio mixer. No music library, film score or recorded track is used.
 Optional narration uses the browser's built-in speech synthesis.
 
 ## Libraries

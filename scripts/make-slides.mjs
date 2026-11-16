@@ -133,6 +133,7 @@ async function capture() {
     const ix = small.locator('[data-interaction]');
     await ix.waitFor({ timeout: 60_000 });
     await ix.evaluate((el) => el.scrollIntoView({ block: 'center' }));
+    await ix.getByRole('button', { name: 'Start', exact: true }).click();
     await small.waitForTimeout(3000);
     if (id === 'surveyor') {
       // Con la hipótesis elegida y la nave posada, la tarjeta enseña la mini-experiencia en marcha.

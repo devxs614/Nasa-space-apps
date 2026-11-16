@@ -1,7 +1,15 @@
-import { useMemo, type ReactNode } from 'react';
-import { LatheGeometry, Quaternion, Vector2, Vector3 } from 'three';
+import { useContext, useMemo, type ReactNode } from 'react';
+import {
+  LatheGeometry,
+  Quaternion,
+  Vector2,
+  Vector3,
+  type BufferGeometry,
+  type Material,
+} from 'three';
 import type { MatKind } from '../../materials';
-import { useMat, useSeg } from './mat';
+import { ModeContext, useMat, useSeg } from './mat';
+import { flippedFaces } from '../../fitToView';
 
 type V3 = [number, number, number];
 const UP = new Vector3(0, 1, 0);
@@ -213,6 +221,22 @@ export function SolarPanelDecagon({
   );
 }
 
+/**
+ * La otra cara de una superficie abierta (plato, parasol, panel curvo). El material sólido solo
+ * dibuja una cara, así que por detrás la pieza desaparecía; el holograma ya dibuja las dos.
+ */
+export function BackFaces({
+  geometry,
+  material,
+}: {
+  geometry: BufferGeometry;
+  material: Material;
+}) {
+  const mode = useContext(ModeContext);
+  const back = useMemo(() => (mode === 'real' ? flippedFaces(geometry) : null), [geometry, mode]);
+  return back ? <mesh geometry={back} material={material} userData={{ backFaces: true }} /> : null;
+}
+
 /** Antena parabólica (perfil de parábola) con alimentador central; apunta a +Y. */
 export function Dish({
   d,
@@ -243,6 +267,11 @@ export function Dish({
   return (
     <group name={name} position={position} rotation={rotation}>
       <mesh geometry={geo} material={m} castShadow />
+      <BackFaces geometry={geo} material={m} />
+      {/* Aro en el borde: de canto, el plato se sigue leyendo. */}
+      <mesh material={m} position={[0, depth, 0]} rotation={[Math.PI / 2, 0, 0]}>
+        <torusGeometry args={[d / 2, d * 0.014, 6, seg]} />
+      </mesh>
       <Strut from={[0, 0, 0]} to={[0, depth * 2.2, 0]} r={d * 0.012} />
       <mesh material={feed} position={[0, depth * 2.2, 0]}>
         <cylinderGeometry args={[d * 0.04, d * 0.02, d * 0.06, 8]} />

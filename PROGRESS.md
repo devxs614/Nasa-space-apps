@@ -1,8 +1,17 @@
 # Progreso
 
-## Fase actual: 9 — QA final y entrega (código congelado: a partir de aquí, solo correcciones)
+## Fase actual: correcciones v1.1 (prompt de correcciones A–M) sobre la entrega v1.0
 
 ## Hecho
+- [x] v1.1 · A: shell común de las 15 mini-experiencias (objetivo, "Cómo se juega", paso, pista a los 6 s, "Reiniciar", panel de resultado con "Intentar de nuevo", tecla R, pausa al salir de pantalla).
+- [x] v1.1 · B: alcance de sonido por intento; ningún bucle queda sonando (`window.__audioDebug.activeLoops()` = 0 tras terminar, reiniciar o salir).
+- [x] v1.1 · C: NEAR con final único, un solo sonido, combustible, zona verde y victoria solo con teclado.
+- [x] v1.1 · D: botones cian con texto oscuro en todos los estados, `StateButton` y etiquetas de la señal por estado.
+- [x] v1.1 · E, F, J y K (otra sesión): riel sincronizado al crecer la página, scroll propio y barra visible en Ajustes, encuadre automático del visor y piezas finas visibles por las dos caras.
+- [x] v1.1 · G y H: Ingenuity en tres pasos guiados y Dawn como carrera entre el cohete químico y el motor iónico.
+- [x] v1.1 · I: auditoría automática de las 15 (pista y reinicio en silencio) y pruebas "siguiendo las instrucciones" de NEAR, Ingenuity y Dawn.
+- [x] v1.1 · L: música generativa original por acto, canal de música y mezclador con cinco barras (Ajustes y barra superior).
+- [x] v1.1 · M1: la narración elige la voz más natural del navegador, habla más despacio y hace pausas reales entre frases.
 - [x] Fase 9 (paquete de entrega): las 7 diapositivas de la Parte 20.7 en `public/last-signal-slides.pdf` (publicadas con la web), generadas con `npm run slides` desde `docs/slides/template.html` con capturas reales de la app, PDF etiquetado y con las fuentes del sitio; el script falla si hay más de 7 diapositivas, si algo se desborda o si el código QR no abre la web.
 - [x] Fase 9 (corrección): sin errores 404 en la consola por texturas y modelos opcionales (lista de `public/textures` y `public/models` hecha al compilar; `assets.test.ts`) y rutas profundas con estado 200 en GitHub Pages (`scripts/spa-routes.mjs` en el flujo de despliegue).
 - [x] Fase 9 (revisión del inglés): los textos en inglés escriben las fechas como la interfaz ("July 20, 1969"), las horas en UTC de 0 a 23 y los recuentos con su plural (`count` en catálogo, fuentes, atlas y línea de tiempo, también en español); el radio del núcleo de InSight lleva el separador de millares de cada idioma y dos citas usan la puntuación estadounidense. Barrido de los 2.017 textos en inglés (traducciones y datos) sin comas decimales, comillas o signos españoles, ortografía británica ni palabras en español; lectura completa de la narración, la interfaz y el quiz. Prueba `english.test.ts`; lecturas estáticas regeneradas.
@@ -46,6 +55,14 @@
 - [x] Fase 2: Lenis + ScrollTrigger, prólogo, portadas de acto, 15 capítulos con sus 7 momentos, riel de progreso, enlaces profundos, estática entre escenas, redirección a `/lectura` sin WebGL 2.
 
 ## Pendiente
+- [ ] v1.1 · I: las 12 actividades no reescritas muestran una sola instrucción (no "Paso n de m"); faltan las mejoras por actividad de la tabla I.2 (por ejemplo, que la curva de Kepler se detenga en cada caída en el modo sin presión, o "Pulso en camino" con progreso en el láser de ALSEP) y las pruebas "siguiendo las instrucciones" de Sojourner, Kepler y LRV. Falta la prueba con una o dos personas que no conozcan la web.
+- [ ] v1.1 · K: no existe la ruta `/dev/modelos` con las 8 vistas ni la prueba `__viewerDebug.visibleParts`; tampoco se añadió SMAA. Revisar a mano la antena de los Viking desde varios ángulos.
+- [ ] v1.1 · J: la prueba del encuadre cubre Kepler, Viking y Dawn, no las 15 máquinas en dos tamaños de pantalla.
+- [ ] v1.1 · E: el capítulo activo sigue saliendo de ScrollTrigger (recalculado al crecer la página), no de un `IntersectionObserver` en la línea central.
+- [ ] v1.1 · D: tras llegar la señal el botón queda deshabilitado con "Señal enviada"; no ofrece "Enviar otra vez".
+- [ ] v1.1 · L: escuchar la música 10 minutos seguidos en un equipo real (cortes, CPU, voces acumuladas con `window.__audioDebug.music()`); no hay prueba e2e de la música.
+- [ ] v1.1 · M2: narración generada con Kokoro (no se hizo); la clave `spoken` de `chapters.json` tampoco.
+- [ ] v1.1 · Recorrido manual de 20 minutos del prompt (La Travesía en inglés, un capítulo por acto en español, movimiento reducido, modo ligero, solo teclado).
 - [ ] Revisión manual de la Parte 19.8 en dispositivos reales (Chrome, Edge, Firefox, Safari 17+ en macOS e iOS, Android de gama media) y con lector de pantalla (VoiceOver, NVDA). Incluye comprobar que la portada monta La Travesía en Safari real y en un Android de gama media (arreglo de be562ae; en el WebKit de Playwright ya pasa).
 - [ ] Lectura completa de la versión inglesa por una persona con inglés fluido (Parte 19.9). Ya hay una pasada automática y una lectura hecha con el asistente de IA (ver "Hecho"); falta la de una persona.
 - [ ] Demo: las 7 diapositivas están publicadas con el equipo en la portada (fsociety7337). Opcional: grabar el vídeo de 30 s con subtítulos en inglés y usar ese enlace en su lugar.
