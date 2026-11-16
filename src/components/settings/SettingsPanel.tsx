@@ -10,7 +10,7 @@ import { useAppStore, type Quality, type TextScale } from '../../state/useAppSto
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { useUiStore, type SettingsTab } from '../../state/useUiStore';
 import { AudioEngine, loadAudioPrefs, type AudioPrefs } from '../../audio/AudioEngine';
-import { useVoiceAvailable } from '../../hooks/useVoiceAvailable';
+import { useVoiceAvailable, useVoiceQuality } from '../../hooks/useVoiceAvailable';
 import { isPersistent } from '../../lib/storage';
 import { useToast } from '../ui/Toast';
 import { cx } from '../../lib/cx';
@@ -65,6 +65,7 @@ export function SettingsPanel() {
   const [prefs, setPrefs] = useState<AudioPrefs>(() => loadAudioPrefs());
   const [confirmReset, setConfirmReset] = useState(false);
   const voice = useVoiceAvailable(st.locale);
+  const voiceQuality = useVoiceQuality(st.locale);
   const { push } = useToast();
 
   const updatePrefs = (p: Partial<AudioPrefs>) => {
@@ -240,6 +241,9 @@ export function SettingsPanel() {
             description={voice ? t('settings.narrationDesc') : t('settings.noVoice')}
             disabled={!voice}
           />
+          {voiceQuality === 'basic' && (
+            <p className="text-[0.9375rem] text-ink-dim">{t('settings.edgeVoice')}</p>
+          )}
           <Segmented<0.8 | 1 | 1.2>
             label={t('settings.narrationRate')}
             value={prefs.narrationRate}

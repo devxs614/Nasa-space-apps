@@ -307,7 +307,8 @@
     "memoryOnly": "Tu progreso no se guardará al cerrar la página.",
     "dataLinks": "Todas las cifras tienen su fuente. Las estimaciones calculadas lo indican.",
     "toSources": "Ver todas las fuentes",
-    "toAi": "Leer la declaración de uso de IA"
+    "toAi": "Leer la declaración de uso de IA",
+    "edgeVoice": "Para la voz más natural, abre esta web en Microsoft Edge."
   },
   "toast": {
     "region": "Avisos",

@@ -301,7 +301,8 @@
     "memoryOnly": "Your progress will not be saved when you close the page.",
     "dataLinks": "Every number has a source. Calculated estimates say so.",
     "toSources": "See all sources",
-    "toAi": "Read the Use of AI statement"
+    "toAi": "Read the Use of AI statement",
+    "edgeVoice": "For the most natural voice, open this site in Microsoft Edge."
   },
   "toast": {
     "region": "Notifications",
