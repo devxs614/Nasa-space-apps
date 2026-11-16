@@ -118,3 +118,30 @@ test('E · el riel marca el capítulo que está en pantalla aunque la página cr
     await expect(page.locator(`a[href="#${id}"][aria-current="step"]`), id).toHaveCount(1);
   }
 });
+
+test('J · el visor del catálogo encuadra entera cada máquina, también Kepler', async ({
+  page,
+}, info) => {
+  test.skip(
+    info.project.name === 'webkit',
+    'el 3D por software del WebKit de pruebas es muy lento',
+  );
+  test.setTimeout(180_000);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/catalogo?lang=en&debug=1');
+  for (const name of ['Kepler space telescope', 'Viking 1 and Viking 2', 'Dawn']) {
+    const card = page.locator('li', { has: page.getByRole('heading', { name, exact: true }) });
+    await card.getByRole('button', { name: /View in 3D/ }).click();
+    await expect(
+      page.getByRole('dialog', { name: new RegExp(`3D viewer: ${name}`) }),
+    ).toBeVisible();
+    // 1 = la máquina toca el borde de la pantalla; con margen, se queda por debajo.
+    await expect
+      .poll(() => page.evaluate<number>('window.__viewerDebug ? window.__viewerDebug.fit() : 99'), {
+        timeout: 30_000,
+        message: name,
+      })
+      .toBeLessThanOrEqual(0.92);
+    await page.getByRole('button', { name: 'Close viewer' }).click();
+  }
+});

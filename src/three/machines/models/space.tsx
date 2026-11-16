@@ -1,7 +1,13 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { AdditiveBlending, type Group, type Mesh, type MeshBasicMaterial } from 'three';
-import { Antenna, Box, Cyl, Dish, KeyPart, Rtg, SolarPanelRect, Strut } from '../parts';
+import {
+  AdditiveBlending,
+  CylinderGeometry,
+  type Group,
+  type Mesh,
+  type MeshBasicMaterial,
+} from 'three';
+import { Antenna, BackFaces, Box, Cyl, Dish, KeyPart, Rtg, SolarPanelRect, Strut } from '../parts';
 import { useMat } from '../parts/mat';
 import { useJourneyStore } from '../../../state/useJourneyStore';
 import { useAppStore } from '../../../state/useAppStore';
@@ -77,18 +83,28 @@ export function DawnModel() {
 
 /** Kepler: fotómetro de 4,7 × 2,7 m con parasol inclinado (pieza clave) y panel curvo. */
 export function KeplerModel() {
+  const dark = useMat('dark');
+  const cells = useMat('cells');
+  // Parasol y panel solar son superficies abiertas: llevan también su cara interior.
+  const shade = useMemo(() => new CylinderGeometry(1.38, 1.38, 1.1, 32, 1, true), []);
+  const panel = useMemo(
+    () => new CylinderGeometry(1.6, 1.6, 3.0, 24, 1, true, -Math.PI / 3, (Math.PI * 2) / 3),
+    [],
+  );
   return (
     <group>
       <Cyl r={1.35} h={3.6} position={[0, 1.8, 0]} mat="mylar" />
       <KeyPart>
-        <mesh material={useMat('dark')} position={[0, 4.0, 0]} rotation={[0.35, 0, 0]}>
-          <cylinderGeometry args={[1.38, 1.38, 1.1, 32, 1, true]} />
-        </mesh>
+        <group position={[0, 4.0, 0]} rotation={[0.35, 0, 0]}>
+          <mesh geometry={shade} material={dark} />
+          <BackFaces geometry={shade} material={dark} />
+        </group>
         <Cyl r={1.25} h={0.05} position={[0, 3.55, 0]} mat="glass" />
       </KeyPart>
-      <mesh material={useMat('cells')} position={[0, 1.6, 0]} rotation={[0, 0, 0]}>
-        <cylinderGeometry args={[1.6, 1.6, 3.0, 24, 1, true, -Math.PI / 3, (Math.PI * 2) / 3]} />
-      </mesh>
+      <group position={[0, 1.6, 0]}>
+        <mesh geometry={panel} material={cells} />
+        <BackFaces geometry={panel} material={cells} />
+      </group>
       <Box w={1.6} h={0.6} d={1.6} position={[0, -0.25, 0]} mat="foil" />
       <Dish d={0.8} position={[0.9, -0.4, 0.6]} rotation={[2.4, 0, 0.3]} />
     </group>

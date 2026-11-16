@@ -41,8 +41,8 @@ export function VikingModel() {
       {[30, 150, 270].map((d, i) => (
         <Leg key={i} top={ring(0.7, d, 0.8)} foot={ring(1.4, d, 0.02)} padR={0.15} />
       ))}
-      <Strut from={[0.2, 1.15, -0.3]} to={[0.2, 1.75, -0.3]} r={0.03} />
-      <Dish d={0.76} position={[0.2, 1.75, -0.3]} rotation={[-0.8, 0, 0.3]} />
+      <Strut from={[0.2, 1.15, -0.3]} to={[0.2, 1.75, -0.3]} r={0.035} name="antenna-hga-mast" />
+      <Dish d={0.76} position={[0.2, 1.75, -0.3]} rotation={[-0.8, 0, 0.3]} name="antenna-hga" />
       <Rtg h={0.4} d={0.28} position={[-0.45, 1.35, 0.25]} />
       <Rtg h={0.4} d={0.28} position={[0.45, 1.35, 0.25]} />
       {[-0.25, 0.25].map((x, i) => (
@@ -51,7 +51,7 @@ export function VikingModel() {
           <Box w={0.02} h={0.18} d={0.02} position={[0, 0.05, 0.08]} mat="dark" />
         </group>
       ))}
-      <Strut from={[-0.6, 1.1, -0.3]} to={[-0.75, 1.65, -0.35]} r={0.015} />
+      <Strut from={[-0.6, 1.1, -0.3]} to={[-0.75, 1.65, -0.35]} r={0.025} name="antenna-lga" />
       <Box w={0.12} h={0.06} d={0.06} position={[-0.75, 1.68, -0.35]} mat="metal" />
       <KeyPart>
         <group ref={arm} position={[0.5, 0.95, 0.3]} rotation={[0, -0.6, 0]}>

@@ -115,7 +115,7 @@ export function MachineModel({
     g.traverse((o) => {
       if (o.name !== 'keyPart') return;
       o.traverse((m) => {
-        if (m instanceof Mesh && !m.userData.outline) {
+        if (m instanceof Mesh && !m.userData.outline && !m.userData.backFaces) {
           const out = new Mesh(m.geometry as BufferGeometry, outlineMaterial());
           out.userData.outline = true;
           out.raycast = () => undefined;
