@@ -78,7 +78,7 @@ test('los botones cian tienen texto y contraste en las 15 actividades, antes y d
         continue;
       }
       await b.click({ timeout: 2000 }).catch(() => undefined);
-      await page.waitForTimeout(200);
+      await page.waitForTimeout(450); // 200 ms de la corrección D más la transición de color
       await audit(page, `${id}: tras pulsar el botón ${i + 1}`);
     }
   }
