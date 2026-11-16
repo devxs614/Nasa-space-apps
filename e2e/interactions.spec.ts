@@ -58,10 +58,10 @@ test('Acto III · NEAR: sin tocar nada falla una sola vez y se puede reintentar 
       timeout: 2000,
     })
     .toBe(0);
-  const scroll = await page.evaluate<number>('window.scrollY');
   await ix.getByRole('button', { name: 'Intentar de nuevo' }).click();
+  // Reintentar no exige hacer scroll: la tarjeta inicial y su botón quedan a la vista.
   await expect(ix.getByText('Cómo se juega')).toBeVisible();
-  expect(Math.abs((await page.evaluate<number>('window.scrollY')) - scroll)).toBeLessThan(200);
+  await expect(ix.getByRole('button', { name: 'Empezar' })).toBeInViewport();
 });
 
 test('Acto III · NEAR: se gana solo con teclado, con toques de la barra espaciadora', async ({

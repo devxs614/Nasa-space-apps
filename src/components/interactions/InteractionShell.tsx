@@ -21,7 +21,8 @@ type Vars = Record<string, string | number>;
 
 export interface InteractionShellProps {
   machineId: InteractionProps['machineId'];
-  active: boolean;
+  /** Momento del relato en pantalla. La pausa ya no depende de esto, sino de que la actividad se vea. */
+  active?: boolean;
   reducedMotion: boolean;
   express?: boolean;
   meta: InteractionMeta;
@@ -41,7 +42,6 @@ const HINT_MS = 6000;
  */
 export function InteractionShell({
   machineId,
-  active,
   reducedMotion,
   express,
   meta,
@@ -89,13 +89,26 @@ export function InteractionShell({
     return () => sound.dispose();
   }, [sound]);
 
+  // La pausa depende de que la actividad se vea, no del momento del relato: en móvil una actividad
+  // alta sigue en pantalla cuando el relato ya cuenta el momento siguiente.
+  const [onScreen, setOnScreen] = useState(true);
+  useEffect(() => {
+    const el = root.current;
+    if (!el || typeof IntersectionObserver === 'undefined') return;
+    const io = new IntersectionObserver((entries) => {
+      const last = entries[entries.length - 1];
+      if (last) setOnScreen(last.isIntersecting);
+    });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
   // Fuera de pantalla: se pausa y calla. Al volver no se reanuda sola: aparece "Reanudar".
   useEffect(() => {
-    if (active || phaseRef.current !== 'playing') return;
+    if (onScreen || phaseRef.current !== 'playing') return;
     sound.stopAll();
     window.clearTimeout(idle.current);
     setPaused(true);
-  }, [active, sound]);
+  }, [onScreen, sound]);
 
   const armHint = useCallback(() => {
     window.clearTimeout(idle.current);
@@ -185,7 +198,12 @@ export function InteractionShell({
   }, [sound, meta, setPhase]);
   // Tras reiniciar, el foco vuelve a "Empezar".
   useEffect(() => {
-    if (runId > 0) startBtn.current?.focus({ preventScroll: true });
+    if (runId === 0) return;
+    startBtn.current?.focus({ preventScroll: true });
+    // La actividad se encoge al volver a la tarjeta inicial: se deja a la vista, sin que haga falta
+    // hacer scroll para reintentar.
+    const el = root.current;
+    if (el && typeof el.scrollIntoView === 'function') el.scrollIntoView({ block: 'nearest' });
   }, [runId]);
 
   const skip = () => {
@@ -306,7 +324,7 @@ export function InteractionShell({
             <Interaction
               key={runId}
               machineId={machineId}
-              active={active && phase === 'playing' && !paused}
+              active={onScreen && phase === 'playing' && !paused}
               reducedMotion={reducedMotion}
               api={api}
               express={express}
