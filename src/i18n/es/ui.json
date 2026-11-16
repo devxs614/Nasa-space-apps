@@ -167,7 +167,10 @@
     "done": "¡Hecho!",
     "noPressure": "Modo sin presión",
     "restart": "Empezar de nuevo",
-    "paused": "Pausada: vuelve a este tramo para seguir."
+    "paused": "Pausada: vuelve a este tramo para seguir.",
+    "goal": "Objetivo",
+    "tryAgain": "Intentar de nuevo",
+    "playAgain": "Jugar de nuevo"
   },
   "signal": {
     "hold": "Mantén pulsado para enviar señal",
@@ -525,13 +528,18 @@
     },
     "near": {
       "title": "Aterriza sin manual",
-      "brake": "Frenar",
       "speed": "Velocidad",
-      "contact": "Contacto a {{v}} km/h. La real fue de unos 6,4 km/h.",
-      "tooFast": "Demasiado rápido: prueba a frenar antes.",
       "label": "Gravedad y propulsión ilustrativas",
       "start": "Empezar el descenso",
-      "success": "Te posaste a 7 km/h o menos."
+      "success": "Te posaste a 7 km/h o menos.",
+      "goal": "Toca Eros a 7 km/h o menos.",
+      "step1": "Mira la velocidad. Mantén el botón para encender los propulsores y frenar.",
+      "step2": "Mantén la velocidad en la zona verde hasta tocar el suelo.",
+      "hold": "Mantén para encender propulsores",
+      "firing": "Encendidos: suelta para parar",
+      "zone": "Zona verde: de 0 a 7 km/h",
+      "win": "Tocaste a {{speed}} km/h. NEAR lo hizo a unos 6,4 km/h, y no estaba diseñada para posarse.",
+      "fail": "Tocaste a {{speed}} km/h: demasiado rápido para posarte con suavidad. Prueba a frenar un poco antes."
     },
     "dawn": {
       "title": "Paciencia iónica",

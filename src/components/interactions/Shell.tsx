@@ -7,6 +7,8 @@ import { cx } from '../../lib/cx';
 
 export interface ShellProps {
   title: string;
+  /** Qué hay que conseguir, en una frase; visible desde el primer fotograma. */
+  goal?: string;
   done: boolean;
   successText: string;
   live?: string;
@@ -21,6 +23,7 @@ export interface ShellProps {
 /** Contrato común de las mini-experiencias (Parte 13.1): saltar, ver resultado, resumen accesible. */
 export function Shell({
   title,
+  goal,
   done,
   successText,
   live,
@@ -49,6 +52,12 @@ export function Shell({
         <h4 className="font-heading text-[length:var(--fs-h3)] font-bold">{title}</h4>
         {illustrative && <Badge tone="info">{label ?? t('ix.illustrative')}</Badge>}
       </header>
+      {goal && (
+        <p className="mb-3" data-testid="interaction-goal">
+          <span className="font-bold text-signal">{t('interaction.goal')}: </span>
+          {goal}
+        </p>
+      )}
       <div className={cx(skipped && !done && 'opacity-60')}>{children}</div>
       <p className="sr-only" aria-live="polite">
         {live}

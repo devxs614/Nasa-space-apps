@@ -161,7 +161,10 @@
     "done": "Done!",
     "noPressure": "No-pressure mode",
     "restart": "Start again",
-    "paused": "Paused: come back to this part to continue."
+    "paused": "Paused: come back to this part to continue.",
+    "goal": "Goal",
+    "tryAgain": "Try again",
+    "playAgain": "Play again"
   },
   "signal": {
     "hold": "Press and hold to send a signal",
@@ -519,13 +522,18 @@
     },
     "near": {
       "title": "Land without a manual",
-      "brake": "Brake",
       "speed": "Speed",
-      "contact": "Touchdown at {{v}} km/h. The real one was about 6.4 km/h.",
-      "tooFast": "Too fast: try braking earlier.",
       "label": "Illustrative gravity and thrust",
       "start": "Start the descent",
-      "success": "You touched down at 7 km/h or less."
+      "success": "You touched down at 7 km/h or less.",
+      "goal": "Touch down on Eros at 7 km/h or slower.",
+      "step1": "Watch the speed. Hold the button to fire the thrusters and slow down.",
+      "step2": "Keep the speed in the green zone until you touch down.",
+      "hold": "Hold to fire thrusters",
+      "firing": "Firing, release to stop",
+      "zone": "Green zone: 0 to 7 km/h",
+      "win": "You touched down at {{speed}} km/h. NEAR did it at about 6.4 km/h, and it was never designed to land.",
+      "fail": "You touched down at {{speed}} km/h, too fast for a gentle landing. Try braking a little earlier."
     },
     "dawn": {
       "title": "Ion patience",
