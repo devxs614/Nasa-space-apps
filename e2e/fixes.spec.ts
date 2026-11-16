@@ -27,6 +27,7 @@ test('D · el botón cian del motor iónico conserva su texto al pulsarlo', asyn
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/maquinas/dawn?lang=en');
   const ix = page.locator('[data-interaction]');
+  await ix.getByRole('button', { name: 'Start', exact: true }).click();
   await ix.getByRole('button', { name: 'Turn on the ion engine' }).click();
   // El texto dice lo que hará el siguiente toque y se sigue leyendo sobre el fondo cian.
   const off = ix.getByRole('button', { name: 'Turn off the ion engine' });
@@ -128,7 +129,7 @@ test('J · el visor del catálogo encuadra entera cada máquina, también Kepler
   );
   test.setTimeout(180_000);
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/catalogo?lang=en&debug=1');
+  await page.goto('/maquinas?lang=en&debug=1');
   for (const name of ['Kepler space telescope', 'Viking 1 and Viking 2', 'Dawn']) {
     const card = page.locator('li', { has: page.getByRole('heading', { name, exact: true }) });
     await card.getByRole('button', { name: /View in 3D/ }).click();

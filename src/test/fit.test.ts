@@ -16,7 +16,8 @@ import { fitRadius, flippedFaces, localBounds, maxNdc } from '../three/fitToView
 function firstFaceNormal(g: LatheGeometry | ReturnType<typeof flippedFaces>): Vector3 {
   const index = g.getIndex()!;
   const pos = g.getAttribute('position');
-  const [a, b, c] = [0, 1, 2].map((i) => new Vector3().fromBufferAttribute(pos, index.getX(i)));
+  // Una cara lejos del eje: la primera de cada gajo de un torneado toca el eje y tiene área cero.
+  const [a, b, c] = [33, 34, 35].map((i) => new Vector3().fromBufferAttribute(pos, index.getX(i)));
   return b!.sub(a!).cross(c!.sub(a!)).normalize();
 }
 
