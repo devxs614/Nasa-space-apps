@@ -950,5 +950,17 @@
     "count_other": "{{count}} máquinas",
     "count_many": "{{count}} máquinas",
     "row": "{{name}}: de {{from}} a {{to}}"
+  },
+  "mixer": {
+    "title": "Mezclador de audio",
+    "open": "Abrir el mezclador de audio",
+    "close": "Cerrar el mezclador de audio",
+    "master": "General",
+    "music": "Música",
+    "ambience": "Ambiente",
+    "sfx": "Efectos",
+    "voice": "Voz",
+    "reset": "Restablecer niveles",
+    "note": "Música generativa original, creada en directo por esta web."
   }
 }

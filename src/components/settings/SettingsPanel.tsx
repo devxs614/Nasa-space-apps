@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import { Dialog } from '../ui/Dialog';
 import { Tabs } from '../ui/Tabs';
 import { Toggle } from '../ui/Toggle';
-import { Slider } from '../ui/Slider';
+import { AudioMixer } from '../audio/AudioMixer';
 import { Button } from '../ui/Button';
 import { useAppStore, type Quality, type TextScale } from '../../state/useAppStore';
 import { useJourneyStore } from '../../state/useJourneyStore';
@@ -69,11 +69,11 @@ export function SettingsPanel() {
   const { push } = useToast();
 
   const updatePrefs = (p: Partial<AudioPrefs>) => {
-    const next = { ...prefs, ...p };
+    // Se parte de lo guardado: el mezclador puede haber cambiado los niveles.
+    const next = { ...loadAudioPrefs(), ...p };
     setPrefs(next);
     AudioEngine.setPrefs(next);
   };
-  const pct = (v: number) => `${Math.round(v * 100)} %`;
   const qualityLabel = (q: Quality) => t(`settings.quality${q[0]?.toUpperCase()}${q.slice(1)}`);
 
   const toggleSound = (on: boolean) => {
@@ -199,41 +199,7 @@ export function SettingsPanel() {
       label: t('settings.tabs.sound'),
       panel: (
         <div className="divide-y divide-line">
-          <Toggle
-            checked={st.soundOn}
-            onChange={toggleSound}
-            label={t('settings.sound')}
-            description={t('settings.soundDesc')}
-          />
-          <div className="py-2">
-            <Slider
-              label={t('settings.ambience')}
-              value={prefs.ambience}
-              min={0}
-              max={1}
-              step={0.05}
-              format={pct}
-              onChange={(v) => updatePrefs({ ambience: v })}
-            />
-            <Slider
-              label={t('settings.sfx')}
-              value={prefs.sfx}
-              min={0}
-              max={1}
-              step={0.05}
-              format={pct}
-              onChange={(v) => updatePrefs({ sfx: v })}
-            />
-            <Slider
-              label={t('settings.voiceVol')}
-              value={prefs.voice}
-              min={0}
-              max={1}
-              step={0.05}
-              format={pct}
-              onChange={(v) => updatePrefs({ voice: v })}
-            />
-          </div>
+          <AudioMixer soundOn={st.soundOn} onToggleSound={toggleSound} />
           <Toggle
             checked={st.narrationOn}
             onChange={(v) => st.updateSettings({ narrationOn: v })}

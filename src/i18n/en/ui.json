@@ -941,5 +941,17 @@
     "count_one": "{{count}} machine",
     "count_other": "{{count}} machines",
     "row": "{{name}}: from {{from}} to {{to}}"
+  },
+  "mixer": {
+    "title": "Audio mixer",
+    "open": "Open the audio mixer",
+    "close": "Close the audio mixer",
+    "master": "Master",
+    "music": "Music",
+    "ambience": "Ambience",
+    "sfx": "Effects",
+    "voice": "Voice",
+    "reset": "Reset levels",
+    "note": "Original generative music, created live by this site."
   }
 }

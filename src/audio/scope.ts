@@ -161,4 +161,4 @@ declare global {
   }
 }
 // Las pruebas e2e comprueban con esto que no queda ningún bucle sonando.
-if (typeof window !== 'undefined') window.__audioDebug = { activeLoops };
+if (typeof window !== 'undefined') window.__audioDebug = { ...window.__audioDebug, activeLoops };

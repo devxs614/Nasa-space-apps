@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import { Menu, Pause, Play, Settings, Volume2, VolumeX } from 'lucide-react';
+import { Menu, Pause, Play, Settings, SlidersHorizontal, Volume2, VolumeX } from 'lucide-react';
 import { useAppStore } from '../../state/useAppStore';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { useUiStore } from '../../state/useUiStore';
 import { MissionClock } from '../hud/MissionClock';
 import { cx } from '../../lib/cx';
-import { AudioEngine } from '../../audio/AudioEngine';
+import { AudioEngine, loadAudioPrefs } from '../../audio/AudioEngine';
+import { AudioMixer } from '../audio/AudioMixer';
 import { MACHINES_BY_ID } from '../../data/machines';
 
 export function TopBar() {
@@ -70,8 +71,37 @@ export function TopBar() {
       updateSettings({ soundOn: true });
       AudioEngine.setEnabled(true);
       setNeedsResume(false);
+      // La primera vez, el mezclador se abre solo: así se ve que la música se puede ajustar o apagar.
+      const prefs = loadAudioPrefs();
+      if (!prefs.mixerSeen) {
+        AudioEngine.setPrefs({ ...prefs, mixerSeen: true });
+        if (window.matchMedia('(min-width: 640px)').matches) setMixerOpen(true);
+      }
     });
   };
+
+  const [mixerOpen, setMixerOpen] = useState(false);
+  const mixer = useRef<HTMLDivElement>(null);
+  const mixerBtn = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (!mixerOpen) return;
+    const outside = (e: PointerEvent) => {
+      const target = e.target as Node;
+      if (mixer.current?.contains(target) || mixerBtn.current?.contains(target)) return;
+      setMixerOpen(false);
+    };
+    const esc = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return;
+      setMixerOpen(false);
+      mixerBtn.current?.focus();
+    };
+    window.addEventListener('pointerdown', outside);
+    window.addEventListener('keydown', esc);
+    return () => {
+      window.removeEventListener('pointerdown', outside);
+      window.removeEventListener('keydown', esc);
+    };
+  }, [mixerOpen]);
 
   const chapter = chapterId ? MACHINES_BY_ID[chapterId] : null;
   const soundLabel = needsResume
@@ -125,6 +155,37 @@ export function TopBar() {
             <VolumeX size={20} strokeWidth={1.5} />
           )}
         </button>
+        <div className="relative hidden sm:block">
+          <button
+            ref={mixerBtn}
+            type="button"
+            className="btn btn-subtle btn-icon"
+            onClick={() => setMixerOpen((o) => !o)}
+            aria-expanded={mixerOpen}
+            aria-controls="audio-mixer"
+            aria-label={mixerOpen ? t('mixer.close') : t('mixer.open')}
+            title={t('mixer.title')}
+          >
+            <SlidersHorizontal size={20} strokeWidth={1.5} />
+          </button>
+          {mixerOpen && (
+            <div
+              ref={mixer}
+              id="audio-mixer"
+              role="dialog"
+              aria-label={t('mixer.title')}
+              data-lenis-prevent
+              className="panel-solid scroll-area absolute top-12 right-0 z-40 max-h-[80svh] w-[min(92vw,360px)] p-4 shadow-xl"
+            >
+              <AudioMixer
+                soundOn={soundOn && !needsResume}
+                onToggleSound={(on) => {
+                  if (on !== (soundOn && !needsResume)) toggleSound();
+                }}
+              />
+            </div>
+          )}
+        </div>
         <button
           type="button"
           className="btn btn-subtle btn-icon"

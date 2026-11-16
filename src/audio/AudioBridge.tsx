@@ -2,6 +2,9 @@ import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AudioEngine } from './AudioEngine';
 import { setAmbience, type AmbienceKind } from './ambience';
+import { MusicEngine } from './music/MusicEngine';
+import { INTENSITY, type ThemeId } from './music/themes';
+import { MIXER_EVENT } from '../components/audio/AudioMixer';
 import { flatline } from './sfx';
 import { speakLines } from './narration';
 import { stopSpeaking } from './narrator';
@@ -28,6 +31,22 @@ const AMBIENCE: Partial<Record<SceneKey, AmbienceKind>> = {
   'outer-system': 'deep',
 };
 
+const MUSIC: Partial<Record<SceneKey, ThemeId>> = {
+  prologue: 'prologue',
+  idle: 'prologue',
+  showcase: 'prologue',
+  epilogue: 'epilogue',
+  'moon-orbit': 'moon',
+  'moon-surface': 'moon',
+  'atlas-moon': 'moon',
+  'mars-orbit': 'mars',
+  'mars-surface': 'mars',
+  'atlas-mars': 'mars',
+  eros: 'smallBodies',
+  'vesta-ceres': 'smallBodies',
+  kepler: 'deepSpace',
+  'outer-system': 'deepSpace',
+};
 let gestured = false;
 
 /** Conecta el motor de audio con el store: interruptor general, ambiente por acto, silencio de la última señal y narración. */
@@ -36,6 +55,7 @@ export function AudioBridge() {
   const soundOn = useAppStore((s) => s.soundOn);
   const narrationOn = useAppStore((s) => s.narrationOn);
   const quality = useAppStore((s) => s.quality);
+  const liteMode = useAppStore((s) => s.liteMode);
   const sceneKey = useJourneyStore((s) => s.sceneKey);
   const flatlined = useRef<string | null>(null);
 
@@ -56,9 +76,23 @@ export function AudioBridge() {
     AudioEngine.setEnabled(soundOn);
     if (!soundOn) {
       setAmbience(null);
+      MusicEngine.stop();
       stopSpeaking();
     }
   }, [soundOn]);
+  // Música generativa: un tema por acto con fundido cruzado; solo pad y piano en calidad baja o modo ligero.
+  useEffect(() => {
+    if (!soundOn || !AudioEngine.ready) return;
+    MusicEngine.setLite(quality === 'low' || liteMode);
+    MusicEngine.setTheme(MUSIC[sceneKey] ?? 'prologue');
+    MusicEngine.sync();
+  }, [soundOn, sceneKey, quality, liteMode]);
+  // El mezclador enciende, apaga o deja en 0 la música: el planificador arranca o se detiene.
+  useEffect(() => {
+    const sync = () => MusicEngine.sync();
+    window.addEventListener(MIXER_EVENT, sync);
+    return () => window.removeEventListener(MIXER_EVENT, sync);
+  }, []);
 
   // Ambiente por acto con fundido cruzado.
   useEffect(() => {
@@ -70,6 +104,8 @@ export function AudioBridge() {
   useEffect(
     () =>
       useJourneyStore.subscribe((s, prev) => {
+        // La música crece y se calma con el relato; en "La última señal" casi desaparece.
+        if (s.beat !== prev.beat) MusicEngine.setIntensity(s.beat ? INTENSITY[s.beat] : 0.4);
         if (!useAppStore.getState().soundOn || !AudioEngine.ready) return;
         const inLast = s.beat === 'lastSignal' && s.beatProgress > 0.3;
         const wasLast = prev.beat === 'lastSignal' && prev.beatProgress > 0.3;

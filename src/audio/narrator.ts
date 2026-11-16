@@ -167,11 +167,13 @@ export function speakLines(
   );
   if (queue.length === 0) return false;
   AudioEngine.duck(true);
+  AudioEngine.setTalking(true);
   const next = (i: number) => {
     if (id !== runId) return; // otra narración tomó el relevo o se pidió silencio
     const item = queue[i];
     if (!item) {
       AudioEngine.duck(false);
+      AudioEngine.setTalking(false);
       onEnd?.();
       return;
     }
@@ -212,4 +214,5 @@ export function stopSpeaking(): void {
   runId++;
   synth()?.cancel();
   AudioEngine.duck(false);
+  AudioEngine.setTalking(false);
 }
