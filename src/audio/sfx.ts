@@ -1,4 +1,5 @@
 import { AudioEngine } from './AudioEngine';
+import type { SoundFn, Voice } from './scope';
 
 /**
  * Efectos sintetizados con Web Audio (Parte 15.3). Cada uno crea sus nodos, los conecta al bus `sfx`,
@@ -40,9 +41,26 @@ function envelope(g: GainNode, t: number, attack: number, peak: number, decay: n
 }
 
 /** Ejecuta un efecto con una voz reservada; libera la voz y desconecta los nodos al final. */
+/** Mientras está puesto, el efecto se construye sobre la salida de un alcance (ver `asSound`). */
+let capture: { out: AudioNode; voice: Voice | null } | null = null;
+
 function voice(
-  build: (ctx: AudioContext, t: number, out: GainNode) => { nodes: AudioNode[]; end: number },
+  build: (ctx: AudioContext, t: number, out: AudioNode) => { nodes: AudioNode[]; end: number },
 ): void {
+  if (capture) {
+    const raw = AudioEngine.rawContext;
+    if (!raw) return;
+    const t0 = raw.currentTime;
+    const built = build(raw, t0, capture.out);
+    capture.voice = {
+      nodes: built.nodes,
+      sources: built.nodes.filter(
+        (n): n is AudioScheduledSourceNode => 'start' in n && 'stop' in n,
+      ),
+      seconds: built.end - t0,
+    };
+    return;
+  }
   const ctx = AudioEngine.context;
   if (!ctx || !AudioEngine.acquireVoice()) return;
   const t = ctx.currentTime;
@@ -379,3 +397,31 @@ export function quake(seconds = 12, amp = 1): void {
     return { nodes: [src, lp, g, o, go], end: t + seconds };
   });
 }
+
+/**
+ * Convierte un efecto en una función de sonido para un alcance (corrección B): el efecto se conecta
+ * a la salida del alcance, que lo para al reiniciar, terminar o salir de la actividad.
+ */
+export function asSound<A extends number[]>(effect: (...args: A) => void): SoundFn<A> {
+  return (_ctx, out, ...args) => {
+    capture = { out, voice: null };
+    try {
+      effect(...args);
+      return capture.voice ?? { sources: [], nodes: [] };
+    } finally {
+      capture = null;
+    }
+  };
+}
+
+/** Los efectos como funciones de sonido, para `api.sound.play` y `api.sound.loop`. */
+export const fx = {
+  tick: asSound(tick),
+  right: asSound(right),
+  gentle: asSound(gentle),
+  thud: asSound(thud),
+  laser: asSound(laser),
+  drill: asSound(drill),
+  quake: asSound(quake),
+  staticBurst: asSound(staticBurst),
+};

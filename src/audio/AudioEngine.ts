@@ -106,6 +106,10 @@ class AudioEngineImpl {
   get context(): AudioContext | null {
     return this.enabled ? this.ctx : null;
   }
+  /** El contexto aunque el sonido esté apagado: para detener lo que ya suena. */
+  get rawContext(): AudioContext | null {
+    return this.ctx;
+  }
   out(bus: Bus): GainNode {
     const g = this.buses.get(bus);
     if (!g) throw new Error(`AudioEngine: bus ${bus} sin inicializar`);
