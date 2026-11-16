@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useParams, useSearchParams } from 'react-router';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
@@ -9,7 +9,7 @@ import { MACHINES_BY_ID, nextMachine, prevMachine } from '../data/machines';
 import { isMachineId } from '../data/ids';
 import { NotFoundPage } from './NotFoundPage';
 import { BEATS } from '../state/useJourneyStore';
-import { refreshScroll } from '../hooks/useScrollProgress';
+import { refreshScroll, useScrollRefresh } from '../hooks/useScrollProgress';
 
 /** Capítulo individual por URL directa: /maquinas/:id?momento=work (Parte 8.7). */
 export function ChapterPage() {
@@ -22,6 +22,8 @@ export function ChapterPage() {
   useDocumentTitle(machine ? machine.name[locale] : t('routes.notFound'));
   useLenis(!reduced && Boolean(machine));
   const beat = params.get('momento');
+  const root = useRef<HTMLDivElement>(null);
+  useScrollRefresh(root);
 
   useEffect(() => {
     refreshScroll();
@@ -39,7 +41,7 @@ export function ChapterPage() {
   const prev = prevMachine(machine.id);
   const next = nextMachine(machine.id);
   return (
-    <div className="relative" data-act={machine.world}>
+    <div ref={root} className="relative" data-act={machine.world}>
       <ChapterSection key={machine.id} machine={machine} standalone />
       <nav
         aria-label={t('index.title')}

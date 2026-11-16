@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router';
 import { useDocumentTitle } from '../hooks/useDocumentTitle';
 import { useLenis, scrollToEl } from '../hooks/useLenis';
-import { refreshScroll } from '../hooks/useScrollProgress';
+import { refreshScroll, useScrollRefresh } from '../hooks/useScrollProgress';
 import { useAppStore } from '../state/useAppStore';
 import { useJourneyStore } from '../state/useJourneyStore';
 import { Prologue } from '../components/journey/Prologue';
@@ -25,6 +25,8 @@ export function JourneyPage() {
   const { hash } = useLocation();
   useDocumentTitle(chapterId ? MACHINES_BY_ID[chapterId].name[locale] : null);
   useLenis(!reduced);
+  const root = useRef<HTMLDivElement>(null);
+  useScrollRefresh(root);
 
   useEffect(() => {
     refreshScroll();
@@ -44,7 +46,7 @@ export function JourneyPage() {
   }, [hash]);
 
   return (
-    <div className="relative">
+    <div ref={root} className="relative">
       <ProgressRail />
       <HudFrame visible={chapterId !== null} />
       <Prologue />

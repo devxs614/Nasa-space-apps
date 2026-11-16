@@ -90,3 +90,31 @@ test('F · en Ajustes, la rueda desplaza el panel y no la página de detrás', a
   await page.waitForTimeout(600);
   expect(await page.evaluate<number>('window.scrollY')).toBeLessThan(2);
 });
+
+test('E · el riel marca el capítulo que está en pantalla aunque la página crezca después', async ({
+  page,
+}, info) => {
+  test.skip(
+    info.project.name === 'webkit',
+    'el WebKit de pruebas tarda minutos en montar La Travesía',
+  );
+  test.setTimeout(180_000);
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/?lang=en');
+  await expect(page.locator('#ch-pioneer')).toBeAttached({ timeout: 60_000 });
+  await expect(page.locator('#contenido [role="status"]')).toHaveCount(0, { timeout: 90_000 });
+  // Algo llega tarde y alarga la página por encima de todos los capítulos (una foto, una actividad…).
+  await page.evaluate(`(() => {
+    const first = document.querySelector('[data-chapter="surveyor"]');
+    const late = document.createElement('div');
+    late.style.height = '1800px';
+    first.parentElement.insertBefore(late, first);
+  })()`);
+  await page.waitForTimeout(700);
+  for (const id of ['kepler', 'pioneer', 'opportunity', 'kepler']) {
+    await page.evaluate(
+      `document.querySelector('[data-chapter="${id}"] [data-beat="work"]').scrollIntoView({ block: 'center' })`,
+    );
+    await expect(page.locator(`a[href="#${id}"][aria-current="step"]`), id).toHaveCount(1);
+  }
+});

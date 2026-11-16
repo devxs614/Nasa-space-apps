@@ -38,4 +38,35 @@ export function useScrollProgress(
 export function refreshScroll(): void {
   window.requestAnimationFrame(() => ScrollTrigger.refresh());
 }
+
+let refreshTimer: number | undefined;
+/** Varios cambios de altura seguidos acaban en un solo recálculo, 150 ms después del último. */
+export function requestScrollRefresh(): void {
+  window.clearTimeout(refreshTimer);
+  refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 150);
+}
+
+/**
+ * Las mini-experiencias, las fotos y el quiz llegan o se abren después de crear los disparadores y
+ * alargan la página: sin recalcular, los capítulos de más abajo se activaban antes de estar en
+ * pantalla (el riel marcaba Pioneer con Kepler todavía a la vista).
+ */
+export function useScrollRefresh(ref: RefObject<HTMLElement | null>): void {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    let height = el.offsetHeight;
+    const ro = new ResizeObserver(() => {
+      const h = el.offsetHeight;
+      if (h === height) return; // los cambios de ancho ya los recalcula ScrollTrigger
+      height = h;
+      requestScrollRefresh();
+    });
+    ro.observe(el);
+    return () => {
+      ro.disconnect();
+      window.clearTimeout(refreshTimer);
+    };
+  }, [ref]);
+}
 scrollBridge.setRefresh(refreshScroll);
