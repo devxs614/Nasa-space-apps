@@ -6,7 +6,7 @@ import { useJourneyStore } from '../../state/useJourneyStore';
 import { MACHINES_BY_ID, getFact } from '../../data/machines';
 import { useAppStore } from '../../state/useAppStore';
 import { SourceBadge } from '../ui/SourceBadge';
-import { playSfx } from '../../audio/play';
+import { fx } from '../../audio/sfx';
 
 const TOTAL = 4;
 
@@ -16,6 +16,7 @@ export function SurveyorInteraction({
   reducedMotion,
   onComplete,
   onSkip,
+  api,
 }: InteractionProps) {
   const { t } = useTranslation('ui');
   const locale = useAppStore((s) => s.locale);
@@ -32,12 +33,12 @@ export function SurveyorInteraction({
 
   const land = () => {
     setPhase('landing');
-    playSfx('thud');
+    api.sound.play(fx.thud);
     window.setTimeout(() => setPhase('landed'), reducedMotion ? 50 : 1800);
   };
   const addDig = (amount: number) => {
     setFx('dig', 1);
-    playSfx('drill');
+    api.sound.play(fx.drill);
     setDug((d) => {
       const nd = d + amount;
       if (nd >= 1) {

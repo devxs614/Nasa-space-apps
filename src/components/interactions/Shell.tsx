@@ -1,95 +1,58 @@
-import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
-import { useTranslation } from 'react-i18next';
-import { CheckCircle2, FastForward, SkipForward } from 'lucide-react';
-import { Badge } from '../ui/Badge';
-import { playSfx } from '../../audio/play';
-import { cx } from '../../lib/cx';
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+} from 'react';
 
 export interface ShellProps {
-  title: string;
-  /** Qué hay que conseguir, en una frase; visible desde el primer fotograma. */
-  goal?: string;
   done: boolean;
   successText: string;
   live?: string;
-  express?: boolean;
-  onSkip: () => void;
   onSeeResult?: () => void;
   children: ReactNode;
+  /** Ya no se usan: el título, la etiqueta, "Saltar" y el resultado los pone `InteractionShell`. */
+  title?: string;
+  goal?: string;
+  express?: boolean;
+  onSkip?: () => void;
   illustrative?: boolean;
   label?: string;
 }
 
-/** Contrato común de las mini-experiencias (Parte 13.1): saltar, ver resultado, resumen accesible. */
-export function Shell({
-  title,
-  goal,
-  done,
-  successText,
-  live,
-  express,
-  onSkip,
-  onSeeResult,
-  children,
-  illustrative = true,
-  label,
-}: ShellProps) {
-  const { t } = useTranslation('ui');
-  const [skipped, setSkipped] = useState(false);
-  const wasDone = useRef(done);
+/** Puente entre una actividad anterior al contrato v2 y el shell común. */
+export interface LegacyBridge {
+  succeed(text: string): void;
+  setSeeResult(fn: (() => void) | null): void;
+}
+export const LegacyContext = createContext<LegacyBridge | null>(null);
+
+/**
+ * Cuerpo de una actividad escrita con el contrato de la Parte 13.1. No dibuja cabecera ni botones:
+ * avisa al `InteractionShell` cuando la actividad termina y le dice cómo "ver el resultado".
+ */
+export function Shell({ done, successText, live, onSeeResult, children }: ShellProps) {
+  const bridge = useContext(LegacyContext);
+  const see = useRef(onSeeResult);
+  see.current = onSeeResult;
   useEffect(() => {
-    if (done && !wasDone.current) playSfx('right');
-    wasDone.current = done;
-  }, [done]);
+    if (!bridge) return;
+    bridge.setSeeResult(() => see.current?.());
+    return () => bridge.setSeeResult(null);
+  }, [bridge]);
+  useEffect(() => {
+    if (done) bridge?.succeed(successText);
+  }, [done, successText, bridge]);
   return (
-    <section
-      className="panel-solid hud-corners p-4"
-      aria-label={title}
-      data-keys="own"
-      data-interaction
-    >
-      <header className="mb-3 flex flex-wrap items-center gap-2">
-        <h4 className="font-heading text-[length:var(--fs-h3)] font-bold">{title}</h4>
-        {illustrative && <Badge tone="info">{label ?? t('ix.illustrative')}</Badge>}
-      </header>
-      {goal && (
-        <p className="mb-3" data-testid="interaction-goal">
-          <span className="font-bold text-signal">{t('interaction.goal')}: </span>
-          {goal}
-        </p>
-      )}
-      <div className={cx(skipped && !done && 'opacity-60')}>{children}</div>
+    <>
+      {children}
       <p className="sr-only" aria-live="polite">
         {live}
       </p>
-      {done && (
-        <p className="mt-3 flex items-start gap-2 text-phosphor" role="status">
-          <CheckCircle2 size={18} className="mt-1 shrink-0" aria-hidden="true" />
-          {successText}
-        </p>
-      )}
-      {!done && (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {express && onSeeResult && (
-            <button type="button" className="btn btn-ghost btn-sm" onClick={onSeeResult}>
-              <FastForward size={16} aria-hidden="true" />
-              {t('interaction.seeResult')}
-            </button>
-          )}
-          <button
-            type="button"
-            className="btn btn-subtle btn-sm"
-            onClick={() => {
-              setSkipped(true);
-              onSkip();
-            }}
-          >
-            <SkipForward size={16} aria-hidden="true" />
-            {t('interaction.skip')}
-          </button>
-        </div>
-      )}
-    </section>
+    </>
   );
 }
 

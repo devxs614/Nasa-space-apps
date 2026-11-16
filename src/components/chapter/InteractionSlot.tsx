@@ -1,4 +1,4 @@
-import { Component, Suspense, useMemo, type ReactNode } from 'react';
+import { Component, useEffect, useMemo, type ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { Machine, MachineId } from '../../data/types';
 import type { InteractionProps } from '../interactions/types';
@@ -6,6 +6,8 @@ import { Poster } from '../media/Poster';
 import { useAppStore } from '../../state/useAppStore';
 import { useJourneyStore } from '../../state/useJourneyStore';
 import { INTERACTIONS } from '../interactions/registry';
+import { META } from '../interactions/meta';
+import { InteractionShell } from '../interactions/InteractionShell';
 import { loadable, type Loadable } from '../../lib/loadable';
 
 class SlotBoundary extends Component<
@@ -34,9 +36,20 @@ function loadableFor(id: MachineId) {
   return c;
 }
 
+function SlotLoading({ id }: { id: MachineId }) {
+  const { t } = useTranslation('ui');
+  return (
+    <div className="space-y-2" role="status">
+      <Poster name={id} alt="" className="max-w-[420px] opacity-60" />
+      <p className="text-ink-dim">{t('interaction.preparing')}</p>
+    </div>
+  );
+}
+
 /**
- * Carga la interacción en diferido (ver src/lib/loadable.tsx), con póster mientras llega y límite
- * de error (Parte 16.4).
+ * Monta la mini-experiencia dentro del shell común (corrección A). El objetivo y "Cómo se juega" se
+ * ven al instante; el código de la actividad llega en diferido (ver src/lib/loadable.tsx) y se
+ * descarga en cuanto su momento entra en pantalla, con límite de error (Parte 16.4).
  */
 export function InteractionSlot({
   machine,
@@ -50,13 +63,20 @@ export function InteractionSlot({
   const { t } = useTranslation('ui');
   const reduced = useAppStore((s) => s.reducedMotion);
   const express = useJourneyStore((s) => s.express);
-  const Interaction = useMemo(() => loadableFor(machine.id), [machine.id]);
-  const loading = (
-    <div className="space-y-2" role="status">
-      <Poster name={machine.id} alt="" className="max-w-[420px] opacity-60" />
-      <p className="text-ink-dim">{t('interaction.preparing')}</p>
-    </div>
-  );
+  const id = machine.id;
+  const Interaction = useMemo(() => {
+    const Lazy = loadableFor(id);
+    function Activity(props: InteractionProps) {
+      return <Lazy {...props} fallback={<SlotLoading id={id} />} />;
+    }
+    return Activity;
+  }, [id]);
+  useEffect(() => {
+    if (active)
+      void loadableFor(id)
+        .preload()
+        .catch(() => undefined);
+  }, [active, id]);
   return (
     <SlotBoundary
       fallback={
@@ -65,17 +85,15 @@ export function InteractionSlot({
         </p>
       }
     >
-      <Suspense fallback={loading}>
-        <Interaction
-          fallback={loading}
-          machineId={machine.id}
-          active={active}
-          reducedMotion={reduced}
-          express={express}
-          onComplete={() => onDone()}
-          onSkip={() => onDone()}
-        />
-      </Suspense>
+      <InteractionShell
+        machineId={id}
+        active={active}
+        reducedMotion={reduced}
+        express={express}
+        meta={META[id]}
+        Interaction={Interaction}
+        onDone={() => onDone()}
+      />
     </SlotBoundary>
   );
 }

@@ -4,8 +4,9 @@ import type { InteractionProps } from './types';
 import { Shell, useDone } from './Shell';
 import { Toggle } from '../ui/Toggle';
 import { useJourneyStore } from '../../state/useJourneyStore';
-import { playSfx } from '../../audio/play';
-import { createTone, type ToneHandle } from '../../audio/sonify';
+import { fx } from '../../audio/sfx';
+import { toneLoop } from '../../audio/sonify';
+import type { LoopHandle } from '../../audio/scope';
 import { useAppStore } from '../../state/useAppStore';
 import { cx } from '../../lib/cx';
 
@@ -19,6 +20,7 @@ export function IngenuityInteraction({
   reducedMotion,
   onComplete,
   onSkip,
+  api,
 }: InteractionProps) {
   const { t } = useTranslation('ui');
   const setFx = useJourneyStore((s) => s.setFx);
@@ -36,20 +38,20 @@ export function IngenuityInteraction({
   const need = mars ? 2400 : 400; // ilustrativo: en Marte hace falta girar mucho más rápido
   const green = rpm >= need * 0.95;
   const soundOn = useAppStore((s) => s.soundOn);
-  const rotor = useRef<ToneHandle | null>(null);
+  const rotor = useRef<LoopHandle | null>(null);
 
   // Sonido del rotor: diente de sierra filtrado cuya frecuencia sigue las rpm (Parte 15.3).
   useEffect(() => {
     if (!soundOn || !active) return;
-    rotor.current = createTone('sawtooth', 30, 0.0001, 900);
+    rotor.current = api.sound.loop(toneLoop, 'sawtooth', 30, 0.0001, 900);
     return () => {
       rotor.current?.stop();
       rotor.current = null;
     };
-  }, [soundOn, active]);
+  }, [soundOn, active, api]);
   useEffect(() => {
-    rotor.current?.setFreq(30 + rpm / 30);
-    rotor.current?.setLevel(rpm > 50 ? 0.05 : 0.0001);
+    rotor.current?.set('freq', 30 + rpm / 30);
+    rotor.current?.set('level', rpm > 50 ? 0.05 : 0.0001);
   }, [rpm]);
 
   useEffect(() => () => setFx('fly', 0), [setFx]);
@@ -99,7 +101,7 @@ export function IngenuityInteraction({
     if (soft) {
       setFlights((n) => n + 1);
       setMsg(t('ix.ingenuity.soft'));
-      playSfx('thud');
+      api.sound.play(fx.thud);
       if (reached.every(Boolean)) finish();
     } else setMsg(t('ix.ingenuity.hard'));
   };

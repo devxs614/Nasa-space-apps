@@ -7,7 +7,7 @@ import { formatLightTime, formatNumber } from '../../lib/format';
 import { useAppStore } from '../../state/useAppStore';
 import { MACHINES_BY_ID, getFact } from '../../data/machines';
 import { Badge } from '../ui/Badge';
-import { playSfx } from '../../audio/play';
+import { fx } from '../../audio/sfx';
 
 const QUAKE_S = 12;
 
@@ -23,7 +23,13 @@ export function quakeSample(t: number, amp = 1): number {
 }
 
 /** 3. ALSEP — "El temblor y el láser". */
-export function AlsepInteraction({ express, reducedMotion, onComplete, onSkip }: InteractionProps) {
+export function AlsepInteraction({
+  express,
+  reducedMotion,
+  onComplete,
+  onSkip,
+  api,
+}: InteractionProps) {
   const { t } = useTranslation('ui');
   const locale = useAppStore((s) => s.locale);
   const { done, finish } = useDone(onComplete);
@@ -58,7 +64,7 @@ export function AlsepInteraction({ express, reducedMotion, onComplete, onSkip }:
 
   const drop = () => {
     setQuaked(true);
-    playSfx('quake', QUAKE_S);
+    api.sound.loop(fx.quake, QUAKE_S);
     if (reducedMotion) {
       drawQuake(QUAKE_S);
       return;
@@ -73,7 +79,7 @@ export function AlsepInteraction({ express, reducedMotion, onComplete, onSkip }:
   };
   const fire = () => {
     setLaser('out');
-    playSfx('laser');
+    api.sound.loop(fx.laser);
     const ms = LASER_ROUND_TRIP_S * 1000;
     const t0 = performance.now();
     const step = (now: number) => {

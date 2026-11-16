@@ -4,8 +4,9 @@ import type { InteractionProps } from './types';
 import { Shell, useDone } from './Shell';
 import { Toggle } from '../ui/Toggle';
 import { createRng } from '../../lib/rng';
-import { playSfx } from '../../audio/play';
-import { createTone, type ToneHandle } from '../../audio/sonify';
+import { fx } from '../../audio/sfx';
+import { toneLoop } from '../../audio/sonify';
+import type { LoopHandle } from '../../audio/scope';
 import { useAppStore } from '../../state/useAppStore';
 
 const STARS = [
@@ -30,6 +31,7 @@ export function KeplerInteraction({
   reducedMotion,
   onComplete,
   onSkip,
+  api,
 }: InteractionProps) {
   const { t } = useTranslation('ui');
   const { done, finish } = useDone(onComplete);
@@ -43,17 +45,17 @@ export function KeplerInteraction({
   const lastHitCycle = useRef(-1);
   const rng = useRef(createRng(1630));
   const soundOn = useAppStore((s) => s.soundOn);
-  const tone = useRef<ToneHandle | null>(null);
+  const tone = useRef<LoopHandle | null>(null);
 
   // Sonificación de la curva de luz (Parte 15.5): 660 Hz de base; cada caída baja el tono.
   useEffect(() => {
     if (!flag || !soundOn || !active || done) return;
-    tone.current = createTone('sine', 660, 0.05);
+    tone.current = api.sound.loop(toneLoop, 'sine', 660, 0.05);
     return () => {
       tone.current?.stop();
       tone.current = null;
     };
-  }, [flag, soundOn, active, done]);
+  }, [flag, soundOn, active, done, api]);
 
   useEffect(() => {
     if (!active || done) return;
@@ -65,9 +67,9 @@ export function KeplerInteraction({
       time.current += dt * SPEED;
       const s = STARS[star]!;
       const d = inTransit(s, time.current);
-      tone.current?.setFreq(660 * (1 - (1 - brightness(s, time.current, 0)) * 4));
+      tone.current?.set('freq', Math.max(20, 660 * (1 - (1 - brightness(s, time.current, 0)) * 4)));
       setDimming((p) => {
-        if (d && !p && flag) playSfx('tick');
+        if (d && !p && flag) api.sound.play(fx.tick);
         return d;
       });
       const c = canvas.current;
@@ -91,7 +93,7 @@ export function KeplerInteraction({
     };
     raf = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(raf);
-  }, [active, done, star, flag, reducedMotion]);
+  }, [active, done, star, flag, reducedMotion, api]);
 
   const press = () => {
     const s = STARS[star]!;
@@ -101,7 +103,7 @@ export function KeplerInteraction({
     const ok = inTransit(s, tt) || inTransit(s, tt - 0.6);
     if (ok && cycle !== lastHitCycle.current) {
       lastHitCycle.current = cycle;
-      playSfx('right');
+      api.sound.play(fx.tick);
       setHits((h) => {
         const n = h + 1;
         if (n >= 3) finish();
@@ -110,7 +112,7 @@ export function KeplerInteraction({
       setMsg(t('ix.kepler.found', { n: Math.min(3, hits + 1) }));
     } else if (!ok) {
       setMsg(t('ix.kepler.miss'));
-      playSfx('gentle');
+      api.sound.play(fx.gentle);
     }
   };
 
