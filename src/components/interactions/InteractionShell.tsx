@@ -314,8 +314,10 @@ export function InteractionShell({
 
       {played && phase !== 'intro' && (
         <div
-          className={cx((ended || paused) && 'opacity-50')}
-          inert={ended || paused}
+          // Tras un éxito la actividad sigue utilizable (seguir dibujando, mirar el resultado);
+          // solo queda inerte tras un fallo o en pausa.
+          className={cx((phase === 'fail' || paused) && 'opacity-50')}
+          inert={phase === 'fail' || paused}
           onPointerDownCapture={touch}
           onKeyDownCapture={touch}
           data-stage

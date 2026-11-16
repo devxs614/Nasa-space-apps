@@ -221,4 +221,8 @@
   en pantallas estrechas, donde está en Ajustes → Sonido. Las barras guardadas con el formato anterior no se heredan
   (tenían otra escala). Solo motor generativo: no se usan pistas grabadas (L.3).
 - M · Solo M1 (voz del navegador). No se generaron audios con Kokoro (M2) ni se añadió la clave `spoken`.
+- A · Tras un éxito la actividad sigue utilizable (seguir dibujando la placa de Pioneer, mirar el resultado); solo queda
+  inerte tras un fallo o en pausa. Surveyor termina con las cuatro zanjas de su objetivo, no con la primera.
+- Pruebas · La prueba de ganar NEAR con teclado decide con márgenes amplios (enciende por encima de 5 km/h, apaga por
+  debajo de 3) para no depender de lo cargada que esté la máquina. Las diapositivas se regeneraron con el aspecto nuevo.
 

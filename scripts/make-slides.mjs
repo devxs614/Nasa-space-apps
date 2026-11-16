@@ -142,9 +142,10 @@ async function capture() {
       const dig = ix.getByRole('button', { name: 'Dig with the scoop' });
       await dig.waitFor({ timeout: 20_000 });
       await dig.click();
-      await small.waitForTimeout(900);
-      await dig.click();
       await small.waitForTimeout(1500);
+      // Una segunda zanja si el botón ya está libre; si no, la captura sale con una.
+      await dig.click({ timeout: 3000 }).catch(() => undefined);
+      await small.waitForTimeout(1200);
       await ix.evaluate((el) => el.scrollIntoView({ block: 'start' }));
     }
     await small.waitForTimeout(500);

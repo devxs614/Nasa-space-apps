@@ -44,7 +44,7 @@ export function SurveyorInteraction({
       if (nd >= 1) {
         setTrenches((n) => {
           const nn = Math.min(TOTAL, n + 1);
-          if (nn >= 1) finish();
+          if (nn >= TOTAL) finish(); // el objetivo son las cuatro zanjas
           return nn;
         });
         window.setTimeout(() => setFx('dig', 0), 400);

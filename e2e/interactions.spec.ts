@@ -74,13 +74,21 @@ test('Acto III · NEAR: se gana solo con teclado, con toques de la barra espacia
   const thrust = ix.locator('[data-near-thrust]');
   await expect(thrust).toHaveAccessibleName('Encender propulsores');
   await thrust.focus();
-  // Enciende por encima de 5,5 km/h y apaga por debajo de 4: siempre dentro de la zona verde.
-  for (let i = 0; i < 400; i++) {
-    if (await ix.locator('[data-result]').count()) break;
-    const v = Number(await ix.locator('[data-near-speed]').getAttribute('data-near-speed'));
-    const firing = (await thrust.getAttribute('data-state')) === 'tapOff';
-    if ((v > 5.5 && !firing) || (v < 4 && firing)) await page.keyboard.press('Space');
-    await page.waitForTimeout(60);
+  // Enciende por encima de 5 km/h y apaga por debajo de 3. El margen hasta los 7 km/h aguanta casi
+  // dos segundos de retraso, para que la prueba no dependa de lo cargada que esté la máquina.
+  const read = `(() => {
+    const ix = document.querySelector('[data-interaction]');
+    return {
+      done: Boolean(ix.querySelector('[data-result]')),
+      v: Number(ix.querySelector('[data-near-speed]')?.getAttribute('data-near-speed')),
+      firing: ix.querySelector('[data-near-thrust]')?.getAttribute('data-state') === 'tapOff',
+    };
+  })()`;
+  for (let i = 0; i < 1500; i++) {
+    const s = await page.evaluate<{ done: boolean; v: number; firing: boolean }>(read);
+    if (s.done) break;
+    if ((s.v > 5 && !s.firing) || (s.v < 3 && s.firing)) await page.keyboard.press('Space');
+    await page.waitForTimeout(30);
   }
   await expect(ix.locator('[data-result="success"]')).toContainText('NEAR lo hizo a unos 6,4 km/h');
   await expect
