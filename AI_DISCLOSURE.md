@@ -7,9 +7,13 @@ This project was built with AI assistance. In line with the NASA Space Apps rule
 - **Text:** chapter scripts and interface copy were drafted with AI assistance and edited by the team. Every factual
   statement was checked against the sources listed in SOURCES.md. Dialogue spoken by the machines and by LUMI is
   fiction and is labeled as such in the interface.
-- **Narration audio:** optional narration uses the browser's built-in speech synthesis (a synthetic voice). It is
-  labeled "Synthetic browser voice" in the interface.
-- **Sound effects and music:** synthesized in real time with the Web Audio API by our own code; no AI-generated audio files.
+- **Narration audio:** optional narration uses the browser's built-in speech synthesis (a synthetic voice). The site
+  picks the most natural voice the browser offers and reads slowly, sentence by sentence. It is labeled "Synthetic
+  browser voice" in the interface. No narration audio files are generated or shipped.
+- **Sound effects and music:** synthesized in real time with the Web Audio API by our own code; no AI-generated audio
+  files and no AI audio model. The optional background music is original: a small generative engine in this repository
+  (`src/audio/music/`) plays chord progressions written for this project and picks melody notes at random. It quotes
+  or imitates no existing work. The code of that engine, like the rest of the code, was written with an AI coding agent.
 - **Images:** no AI-generated images are used. Photographs come from the NASA Image and Video Library with credit.
   Patches, posters and 3D models are drawn procedurally by our code. If any AI-generated image is ever added,
   it carries a visible "AI-generated" watermark.

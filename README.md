@@ -25,6 +25,8 @@ labeled; every fact links to its source.
 - Lunar and Martian atlases, timeline, catalog, passport with original patches, quiz
 - Spanish and English, WCAG 2.2 AA, reduced motion, lite mode and a WebGL-free reading mode
 - Classroom mode (`?aula=1`) and a 30-second automatic demo (`?demo=1`)
+- Optional original music generated live in the browser, an audio mixer (master, music, ambience, effects, voice)
+  and narration with the most natural voice the browser offers
 
 ## NASA data used
 

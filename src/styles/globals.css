@@ -268,6 +268,8 @@
   transform: none;
   opacity: 1;
   cursor: not-allowed;
+  /* Sin transición: a mitad del cambio de cian a oscuro el texto no se leería. */
+  transition: none;
 }
 .btn:disabled {
   cursor: not-allowed;

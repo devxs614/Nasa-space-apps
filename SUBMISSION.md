@@ -110,8 +110,9 @@ standard license). No copyrighted material is used without permission.
 Yes. An AI coding agent (Claude Code) generated most of the code from a detailed specification written by our team;
 we reviewed, tested and edited it. AI also helped draft chapter scripts and interface text, which we edited and
 fact-checked against the sources in SOURCES.md. Optional narration uses the browser's built-in synthetic voice and is
-labeled as such. No AI-generated images, audio files or data are used; sound is synthesized live with the Web Audio API
-by our code. No NASA logos, insignia, flags or mission identifiers are used as branding. Details: AI_DISCLOSURE.md.
+labeled as such. Background music is generated live in the browser by our own code; no AI audio model is used. No
+AI-generated images, audio files or data are used; sound is synthesized live with the Web Audio API by our code. No
+NASA logos, insignia, flags or mission identifiers are used as branding. Details: AI_DISCLOSURE.md.
 ```
 
 ## Before you press "Submit for Judging"

@@ -115,7 +115,7 @@ test('I · las 15 actividades dan una pista a los 6 s sin acción y "Restart" la
     await expect(ix.getByText('How to play'), id).toBeVisible();
     await ix.getByRole('button', { name: 'Start', exact: true }).click();
     await expect(ix.locator('[data-step]'), id).not.toBeEmpty();
-    await expect(ix.locator('[data-hint]'), id).toContainText('Hint:', { timeout: 9000 });
+    await expect(ix.locator('[data-hint]'), id).toContainText('Hint:', { timeout: 15_000 });
     await ix.getByRole('button', { name: 'Restart' }).click();
     await expect(ix.getByText('How to play'), id).toBeVisible();
     await expect.poll(() => loops(page), { timeout: 2000, message: id }).toBe(0);

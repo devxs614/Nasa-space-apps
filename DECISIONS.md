@@ -195,3 +195,30 @@
 - Límites que comprueba el script: exactamente 7 diapositivas, 7 páginas en el PDF, ningún contenido desbordado, todas las
   imágenes y fuentes cargadas.
 
+## 2026-11-15 — Correcciones v1.1 (prompt de correcciones A–M)
+- Dos sesiones trabajaron a la vez en la rama `fixes-v1.1`. La otra subió versiones ligeras de C, D, E, F y, en un commit sin
+  mensaje, J y K. Este trabajo (A, B, C, D, G, H, I, L, M) se reconstruyó encima del suyo: se conservan su E, su F y su
+  J/K; en NEAR y en los botones cian queda la versión sobre el contrato nuevo. La versión anterior está en la etiqueta
+  `v1.0-entrega`.
+- A · Los metadatos de las 15 actividades (objetivo, controles, pasos, pistas) viven en `interactions/meta.ts`, no en el
+  archivo de cada actividad: así el objetivo se ve antes de que llegue su fragmento. Las 12 actividades que no se
+  reescribieron usan un adaptador (`Shell.tsx`) que avisa al shell común cuando terminan; no dibujan botones propios.
+- A · La actividad se pausa cuando deja de verse (`IntersectionObserver`), no cuando el relato cambia de momento: en móvil,
+  una actividad alta seguía en pantalla y quedaba inerte. Cambiar de paso no reinicia el contador de la pista.
+- B · `createScope` vive en `audio/scope.ts` y no como método de `AudioEngine`, para evitar una importación circular. Los
+  efectos globales (clics, señal) siguen con `playSfx`: son efectos cortos que se desconectan solos. Los efectos con
+  duración propia (sismos, láser) usan `sound.loop` y se retiran solos al acabar. No había ningún `navigator.vibrate`.
+- C · La causa del zumbido de NEAR: el bucle marcaba el final dentro de un actualizador de estado de React, que se ejecuta
+  después; el bucle seguía pidiendo fotogramas tras el contacto y disparaba el golpe en cada uno. Física ilustrativa:
+  30 m, caída libre de unos 10 s (falla siempre), descenso cuidadoso de unos 20 s.
+- D · La causa de los botones sin texto: `.btn[aria-pressed='true']` ponía el texto cian, también en el botón principal
+  cian. El botón de la señal sigue deshabilitado con "Señal enviada" al llegar; "Enviar otra vez" queda pendiente.
+- E · Se mantiene la solución de la otra sesión (recalcular los disparadores cuando la página crece). El gancho por geometría
+  (`useActiveChapter`) del prompt no se implementó: su prueba del riel pasa sin él.
+- L · La música empieza activada al 50 % y, la primera vez que se activa el sonido, el mezclador se abre solo para que se vea
+  que se puede ajustar o apagar. Para que empiece apagada basta con `musicOn: false` en `defaultAudioPrefs`. El mezclador
+  de la barra superior es un botón propio junto al de sonido (que sigue encendiendo y apagando de un toque) y no aparece
+  en pantallas estrechas, donde está en Ajustes → Sonido. Las barras guardadas con el formato anterior no se heredan
+  (tenían otra escala). Solo motor generativo: no se usan pistas grabadas (L.3).
+- M · Solo M1 (voz del navegador). No se generaron audios con Kokoro (M2) ni se añadió la clave `spoken`.
+

@@ -843,7 +843,7 @@
     "teamText": "Somos un equipo participante del NASA Space Apps Challenge 2026. Quienes contribuyeron al código figuran en el repositorio del proyecto. No publicamos datos de contacto personales.",
     "ai": "Uso de inteligencia artificial",
     "aiText": "Este sitio se programó con ayuda de un asistente de IA; el equipo revisó los datos contra fuentes de NASA.",
-    "aiDetails": "La voz de la narración es la síntesis del navegador («Voz sintética»). No hay imágenes, audios ni datos generados con IA: el sonido se sintetiza en vivo y los tiempos de luz son cálculos con elementos orbitales de JPL.",
+    "aiDetails": "La voz de la narración es la síntesis del navegador («Voz sintética»). No hay imágenes, audios ni datos generados con IA: el sonido y la música opcional se sintetizan en vivo con nuestro propio código y los tiempos de luz son cálculos con elementos orbitales de JPL.",
     "credits": "Créditos",
     "creditsText": "Bibliotecas de código abierto (React, three.js, React Three Fiber, GSAP con su licencia estándar gratuita, Lenis, Zustand, i18next y más) y fuentes con licencia SIL Open Font License: Unbounded, Fraunces, Atkinson Hyperlegible Next y JetBrains Mono. Lista completa en CREDITS.md.",
     "repo": "Ver el código y CREDITS.md",
