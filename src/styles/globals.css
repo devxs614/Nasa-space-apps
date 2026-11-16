@@ -293,6 +293,34 @@
   cursor: not-allowed;
 }
 
+/* ─── Paneles con desplazamiento propio: barra siempre visible ─── */
+.scroll-area {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  overscroll-behavior: contain;
+  touch-action: pan-y;
+}
+.scroll-area::-webkit-scrollbar {
+  width: 12px;
+}
+.scroll-area::-webkit-scrollbar-track {
+  background: rgb(255 255 255 / 0.08);
+  border-radius: 999px;
+}
+.scroll-area::-webkit-scrollbar-thumb {
+  background: var(--signal);
+  border-radius: 999px;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+/* Firefox no admite ::-webkit-scrollbar; en Chrome estas propiedades anularían las de arriba. */
+@supports not selector(::-webkit-scrollbar) {
+  .scroll-area {
+    scrollbar-width: auto;
+    scrollbar-color: var(--signal) rgb(255 255 255 / 0.08);
+  }
+}
+
 /* ─── Tarjetas 3D (Parte 16.5) ─────────────────────────────────── */
 .card3d {
   transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));

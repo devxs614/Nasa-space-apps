@@ -66,3 +66,27 @@ test('D · ningún botón cian de las actividades se queda sin texto legible', a
     expect(result, id).toEqual({ empty: 0, low: 0 });
   }
 });
+
+test('F · en Ajustes, la rueda desplaza el panel y no la página de detrás', async ({
+  page,
+}, info) => {
+  test.skip(info.project.name !== 'chromium', 'la rueda del ratón es de escritorio');
+  test.setTimeout(120_000);
+  await page.setViewportSize({ width: 1366, height: 520 });
+  await page.goto('/?lang=en'); // sin movimiento reducido: el scroll inercial está activo
+  await expect(page.locator('#ch-surveyor')).toBeAttached({ timeout: 60_000 });
+  await page.getByRole('button', { name: 'Settings' }).first().click();
+  const dialog = page.getByRole('dialog', { name: 'Settings' });
+  await dialog.getByRole('tab', { name: 'Sound' }).click();
+  const body = dialog.locator('[data-dialog-body]');
+  const box = await body.boundingBox();
+  expect(box).not.toBeNull();
+  await page.mouse.move(box!.x + box!.width / 2, box!.y + box!.height / 2);
+  const scrollTop = () =>
+    page.evaluate<number>(`document.querySelector('[data-dialog-body]').scrollTop`);
+  expect(await scrollTop()).toBe(0);
+  await page.mouse.wheel(0, 600);
+  await expect.poll(scrollTop).toBeGreaterThan(50);
+  await page.waitForTimeout(600);
+  expect(await page.evaluate<number>('window.scrollY')).toBeLessThan(2);
+});
