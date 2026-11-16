@@ -545,7 +545,7 @@
       "title": "Paciencia iónica",
       "chemical": "Cohete químico",
       "ion": "Motor iónico",
-      "ionOn": "Motor iónico encendido",
+      "ionOn": "Apagar motor iónico",
       "ionOff": "Encender motor iónico",
       "fuel": "Combustible",
       "speed": "Velocidad",

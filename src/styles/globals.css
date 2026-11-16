@@ -281,6 +281,17 @@
   border-color: var(--signal);
   color: var(--signal);
 }
+/* El botón principal conserva su texto oscuro también pulsado: cian sobre cian no se lee. */
+.btn-primary[aria-pressed='true'] {
+  color: #031417;
+  box-shadow:
+    0 0 0 1px var(--signal),
+    0 0 0 4px rgb(94 242 255 / 0.35);
+}
+.btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
 
 /* ─── Tarjetas 3D (Parte 16.5) ─────────────────────────────────── */
 .card3d {

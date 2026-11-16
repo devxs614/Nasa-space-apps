@@ -539,7 +539,7 @@
       "title": "Ion patience",
       "chemical": "Chemical rocket",
       "ion": "Ion engine",
-      "ionOn": "Ion engine on",
+      "ionOn": "Turn off the ion engine",
       "ionOff": "Turn on the ion engine",
       "fuel": "Fuel",
       "speed": "Speed",
