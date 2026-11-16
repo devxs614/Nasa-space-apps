@@ -12,7 +12,7 @@ import { VoiceLine } from './VoiceLine';
 import { useSignal } from '../../hooks/useSignal';
 import { useAppStore } from '../../state/useAppStore';
 import { lightTime } from '../../lib/astro';
-import { formatDate, formatLightTime } from '../../lib/format';
+import { formatLightTime } from '../../lib/format';
 import { playSfx } from '../../audio/play';
 
 /** "Despertar": LUMI, el botón de señal con su tiempo de luz y la respuesta archivada (Partes 8.2 y 14.2). */
@@ -52,15 +52,19 @@ export function BeatWake({ machine }: { machine: Machine }) {
     lt.seconds === null
       ? t('signal.ariaOff', { name })
       : t('signal.aria', { name, time: formatLightTime(lt.seconds, locale) });
-  const label = kepler
-    ? t('signal.keplerOff', { date: formatDate(machine.lastSignal.date, locale) })
-    : status === 'traveling'
+  // El botón dice siempre lo que hará o lo que está pasando (corrección D).
+  const label =
+    status === 'traveling'
       ? t('signal.traveling')
       : arrived
         ? t('signal.sent')
-        : instant
-          ? t('signal.press')
-          : t('signal.hold');
+        : kepler
+          ? t('signal.keplerPlay')
+          : status === 'charging'
+            ? t('signal.charging')
+            : instant
+              ? t('signal.press')
+              : t('signal.hold');
 
   return (
     <BeatShell machine={machine} beat="wake" onProgress={onScroll}>

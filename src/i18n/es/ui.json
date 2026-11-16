@@ -162,23 +162,37 @@
   "interaction": {
     "preparing": "Preparando la mini-experiencia…",
     "loadFailed": "No se pudo cargar esta parte. Puedes seguir leyendo.",
-    "skip": "Saltar interacción",
+    "skip": "Saltar",
     "seeResult": "Ver resultado",
     "done": "¡Hecho!",
     "noPressure": "Modo sin presión",
-    "restart": "Empezar de nuevo",
-    "paused": "Pausada: vuelve a este tramo para seguir.",
+    "restart": "Reiniciar",
+    "paused": "En pausa mientras esta parte estaba fuera de pantalla.",
     "goal": "Objetivo",
+    "step": "Paso {{n}} de {{total}}",
+    "howTo": "Cómo se juega",
+    "start": "Empezar",
     "tryAgain": "Intentar de nuevo",
-    "playAgain": "Jugar de nuevo"
+    "playAgain": "Jugar de nuevo",
+    "continue": "Seguir con la historia",
+    "success": "Misión cumplida",
+    "fail": "Esta vez no",
+    "real": "Ver qué pasó de verdad",
+    "hint": "Pista",
+    "resume": "Reanudar",
+    "controls": {
+      "mouse": "Ratón",
+      "touch": "Táctil",
+      "keyboard": "Teclado"
+    }
   },
   "signal": {
-    "hold": "Mantén pulsado para enviar señal",
-    "press": "Pulsa para enviar señal",
+    "hold": "Mantén para enviar la señal",
+    "press": "Enviar la señal",
     "aria": "Enviar señal a {{name}}. Tiempo de luz estimado: {{time}}",
     "ariaOff": "Enviar señal a {{name}}. Transmisor apagado",
-    "charging": "Cargando señal…",
-    "traveling": "Señal en camino…",
+    "charging": "Cargando: no sueltes",
+    "traveling": "Señal en camino",
     "sent": "Señal enviada",
     "again": "Enviar otra vez",
     "keplerOff": "Transmisor apagado desde el {{date}}",
@@ -203,7 +217,8 @@
     "ephemerisNote": "Posiciones calculadas con los elementos keplerianos de JPL para hoy.",
     "elapsed": "Tiempo real transcurrido",
     "compressionTitle": "Compresión de tiempo: el pulso tarda 3 s en pantalla",
-    "silent": "Última señal recibida"
+    "silent": "Última señal recibida",
+    "keplerPlay": "Reproducir su último recuerdo"
   },
   "prologue": {
     "tuning": "Sintonizando…",
@@ -593,6 +608,130 @@
       "saved": "Dibujo guardado: aparecerá en tu postal.",
       "canvas": "Lienzo de dibujo",
       "success": "Exploraste la placa."
+    }
+  },
+  "ixm": {
+    "common": {
+      "mouse": "Haz clic en los botones.",
+      "touch": "Toca los botones.",
+      "keyboard": "Pulsa Tab para llegar a un botón y después Enter o Espacio."
+    },
+    "surveyor": {
+      "goal": "Descubre si el suelo de la Luna puede sostener una nave.",
+      "s1": "Elige una hipótesis, pulsa «Aterrizar» y cava 4 zanjas.",
+      "h1": "Elige «Mar de polvo profundo» o «Suelo firme» para empezar; después usa «Aterrizar» y «Cavar con la pala».",
+      "mouse": "Haz clic en los botones o arrastra sobre el suelo para cavar.",
+      "touch": "Toca los botones o arrastra sobre el suelo para cavar.",
+      "keyboard": "Pulsa Tab para llegar a un botón y después Enter o Espacio."
+    },
+    "apollo": {
+      "goal": "Visita dos sitios de alunizaje y haz despegar una etapa de ascenso.",
+      "s1": "Elige dos sitios de la lista y pulsa «Despegar».",
+      "h1": "Elige un sitio de la lista. Tras dos visitas, pulsa «Despegar»."
+    },
+    "alsep": {
+      "goal": "Haz sonar la Luna y después rebota un láser en ella.",
+      "s1": "Pulsa «Dejar caer la etapa de ascenso» para hacer sonar la Luna y después «Disparar láser».",
+      "h1": "Pulsa primero «Dejar caer la etapa de ascenso»; cuando acabe el temblor, pulsa «Disparar láser»."
+    },
+    "lrv": {
+      "goal": "Visita las tres paradas y vuelve antes de que se agote la batería.",
+      "s1": "Conduce hasta las tres paradas de geología y vuelve al módulo lunar. No salgas del círculo: marca hasta dónde podría volver a pie la tripulación.",
+      "h1": "Usa los botones de flecha, o las flechas del teclado, para conducir hacia la parada más cercana.",
+      "mouse": "Usa los botones de flecha para conducir.",
+      "touch": "Usa los botones de flecha para conducir.",
+      "keyboard": "Las flechas del teclado conducen el rover."
+    },
+    "viking": {
+      "goal": "Haz las tres pruebas y decide: ¿vida o química?",
+      "s1": "Pulsa «Recoger muestra», haz las tres pruebas y vota.",
+      "h1": "Empieza por «Recoger muestra». Después aparecen las tres pruebas: hazlas todas antes de votar."
+    },
+    "sojourner": {
+      "goal": "Pon órdenes en cola para llegar a la roca marcada y mídela.",
+      "s1": "Pon movimientos en cola, pulsa «Enviar» y espera el retraso. En la roca marcada, añade «Medir».",
+      "h1": "Pulsa «Avanzar» unas veces y después «Enviar». El rover se mueve cuando llega la señal."
+    },
+    "spirit": {
+      "goal": "Retrocede para ver qué desentierra la rueda atascada y analízalo.",
+      "s1": "Pulsa «Retroceder arrastrando la rueda» y después «Analizar» para ver lo que desenterró la rueda.",
+      "h1": "Pulsa «Retroceder arrastrando la rueda» o arrastra hacia la izquierda.",
+      "mouse": "Haz clic en los botones o arrastra hacia la izquierda.",
+      "touch": "Toca los botones o arrastra hacia la izquierda.",
+      "keyboard": "Pulsa Tab para llegar a un botón y después Enter o Espacio."
+    },
+    "opportunity": {
+      "goal": "Recorre la línea de tiempo de 2004 a 2018.",
+      "s1": "Lleva el deslizador de años hasta el final y mira crecer el odómetro.",
+      "h1": "Arrastra el deslizador a la derecha o pulsa la flecha derecha.",
+      "mouse": "Arrastra el deslizador.",
+      "touch": "Arrastra el deslizador.",
+      "keyboard": "Las flechas izquierda y derecha mueven el deslizador."
+    },
+    "phoenix": {
+      "goal": "Cava, observa los trozos blancos durante cuatro días y di qué pasó.",
+      "s1": "Pulsa «Cavar la zanja», avanza el tiempo hasta el día 4 y responde la pregunta.",
+      "h1": "Pulsa «Cavar la zanja» para empezar."
+    },
+    "insight": {
+      "goal": "Provoca un sismo marciano y compara los modelos del núcleo de 2021 y 2023.",
+      "s1": "Pulsa «Generar sismo» y compara los modelos de 2021 y 2023.",
+      "h1": "Pulsa primero «Generar sismo» y después cambia entre «Modelo de 2021» y «Modelo de 2023»."
+    },
+    "ingenuity": {
+      "goal": "Lleva a Ingenuity a las tres marcas y aterriza con suavidad.",
+      "s1": "Acelera los rotores: mantén el botón hasta que la aguja llegue a la zona verde.",
+      "s2": "Vuela a la marca {{n}} de 3: haz clic o tócala.",
+      "s3": "Aterriza suave: mantén el botón para frenar la bajada y deja la barra en verde.",
+      "h1": "Mantén pulsado el botón cian. No sueltes hasta que la aguja esté en verde.",
+      "h2": "Haz clic en la marca brillante número {{n}}.",
+      "h3": "Mantén el botón para frenar. Suelta para bajar más rápido.",
+      "mouse": "Mantén pulsado el botón cian. Haz clic en las marcas numeradas.",
+      "touch": "Mantén pulsado el botón cian. Toca las marcas numeradas.",
+      "keyboard": "Mantén la barra espaciadora. Usa Tab y Enter en las marcas."
+    },
+    "near": {
+      "goal": "Toca Eros a 7 km/h o menos.",
+      "s1": "Mira la velocidad. Mantén el botón para encender los propulsores y frenar.",
+      "s2": "Mantén la velocidad en la zona verde hasta tocar el suelo.",
+      "h1": "Mantén pulsado el botón cian, o la barra espaciadora, para frenar.",
+      "h2": "Mantén pulsado el botón cian, o la barra espaciadora, para frenar.",
+      "mouse": "Mantén pulsado el botón cian para encender los propulsores.",
+      "touch": "Mantén pulsado el botón cian para encender los propulsores.",
+      "keyboard": "Mantén la barra espaciadora para frenar.",
+      "hold": "Mantén para encender propulsores",
+      "firing": "Encendidos: suelta para parar",
+      "tapOn": "Encender propulsores",
+      "tapOff": "Apagar propulsores",
+      "empty": "Sin combustible",
+      "height": "Altura",
+      "fuel": "Combustible",
+      "speed": "Velocidad",
+      "limit": "Zona verde: 7 km/h o menos",
+      "success": "Tocaste a {{speed}} km/h. NEAR lo hizo a unos 6,4 km/h, y no estaba diseñada para posarse.",
+      "fail": "Tocaste a {{speed}} km/h: demasiado rápido para posarte con suavidad. Prueba a frenar un poco antes."
+    },
+    "dawn": {
+      "goal": "Lleva a Dawn de Vesta a Ceres. ¿Qué motor llega: un gran empujón o un empuje suave que nunca para?",
+      "s1": "Prueba el cohete químico: un gran empujón.",
+      "s2": "Ahora enciende el motor iónico y déjalo encendido.",
+      "s3": "Mantenlo encendido hasta llegar a Ceres.",
+      "h1": "Pulsa 'Encender cohete químico' para ver un gran empujón.",
+      "h2": "Enciende el motor iónico y déjalo encendido: funciona porque nunca para.",
+      "h3": "Enciende el motor iónico y déjalo encendido: funciona porque nunca para."
+    },
+    "kepler": {
+      "goal": "Pulsa «¡Tránsito!» cada vez que una estrella se atenúa y confirma un planeta.",
+      "s1": "Mira la curva y pulsa «¡Tránsito!» en cada caída, tres veces.",
+      "h1": "Espera a que la línea baje y pulsa «¡Tránsito!»."
+    },
+    "pioneer": {
+      "goal": "Abre las cuatro partes del mensaje o diseña tu propia placa.",
+      "s1": "Abre las cuatro partes del mensaje con los botones bajo el diagrama.",
+      "h1": "Pulsa uno de los cuatro botones bajo el diagrama.",
+      "mouse": "Haz clic en los botones; dibuja en el lienzo con el ratón.",
+      "touch": "Toca los botones; dibuja en el lienzo con el dedo.",
+      "keyboard": "Pulsa Tab para llegar a un botón y después Enter o Espacio."
     }
   },
   "media": {

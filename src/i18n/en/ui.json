@@ -156,23 +156,37 @@
   "interaction": {
     "preparing": "Getting the mini-experience ready…",
     "loadFailed": "This part could not load. You can keep reading.",
-    "skip": "Skip interaction",
+    "skip": "Skip",
     "seeResult": "See result",
     "done": "Done!",
     "noPressure": "No-pressure mode",
-    "restart": "Start again",
-    "paused": "Paused: come back to this part to continue.",
+    "restart": "Restart",
+    "paused": "Paused while this part was off screen.",
     "goal": "Goal",
+    "step": "Step {{n}} of {{total}}",
+    "howTo": "How to play",
+    "start": "Start",
     "tryAgain": "Try again",
-    "playAgain": "Play again"
+    "playAgain": "Play again",
+    "continue": "Continue the story",
+    "success": "Mission complete",
+    "fail": "Not this time",
+    "real": "See what really happened",
+    "hint": "Hint",
+    "resume": "Resume",
+    "controls": {
+      "mouse": "Mouse",
+      "touch": "Touch",
+      "keyboard": "Keyboard"
+    }
   },
   "signal": {
-    "hold": "Press and hold to send a signal",
-    "press": "Press to send a signal",
+    "hold": "Hold to send signal",
+    "press": "Send signal",
     "aria": "Send a signal to {{name}}. Estimated light time: {{time}}",
     "ariaOff": "Send a signal to {{name}}. Transmitter off",
-    "charging": "Charging signal…",
-    "traveling": "Signal on its way…",
+    "charging": "Charging, keep holding",
+    "traveling": "Signal on its way",
     "sent": "Signal sent",
     "again": "Send again",
     "keplerOff": "Transmitter off since {{date}}",
@@ -197,7 +211,8 @@
     "ephemerisNote": "Positions calculated for today with JPL's Keplerian elements.",
     "elapsed": "Real time elapsed",
     "compressionTitle": "Time compression: the pulse takes 3 s on screen",
-    "silent": "Last signal received"
+    "silent": "Last signal received",
+    "keplerPlay": "Play its last memory"
   },
   "prologue": {
     "tuning": "Tuning in…",
@@ -587,6 +602,130 @@
       "saved": "Drawing saved: it will appear on your postcard.",
       "canvas": "Drawing canvas",
       "success": "You explored the plaque."
+    }
+  },
+  "ixm": {
+    "common": {
+      "mouse": "Click the buttons.",
+      "touch": "Tap the buttons.",
+      "keyboard": "Press Tab to reach a button, then Enter or Space."
+    },
+    "surveyor": {
+      "goal": "Find out if the Moon's ground can hold a lander.",
+      "s1": "Choose a hypothesis, press “Land”, then dig 4 trenches.",
+      "h1": "Pick “A deep sea of dust” or “Firm ground” to begin; then use “Land” and “Dig with the scoop”.",
+      "mouse": "Click the buttons, or drag across the soil to dig.",
+      "touch": "Tap the buttons, or drag across the soil to dig.",
+      "keyboard": "Press Tab to reach a button, then Enter or Space."
+    },
+    "apollo": {
+      "goal": "Visit two landing sites and launch an ascent stage.",
+      "s1": "Pick two sites from the list, then press “Lift off”.",
+      "h1": "Choose a site in the list. After two visits, press “Lift off”."
+    },
+    "alsep": {
+      "goal": "Make the Moon ring, then bounce a laser off it.",
+      "s1": "Press “Drop the ascent stage” to make the Moon ring, then “Fire the laser”.",
+      "h1": "Press “Drop the ascent stage” first; when the shaking ends, press “Fire the laser”."
+    },
+    "lrv": {
+      "goal": "Visit the three stops and get back before the battery runs low.",
+      "s1": "Drive to the three geology stops, then back to the lunar module. Stay inside the circle: it marks how far the crew could walk back.",
+      "h1": "Use the arrow buttons, or the arrow keys, to drive toward the nearest stop.",
+      "mouse": "Use the arrow buttons to drive.",
+      "touch": "Use the arrow buttons to drive.",
+      "keyboard": "The arrow keys drive the rover."
+    },
+    "viking": {
+      "goal": "Run the three tests, then decide: life or chemistry?",
+      "s1": "Press “Collect a sample”, run the three tests, then vote.",
+      "h1": "Start with “Collect a sample”. The three tests appear next: run all of them before you vote."
+    },
+    "sojourner": {
+      "goal": "Queue commands to reach the marked rock, then measure it.",
+      "s1": "Queue moves, press “Send” and wait for the delay. At the marked rock, queue “Measure”.",
+      "h1": "Press “Forward” a few times, then “Send”. The rover moves when the signal arrives."
+    },
+    "spirit": {
+      "goal": "Drive backward to see what the stuck wheel digs up, then analyze it.",
+      "s1": "Press “Back up dragging the wheel”, then “Analyze” what the wheel dug up.",
+      "h1": "Press “Back up dragging the wheel”, or drag to the left.",
+      "mouse": "Click the buttons, or drag to the left.",
+      "touch": "Tap the buttons, or drag to the left.",
+      "keyboard": "Press Tab to reach a button, then Enter or Space."
+    },
+    "opportunity": {
+      "goal": "Drive the timeline from 2004 to 2018.",
+      "s1": "Move the year slider to the end and watch the odometer grow.",
+      "h1": "Drag the slider to the right, or press the Right arrow key.",
+      "mouse": "Drag the slider.",
+      "touch": "Drag the slider.",
+      "keyboard": "The Left and Right arrow keys move the slider."
+    },
+    "phoenix": {
+      "goal": "Dig, watch the white bits for four days, and say what happened.",
+      "s1": "Press “Dig the trench”, move time forward to day 4, then answer the question.",
+      "h1": "Press “Dig the trench” to begin."
+    },
+    "insight": {
+      "goal": "Make a marsquake, then compare the 2021 and 2023 models of the core.",
+      "s1": "Press “Make a quake”, then compare the 2021 and 2023 models.",
+      "h1": "Press “Make a quake” first, then switch between “2021 model” and “2023 model”."
+    },
+    "ingenuity": {
+      "goal": "Fly Ingenuity to the three markers and land gently.",
+      "s1": "Spin up the rotors: hold the button until the needle reaches the green zone.",
+      "s2": "Fly to marker {{n}} of 3: click or tap it.",
+      "s3": "Land gently: hold the button to slow the descent and keep the bar in the green.",
+      "h1": "Press and hold the cyan button. Don't let go until the needle is green.",
+      "h2": "Click the glowing marker number {{n}}.",
+      "h3": "Hold the button to slow down. Let go to drop faster.",
+      "mouse": "Press and hold the cyan button. Click the numbered markers.",
+      "touch": "Press and hold the cyan button. Tap the numbered markers.",
+      "keyboard": "Hold Space. Use Tab and Enter on the markers."
+    },
+    "near": {
+      "goal": "Touch down on Eros at 7 km/h or slower.",
+      "s1": "Watch the speed. Hold the button to fire the thrusters and slow down.",
+      "s2": "Keep the speed in the green zone until you touch down.",
+      "h1": "Press and hold the cyan button, or the Space bar, to brake.",
+      "h2": "Press and hold the cyan button, or the Space bar, to brake.",
+      "mouse": "Press and hold the cyan button to fire the thrusters.",
+      "touch": "Press and hold the cyan button to fire the thrusters.",
+      "keyboard": "Hold the Space bar to brake.",
+      "hold": "Hold to fire thrusters",
+      "firing": "Firing, release to stop",
+      "tapOn": "Fire thrusters",
+      "tapOff": "Stop thrusters",
+      "empty": "Out of fuel",
+      "height": "Height",
+      "fuel": "Fuel",
+      "speed": "Speed",
+      "limit": "Green zone: 7 km/h or slower",
+      "success": "You touched down at {{speed}} km/h. NEAR did it at about 6.4 km/h, and it was never designed to land.",
+      "fail": "You touched down at {{speed}} km/h, too fast for a gentle landing. Try braking a little earlier."
+    },
+    "dawn": {
+      "goal": "Get Dawn from Vesta to Ceres. Which engine gets there: one big push, or a gentle push that never stops?",
+      "s1": "Try the chemical rocket: one big push.",
+      "s2": "Now turn on the ion engine and leave it on.",
+      "s3": "Keep it on until you reach Ceres.",
+      "h1": "Press 'Fire chemical rocket' to see one big push.",
+      "h2": "Turn on the ion engine and leave it on. It works by never stopping.",
+      "h3": "Turn on the ion engine and leave it on. It works by never stopping."
+    },
+    "kepler": {
+      "goal": "Press “Transit!” each time a star dims, and confirm a planet.",
+      "s1": "Watch the curve and press “Transit!” during each dip, three times.",
+      "h1": "Wait until the line dips, then press “Transit!”."
+    },
+    "pioneer": {
+      "goal": "Open the four parts of the message, or design your own plaque.",
+      "s1": "Open the four parts of the message with the buttons under the diagram.",
+      "h1": "Press one of the four buttons under the diagram.",
+      "mouse": "Click the buttons; draw on the canvas with the mouse.",
+      "touch": "Tap the buttons; draw on the canvas with a finger.",
+      "keyboard": "Press Tab to reach a button, then Enter or Space."
     }
   },
   "media": {
